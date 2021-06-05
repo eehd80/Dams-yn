@@ -19,13 +19,13 @@ const Receive = () => (
                         <Label for="tel">고객전화번호</Label>
                     </Col>
                     <Col>
-                        <NumberFormat format="###-####-####" className="form-control" />
+                        <NumberFormat format="###-####-####" id="tel" name="tel" className="form-control" />
                     </Col>
                     <Col>
                         <Label for="purpose">이용목적</Label>
                     </Col>
                     <Col>
-                        <Select options={options} />
+                        <Select options={options} id="purpose" name="purpose" />
                     </Col>
                 </Row>
             </Form>

@@ -1,6 +1,76 @@
-# Getting Started with Create React App
+# 용인시 교통약자 DAMS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 1. git 다운로드
+
+```
+git clone https://github.com/eehd80/Dams-yn.git .
+```
+
+## 2. React 설치
+
+```
+yarn install
+```
+
+## 3. React 라이브러리 추가 설치
+
+### sass
+
+```
+yarn add node-sass@4.14.1
+
+yarn add sass -D //macbook m1 일 경우 추가 설치
+```
+
+-   css를 scss로 수정
+-   사용방법 : <https://react.vlpt.us/styling/01-sass.html>
+
+### reactstrap
+
+```
+npm install --save bootstrap
+npm install --save reactstrap react react-dom
+```
+
+-   index.js에 아래 라인을 추가해준다.
+    -- import 'bootstrap/dist/css/bootstrap.css';
+
+-   사용방법 : <https://reactstrap.github.io/>
+-   components : <https://reactstrap.github.io/components/form/>
+
+### react-datetime
+
+```
+yarn add react-datetime
+```
+
+-   사용방법 : <https://www.npmjs.com/package/react-datetime>
+
+### react-number-format
+
+```
+npm install react-number-format --save
+```
+
+-   사용방법 : <https://www.npmjs.com/package/react-number-format>
+
+### react-select
+
+```
+yarn add react-select
+```
+
+-   사용방법 : <https://react-select.com/home#getting-started>
+
+### ag-grid
+
+```
+npm install --save ag-grid-community ag-grid-react
+```
+
+-   사용방법 : <https://www.ag-grid.com/react-grid/getting-started/>
+
+---
 
 ## Available Scripts
 
@@ -68,4 +138,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
 # Dams-yn
