@@ -1,10 +1,12 @@
 @charset "UTF-8";
-@import 'reset', 'main', 'contents', 'variables', 'mixins';
+@import "reset", "main", "contents", "variables", "mixins";
 
 // 공통 레이아웃, 공통 디자인
 .container {
-    width: calc(100% - 40px); 
-    margin : 0 auto;
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin: 0 auto;
 }
 #header {
     border-bottom: 1px solid $line1;
@@ -12,7 +14,8 @@
 .gnb-util {
     background-color: $prim2;
     .container {
-        display: flex; justify-content: flex-end;
+        display: flex;
+        justify-content: flex-end;
         height: 28px;
     }
     .lst-util {
@@ -20,9 +23,11 @@
         li {
             position: relative;
             &::before {
-                content: '';
-                @include posY;left: 0;
-                width: 1px; height: 40%; 
+                content: "";
+                @include posY;
+                left: 0;
+                width: 1px;
+                height: 40%;
                 background: $w;
                 opacity: 0.3;
             }
@@ -41,12 +46,14 @@
                 background-color: $prim4;
             }
         }
-        
-    }    
+    }
     a {
-        display: block; 
-        height: 100%; padding: 0 20px;
-        color: $w; line-height: 28px;
+        display: block;
+        height: 100%;
+        padding: 0 20px;
+        color: $w;
+        line-height: 28px;
+        font-size: 0.9em;
     }
 }
 .gnb-wrap {
@@ -56,42 +63,58 @@
         justify-content: space-between;
     }
     .logo {
+        font-size: 1.5em;
         a {
             display: block;
-            height: 70px; 
-            line-height: 70px; font-size: 1.1em; 
-            white-space: nowrap;letter-spacing: -.1em;
+            height: 70px;
+            line-height: 70px;
+            letter-spacing: -0.1em;
+            white-space: nowrap;
         }
     }
 }
 #gnb {
-    &:hover, &:focus, &.active {
-        .nav-bg, .nav-depth2 {
+    &:hover,
+    &:focus,
+    &.active {
+        .nav-bg,
+        .nav-depth2 {
             display: block;
-        }        
+        }
     }
     .nav-depth1 {
         display: flex;
         > li {
             position: relative;
             border-bottom: 3px solid $w;
-            &:hover, &:focus, &.active {
+            &:hover,
+            &:focus,
+            &.active {
                 border-bottom: 3px solid $prim4;
                 > a {
-                    color: $prim3; font-weight: bold;
+                    color: $prim3;
+                    font-weight: bold;
                 }
             }
             > a {
                 display: block;
-                width: 160px;height: 70px;
-                line-height: 70px; font-size: 1.1em;
+                width: 160px;
+                height: 70px;
+                line-height: 70px;
+                font-size: 1.1em;
                 text-align: center;
-            }       
-        }        
+                font-weight: 500;
+            }
+        }
     }
     .nav-depth2 {
-        position: absolute;top: 73px;right: 0; left: 0; z-index: 1100;
-        overflow: hidden; padding: 20px 0;
+        position: absolute;
+        top: 73px;
+        right: 0;
+        left: 0;
+        z-index: 1100;
+        overflow: hidden;
+        padding: 20px 0;
         display: none;
         > li {
             margin: 5px;
@@ -99,22 +122,28 @@
                 position: relative;
                 display: block;
                 padding: 7px 20px 7px 10px;
-                border: 1px solid rgba(255,255,255,0.4);
-                color: $w; font-weight: 500; font-size: 0.857em;
-                &:hover, &:focus { 
+                border: 1px solid rgba(255, 255, 255, 0.4);
+                color: $w;
+                font-weight: 500;
+                font-size: 0.857em;
+                &:hover,
+                &:focus {
                     color: $prim5;
                 }
                 &::before {
-                    @include posY; right: 10px;
+                    @include posY;
+                    right: 10px;
                     content: "\f105";
-                    font-family: 'Line Awesome Free';
-                    font-weight: 900; font-size: 1em;
-                    color: $w; opacity: .8;
+                    font-family: "Line Awesome Free";
+                    font-weight: 900;
+                    font-size: 1em;
+                    color: $w;
+                    opacity: 0.8;
                 }
                 &.ico-plus::before {
                     content: "\f067";
                 }
-            }            
+            }
         }
     }
     .nav-depth3 {
@@ -122,46 +151,59 @@
             position: relative;
             margin: 5px;
             &::before {
-                content: '';
-                @include posY; left: 5px;
-                width: 2px; height: 2px;
+                content: "";
+                @include posY;
+                left: 5px;
+                width: 2px;
+                height: 2px;
                 border-radius: 50%;
                 background-color: $w;
                 opacity: 0.7;
             }
         }
         a {
-            display: block; 
-            height: 34px; padding-left:13px;
+            display: block;
+            height: 34px;
+            padding-left: 13px;
             line-height: 34px;
-            color: $w; font-size: 0.857em;
-            &:hover, &:focus { 
+            color: $w;
+            font-size: 0.857em;
+            &:hover,
+            &:focus {
                 color: $prim5;
             }
         }
     }
     .nav-bg {
         display: none;
-        position: absolute;top: 73px;left: 0;right: 0; z-index: 1000;
-        height: 600px; transition: all .5s;
+        position: absolute;
+        top: 73px;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        height: 600px;
+        transition: all 0.5s;
         border-bottom: 1px solid #eee;
         background-color: $prim3;
     }
 }
 
 #favorites {
-    border-top: 1px solid $prim2;
-    background-color: $line1;
-    .lst-favor {        
-        display: flex; justify-content: center;
+    border-top: 1px solid $line1;
+    border-bottom: 1px solid $line1;
+    .lst-favor {
+        display: flex;
+        justify-content: center;
         li {
             position: relative;
             padding-left: 10px;
             &::before {
                 content: "\f005";
-                @include posY; left: 10px;
-                font-family: 'Line Awesome Free';
-                font-weight: 900; color: $prim3;
+                @include posY;
+                left: 10px;
+                font-family: "Line Awesome Free";
+                font-weight: 900;
+                color: $prim3;
             }
         }
         a {
@@ -172,6 +214,66 @@
             }
         }
     }
+}
+
+#main {
+    display: flex;
+}
+#receve {
+    position: relative;
+    border-right: 1px solid $line1;
+    background-color: $w;
+    box-shadow: 0 1px 3px 0 rgba($b, 0.1);
+    .form-wrap {
+        overflow: hidden;
+        width: 1000px;
+        padding: 20px;
+        &::after {
+            position: absolute;
+            top: 0;
+            right: -1px;
+            bottom: 0;
+            width: 1px;
+            background-color: rgba(0, 0, 0, 0.1);
+            content: "";
+        }
+    }
+    .btn_fold {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: -20px;
+        z-index: 10;
+        width: 20px;
+        height: 52px;
+        margin-top: -26px;
+        border-left-width: 0;
+        border-radius: 0 4px 4px 0;
+        background-clip: padding-box;
+        background-color: $w;
+        text-align: center;
+        color: $b;
+        &::before {
+            @include posXY;
+            content: "\f104";
+            font-family: "Line Awesome Free";
+            font-weight: 900;
+        }
+    }
+    &.is-folded {
+        .form-wrap {
+            width: 0;
+            padding: 0;
+        }
+        &::before {
+            content: "\f105";
+        }
+    }
+}
+.contents {
+    flex-grow: 1;
+    background: $gray-e;
 }
 
 #footer {
