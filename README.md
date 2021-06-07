@@ -41,10 +41,10 @@ npm install --save reactstrap react react-dom
 ### react-datetime
 
 ```
-yarn add react-datetime
+yarn add react-datepicker
 ```
 
--   사용방법 : [https://www.npmjs.com/package/react-datetime](https://www.npmjs.com/package/react-datetime){:target="\_blank"}
+-   사용방법 : [https://reactdatepicker.com/](https://reactdatepicker.com/){:target="\_blank"}
 
 ### react-number-format
 

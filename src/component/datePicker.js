@@ -3,12 +3,18 @@ import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
 
-// CSS Modules, react-datepicker-cssmodules.css
-// import 'react-datepicker/dist/react-datepicker-cssmodules.css';
-
-const Example = () => {
+const DatePickerButton = () => {
     const [startDate, setStartDate] = useState(new Date());
-    return <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />;
+    return (
+        <DatePicker
+            selected={startDate}
+            onChange={(date) => setStartDate(date)}
+            locale="ko"
+            showTimeSelect
+            timeFormat="p"
+            timeIntervals={15}
+            dateFormat="yyyy/MM/dd(eee) , p"
+        />
+    );
 };
-
-<DatePicker selected={startdate} onChange={(date) => setStartDate(date)} />;
+export default DatePickerButton;

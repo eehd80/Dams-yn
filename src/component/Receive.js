@@ -2,6 +2,7 @@ import React from "react";
 import { Row, Col, Form, FormGroup, Label, Input, FormFeedback, FormText } from "reactstrap";
 import NumberFormat from "react-number-format";
 import Select from "react-select";
+import DatePickerButton from "../component/DatePicker";
 
 const purpose = [
     { value: "관내병원", label: "관내병원" },
@@ -166,7 +167,7 @@ const Receive = () => (
                     </Col>
                     <Col>
                         <div className="form-control-wrap">
-                            <Input type="text" id="vehicleIn" />
+                            <Input type="text" id="vehicleIn" name="vehicleIn" />
                             <span className="form-control-clear">
                                 <span className="blind">지우기</span>
                             </span>
@@ -179,7 +180,7 @@ const Receive = () => (
                     </Col>
                     <Col xs="6">
                         <div className="form-control-wrap">
-                            <Input type="text" id="vehicleOut" />
+                            <Input type="text" id="vehicleOut" name="vehicleOut" />
                             <span className="form-control-clear">
                                 <span className="blind">지우기</span>
                             </span>
@@ -187,7 +188,7 @@ const Receive = () => (
                     </Col>
                     <Col>
                         <div className="form-control-wrap">
-                            <Input type="text" id="vehicleOut" />
+                            <Input type="text" id="vehicleOut2" name="vehicleOut2" />
                             <span className="form-control-clear">
                                 <span className="blind">지우기</span>
                             </span>
@@ -199,9 +200,27 @@ const Receive = () => (
                 </Row>
                 <Row>
                     <Col xs="2" className="tit">
-                        <Label for="vehicleOut">예약</Label>
+                        <Label for="booking">예약</Label>
                     </Col>
-                    <Col xs="6">{/* <Datetime dateFormat="YYYY-MM" timeFormat={false} /> */}</Col>
+                    <Col>
+                        <DatePickerButton id="booking" name="booking" />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs="2" className="tit">
+                        <Label for="shuttle">왕복예약</Label>
+                    </Col>
+                    <Col>
+                        <DatePickerButton id="shuttle" name="shuttle" />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs="2" className="tit">
+                        <Label for="shuttle">콜이용실적</Label>
+                    </Col>
+                    <Col>
+                        <DatePickerButton id="shuttle" name="shuttle" />
+                    </Col>
                 </Row>
             </Form>
         </div>
