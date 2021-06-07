@@ -2,6 +2,9 @@
 @import "reset", "main", "contents", "variables", "mixins";
 
 // 공통 레이아웃, 공통 디자인
+.wrap {
+    // width: 3440px;
+}
 .container {
     width: calc(100% - 40px) !important;
     max-width: none !important;
@@ -79,7 +82,7 @@
     &.active {
         .nav-bg,
         .nav-depth2 {
-            display: block;
+            display: none;
         }
     }
     .nav-depth1 {
@@ -226,7 +229,7 @@
     box-shadow: 0 1px 3px 0 rgba($b, 0.1);
     .form-wrap {
         overflow: hidden;
-        width: 1000px;
+        width: 700px;
         padding: 20px;
         &::after {
             position: absolute;
@@ -269,6 +272,24 @@
         &::before {
             content: "\f105";
         }
+    }
+    .row {
+        height: 38px;
+        margin-bottom: 10px;
+    }
+    .tit {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 100%;
+    }
+    .form-group {
+        display: flex;
+        align-items: center;
+    }
+    .form-check-input {
+        margin: 0 6px -1px 0;
+        vertical-align: middle;
     }
 }
 .contents {
