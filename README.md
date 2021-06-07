@@ -23,7 +23,7 @@ yarn add sass -D //macbook m1 일 경우 추가 설치
 ```
 
 -   css를 scss로 수정
--   사용방법 : <https://react.vlpt.us/styling/01-sass.html>{:target="\_blank"}
+-   사용방법 : [https://react.vlpt.us/styling/01-sass.html](https://react.vlpt.us/styling/01-sass.html){:target="\_blank"}
 
 ### reactstrap
 
@@ -35,8 +35,8 @@ npm install --save reactstrap react react-dom
 -   index.js에 아래 라인을 추가해준다.
     -- import 'bootstrap/dist/css/bootstrap.css';
 
--   사용방법 : <https://reactstrap.github.io/>{:target="\_blank"}
--   components : <https://reactstrap.github.io/components/form/>{:target="\_blank"}
+-   사용방법 : [https://reactstrap.github.io/](https://reactstrap.github.io/){:target="\_blank"}
+-   components : [https://reactstrap.github.io/components/form/](https://reactstrap.github.io/components/form/){:target="\_blank"}
 
 ### react-datetime
 
@@ -44,7 +44,7 @@ npm install --save reactstrap react react-dom
 yarn add react-datetime
 ```
 
--   사용방법 : <https://www.npmjs.com/package/react-datetime>{:target="\_blank"}
+-   사용방법 : [https://www.npmjs.com/package/react-datetime](https://www.npmjs.com/package/react-datetime){:target="\_blank"}
 
 ### react-number-format
 
@@ -52,7 +52,7 @@ yarn add react-datetime
 npm install react-number-format --save
 ```
 
--   사용방법 : <https://www.npmjs.com/package/react-number-format>{:target="\_blank"}
+-   사용방법 : [https://www.npmjs.com/package/react-number-format](https://www.npmjs.com/package/react-number-format){:target="\_blank"}
 
 ### react-select
 
@@ -61,7 +61,7 @@ yarn add react-select
 npm i react-select
 ```
 
--   사용방법 : <https://react-select.com/home#getting-started>{:target="\_blank"}
+-   사용방법 : [https://react-select.com/home#getting-started](https://react-select.com/home#getting-started){:target="\_blank"}
 
 ### ag-grid
 
@@ -69,7 +69,7 @@ npm i react-select
 npm install --save ag-grid-community ag-grid-react
 ```
 
--   사용방법 : <https://www.ag-grid.com/react-grid/getting-started/>{:target="\_blank"}
+-   사용방법 : [https://www.ag-grid.com/react-grid/getting-started/](https://www.ag-grid.com/react-grid/getting-started/){:target="\_blank"}
 
 ---
 
