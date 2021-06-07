@@ -2,7 +2,7 @@ import React from "react";
 import { Row, Col, Form, FormGroup, Label, Input, FormFeedback, FormText } from "reactstrap";
 import NumberFormat from "react-number-format";
 import Select from "react-select";
-import DatePickerButton from "../component/DatePicker";
+import DatePickerButton from "./DatePicker";
 
 const purpose = [
     { value: "관내병원", label: "관내병원" },
