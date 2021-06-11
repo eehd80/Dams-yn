@@ -1,24 +1,25 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 import Header from "../component/Header";
-import Footer from "../component/Footer";
-import Receive from '../component/Receive'
+import Receive from "../component/Receive";
+import Map from "../component/Map";
+import Call from "../component/Call";
 
-
-class Main extends Component{
-    render(){
+class Main extends Component {
+    render() {
         return (
-        <div className="wrap">
-            <Header />
-            <div id="main">
-                <Receive />
-                <div className="contents">
-                    conetents
+            <div className="wrap">
+                <Header />
+                <div id="main">
+                    <Receive />
+                    <div className="contents">
+                        <Map />
+                        <Call />
+                    </div>
                 </div>
+                {/* <Footer /> */}
             </div>
-            <Footer />
-        </div>
-        )
+        );
     }
 }
 

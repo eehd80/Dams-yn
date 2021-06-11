@@ -194,6 +194,7 @@
 #favorites {
     border-top: 1px solid $line1;
     border-bottom: 1px solid $line1;
+    // background-color: rgba($b, 0.02);
     .lst-favor {
         display: flex;
         justify-content: center;
@@ -221,26 +222,74 @@
 
 #main {
     display: flex;
+    height: calc(100vh - 145px);
+    border-top: 1px solid $prim2;
 }
 #receve {
     position: relative;
+    width: 700px;
     border-right: 1px solid $line1;
     background-color: $w;
     box-shadow: 0 1px 3px 0 rgba($b, 0.1);
-}
-
-.form-wrap {
-    overflow: hidden;
-    width: 700px;
-    padding: 20px;
     &::after {
         position: absolute;
         top: 0;
-        right: -1px;
+        right: -5px;
         bottom: 0;
-        width: 1px;
-        background-color: rgba(0, 0, 0, 0.1);
+        z-index: 100;
+        width: 5px;
+        background-color: rgba($prim2, 0.7);
         content: "";
+    }
+    &.is-folded {
+        width: 10px;
+        padding: 0;
+        .btn-fold::before {
+            content: "\f105";
+        }
+    }
+    .btn-fold {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        display: block;
+        @include posY;
+        right: -20px;
+        z-index: 110;
+        width: 20px;
+        height: 52px;
+        border-left-width: 0;
+        border-radius: 0 4px 4px 0;
+        background-clip: padding-box;
+        background-color: $w;
+        text-align: center;
+        color: $b;
+        &::before {
+            @include posXY;
+            content: "\f104";
+            font-family: "Line Awesome Free";
+            font-weight: 900;
+        }
+    }
+}
+.form-receipt {
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100% - 220px);
+    padding: 20px;
+    border-bottom: 1px solid $line1;
+}
+.form-wrap {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 145px);
+    .row {
+        align-items: center;
+        // height: 38px;
+        margin-bottom: 10px;
+    }
+    .tbl-receipt {
+        height: 200px;
+        margin-top: auto;
     }
     .form-control-wrap {
         position: relative;
@@ -268,75 +317,92 @@
     .form-control:focus + .form-control-clear::before {
         display: flex;
     }
-    .btn_fold {
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        display: block;
-        position: absolute;
-        top: 50%;
-        right: -20px;
-        z-index: 10;
-        width: 20px;
-        height: 52px;
-        margin-top: -26px;
-        border-left-width: 0;
-        border-radius: 0 4px 4px 0;
-        background-clip: padding-box;
-        background-color: $w;
-        text-align: center;
-        color: $b;
-        &::before {
-            @include posXY;
-            content: "\f104";
-            font-family: "Line Awesome Free";
-            font-weight: 900;
+    .form-check {
+        position: relative;
+        height: 100%;
+        padding: 1px 0 0;
+        label {
+            &::before {
+                @include posY;
+                left: 0;
+                width: 20px;
+                height: 20px;
+                background-image: url(../../images/img-comm.png);
+                background-position: 0 0;
+                background-repeat: no-repeat;
+                content: "";
+            }
+        }
+        .form-check-input {
+            float: none;
+            margin: -4px 10px 0 0;
+            vertical-align: middle;
+            &:checked + label::before {
+                background-position: -20px 0;
+            }
         }
     }
-    &.is-folded {
-        .form-wrap {
-            width: 0;
-            padding: 0;
+    .unit- {
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        &.unit-l {
+            margin-left: 10px;
         }
-        &::before {
-            content: "\f105";
+        &.unit-r {
+            margin-right: 10px;
         }
-    }
-    .row {
-        height: 38px;
-        margin-bottom: 10px;
     }
     .tit {
+        position: relative;
         display: flex;
-        // justify-content: flex-end;
         align-items: center;
         height: 100%;
         color: $prim2;
         font-weight: 500;
+        white-space: nowrap;
         &::before {
-            display: inline-block;
+            @include posY;
+            left: 2px;
+            display: block;
             content: "";
             width: 3px;
             height: 3px;
-            margin-right: 7px;
             border-radius: 50%;
             background-color: $prim2;
         }
-    }
-    .unit {
-        display: flex;
-        align-items: center;
     }
     .form-group {
         display: flex;
         align-items: center;
     }
-    .form-check-input {
-        margin: 3px 6px 0 0;
+}
+
+// btn
+.btn- {
+    width: 100%;
+    height: 100%;
+    font-size: 0.95em;
+    &.btn-primary {
+        border: 1px solid $prim3;
+        background-color: $prim3;
+    }
+    &.btn-h {
+        margin: 20px 0;
+        padding: 20px 0;
+        font-size: 1rem;
+    }
+    i {
+        display: inline-block;
         vertical-align: middle;
+        margin: -2px 5px 0 0;
+        font-size: 1.2em;
     }
-    .form-check {
-        height: 100%;
-        padding: 10px 0 0;
-    }
+}
+
+// table
+.tbl- {
+    height: 100%;
 }
 
 .react-datepicker-wrapper {
@@ -360,8 +426,144 @@
 }
 
 .contents {
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
+    height: calc(100vh - 145px);
+    padding-left: 3px;
     background: $gray-e;
+}
+
+.panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.resize-wrap {
+    min-height: 50px;
+    height: 100%;
+    border-bottom: 5px solid rgba($prim2, 0.7);
+}
+.map-info {
+    width: 300px;
+    height: 100%;
+    // border-left: 1px solid $prim2;
+    background: $w;
+}
+
+// map
+#Map {
+    position: relative;
+    width: calc(100% - 300px);
+    height: 100%;
+    border-bottom: 1px solid $line1;
+    background-color: $b;
+    box-shadow: 0 1px 3px 0 rgba($b, 0.1);
+    &::after {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -1px;
+        height: 1px;
+        background-color: rgba(0, 0, 0, 0.1);
+        content: "";
+    }
+    &.is-folded {
+        height: 10px;
+    }
+    .btn_fold {
+        display: block;
+        position: absolute;
+        left: 50%;
+        bottom: -36px;
+        z-index: 10;
+        width: 20px;
+        height: 52px;
+        transform: translateX(-50%) rotate(90deg);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-left-width: 0;
+        border-radius: 0 4px 4px 0;
+        background-clip: padding-box;
+        background-color: $w;
+        text-align: center;
+        color: $b;
+        &::before {
+            @include posXY;
+            content: "\f104";
+            font-family: "Line Awesome Free";
+            font-weight: 900;
+        }
+    }
+    &.map-bg {
+        height: 100%;
+        background: url(../../images/Map.png) 0 0 no-repeat;
+    }
+    .flag-wrap {
+        position: absolute;
+        width: 60px;
+        height: 84px;
+        transform: scale(0.7);
+        transform-origin: 50% 100%;
+        &:hover {
+            .guide,
+            .remover {
+                display: flex;
+            }
+        }
+        .guide {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: -8px;
+            left: 72px;
+            padding: 3px 5px;
+            white-space: nowrap;
+            border: 1px solid rgba($b, 0.3);
+            border-radius: 5px;
+            background-color: $w;
+            font-size: 0.9em;
+        }
+        .remover {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: -7px;
+            right: -7px;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: $w;
+            &::before {
+                font-family: "Line Awesome Free";
+                font-weight: 900;
+                content: "\f00d";
+            }
+            &:hover {
+                color: $prim;
+            }
+        }
+        &.flag-origin {
+            .flag-img {
+                width: 60px;
+                height: 84px;
+                background-position: 0 -20px;
+            }
+        }
+        &.flag-dest {
+            .flag-img {
+                width: 60px;
+                height: 84px;
+                background-position: -60px -20px;
+            }
+        }
+    }
+}
+
+// Call
+#Call {
+    height: 100%;
 }
 
 #footer {

@@ -71,6 +71,22 @@ npm install --save ag-grid-community ag-grid-react
 
 -   사용방법 : [https://www.ag-grid.com/react-grid/getting-started/](https://www.ag-grid.com/react-grid/getting-started/){:target="\_blank"}
 
+## react-resize-pannel
+
+```
+yarn add react-resize-panel
+```
+
+-   사용방법 : <https://reactjsexample.com/a-very-simple-resizable-panel-as-a-react-component/>
+
+## react-resize-detector
+
+```
+yarn add react-resize-detector
+```
+
+-   사용방법 : <https://github.com/maslianok/react-resize-detector>
+
 ---
 
 ## Available Scripts
@@ -141,3 +157,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 # Dams-yn
+
+```
+
+```
