@@ -2,9 +2,11 @@
 @import "reset", "main", "contents", "variables", "mixins";
 
 // 공통 레이아웃, 공통 디자인
-.wrap {
-    // width: 3440px;
-}
+// .wrap {
+//     overflow-y: hidden;
+//     overflow-x: auto;
+//     height: 100vh;
+// }
 .container {
     width: calc(100% - 40px) !important;
     max-width: none !important;
@@ -82,7 +84,7 @@
     &.active {
         .nav-bg,
         .nav-depth2 {
-            display: none;
+            display: block;
         }
     }
     .nav-depth1 {
@@ -184,7 +186,7 @@
         left: 0;
         right: 0;
         z-index: 1000;
-        height: 600px;
+        height: 630px;
         transition: all 0.5s;
         border-bottom: 1px solid #eee;
         background-color: $prim3;
@@ -222,7 +224,7 @@
 
 #main {
     display: flex;
-    height: calc(100vh - 145px);
+    height: calc(100vh - 165px);
     border-top: 1px solid $prim2;
 }
 #receve {
@@ -281,7 +283,8 @@
 .form-wrap {
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 145px);
+    height: 100%;
+    // height: calc(100vh - 145px);
     .row {
         align-items: center;
         // height: 38px;
@@ -403,6 +406,9 @@
 // table
 .tbl- {
     height: 100%;
+    &.tbl-map {
+        // text-align: center;
+    }
 }
 
 .react-datepicker-wrapper {
@@ -429,7 +435,8 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    height: calc(100vh - 145px);
+    height: 100%;
+    // height: calc(100vh - 145px);
     padding-left: 3px;
     background: $gray-e;
 }
@@ -440,12 +447,11 @@
     align-items: center;
 }
 .resize-wrap {
-    min-height: 50px;
     height: 100%;
     border-bottom: 5px solid rgba($prim2, 0.7);
 }
 .map-info {
-    width: 300px;
+    width: 800px;
     height: 100%;
     // border-left: 1px solid $prim2;
     background: $w;
@@ -563,7 +569,28 @@
 
 // Call
 #Call {
+    overflow: hidden;
     height: 100%;
+}
+
+// form
+.tbl-filter {
+    // overflow: hidden;
+    padding: 10px;
+    .form-group {
+        position: relative;
+        // z-index: 100;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        label {
+            padding-right: 20px;
+            white-space: nowrap;
+        }
+        > div {
+            flex-grow: 1;
+        }
+    }
 }
 
 #footer {

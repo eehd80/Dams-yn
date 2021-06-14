@@ -240,7 +240,7 @@ const Receive = () => (
                         <span className="unit- unit-l">분후</span>
                     </Col>
                     <Col>
-                        <Button color="success" className="btn-">
+                        <Button color="primary" className="btn-">
                             예약스케줄
                         </Button>
                     </Col>
@@ -281,7 +281,7 @@ const Receive = () => (
                         <span className="unit- unit-l">분후</span>
                     </Col>
                     <Col>
-                        <Button color="success" className="btn-">
+                        <Button color="primary" className="btn-">
                             예약스케줄
                         </Button>
                     </Col>

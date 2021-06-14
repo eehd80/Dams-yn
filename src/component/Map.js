@@ -12,7 +12,7 @@ const rowData = [
 
 const Map = () => (
     <ResizePanel direction="s" style={{ height: "10%" }}>
-        <div className="resize-wrap panel">
+        <div className="resize-wrap panel" style={{ "min-height": "170px" }}>
             <div id="Map" className="map-bg">
                 {/* is-folded 추가 : 맵 접기 */}
                 {/* 맵 api를 설정하실거 같아서 map-bg에 임시로 이미지를 깔아놨습니다. 나중에 이 클래스를 빼주세요 */}
