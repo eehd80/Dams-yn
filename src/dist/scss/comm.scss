@@ -2,11 +2,9 @@
 @import "reset", "main", "contents", "variables", "mixins";
 
 // 공통 레이아웃, 공통 디자인
-// .wrap {
-//     overflow-y: hidden;
-//     overflow-x: auto;
-//     height: 100vh;
-// }
+.wrap {
+    min-width: 2000px;
+}
 .container {
     width: calc(100% - 40px) !important;
     max-width: none !important;
