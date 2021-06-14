@@ -4,6 +4,7 @@ import Header from "../component/Header";
 import Receive from "../component/Receive";
 import Map from "../component/Map";
 import Call from "../component/Call";
+import ReactResizeDetector from "react-resize-detector";
 
 class Main extends Component {
     render() {

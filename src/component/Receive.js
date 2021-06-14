@@ -1,9 +1,9 @@
 import React from "react";
+// import ReactDOM from "react-dom";
 import { Row, Col, Form, FormGroup, Label, Input, FormFeedback, FormText, Button } from "reactstrap";
 import NumberFormat from "react-number-format";
 import Select from "react-select";
 import DatePickerButton from "./DatePicker";
-import { render } from "react-dom";
 import { AgGridColumn, AgGridReact } from "ag-grid-react";
 
 import "ag-grid-community/dist/styles/ag-grid.css";
@@ -50,6 +50,10 @@ const rowData = [
 const Receive = () => (
     <div id="receve" className="">
         {/* is-folded 추가 : 접수창 접기 */}
+
+        <button role="button" class="btn-fold" aria-expanded="true">
+            <span className="blind">목록영역 접기</span>
+        </button>
 
         <div className="form-wrap">
             <Form className="form-receipt">
@@ -380,10 +384,6 @@ const Receive = () => (
                 </AgGridReact>
             </div>
         </div>
-
-        <a href="javascript:void(0);" role="button" class="btn-fold" aria-expanded="true">
-            <span className="blind">목록영역 접기</span>
-        </a>
     </div>
 );
 
