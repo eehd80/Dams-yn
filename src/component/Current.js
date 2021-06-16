@@ -541,7 +541,7 @@ const Current = (props) => {
                                 <i class="las la-backspace"></i> 삭제
                             </Button>
                         </div>
-                        <div className="tbl- tbl-type1 tbl-call ag-theme-balham" style={{ height: "400px" }}>
+                        <div className="tbl- tbl-type1 tbl-call ag-theme-balham" style={{ height: "300px" }}>
                             <AgGridReact rowData={bbsList}>
                                 <AgGridColumn field="순서"></AgGridColumn>
                                 <AgGridColumn field="제목"></AgGridColumn>

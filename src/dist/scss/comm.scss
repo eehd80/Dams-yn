@@ -72,7 +72,7 @@
 
 // 공통 레이아웃, 공통 디자인
 .wrap {
-    min-width: 2200px;
+    min-width: 1700px;
 }
 .container {
     width: calc(100% - 40px) !important;
@@ -297,6 +297,7 @@
 }
 #receve {
     position: relative;
+    width: 700px;
     border-right: 1px solid $line1;
     background-color: $w;
     box-shadow: 0 1px 3px 0 rgba($b, 0.1);
@@ -354,7 +355,7 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    width: 700px;
+    // width: 700px;
     height: 100%;
     // height: calc(100vh - 145px);
     font-size: 0.8rem;
@@ -747,7 +748,7 @@
         padding: 9px 0 10px;
     }
     button {
-        margin-left: 20px;
+        margin-left: 10px;
     }
 }
 
