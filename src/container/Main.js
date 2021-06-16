@@ -3,8 +3,7 @@ import React, { Component } from "react";
 import Header from "../component/Header";
 import Receive from "../component/Receive";
 import Map from "../component/Map";
-import Call from "../component/Call";
-import ReactResizeDetector from "react-resize-detector";
+import Current from "../component/Current";
 
 class Main extends Component {
     render() {
@@ -15,7 +14,7 @@ class Main extends Component {
                     <Receive />
                     <div className="contents">
                         <Map />
-                        <Call />
+                        <Current />
                     </div>
                 </div>
                 {/* <Footer /> */}

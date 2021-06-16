@@ -11,10 +11,11 @@ const rowData = [
 ];
 
 const Map = () => (
-    <ResizePanel direction="s" style={{ height: "10%" }}>
-        <div className="resize-wrap panel" style={{ "min-height": "170px" }}>
+    <ResizePanel direction="s" className="resize-panel">
+        <div className="resize-wrap panel">
+            {" "}
+            {/* 최소 높이값 설정 */}
             <div id="Map" className="map-bg">
-                {/* is-folded 추가 : 맵 접기 */}
                 {/* 맵 api를 설정하실거 같아서 map-bg에 임시로 이미지를 깔아놨습니다. 나중에 이 클래스를 빼주세요 */}
                 {/* 출발 */}
                 <div className="flag-wrap flag-origin" style={{ top: "50px", left: "500px" }}>
@@ -37,9 +38,8 @@ const Map = () => (
                     </div>
                 </div>
             </div>
-
             <div className="map-info">
-                <div className="tbl- tbl-type1 tbl-map ag-theme-balham">
+                <div className="tbl- tbl-type1 tbl-map ag-theme-balham" style={{ height: "calc(100% - 30px)" }}>
                     <AgGridReact rowData={rowData}>
                         <AgGridColumn field="아이디"></AgGridColumn>
                         <AgGridColumn field="이름"></AgGridColumn>

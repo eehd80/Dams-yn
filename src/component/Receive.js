@@ -244,7 +244,7 @@ const Receive = () => (
                         <span className="unit- unit-l">분후</span>
                     </Col>
                     <Col>
-                        <Button color="primary" className="btn-">
+                        <Button color="primary" className="btn-w">
                             예약스케줄
                         </Button>
                     </Col>
@@ -285,7 +285,7 @@ const Receive = () => (
                         <span className="unit- unit-l">분후</span>
                     </Col>
                     <Col>
-                        <Button color="primary" className="btn-">
+                        <Button color="primary" className="btn-w">
                             예약스케줄
                         </Button>
                     </Col>
@@ -334,7 +334,7 @@ const Receive = () => (
                 <Row>
                     <Col>
                         <span className="blind">기타 문의사항</span>
-                        <Input type="textarea" name="text" id="exampleText" placeholder="기타문의사항" />
+                        <Input type="textarea" name="text" id="etcQA" placeholder="기타문의사항" style={{ height: "100px" }} />
                     </Col>
                 </Row>
                 <Row>
@@ -352,22 +352,22 @@ const Receive = () => (
                 </Row>
                 <Row className="form-btn">
                     <Col>
-                        <Button color="primary" className="btn- btn-h">
+                        <Button color="primary" className="btn-h">
                             <i class="las la-plus"></i> 접수등록
                         </Button>
                     </Col>
                     <Col>
-                        <Button color="secondary" className="btn- btn-h">
+                        <Button color="secondary" className="btn-h">
                             <i class="las la-pause"></i> 접수대기
                         </Button>
                     </Col>
                     <Col>
-                        <Button color="warning" className="btn- btn-h">
+                        <Button color="warning" className="btn-h">
                             <i class="las la-reply"></i> 미배차(취소)
                         </Button>
                     </Col>
                     <Col>
-                        <Button color="danger" className="btn- btn-h">
+                        <Button color="danger" className="btn-h">
                             <i class="las la-times"></i> 취소
                         </Button>
                     </Col>
