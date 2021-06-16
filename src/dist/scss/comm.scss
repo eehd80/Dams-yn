@@ -46,6 +46,19 @@
         font-size: 1.3em;
     }
 }
+.btn- {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    border-radius: 3px;
+    background: $prim2;
+    vertical-align: middle;
+    color: $w;
+    font-weight: 900;
+}
 
 // table
 .tbl- {
@@ -279,12 +292,11 @@
 
 #main {
     display: flex;
-    // height: calc(100vh - 145px);
+    // height: calc(100vh - 140px);
     border-top: 1px solid $prim2;
 }
 #receve {
     position: relative;
-    width: 700px;
     border-right: 1px solid $line1;
     background-color: $w;
     box-shadow: 0 1px 3px 0 rgba($b, 0.1);
@@ -301,6 +313,9 @@
     &.is-folded {
         width: 0;
         padding: 0;
+        .form-wrap {
+            width: 0;
+        }
         .btn-fold::before {
             content: "\f105";
         }
@@ -339,6 +354,7 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    width: 700px;
     height: 100%;
     // height: calc(100vh - 145px);
     font-size: 0.8rem;
@@ -348,7 +364,7 @@
         margin-bottom: 10px;
     }
     .tbl-receipt {
-        height: 300px;
+        height: 200px;
         margin-top: auto;
     }
     .form-control-wrap {
@@ -597,6 +613,71 @@
                 width: 60px;
                 height: 84px;
                 background-position: -60px -20px;
+            }
+        }
+    }
+    .point-context {
+        position: absolute;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 10px;
+            height: 10px;
+            border: 1px solid rgba($b, 0.5);
+            border-radius: 50%;
+            background: red;
+        }
+        .contextWrap {
+            overflow: hidden;
+            position: absolute;
+            z-index: 9;
+            width: 120px;
+            margin: -134px 0 0 6px;
+            // margin: -3px 0 0 -11px;
+            padding: 10px 11px;
+            background: $w;
+            border-radius: 3px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            white-space: nowrap;
+            a {
+                display: block;
+                font-size: 12px;
+                line-height: 25px;
+            }
+            .separator {
+                display: block;
+                overflow: hidden;
+                height: 1px;
+                margin: 6px 0 7px;
+                background-color: #f0f0f0;
+            }
+        }
+        .ico- {
+            position: relative;
+            padding-left: 23px;
+            &::before {
+                content: "";
+                position: absolute;
+                top: -9px;
+                left: -8px;
+                display: inline-block;
+                width: 34px;
+                height: 46px;
+                transform: scale(0.5);
+                @include img-g;
+            }
+            &.origin {
+                &::before {
+                    background-position: 0 -120px;
+                }
+            }
+            &.dest {
+                &::before {
+                    background-position: -40px -120px;
+                }
             }
         }
     }

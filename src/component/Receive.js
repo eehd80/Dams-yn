@@ -79,6 +79,10 @@ const Receive = () => (
                 <Row>
                     <Col xs="2" className="tit">
                         <Label for="replyTel">회신번호</Label>
+                        <div className="btn-">
+                            <i class="las la-search"></i>
+                            <span className="blind">검색</span>
+                        </div>
                     </Col>
                     <Col>
                         <div className="form-control-wrap">

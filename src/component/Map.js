@@ -11,14 +11,14 @@ const rowData = [
 ];
 
 const Map = () => (
-    <ResizePanel direction="s" className="resize-panel">
+    <ResizePanel direction="s" className="resize-panel" style={{ "min-height": "100px" }}>
         <div className="resize-wrap panel">
             {" "}
             {/* 최소 높이값 설정 */}
             <div id="Map" className="map-bg">
                 {/* 맵 api를 설정하실거 같아서 map-bg에 임시로 이미지를 깔아놨습니다. 나중에 이 클래스를 빼주세요 */}
                 {/* 출발 */}
-                <div className="flag-wrap flag-origin" style={{ top: "50px", left: "500px" }}>
+                <div className="flag-wrap flag-origin" style={{ top: "50px", left: "408px" }}>
                     <div className="guide">끌어서 출발지 변경</div>
                     <a href="#" className="remover">
                         <span className="blind">삭제</span>
@@ -35,6 +35,24 @@ const Map = () => (
                     </a>
                     <div className="flag-img img_g">
                         <span className="blind">도착</span>
+                    </div>
+                </div>
+                {/* 지정 */}
+                <div className="point-context" style={{ top: "200px", left: "500px" }}>
+                    <div class="contextWrap">
+                        <a data-id="here" href="#" class="context_here">
+                            <span class="text">여기 주소 보기</span>
+                        </a>
+                        <a data-id="favorite" class="fav" href="#">
+                            <span class="text">즐겨찾기 추가</span>
+                        </a>
+                        <span class="separator"></span>
+                        <a data-id="origin" href="#" class="ico- origin">
+                            <span class="text">출발지 지정</span>
+                        </a>
+                        <a data-id="destination" href="#" className="ico- dest">
+                            <span class="text">도착지 지정</span>
+                        </a>
                     </div>
                 </div>
             </div>
