@@ -72,9 +72,9 @@ class Main extends Component {
                         <Map />
                         <div id="Memo" className="main">
                             <div className="tit-sub-wrap">
-                                <h2 className="tit-sub">콜현황</h2>
+                                <h2 className="tit-sub">메모</h2>
                                 <ButtonGroup>
-                                    <Button>메모</Button>
+                                    <Button>콜현황</Button>
                                     <Button>웹 예약콜</Button>
                                     <Button>예약콜</Button>
                                     <Button>공지사항</Button>
