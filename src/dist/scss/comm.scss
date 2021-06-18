@@ -21,6 +21,26 @@
         background-color: #3a4a5d;
     }
 }
+.tit-sub-wrap {
+    display: flex;
+    margin-bottom: 20px;
+}
+.tit-sub {
+    position: relative;
+    padding-left: 15px;
+    font-size: 26px;
+    &::before {
+        position: absolute;
+        top: 6px;
+        left: 0;
+        display: block;
+        content: "";
+        width: 7px;
+        height: 23px;
+        margin-right: 10px;
+        background: $prim3;
+    }
+}
 // btn
 .btn {
     height: 100%;
@@ -42,7 +62,7 @@
     i {
         display: inline-block;
         vertical-align: middle;
-        margin: -2px 5px 0 0;
+        margin: -2px 3px 0 0;
         font-size: 1.3em;
     }
 }
@@ -59,6 +79,27 @@
     color: $w;
     font-weight: 900;
 }
+.btn-group {
+    .btn {
+        position: relative;
+        height: 32px;
+        margin-left: 100px;
+        padding: 0 20px;
+        background-color: $prim2;
+        border: none;
+        &:first-child::before {
+            display: none;
+        }
+        &::before {
+            content: "";
+            @include posY;
+            left: 0;
+            width: 1px;
+            height: 12px;
+            background: rgba($w, 0.3);
+        }
+    }
+}
 
 // table
 .tbl- {
@@ -72,7 +113,7 @@
 
 // 공통 레이아웃, 공통 디자인
 .wrap {
-    min-width: 1700px;
+    min-width: 1920px;
 }
 .container {
     width: calc(100% - 40px) !important;
@@ -88,8 +129,25 @@
     background-color: $prim2;
     .container {
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
         height: 28px;
+    }
+    a {
+        display: block;
+        height: 100%;
+        padding: 0 20px;
+        color: $w;
+        line-height: 28px;
+        font-size: 0.9em;
+    }
+    .logo {
+        a {
+            padding: 0 !important;
+            font-size: 0.9rem;
+        }
+    }
+    .util-wrap {
+        display: flex;
     }
     .lst-util {
         display: flex;
@@ -120,22 +178,15 @@
             }
         }
     }
-    a {
-        display: block;
-        height: 100%;
-        padding: 0 20px;
-        color: $w;
-        line-height: 28px;
-        font-size: 0.9em;
-    }
 }
 .gnb-wrap {
     position: relative;
     .container {
         display: flex;
-        justify-content: space-between;
+        // justify-content: center;
     }
     .logo {
+        margin-right: 30px;
         font-size: 1.5em;
         a {
             display: block;
@@ -203,18 +254,15 @@
                 &:focus {
                     color: $prim5;
                 }
-                &::before {
+                &.ico-plus::before {
+                    content: "\f067";
                     @include posY;
                     right: 10px;
-                    content: "\f105";
                     font-family: "Line Awesome Free";
                     font-weight: 900;
                     font-size: 1em;
                     color: $w;
                     opacity: 0.8;
-                }
-                &.ico-plus::before {
-                    content: "\f067";
                 }
             }
         }
@@ -267,9 +315,10 @@
     // background-color: rgba($b, 0.02);
     .lst-favor {
         display: flex;
-        justify-content: center;
+        margin-left: 37px;
         li {
             position: relative;
+            margin-right: 10px;
             padding-left: 10px;
             &::before {
                 content: "\f005";
@@ -297,7 +346,8 @@
 }
 #receve {
     position: relative;
-    width: 700px;
+    width: 500px;
+    height: 1080px;
     border-right: 1px solid $line1;
     background-color: $w;
     box-shadow: 0 1px 3px 0 rgba($b, 0.1);
@@ -363,6 +413,9 @@
         align-items: center;
         // height: 38px;
         margin-bottom: 10px;
+        > * {
+            padding: 0 5px;
+        }
     }
     .tbl-receipt {
         height: 200px;
@@ -391,6 +444,7 @@
     .form-control {
         padding-right: 30px;
         font-size: 0.9rem;
+        background: $gray-e;
     }
     .form-control:focus + .form-control-clear::before {
         display: flex;
@@ -403,20 +457,21 @@
             &::before {
                 @include posY;
                 left: 0;
-                width: 20px;
-                height: 20px;
+                width: 15px;
+                height: 15px;
                 background-image: url(../../images/img-comm.png);
                 background-position: 0 0;
                 background-repeat: no-repeat;
                 content: "";
+                // transform: translateY(-2px);
             }
         }
         .form-check-input {
             float: none;
-            margin: -4px 10px 0 0;
+            margin: 0 5px 0 0;
             vertical-align: middle;
             &:checked + label::before {
-                background-position: -20px 0;
+                background-position: -15px 0;
             }
         }
     }
@@ -436,12 +491,14 @@
         display: flex;
         align-items: center;
         height: 100%;
+        padding-left: 13px;
         color: $prim2;
         font-weight: 500;
         white-space: nowrap;
+        letter-spacing: -1px;
         &::before {
             @include posY;
-            left: 2px;
+            left: 5px;
             display: block;
             content: "";
             width: 3px;
@@ -449,10 +506,22 @@
             border-radius: 50%;
             background-color: $prim2;
         }
+        .btn- {
+            position: absolute;
+            top: -1px;
+            right: 0;
+        }
+    }
+    .col {
+        white-space: nowrap;
     }
     .form-group {
         display: flex;
         align-items: center;
+    }
+    .css-yk16xz-control,
+    .react-datepicker__input-container input {
+        background-color: $gray-e !important;
     }
 }
 
@@ -499,11 +568,25 @@
     overflow: hidden;
 }
 .resize-wrap {
+    position: relative;
     height: 100%;
-    border-bottom: 5px solid rgba($prim2, 0.7);
+    &::after {
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        bottom: -1px;
+        height: 5px;
+        background-color: rgba(58, 74, 93, 0.7);
+        content: "";
+    }
+}
+.ResizePanel-module_ResizeBarVertical__2LUZV {
+    z-index: 100 !important;
+    transform: translateY(-2px);
 }
 .map-info {
-    width: 40%;
+    width: 330px;
     height: 100%;
     // border-left: 1px solid $prim2;
     background: $w;
@@ -512,20 +595,11 @@
 // map
 #Map {
     position: relative;
-    width: calc(100% - 40%);
+    width: calc(100% - 330px);
     height: 100%;
     border-bottom: 1px solid $line1;
     background-color: $b;
     box-shadow: 0 1px 3px 0 rgba($b, 0.1);
-    &::after {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: -1px;
-        height: 1px;
-        background-color: rgba(0, 0, 0, 0.1);
-        content: "";
-    }
     &.is-folded {
         height: 10px;
     }
@@ -555,6 +629,7 @@
     &.map-bg {
         height: 100%;
         background: url(../../images/Map.png) 0 0 no-repeat;
+        background-size: cover;
     }
     .flag-wrap {
         position: absolute;
@@ -684,8 +759,13 @@
     }
 }
 
+.pop-map {
+    display: flex;
+    height: 100vh;
+}
+
 // Call
-#current {
+#call {
     // overflow: hidden;
     height: 100%;
 }

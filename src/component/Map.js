@@ -9,6 +9,10 @@ const rowData = [
     { 아이디: "eehd80", 이름: "정미애", 차량번호: "40아 2222" },
     { 아이디: "eehd80", 이름: "정미애", 차량번호: "40아 2222" },
 ];
+const defaultColDef = {
+    width: 100,
+    resizable: true,
+};
 
 const Map = () => (
     <ResizePanel direction="s" className="resize-panel" style={{ "min-height": "100px" }}>
@@ -58,7 +62,7 @@ const Map = () => (
             </div>
             <div className="map-info">
                 <div className="tbl- tbl-type1 tbl-map ag-theme-balham" style={{ height: "calc(100% - 30px)" }}>
-                    <AgGridReact rowData={rowData}>
+                    <AgGridReact rowData={rowData} defaultColDef={defaultColDef}>
                         <AgGridColumn field="아이디"></AgGridColumn>
                         <AgGridColumn field="이름"></AgGridColumn>
                         <AgGridColumn field="차량번호"></AgGridColumn>

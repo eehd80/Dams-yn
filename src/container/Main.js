@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Header from "../component/Header";
 import Receive from "../component/Receive";
 import Map from "../component/Map";
-import Current from "../component/Current";
+import Call from "../component/Call";
 
 class Main extends Component {
     render() {
@@ -14,7 +14,7 @@ class Main extends Component {
                     <Receive />
                     <div className="contents">
                         <Map />
-                        <Current />
+                        <Call />
                     </div>
                 </div>
                 {/* <Footer /> */}
