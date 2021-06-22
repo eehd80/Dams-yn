@@ -88,12 +88,6 @@ class Main extends Component {
                         <div id="Memo" className="main">
                             <div className="tit-sub-wrap">
                                 <h2 className="tit-sub">공지사항</h2>
-                                <ButtonGroup>
-                                    <Button>콜현황</Button>
-                                    <Button>메모</Button>
-                                    <Button>웹 예약콜</Button>
-                                    <Button>예약콜</Button>
-                                </ButtonGroup>
                             </div>
 
                             {/* 메모 리스트 */}
@@ -112,10 +106,10 @@ class Main extends Component {
                                 </div>
                                 <div className="tbl- tbl-type1 tbl-call ag-theme-balham" style={{ height: "300px" }}>
                                     <AgGridReact rowData={bbsList} defaultColDef={defaultColDef}>
-                                        <AgGridColumn field="순서"></AgGridColumn>
-                                        <AgGridColumn field="제목"></AgGridColumn>
-                                        <AgGridColumn field="등록일"></AgGridColumn>
-                                        <AgGridColumn field="등록업체"></AgGridColumn>
+                                        <AgGridColumn field="순서" minWidth={60} maxWidth={70}></AgGridColumn>
+                                        <AgGridColumn field="제목" minWidth={400}></AgGridColumn>
+                                        <AgGridColumn field="등록일" minWidth={200}></AgGridColumn>
+                                        <AgGridColumn field="등록업체" minWidth={200}></AgGridColumn>
                                     </AgGridReact>
                                 </div>
                             </div>

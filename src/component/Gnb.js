@@ -5,13 +5,13 @@ const Gnb = () => (
         <div className="nav-bg"></div>
         <ul className="nav-depth1">
             <li>
-                <a href="./s1">접수/배차</a>
+                <a href="/">접수/배차</a>
                 <ul className="nav-depth2">
                     <li>
-                        <a href="./s1010">접수</a>
+                        <a href="/">접수</a>
                     </li>
                     <li>
-                        <a href="./s1020">콜 현황</a>
+                        <a href="/">콜 현황</a>
                     </li>
                     <li>
                         <a href="./s1030">예약콜 현황</a>

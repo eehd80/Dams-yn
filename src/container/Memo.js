@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { AgGridColumn, AgGridReact } from "ag-grid-react";
 import DatePickerButton from "../component/DatePicker";
 import NumberFormat from "react-number-format";
-import { Row, Col, Button, FormGroup, Label, Input, ButtonGroup } from "reactstrap";
+import { Row, Col, Button, FormGroup, Label, Input } from "reactstrap";
 
 import Header from "../component/Header";
 import Receive from "../component/Receive";
@@ -73,15 +73,9 @@ class Main extends Component {
                         <div id="Memo" className="main">
                             <div className="tit-sub-wrap">
                                 <h2 className="tit-sub">메모</h2>
-                                <ButtonGroup>
-                                    <Button>콜현황</Button>
-                                    <Button>웹 예약콜</Button>
-                                    <Button>예약콜</Button>
-                                    <Button>공지사항</Button>
-                                </ButtonGroup>
                             </div>
 
-                            {/* 메모 리스트 */}
+                            {/* 리스트 */}
                             <div className="lst-memo">
                                 <h3 className="blind">메모 리스트</h3>
                                 <div className="btn-util">
@@ -97,18 +91,18 @@ class Main extends Component {
                                 </div>
                                 <div className="tbl- tbl-type1 tbl-call ag-theme-balham" style={{ height: "300px" }}>
                                     <AgGridReact rowData={memoList} defaultColDef={defaultColDef}>
-                                        <AgGridColumn field="순서"></AgGridColumn>
-                                        <AgGridColumn field="선택"></AgGridColumn>
-                                        <AgGridColumn field="상태"></AgGridColumn>
-                                        <AgGridColumn field="제목"></AgGridColumn>
-                                        <AgGridColumn field="내용"></AgGridColumn>
-                                        <AgGridColumn field="알람일자"></AgGridColumn>
-                                        <AgGridColumn field="등록일"></AgGridColumn>
+                                        <AgGridColumn field="순서" minWidth={60} maxWidth={70}></AgGridColumn>
+                                        <AgGridColumn field="선택" minWidth={60} maxWidth={70}></AgGridColumn>
+                                        <AgGridColumn field="상태" minWidth={100}></AgGridColumn>
+                                        <AgGridColumn field="제목" minWidth={200}></AgGridColumn>
+                                        <AgGridColumn field="내용" minWidth={300}></AgGridColumn>
+                                        <AgGridColumn field="알람일자" minWidth={200}></AgGridColumn>
+                                        <AgGridColumn field="등록일" minWidth={200}></AgGridColumn>
                                     </AgGridReact>
                                 </div>
                             </div>
 
-                            {/* 메모등록 */}
+                            {/* 등록 */}
                             <div className="regi-memo form-wrap">
                                 <h3 className="blind">메모 등록</h3>
                                 <div className="btn-util">

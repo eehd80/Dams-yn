@@ -12,17 +12,20 @@ const Header = () => (
                 </h1>
                 <div className="util-wrap">
                     <ul className="lst-util">
-                        <li>
-                            <a href="#">메모</a>
+                        <li className="on">
+                            <a href="/">콜현황</a>
                         </li>
                         <li>
-                            <a href="#">웹 예약콜</a>
+                            <a href="/memo">메모</a>
                         </li>
                         <li>
-                            <a href="#">예약콜</a>
+                            <a href="/webCall">웹 예약콜</a>
                         </li>
                         <li>
-                            <a href="#">공지사항</a>
+                            <a href="/s1030">예약콜</a>
+                        </li>
+                        <li>
+                            <a href="/Board">공지사항</a>
                         </li>
                     </ul>
                     <ul className="lst-log">
