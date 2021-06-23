@@ -276,19 +276,22 @@ const defaultColDef = {
     resizable: true,
 };
 
-const timeBooking = [
-    { value: "접수시간", label: "접수시간" },
-    { value: "예약시간", label: "예약시간" },
-    { value: "완료시간", label: "완료시간" },
+const renew = [
+    { value: "수동", label: "수동" },
+    { value: "자동 3초", label: "자동 3초" },
+    { value: "자동 5초", label: "자동 5초" },
+    { value: "자동 10초", label: "자동 10초" },
+    { value: "자동 30초", label: "자동 30초" },
+    { value: "자동 1분", label: "자동 1분" },
+];
+const array = [
+    { value: "시간순", label: "시간순" },
+    { value: "상태순", label: "상태순" },
 ];
 const state = [
-    { value: "취소", label: "취소" },
-    { value: "완료", label: "완료" },
-];
-const callBooking = [
-    { value: "예약콜포함", label: "예약콜포함" },
-    { value: "예약콜만", label: "예약콜만" },
-    { value: "예약콜제외", label: "예약콜제외" },
+    { value: "대기", label: "대기" },
+    { value: "접수", label: "접수" },
+    { value: "배차", label: "배차" },
 ];
 const condition = [
     { value: "ID", label: "ID" },
@@ -311,69 +314,54 @@ class Main extends Component {
                         <Map />
                         <div className="main">
                             <div className="tit-sub-wrap">
-                                <h2 className="tit-sub">콜검색</h2>
+                                <h2 className="tit-sub">위치정보관리</h2>
                             </div>
                             {/* 검색 */}
                             <Form className="tbl-filter">
                                 <Row>
-                                    <Col xs="1">
+                                    <Col xs="2">
                                         <FormGroup>
-                                            <Label for="timeBooking" className="blind">
-                                                예약시간
-                                            </Label>
-                                            <Select options={timeBooking} id="timeBooking" name="timeBooking" placeholder="예약시간" />
+                                            <Label for="renew">갱신</Label>
+                                            <Select options={renew} defaultValue={renew[0]} id="renew" name="renew" />
                                         </FormGroup>
                                     </Col>
-                                    <Col xs="3" className="d-flex">
-                                        <DatePickerButton /> <span className="wav-">~</span> <DatePickerButton />
+                                    <Col xs="2">
+                                        <FormGroup>
+                                            <Label for="array">정렬</Label>
+                                            <Select options={array} defaultValue={array[0]} id="array" name="array" />
+                                        </FormGroup>
                                     </Col>
-                                    <Col>
+                                    <Col xs="2">
                                         <FormGroup>
                                             <Label for="state" className="blind">
                                                 상태
                                             </Label>
-                                            <Select isMulti options={state} id="state" name="state" placeholder="상태" />
-                                        </FormGroup>
-                                    </Col>
-                                    <Col xs="1">
-                                        <FormGroup>
-                                            <Label for="callBooking" className="blind">
-                                                예약콜포함
-                                            </Label>
                                             <Select
-                                                options={callBooking}
-                                                defaultValue={callBooking[0]}
-                                                id="callBooking"
-                                                name="callBooking"
-                                                placeholder="예약콜포함"
+                                                isMulti
+                                                options={state}
+                                                // defaultValue={condition[0]}
+                                                id="state"
+                                                name="state"
+                                                placeholder="상태조건"
+                                                className="basic-multi-select"
+                                                classNamePrefix="select"
                                             />
                                         </FormGroup>
                                     </Col>
-                                    <Col xs="1" className="txt-right">
-                                        <FormGroup check>
-                                            <Input type="checkbox" id="check" />
-                                            <Label check for="check">
-                                                접수자
-                                            </Label>
-                                        </FormGroup>
-                                    </Col>
                                     <Col xs="1">
-                                        <FormGroup>
-                                            <Label for="condition" className="blind">
-                                                조회조건
+                                        <FormGroup className="d-flex">
+                                            <Label for="array" className="blind">
+                                                정렬
                                             </Label>
-                                            <Select options={condition} id="condition" name="condition" placeholder="조회조건" />
+                                            <Select options={condition} defaultValue={condition[0]} id="condition" name="condition" />
                                         </FormGroup>
                                     </Col>
-                                    <Col>
+                                    <Col xs="2">
                                         <Input type="text" name="search" id="search" placeholder="검색" />
                                     </Col>
                                     <Col className="btn-group2">
                                         <ButtonToggle className="c-blue">
                                             <i class="las la-search"></i> 검색
-                                        </ButtonToggle>
-                                        <ButtonToggle className="c-green">
-                                            <i class="las la-file-excel"></i> 엑셀
                                         </ButtonToggle>
                                     </Col>
                                 </Row>
@@ -425,25 +413,6 @@ class Main extends Component {
                                         <AgGridColumn field="요금합계"></AgGridColumn>
                                     </AgGridReact>
                                 </div>
-                            </div>
-                            {/* 통계 표시 */}
-                            <div className="wrap-stats">
-                                <dl>
-                                    <dt className="c-blue">완료</dt>
-                                    <dd>117</dd>
-                                </dl>
-                                <dl>
-                                    <dt className="c-red">취소</dt>
-                                    <dd>109</dd>
-                                </dl>
-                                <dl>
-                                    <dt className="c-yellow">접수</dt>
-                                    <dd>226</dd>
-                                </dl>
-                                <dl>
-                                    <dt className="c-green">배차</dt>
-                                    <dd>151</dd>
-                                </dl>
                             </div>
                         </div>
                     </div>

@@ -610,8 +610,8 @@ const Current = (props) => {
                         <Col xs="2">
                             <Input type="text" name="search" id="search" placeholder="검색" />
                         </Col>
-                        <Col xs="1">
-                            <ButtonToggle color="primary" className="btn-w">
+                        <Col className="btn-group2">
+                            <ButtonToggle className="c-blue">
                                 <i class="las la-search"></i> 검색
                             </ButtonToggle>
                         </Col>

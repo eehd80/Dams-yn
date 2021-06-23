@@ -92,7 +92,7 @@ class Main extends Component {
                                 <div className="tbl- tbl-type1 tbl-call ag-theme-balham" style={{ height: "300px" }}>
                                     <AgGridReact rowData={memoList} defaultColDef={defaultColDef}>
                                         <AgGridColumn field="순서" minWidth={60} maxWidth={70}></AgGridColumn>
-                                        <AgGridColumn field="선택" minWidth={60} maxWidth={70}></AgGridColumn>
+                                        <AgGridColumn field="선택" minWidth={60} maxWidth={70} checkboxSelection={true}></AgGridColumn>
                                         <AgGridColumn field="상태" minWidth={100}></AgGridColumn>
                                         <AgGridColumn field="제목" minWidth={200}></AgGridColumn>
                                         <AgGridColumn field="내용" minWidth={300}></AgGridColumn>

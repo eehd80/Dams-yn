@@ -224,7 +224,7 @@ class Main extends Component {
                     <Receive />
                     <div className="contents">
                         <Map />
-                        <div id="Memo" className="main">
+                        <di className="main">
                             <div className="tit-sub-wrap">
                                 <h2 className="tit-sub">예약콜</h2>
                             </div>
@@ -261,13 +261,11 @@ class Main extends Component {
                                         <Input type="text" name="search" id="search" placeholder="검색" />
                                     </Col>
 
-                                    <Col xs="1">
-                                        <ButtonToggle color="primary" className="btn-w">
+                                    <Col className="btn-group2">
+                                        <ButtonToggle className="c-blue">
                                             <i class="las la-search"></i> 검색
                                         </ButtonToggle>
-                                    </Col>
-                                    <Col xs="1">
-                                        <ButtonToggle className="btn-w btn-excel">
+                                        <ButtonToggle className="c-green">
                                             <i class="las la-file-excel"></i> 엑셀
                                         </ButtonToggle>
                                     </Col>
@@ -356,7 +354,7 @@ class Main extends Component {
                                     </Col>
                                 </Row>
                             </div>
-                        </div>
+                        </di>
                     </div>
                 </div>
                 {/* <Footer /> */}

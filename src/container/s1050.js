@@ -312,7 +312,7 @@ class Main extends Component {
                     <Receive />
                     <div className="contents">
                         <Map />
-                        <div id="Memo" className="main">
+                        <div className="main">
                             <div className="tit-sub-wrap">
                                 <h2 className="tit-sub">심야콜 접수</h2>
                             </div>
@@ -359,8 +359,8 @@ class Main extends Component {
                                     <Col xs="2">
                                         <Input type="text" name="search" id="search" placeholder="검색" />
                                     </Col>
-                                    <Col xs="1">
-                                        <ButtonToggle color="primary" className="btn-w">
+                                    <Col className="btn-group2">
+                                        <ButtonToggle className="c-blue">
                                             <i class="las la-search"></i> 검색
                                         </ButtonToggle>
                                     </Col>
