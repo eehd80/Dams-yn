@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { render } from "react-dom";
 import { AgGridColumn, AgGridReact } from "ag-grid-react";
-// import DatePickerButton from "./DatePicker";
-// import NumberFormat from "react-number-format";
+import DatePickerButton from "./DatePicker";
+import NumberFormat from "react-number-format";
 import Select from "react-select";
-import { Row, Col, ButtonToggle, Form, FormGroup, Label, Input } from "reactstrap";
+import { Row, Col, ButtonToggle, Button, Form, FormGroup, Label, Input } from "reactstrap";
 
 // import "ag-grid-enterprise";
 import "ag-grid-community/dist/styles/ag-grid.css";
@@ -682,6 +682,57 @@ const Current = (props) => {
                         </ul>
                     </div>
                 </div>
+            </div>
+
+            <div className="layer-" style={{ width: "500px" }}>
+                <div className="head-layer">
+                    <h3>예약콜로 수정</h3>
+                </div>
+                <div className="cont-layer">
+                    <Row>
+                        <Col xs="3" className="tit">
+                            예약일
+                        </Col>
+                        <Col>
+                            <DatePickerButton />
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col xs="3" className="tit">
+                            배차제한시간
+                        </Col>
+                        <Col>
+                            <NumberFormat format="##" id="previous" name="previous" placeholder="20" className="form-control" />
+                            <span className="wav-">분전</span>
+                        </Col>
+                        <Col>
+                            <NumberFormat format="##" id="after" name="after" placeholder="30" className="form-control" />
+                            <span className="wav-">분후</span>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col xs="3" className="tit">
+                            등록구분
+                        </Col>
+                        <Col>
+                            <Select options={condition} defaultValue={condition[0]} id="condition" name="condition" />
+                        </Col>
+                    </Row>
+                    <Row className="btn-area">
+                        <Col></Col>
+                        <Col>
+                            <Button className="btn-w c-blue">저장</Button>
+                        </Col>
+                        <Col>
+                            <Button className="btn-w">취소</Button>
+                        </Col>
+                        <Col></Col>
+                    </Row>
+                </div>
+                <Button className="btn-close">
+                    <i class="las la-times"></i>
+                    <span className="blind">닫기</span>
+                </Button>
             </div>
         </div>
     );

@@ -5,10 +5,6 @@ import NumberFormat from "react-number-format";
 import Select from "react-select";
 import { Row, Col, Button, ButtonToggle, Form, FormGroup, Label, Input } from "reactstrap";
 
-import Header from "../component/Header";
-import Receive from "../component/Receive";
-import Map from "../component/Map";
-
 const webCall = [
     {
         구분: "앱",

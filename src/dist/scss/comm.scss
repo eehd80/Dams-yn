@@ -182,19 +182,53 @@
         justify-content: flex-end;
         align-items: center;
     }
-    .btn-area {
-        display: flex;
-        justify-content: flex-end;
-        button {
-            margin-right: 10px;
-            &:last-child {
-                margin-right: 0;
-            }
-        }
-    }
 }
 
 // layer
+.layer- {
+    @include posXY;
+    border: 1px solid $prim2;
+    background: #f8f8f8;
+    box-shadow: 0 1px 4px 1px rgba(186, 191, 199, 0.4);
+    .head-layer {
+        padding: 10px 20px;
+        background: $prim2;
+        color: $w;
+        h3 {
+            font-size: 1.1em;
+        }
+    }
+    .cont-layer {
+        padding: 20px;
+        .tit {
+            // justify-content: flex-end;
+            align-items: center;
+            padding-left: 20px;
+        }
+        > div > div {
+            display: flex;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    }
+    .css-2b097c-container {
+        width: 100%;
+    }
+    .btn-close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 38px;
+        height: 38px;
+        padding: 0;
+        i {
+            color: $w;
+        }
+    }
+    .btn-area {
+        margin-top: 20px;
+    }
+}
 .layer-option {
     position: absolute;
     border: 1px solid #babfc7;
