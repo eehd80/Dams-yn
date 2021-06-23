@@ -684,7 +684,7 @@ const Current = (props) => {
                 </div>
             </div>
 
-            <div className="layer-" style={{ top: "40px", left: "40px", width: "500px" }}>
+            <div className="layer-" style={{ top: "300px", left: "600px", width: "500px" }}>
                 <div className="head-layer">
                     <h3>예약콜로 수정</h3>
                 </div>
