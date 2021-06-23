@@ -186,11 +186,12 @@
 
 // layer
 .layer- {
-    @include posXY;
+    position: absolute;
     border: 1px solid $prim2;
-    background: #f8f8f8;
+    background: $w;
     box-shadow: 0 1px 4px 1px rgba(186, 191, 199, 0.4);
     .head-layer {
+        height: 40px;
         padding: 10px 20px;
         background: $prim2;
         color: $w;
@@ -204,11 +205,12 @@
             // justify-content: flex-end;
             align-items: center;
             padding-left: 20px;
+            &::before {
+                left: 10px;
+            }
         }
         > div > div {
             display: flex;
-            padding-top: 5px;
-            padding-bottom: 5px;
         }
     }
     .css-2b097c-container {
@@ -218,15 +220,23 @@
         position: absolute;
         top: 0;
         right: 0;
-        width: 38px;
-        height: 38px;
+        width: 40px;
+        height: 40px;
         padding: 0;
-        i {
-            color: $w;
-        }
+        @include img-g;
+        background-position: -120px -120px;
     }
     .btn-area {
         margin-top: 20px;
+        .btn {
+            height: 35px;
+        }
+    }
+    .ag-root-wrapper {
+        width: 100%;
+    }
+    .tbl-filter {
+        margin: 0 6px;
     }
 }
 .layer-option {
