@@ -136,7 +136,6 @@ class Main extends Component {
                             </Form>
                             {/* 리스트 */}
                             <div className="lst-memo">
-                                <h3 className="blind">웹예약콜 리스트</h3>
                                 <div className="tbl- tbl-type1 tbl-call ag-theme-balham" style={{ height: "400px" }}>
                                     <AgGridReact
                                         rowData={webCall}
@@ -163,7 +162,7 @@ class Main extends Component {
                                 <div className="cont-layer form-wrap">
                                     <Row>
                                         <Col className="tit">
-                                            <label for="idPop">회원사명</label>
+                                            <label for="idPop">회원사명</label> <span className="ico-c">필수</span>
                                         </Col>
                                         <Col xs="4">
                                             <div className="form-control-wrap">
@@ -189,7 +188,7 @@ class Main extends Component {
                                     </Row>
                                     <Row>
                                         <Col className="tit">
-                                            <label for="telPop">회원사전화</label>
+                                            <label for="telPop">회원사전화</label> <span className="ico-c">필수</span>
                                         </Col>
                                         <Col xs="4">
                                             <div className="form-control-wrap">

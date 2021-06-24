@@ -274,7 +274,6 @@ class Main extends Component {
 
                             {/* 리스트 */}
                             <div className="lst-memo">
-                                <h3 className="blind">웹예약콜 리스트</h3>
                                 <div className="tbl- tbl-type1 tbl-call ag-theme-balham" style={{ height: "300px" }}>
                                     <AgGridReact
                                         rowData={webCall}

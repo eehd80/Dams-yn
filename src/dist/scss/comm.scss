@@ -23,7 +23,19 @@
 }
 .c-yellow {
     background-color: $yellow;
+    color: $b;
 }
+.ico-c {
+    font-size: 0;
+    color: red;
+    &::before {
+        content: "*";
+        display: inline-block;
+        margin-top: 5px;
+        font-size: 1.2rem;
+    }
+}
+
 // tit
 .tit- {
     position: relative;
@@ -455,11 +467,11 @@
         padding: 20px 0;
         display: none;
         > li {
-            margin: 5px;
+            margin: 3px;
             > a {
                 position: relative;
                 display: block;
-                padding: 7px 20px 7px 10px;
+                padding: 2px 20px 3px 10px;
                 border: 1px solid rgba(255, 255, 255, 0.4);
                 color: $w;
                 font-weight: 500;
@@ -482,6 +494,7 @@
         }
     }
     .nav-depth3 {
+        margin: 9px 0 13px;
         li {
             position: relative;
             margin: 5px;
@@ -498,9 +511,9 @@
         }
         a {
             display: block;
-            height: 34px;
+            height: 16px;
             padding-left: 13px;
-            line-height: 34px;
+            line-height: 16px;
             color: $w;
             font-size: 0.857em;
             &:hover,
@@ -516,7 +529,7 @@
         left: 0;
         right: 0;
         z-index: 1000;
-        height: 630px;
+        height: 440px;
         transition: all 0.5s;
         border-bottom: 1px solid #eee;
         background-color: $prim3;

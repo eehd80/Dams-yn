@@ -129,6 +129,10 @@ const usePop = [
     { value: "사용", label: "사용" },
     { value: "비사용", label: "비사용" },
 ];
+const positionPop = [
+    { value: "관내", label: "관내" },
+    { value: "비관내", label: "비관내" },
+];
 
 class Main extends Component {
     render() {
@@ -240,7 +244,6 @@ class Main extends Component {
                             </Form>
                             {/* 리스트 */}
                             <div className="lst-memo">
-                                <h3 className="blind">웹예약콜 리스트</h3>
                                 <div className="tbl- tbl-type1 tbl-call ag-theme-balham" style={{ height: "400px" }}>
                                     <AgGridReact
                                         rowData={webCall}
@@ -273,52 +276,7 @@ class Main extends Component {
                                 <div className="cont-layer form-wrap">
                                     <Row>
                                         <Col className="tit">
-                                            <label for="idPop">회원사명</label>
-                                        </Col>
-                                        <Col xs="4">
-                                            <div className="form-control-wrap">
-                                                <Input type="text" name="idPop" id="idPop" />
-                                                <span className="form-control-clear">
-                                                    <span className="blind">지우기</span>
-                                                </span>
-                                            </div>
-                                            <Button className="btn-pop">중복검사</Button>
-                                        </Col>
-                                        <Col className="tit">
-                                            <Label for="nicknamePop">회원사별칭</Label>
-                                        </Col>
-                                        <Col xs="4">
-                                            <div className="form-control-wrap">
-                                                <Input type="text" name="idPop" id="idPop" />
-                                                <span className="form-control-clear">
-                                                    <span className="blind">지우기</span>
-                                                </span>
-                                            </div>
-                                            <Button className="btn-pop">중복검사</Button>
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <Col className="tit">
-                                            <label for="telPop">회원사전화</label>
-                                        </Col>
-                                        <Col xs="4">
-                                            <div className="form-control-wrap">
-                                                <NumberFormat format="###-####-####" id="telPop" name="telPop" className="form-control" />
-                                                <span className="form-control-clear">
-                                                    <span className="blind">지우기</span>
-                                                </span>
-                                            </div>
-                                        </Col>
-                                        <Col className="tit">
-                                            <Label for="workPop">등록일</Label>
-                                        </Col>
-                                        <Col xs="4">
-                                            <DatePickerButton />
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <Col className="tit">
-                                            <label for="namePop">대표자명</label>
+                                            <label for="namePop">고객명</label>
                                         </Col>
                                         <Col xs="4">
                                             <div className="form-control-wrap">
@@ -329,29 +287,60 @@ class Main extends Component {
                                             </div>
                                         </Col>
                                         <Col className="tit">
-                                            <Label for="usestartPop">사용시작일</Label>
+                                            <label for="usePop">사용여부</label>
                                         </Col>
                                         <Col xs="4">
-                                            <DatePickerButton />
+                                            <Select options={usePop} defaultValue={usePop[0]} id="usePop" name="usePop" />
                                         </Col>
                                     </Row>
                                     <Row>
                                         <Col className="tit">
-                                            <label for="phonePop">대표자전화</label>
+                                            <Label for="birthPop">생년월일/성별</Label>
+                                        </Col>
+                                        <Col xs="4">
+                                            <DatePickerButton />
+                                        </Col>
+                                        <Col className="tit">
+                                            <label for="positionPop">거주위치</label>
+                                        </Col>
+                                        <Col xs="4">
+                                            <Select
+                                                options={positionPop}
+                                                defaultValue={positionPop[0]}
+                                                id="positionPop"
+                                                name="positionPop"
+                                            />
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col className="tit">
+                                            <label for="receiptPop">고객접수번호</label>
                                         </Col>
                                         <Col xs="4">
                                             <div className="form-control-wrap">
-                                                <Input type="text" name="phonePop" id="phonePop" />
+                                                <Input type="text" name="receiptPop" id="receiptPop" />
                                                 <span className="form-control-clear">
                                                     <span className="blind">지우기</span>
                                                 </span>
                                             </div>
+                                            <Button className="btn-pop">중복검사</Button>
                                         </Col>
                                         <Col className="tit">
-                                            <Label for="useendPop">사용중지일</Label>
+                                            <label for="reptelPop">대표자전화</label>
                                         </Col>
                                         <Col xs="4">
-                                            <DatePickerButton />
+                                            <div className="form-control-wrap">
+                                                <NumberFormat
+                                                    format="###-####-####"
+                                                    id="reptelPop"
+                                                    name="reptelPop"
+                                                    className="form-control"
+                                                />
+                                                <span className="form-control-clear">
+                                                    <span className="blind">지우기</span>
+                                                </span>
+                                            </div>
+                                            <Button className="btn-pop">중복검사</Button>
                                         </Col>
                                     </Row>
                                     <Row>
@@ -360,7 +349,7 @@ class Main extends Component {
                                         </Col>
                                         <Col xs="4">
                                             <div className="form-control-wrap">
-                                                <Input type="text" name="idPop" id="idPop" />
+                                                <Input type="text" name="adressPop" id="adressPop" />
                                                 <span className="form-control-clear">
                                                     <span className="blind">지우기</span>
                                                 </span>
@@ -368,17 +357,28 @@ class Main extends Component {
                                             <Button className="btn-pop">주소검색</Button>
                                         </Col>
                                         <Col className="tit">
-                                            <label for="usePop">사용여부</label>
+                                            <label for="phonePop">휴대폰번호</label>
                                         </Col>
                                         <Col xs="4">
-                                            <Select options={usePop} defaultValue={usePop[0]} id="usePop" name="usePop" />
+                                            <div className="form-control-wrap">
+                                                <NumberFormat
+                                                    format="###-####-####"
+                                                    id="phonePop"
+                                                    name="phonePop"
+                                                    className="form-control"
+                                                />
+
+                                                <span className="form-control-clear">
+                                                    <span className="blind">지우기</span>
+                                                </span>
+                                            </div>
                                         </Col>
                                     </Row>
                                     <Row>
                                         <Col></Col>
                                         <Col xs="4">
                                             <div className="form-control-wrap">
-                                                <Input type="text" name="idPop" id="idPop" />
+                                                <Input type="text" name="adressPop2" id="adressPop2" />
                                                 <span className="form-control-clear">
                                                     <span className="blind">지우기</span>
                                                 </span>
@@ -389,16 +389,91 @@ class Main extends Component {
                                     </Row>
                                     <Row>
                                         <Col className="tit">
-                                            <Label for="notePop">비고</Label>
+                                            <label for="addtelPop1">추가전화1</label>
                                         </Col>
-                                        <Col xs="10">
-                                            <FormText className="form-control">
-                                                안녕하세요~ 오다다입니다. This is some placeholder block-level help text for the above
-                                                input. It's a bit lighter and easily wraps to a new line.
-                                            </FormText>
+                                        <Col xs="4">
+                                            <div className="form-control-wrap">
+                                                <NumberFormat
+                                                    format="###-####-####"
+                                                    id="addtelPop1"
+                                                    name="addtelPop1"
+                                                    className="form-control"
+                                                />
+                                                <span className="form-control-clear">
+                                                    <span className="blind">지우기</span>
+                                                </span>
+                                            </div>
+                                        </Col>
+                                        <Col className="tit">
+                                            <label for="notePop1">비고</label>
+                                        </Col>
+                                        <Col xs="4">
+                                            <div className="form-control-wrap">
+                                                <Input type="text" name="notePop1" id="notePop1" />
+                                                <span className="form-control-clear">
+                                                    <span className="blind">지우기</span>
+                                                </span>
+                                            </div>
                                         </Col>
                                     </Row>
-
+                                    <Row>
+                                        <Col className="tit">
+                                            <label for="addtelPop1">추가전화2</label>
+                                        </Col>
+                                        <Col xs="4">
+                                            <div className="form-control-wrap">
+                                                <NumberFormat
+                                                    format="###-####-####"
+                                                    id="addtelPop2"
+                                                    name="addtelPop2"
+                                                    className="form-control"
+                                                />
+                                                <span className="form-control-clear">
+                                                    <span className="blind">지우기</span>
+                                                </span>
+                                            </div>
+                                        </Col>
+                                        <Col className="tit">
+                                            <label for="notePop2">비고</label>
+                                        </Col>
+                                        <Col xs="4">
+                                            <div className="form-control-wrap">
+                                                <Input type="text" name="notePop2" id="notePop2" />
+                                                <span className="form-control-clear">
+                                                    <span className="blind">지우기</span>
+                                                </span>
+                                            </div>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col className="tit">
+                                            <label for="addtelPop3">추가전화3</label>
+                                        </Col>
+                                        <Col xs="4">
+                                            <div className="form-control-wrap">
+                                                <NumberFormat
+                                                    format="###-####-####"
+                                                    id="addtelPop3"
+                                                    name="addtelPop3"
+                                                    className="form-control"
+                                                />
+                                                <span className="form-control-clear">
+                                                    <span className="blind">지우기</span>
+                                                </span>
+                                            </div>
+                                        </Col>
+                                        <Col className="tit">
+                                            <label for="notePop3">비고</label>
+                                        </Col>
+                                        <Col xs="4">
+                                            <div className="form-control-wrap">
+                                                <Input type="text" name="notePop3" id="notePop3" />
+                                                <span className="form-control-clear">
+                                                    <span className="blind">지우기</span>
+                                                </span>
+                                            </div>
+                                        </Col>
+                                    </Row>
                                     <Row className="btn-area">
                                         <Col></Col>
                                         <Col>
