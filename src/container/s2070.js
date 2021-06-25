@@ -12,33 +12,15 @@ import Map from "../component/Map";
 const webCall = [
     {
         번호: "1",
-        승인상태: "승인대기",
-        고객명: "최유금",
-        핸드폰번호: "010-2222-2222",
-        WebID: "makebelie",
-        이용대상자유형1: "지폐성장애",
-        장애등급1: "1급",
-        이용대상자유형2: "노약자",
-        장애등급2: "등급외",
-        휠체어: "휠체어수동",
-        추가전화번호1: "070-2222-3333",
-        추가전화번호2: "010-2222-3333",
-        추가전화번호3: "010-2222-3333",
-    },
-    {
-        번호: "1",
-        승인상태: "승인대기",
-        고객명: "최유금",
-        핸드폰번호: "010-2222-2222",
-        WebID: "makebelie",
-        이용대상자유형1: "지폐성장애",
-        장애등급1: "1급",
-        이용대상자유형2: "노약자",
-        장애등급2: "등급외",
-        휠체어: "휠체어수동",
-        추가전화번호1: "070-2222-3333",
-        추가전화번호2: "010-2222-3333",
-        추가전화번호3: "010-2222-3333",
+        선택: "",
+        기사명: "최유금",
+        기사ID: "1002",
+        기사인식번호: "1002",
+        기사전화번호: "010-2222-2222",
+        차량번호: "75다 5454",
+        차종: "올뉴 카니발",
+        사용여부: "사용",
+        등록일: "2011-05-22 13:12:55",
     },
 ];
 
@@ -47,15 +29,17 @@ const defaultColDef = {
     resizable: true,
 };
 
-const condition = [
-    { value: "고객명", label: "고객명" },
-    { value: "고객전화번호", label: "고객전화번호" },
-    { value: "webID", label: "webID" },
+const use = [
+    { value: "전체", label: "전체" },
+    { value: "사용", label: "사용" },
+    { value: "미사용", label: "미사용" },
 ];
-const approval = [
-    { value: "승인대기", label: "승인대기" },
-    { value: "승인", label: "승인" },
-    { value: "거부", label: "거부" },
+const condition = [
+    { value: "기사명", label: "기사명" },
+    { value: "기사ID", label: "기사ID" },
+    { value: "기사전화", label: "기사전화" },
+    { value: "인식번호", label: "인식번호" },
+    { value: "차량번호", label: "차량번호" },
 ];
 
 class Main extends Component {
@@ -69,7 +53,7 @@ class Main extends Component {
                         <Map />
                         <div className="wrap-data">
                             <div className="tit-sub-wrap">
-                                <h2 className="tit-sub">홈페이지 가입 고객관리</h2>
+                                <h2 className="tit-sub">운전원 근무조 관리</h2>
                             </div>
                             <div className="lst-data">
                                 {/* 검색 */}
@@ -77,10 +61,10 @@ class Main extends Component {
                                     <Row>
                                         <Col xs="2">
                                             <FormGroup>
-                                                <Label for="approvalPop" className="blind">
-                                                    승인여부
+                                                <Label for="use" className="blind">
+                                                    사용여부
                                                 </Label>
-                                                <Select options={approval} defaultValue={approval[0]} id="approval" name="approval" />
+                                                <Select options={use} defaultValue={use[0]} id="use" name="use" />
                                             </FormGroup>
                                         </Col>
                                         <Col xs="2">
@@ -95,6 +79,12 @@ class Main extends Component {
                                             <Input type="text" name="search" id="search" placeholder="검색" />
                                         </Col>
                                         <Col className="btn-group2">
+                                            <ButtonToggle className="c-yellow">
+                                                <i className="las la-sms"></i> 기존근무조설정
+                                            </ButtonToggle>
+                                            <ButtonToggle className="c-green">
+                                                <i className="las la-file-excel"></i> 엑셀 불러오기
+                                            </ButtonToggle>
                                             <ButtonToggle className="c-blue">
                                                 <i className="las la-plus"></i> 신규
                                             </ButtonToggle>
@@ -116,18 +106,15 @@ class Main extends Component {
                                         allowContextMenuWithControlKey={true}
                                     >
                                         <AgGridColumn field="번호" minWidth={60} maxWidth={70}></AgGridColumn>
-                                        <AgGridColumn field="승인상태" minWidth={100}></AgGridColumn>
-                                        <AgGridColumn field="고객명"></AgGridColumn>
-                                        <AgGridColumn field="핸드폰번호" minWidth={150}></AgGridColumn>
-                                        <AgGridColumn field="WebID" minWidth={150}></AgGridColumn>
-                                        <AgGridColumn field="이용대상자유형1" minWidth={150}></AgGridColumn>
-                                        <AgGridColumn field="장애등급1"></AgGridColumn>
-                                        <AgGridColumn field="이용대상자유형2" minWidth={150}></AgGridColumn>
-                                        <AgGridColumn field="장애등급2"></AgGridColumn>
-                                        <AgGridColumn field="휠체어" minWidth={150}></AgGridColumn>
-                                        <AgGridColumn field="추가전화번호1" minWidth={150}></AgGridColumn>
-                                        <AgGridColumn field="추가전화번호2" minWidth={150}></AgGridColumn>
-                                        <AgGridColumn field="추가전화번호3" minWidth={150}></AgGridColumn>
+                                        <AgGridColumn field="선택" minWidth={60} maxWidth={70}></AgGridColumn>
+                                        <AgGridColumn field="기사명"></AgGridColumn>
+                                        <AgGridColumn field="기사ID"></AgGridColumn>
+                                        <AgGridColumn field="기사인식번호"></AgGridColumn>
+                                        <AgGridColumn field="기사전화번호" minWidth={150}></AgGridColumn>
+                                        <AgGridColumn field="차량번호" minWidth={150}></AgGridColumn>
+                                        <AgGridColumn field="차종" minWidth={150}></AgGridColumn>
+                                        <AgGridColumn field="사용여부"></AgGridColumn>
+                                        <AgGridColumn field="등록일" minWidth={200}></AgGridColumn>
                                     </AgGridReact>
                                 </div>
                             </div>

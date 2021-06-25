@@ -192,24 +192,6 @@ const defaultColDef = {
     resizable: true,
 };
 
-const timeSearch = [
-    { value: "이용예정시간", label: "이용예정시간" },
-    { value: "접수시간", label: "접수시간" },
-];
-const callAll = [
-    { value: "즉시콜", label: "즉시콜" },
-    { value: "예약콜", label: "예약콜" },
-];
-const condition = [
-    { value: "차량ID", label: "차량ID" },
-    { value: "고객명", label: "고객명" },
-    { value: "고객전화", label: "고객전화" },
-    { value: "회신번호", label: "회신번호" },
-    { value: "승차위치", label: "승차위치" },
-    { value: "하차위치", label: "하차위치" },
-    { value: "차량번호", label: "차량번호" },
-];
-
 class Main extends Component {
     render() {
         return (
@@ -234,12 +216,12 @@ class Main extends Component {
 
                         <Col xs="1">
                             <ButtonToggle color="primary" className="btn-w">
-                                <i class="las la-search"></i> 검색
+                                <i className="las la-search"></i> 검색
                             </ButtonToggle>
                         </Col>
                         <Col xs="1">
                             <ButtonToggle className="btn-w c-receive">
-                                <i class="las la-sign-in-alt"></i> 적용
+                                <i className="las la-sign-in-alt"></i> 적용
                             </ButtonToggle>
                         </Col>
                     </Row>

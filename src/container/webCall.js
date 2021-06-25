@@ -263,12 +263,12 @@ class Main extends Component {
 
                                     <Col xs="1">
                                         <ButtonToggle color="primary" className="btn-w">
-                                            <i class="las la-search"></i> 검색
+                                            <i className="las la-search"></i> 검색
                                         </ButtonToggle>
                                     </Col>
                                     <Col xs="1">
                                         <ButtonToggle className="btn-w btn-excel">
-                                            <i class="las la-file-excel"></i> 엑셀
+                                            <i className="las la-file-excel"></i> 엑셀
                                         </ButtonToggle>
                                     </Col>
                                 </Row>
@@ -309,13 +309,13 @@ class Main extends Component {
                                 <h3 className="blind">메모 등록</h3>
                                 <div className="btn-util">
                                     <Button color="secondary">
-                                        <i class="las la-check"></i> 확인
+                                        <i className="las la-check"></i> 확인
                                     </Button>
                                     <Button color="primary">
-                                        <i class="las la-save"></i> 저장
+                                        <i className="las la-save"></i> 저장
                                     </Button>
                                     <Button color="danger">
-                                        <i class="las la-times"></i> 취소
+                                        <i className="las la-times"></i> 취소
                                     </Button>
                                 </div>
                                 <Row>

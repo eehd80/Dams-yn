@@ -70,23 +70,22 @@ class Main extends Component {
                     <Receive />
                     <div className="contents">
                         <Map />
-                        <div id="Memo" className="main">
+                        <div id="Memo" className="wrap-data">
                             <div className="tit-sub-wrap">
                                 <h2 className="tit-sub">메모</h2>
                             </div>
 
                             {/* 리스트 */}
-                            <div className="lst-memo">
-                                <h3 className="blind">메모 리스트</h3>
+                            <div className="lst-data">
                                 <div className="btn-util">
                                     <Button color="primary">
-                                        <i class="las la-plus"></i> 신규
+                                        <i className="las la-plus"></i> 신규
                                     </Button>
                                     <Button color="secondary">
-                                        <i class="las la-search"></i> 검색
+                                        <i className="las la-search"></i> 검색
                                     </Button>
                                     <Button color="danger">
-                                        <i class="las la-backspace"></i> 삭제
+                                        <i className="las la-backspace"></i> 삭제
                                     </Button>
                                 </div>
                                 <div className="tbl- tbl-type1 tbl-call ag-theme-balham" style={{ height: "300px" }}>
@@ -104,18 +103,6 @@ class Main extends Component {
 
                             {/* 등록 */}
                             <div className="regi-memo form-wrap">
-                                <h3 className="blind">메모 등록</h3>
-                                <div className="btn-util">
-                                    <Button color="secondary">
-                                        <i class="las la-check"></i> 확인
-                                    </Button>
-                                    <Button color="primary">
-                                        <i class="las la-save"></i> 저장
-                                    </Button>
-                                    <Button color="danger">
-                                        <i class="las la-times"></i> 취소
-                                    </Button>
-                                </div>
                                 <Row>
                                     <Col xs="1" className="tit-">
                                         제목
@@ -153,6 +140,18 @@ class Main extends Component {
                                         <Input type="textarea" name="text" id="memoCont" />
                                     </Col>
                                 </Row>
+
+                                <div className="btn-util">
+                                    <Button color="secondary">
+                                        <i className="las la-check"></i> 확인
+                                    </Button>
+                                    <Button color="primary">
+                                        <i className="las la-save"></i> 저장
+                                    </Button>
+                                    <Button color="danger">
+                                        <i className="las la-times"></i> 취소
+                                    </Button>
+                                </div>
                             </div>
                         </div>
                     </div>

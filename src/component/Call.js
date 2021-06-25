@@ -396,6 +396,7 @@ const state = [
     { value: "배차", label: "배차" },
 ];
 const condition = [
+    { value: "검색전체", label: "검색" },
     { value: "ID", label: "ID" },
     { value: "고객명", label: "고객명" },
     { value: "고객전화", label: "고객전화" },
@@ -562,62 +563,55 @@ const Current = (props) => {
     };
 
     return (
-        <div id="call" className="main">
+        <div id="call" className="wrap-data">
             <div className="tit-sub-wrap">
                 <h2 className="tit-sub">콜현황</h2>
             </div>
 
-            <div className="call-wrap">
+            <div className="lst-data">
                 <Form className="tbl-filter">
-                    <Row>
-                        <Col xs="2">
-                            <FormGroup>
-                                <Label for="renew">갱신</Label>
-                                <Select options={renew} defaultValue={renew[0]} id="renew" name="renew" />
-                            </FormGroup>
-                        </Col>
-                        <Col xs="2">
-                            <FormGroup>
-                                <Label for="array">정렬</Label>
-                                <Select options={array} defaultValue={array[0]} id="array" name="array" />
-                            </FormGroup>
-                        </Col>
-                        <Col xs="2">
-                            <FormGroup>
-                                <Label for="state" className="blind">
-                                    상태
-                                </Label>
-                                <Select
-                                    isMulti
-                                    options={state}
-                                    // defaultValue={condition[0]}
-                                    id="state"
-                                    name="state"
-                                    placeholder="상태조건"
-                                    className="basic-multi-select"
-                                    classNamePrefix="select"
-                                />
-                            </FormGroup>
-                        </Col>
-                        <Col xs="1">
-                            <FormGroup className="d-flex">
-                                <Label for="array" className="blind">
-                                    정렬
-                                </Label>
-                                <Select options={condition} defaultValue={condition[0]} id="condition" name="condition" />
-                            </FormGroup>
-                        </Col>
-                        <Col xs="2">
-                            <Input type="text" name="search" id="search" placeholder="검색" />
-                        </Col>
-                        <Col className="btn-group2">
-                            <ButtonToggle className="c-blue">
-                                <i class="las la-search"></i> 검색
-                            </ButtonToggle>
-                        </Col>
-                    </Row>
+                    <FormGroup>
+                        <Label for="renew" className="blind">
+                            갱신
+                        </Label>
+                        <Select options={renew} defaultValue={renew[0]} id="renew" name="renew" />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for="array" className="blind">
+                            정렬
+                        </Label>
+                        <Select options={array} defaultValue={array[0]} id="array" name="array" />
+                    </FormGroup>
+                    <FormGroup className="inp-et2">
+                        <Label for="state" className="blind">
+                            상태
+                        </Label>
+                        <Select
+                            isMulti
+                            options={state}
+                            defaultValue={state[0]}
+                            id="state"
+                            name="state"
+                            // placeholder="상태조건"
+                            className="basic-multi-select"
+                            classNamePrefix="select"
+                        />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for="array" className="blind">
+                            정렬
+                        </Label>
+                        <Select options={condition} defaultValue={condition[0]} id="condition" name="condition" />
+                    </FormGroup>
+                    <Input type="text" name="search" id="search" placeholder="검색" className="inp-search" />
+
+                    <div className="btn-group2">
+                        <ButtonToggle className="c-blue">
+                            <i className="las la-search"></i> 검색
+                        </ButtonToggle>
+                    </div>
                 </Form>
-                <div className="tbl- tbl-type1 tbl-call ag-theme-balham" style={{ height: "500px" }}>
+                <div className="tbl- ag-theme-balham" style={{ minHeight: "500px" }}>
                     <AgGridReact
                         rowData={callData}
                         defaultColDef={defaultColDef}
@@ -652,7 +646,7 @@ const Current = (props) => {
 
                     {/* 마우스 오른쪽 클릭 */}
                     {/* 제가 이걸 왜 만들었을까요? ㅋ 옵션 적용해봤는데 적용이 안됐습니다. ㅜㅜ 혹시 필요하시면 사용하시고 옵션 사용하실거면 지우셔도 됩니다. */}
-                    <div className="layer-option" style={{ top: "50px", left: "200px" }}>
+                    <div className="layer-option" style={{ top: "50px", left: "100px" }}>
                         <ul>
                             <li>수정</li>
                             <li>접수</li>
@@ -684,7 +678,7 @@ const Current = (props) => {
                 </div>
             </div>
 
-            <div className="layer-" style={{ top: "300px", left: "600px", width: "500px" }}>
+            <div className="layer-" style={{ top: "300px", right: "100px", width: "500px" }}>
                 <div className="head-layer">
                     <h3>예약콜로 수정</h3>
                 </div>
@@ -730,7 +724,7 @@ const Current = (props) => {
                     </Row>
                 </div>
                 <Button className="btn-close">
-                    <i class="las la-times"></i>
+                    <i className="las la-times"></i>
                     <span className="blind">닫기</span>
                 </Button>
             </div>

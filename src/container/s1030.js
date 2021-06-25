@@ -224,57 +224,43 @@ class Main extends Component {
                     <Receive />
                     <div className="contents">
                         <Map />
-                        <di className="main">
+                        <di className="wrap-data">
                             <div className="tit-sub-wrap">
                                 <h2 className="tit-sub">예약콜</h2>
                             </div>
-
-                            {/* 검색 */}
-                            <Form className="tbl-filter">
-                                <Row>
-                                    <Col xs="1">
+                            <div className="lst-data">
+                                <Form className="tbl-filter">
+                                    <FormGroup className="inp-et3">
                                         <Label for="timeSearch" className="blind">
                                             검색시간조건
                                         </Label>
                                         <Select options={timeSearch} id="timeSearch" name="timeSearch" placeholder="검색시간조건" />
-                                    </Col>
-                                    <Col xs="3" className="d-flex">
                                         <DatePickerButton /> <span className="wav-">~</span> <DatePickerButton />
-                                    </Col>
-                                    <Col xs="1">
-                                        <FormGroup>
-                                            <Label for="callAll" className="blind">
-                                                전체콜
-                                            </Label>
-                                            <Select options={callAll} id="callAll" name="callAll" placeholder="전체콜" />
-                                        </FormGroup>
-                                    </Col>
-                                    <Col xs="1">
-                                        <FormGroup>
-                                            <Label for="condition" className="blind">
-                                                조회조건
-                                            </Label>
-                                            <Select options={condition} id="condition" name="condition" placeholder="조회조건" />
-                                        </FormGroup>
-                                    </Col>
-                                    <Col xs="2">
-                                        <Input type="text" name="search" id="search" placeholder="검색" />
-                                    </Col>
-
-                                    <Col className="btn-group2">
+                                    </FormGroup>
+                                    <FormGroup>
+                                        <Label for="callAll" className="blind">
+                                            전체콜
+                                        </Label>
+                                        <Select options={callAll} id="callAll" name="callAll" placeholder="전체콜" />
+                                    </FormGroup>
+                                    <FormGroup>
+                                        <Label for="condition" className="blind">
+                                            조회조건
+                                        </Label>
+                                        <Select options={condition} id="condition" name="condition" placeholder="조회조건" />
+                                    </FormGroup>
+                                    <Input type="text" name="search" id="search" placeholder="검색" className="inp-search" />
+                                    <div className="btn-group2">
                                         <ButtonToggle className="c-blue">
-                                            <i class="las la-search"></i> 검색
+                                            <i className="las la-search"></i> 검색
                                         </ButtonToggle>
                                         <ButtonToggle className="c-green">
-                                            <i class="las la-file-excel"></i> 엑셀
+                                            <i className="las la-file-excel"></i> 엑셀
                                         </ButtonToggle>
-                                    </Col>
-                                </Row>
-                            </Form>
-
-                            {/* 리스트 */}
-                            <div className="lst-memo">
-                                <div className="tbl- tbl-type1 tbl-call ag-theme-balham" style={{ height: "300px" }}>
+                                    </div>
+                                </Form>
+                                {/* 리스트 */}
+                                <div className="tbl- ag-theme-balham">
                                     <AgGridReact
                                         rowData={webCall}
                                         defaultColDef={defaultColDef}
@@ -299,59 +285,6 @@ class Main extends Component {
                                         <AgGridColumn field="배차자"></AgGridColumn>
                                     </AgGridReact>
                                 </div>
-                            </div>
-
-                            {/* 등록 */}
-                            <div className="regi-memo form-wrap">
-                                <h3 className="blind">메모 등록</h3>
-                                <div className="btn-util">
-                                    <Button color="secondary">
-                                        <i class="las la-check"></i> 확인
-                                    </Button>
-                                    <Button color="primary">
-                                        <i class="las la-save"></i> 저장
-                                    </Button>
-                                    <Button color="danger">
-                                        <i class="las la-times"></i> 취소
-                                    </Button>
-                                </div>
-                                <Row>
-                                    <Col xs="1" className="tit-">
-                                        제목
-                                    </Col>
-                                    <Col xs="2">
-                                        <div className="form-control-wrap">
-                                            <NumberFormat
-                                                format="###-####-####"
-                                                id="receiveNum"
-                                                name="receiveNum"
-                                                className="form-control"
-                                            />
-                                            <span className="form-control-clear">
-                                                <span className="blind">지우기</span>
-                                            </span>
-                                        </div>
-                                    </Col>
-                                    <Col xs={{ size: 1, offset: 1 }} className="tit-">
-                                        <FormGroup check>
-                                            <Input type="checkbox" id="shuttle" />
-                                            <Label check for="shuttle">
-                                                알람일자
-                                            </Label>
-                                        </FormGroup>
-                                    </Col>
-                                    <Col xs="2">
-                                        <DatePickerButton />
-                                    </Col>
-                                </Row>
-                                <Row>
-                                    <Col xs="1" className="tit-">
-                                        내용
-                                    </Col>
-                                    <Col>
-                                        <Input type="textarea" name="text" id="memoCont" />
-                                    </Col>
-                                </Row>
                             </div>
                         </di>
                     </div>

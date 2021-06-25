@@ -85,23 +85,22 @@ class Main extends Component {
                     <Receive />
                     <div className="contents">
                         <Map />
-                        <div id="Memo" className="main">
+                        <div id="Memo" className="wrap-data">
                             <div className="tit-sub-wrap">
                                 <h2 className="tit-sub">공지사항</h2>
                             </div>
 
                             {/* 메모 리스트 */}
-                            <div className="lst-memo">
-                                <h3 className="blind">메모 리스트</h3>
+                            <div className="lst-data">
                                 <div className="btn-util">
                                     <Button color="primary">
-                                        <i class="las la-plus"></i> 신규
+                                        <i className="las la-plus"></i> 신규
                                     </Button>
                                     <Button color="secondary">
-                                        <i class="las la-search"></i> 검색
+                                        <i className="las la-search"></i> 검색
                                     </Button>
                                     <Button color="danger">
-                                        <i class="las la-backspace"></i> 삭제
+                                        <i className="las la-backspace"></i> 삭제
                                     </Button>
                                 </div>
                                 <div className="tbl- tbl-type1 tbl-call ag-theme-balham" style={{ height: "300px" }}>

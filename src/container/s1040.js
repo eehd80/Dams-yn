@@ -309,78 +309,78 @@ class Main extends Component {
                     <Receive />
                     <div className="contents">
                         <Map />
-                        <div className="main">
+                        <div className="wrap-data">
                             <div className="tit-sub-wrap">
                                 <h2 className="tit-sub">콜검색</h2>
                             </div>
-                            {/* 검색 */}
-                            <Form className="tbl-filter">
-                                <Row>
-                                    <Col xs="1">
-                                        <FormGroup>
-                                            <Label for="timeBooking" className="blind">
-                                                예약시간
-                                            </Label>
-                                            <Select options={timeBooking} id="timeBooking" name="timeBooking" placeholder="예약시간" />
-                                        </FormGroup>
-                                    </Col>
-                                    <Col xs="3" className="d-flex">
-                                        <DatePickerButton /> <span className="wav-">~</span> <DatePickerButton />
-                                    </Col>
-                                    <Col>
-                                        <FormGroup>
-                                            <Label for="state" className="blind">
-                                                상태
-                                            </Label>
-                                            <Select isMulti options={state} id="state" name="state" placeholder="상태" />
-                                        </FormGroup>
-                                    </Col>
-                                    <Col xs="1">
-                                        <FormGroup>
-                                            <Label for="callBooking" className="blind">
-                                                예약콜포함
-                                            </Label>
-                                            <Select
-                                                options={callBooking}
-                                                defaultValue={callBooking[0]}
-                                                id="callBooking"
-                                                name="callBooking"
-                                                placeholder="예약콜포함"
-                                            />
-                                        </FormGroup>
-                                    </Col>
-                                    <Col xs="1" className="txt-right">
-                                        <FormGroup check>
-                                            <Input type="checkbox" id="check" />
-                                            <Label check for="check">
-                                                접수자
-                                            </Label>
-                                        </FormGroup>
-                                    </Col>
-                                    <Col xs="1">
-                                        <FormGroup>
-                                            <Label for="condition" className="blind">
-                                                조회조건
-                                            </Label>
-                                            <Select options={condition} id="condition" name="condition" placeholder="조회조건" />
-                                        </FormGroup>
-                                    </Col>
-                                    <Col>
-                                        <Input type="text" name="search" id="search" placeholder="검색" />
-                                    </Col>
-                                    <Col className="btn-group2">
-                                        <ButtonToggle className="c-blue">
-                                            <i class="las la-search"></i> 검색
-                                        </ButtonToggle>
-                                        <ButtonToggle className="c-green">
-                                            <i class="las la-file-excel"></i> 엑셀
-                                        </ButtonToggle>
-                                    </Col>
-                                </Row>
-                            </Form>
-                            {/* 리스트 */}
-                            <div className="lst-memo">
-                                <div className="tbl- tbl-type1 tbl-call ag-theme-balham" style={{ height: "300px" }}>
+                            <div className="lst-data">
+                                {/* 검색 */}
+                                <Form className="tbl-filter">
+                                    <Row>
+                                        <Col xs="1">
+                                            <FormGroup>
+                                                <Label for="timeBooking" className="blind">
+                                                    예약시간
+                                                </Label>
+                                                <Select options={timeBooking} id="timeBooking" name="timeBooking" placeholder="예약시간" />
+                                            </FormGroup>
+                                        </Col>
+                                        <Col xs="3" className="d-flex">
+                                            <DatePickerButton /> <span className="wav-">~</span> <DatePickerButton />
+                                        </Col>
+                                        <Col>
+                                            <FormGroup>
+                                                <Label for="state" className="blind">
+                                                    상태
+                                                </Label>
+                                                <Select isMulti options={state} id="state" name="state" placeholder="상태" />
+                                            </FormGroup>
+                                        </Col>
+                                        <Col xs="1">
+                                            <FormGroup>
+                                                <Label for="callBooking" className="blind">
+                                                    예약콜포함
+                                                </Label>
+                                                <Select
+                                                    options={callBooking}
+                                                    defaultValue={callBooking[0]}
+                                                    id="callBooking"
+                                                    name="callBooking"
+                                                    placeholder="예약콜포함"
+                                                />
+                                            </FormGroup>
+                                        </Col>
+                                        <Col xs="1" className="txt-right">
+                                            <FormGroup check>
+                                                <Input type="checkbox" id="check" />
+                                                <Label check for="check">
+                                                    접수자
+                                                </Label>
+                                            </FormGroup>
+                                        </Col>
+                                        <Col xs="1">
+                                            <FormGroup>
+                                                <Label for="condition" className="blind">
+                                                    조회조건
+                                                </Label>
+                                                <Select options={condition} id="condition" name="condition" placeholder="조회조건" />
+                                            </FormGroup>
+                                        </Col>
+                                        <Col>
+                                            <Input type="text" name="search" id="search" placeholder="검색" />
+                                        </Col>
+                                        <Col className="btn-group2">
+                                            <ButtonToggle className="c-blue">
+                                                <i className="las la-search"></i> 검색
+                                            </ButtonToggle>
+                                            <ButtonToggle className="c-green">
+                                                <i className="las la-file-excel"></i> 엑셀
+                                            </ButtonToggle>
+                                        </Col>
+                                    </Row>
+                                </Form>
+                                {/* 리스트 */}
+                                <div className="tbl- ag-theme-balham">
                                     <AgGridReact
                                         rowData={webCall}
                                         defaultColDef={defaultColDef}

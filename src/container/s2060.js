@@ -51,51 +51,51 @@ class Main extends Component {
                     <Receive />
                     <div className="contents">
                         <Map />
-                        <div className="main">
+                        <div className="wrap-data">
                             <div className="tit-sub-wrap">
                                 <h2 className="tit-sub">기사관리</h2>
                             </div>
-                            {/* 검색 */}
-                            <Form className="tbl-filter">
-                                <Row>
-                                    <Col xs="1">
-                                        <FormGroup>
-                                            <Label for="use" className="blind">
-                                                사용여부
-                                            </Label>
-                                            <Select options={use} defaultValue={use[0]} id="use" name="use" />
-                                        </FormGroup>
-                                    </Col>
-                                    <Col xs="1">
-                                        <FormGroup>
-                                            <Label for="condition" className="blind">
-                                                조회조건
-                                            </Label>
-                                            <Select options={condition} defaultValue={condition[0]} id="condition" name="condition" />
-                                        </FormGroup>
-                                    </Col>
-                                    <Col xs="2">
-                                        <Input type="text" name="search" id="search" placeholder="검색" />
-                                    </Col>
-                                    <Col className="btn-group2">
-                                        <ButtonToggle className="c-yellow">
-                                            <i class="las la-sms"></i> SMS 전송
-                                        </ButtonToggle>
-                                        <ButtonToggle className="c-blue">
-                                            <i class="las la-plus"></i> 신규
-                                        </ButtonToggle>
-                                        <ButtonToggle className="">
-                                            <i class="las la-search"></i> 검색
-                                        </ButtonToggle>
-                                        <ButtonToggle className="c-green">
-                                            <i class="las la-file-excel"></i> 엑셀
-                                        </ButtonToggle>
-                                    </Col>
-                                </Row>
-                            </Form>
-                            {/* 리스트 */}
-                            <div className="lst-memo">
-                                <div className="tbl- tbl-type1 tbl-call ag-theme-balham" style={{ height: "400px" }}>
+                            <div className="lst-data">
+                                {/* 검색 */}
+                                <Form className="tbl-filter">
+                                    <Row>
+                                        <Col xs="2">
+                                            <FormGroup>
+                                                <Label for="use" className="blind">
+                                                    사용여부
+                                                </Label>
+                                                <Select options={use} defaultValue={use[0]} id="use" name="use" />
+                                            </FormGroup>
+                                        </Col>
+                                        <Col xs="2">
+                                            <FormGroup>
+                                                <Label for="condition" className="blind">
+                                                    조회조건
+                                                </Label>
+                                                <Select options={condition} defaultValue={condition[0]} id="condition" name="condition" />
+                                            </FormGroup>
+                                        </Col>
+                                        <Col xs="2">
+                                            <Input type="text" name="search" id="search" placeholder="검색" />
+                                        </Col>
+                                        <Col className="btn-group2">
+                                            <ButtonToggle className="c-yellow">
+                                                <i className="las la-sms"></i> SMS 전송
+                                            </ButtonToggle>
+                                            <ButtonToggle className="c-blue">
+                                                <i className="las la-plus"></i> 신규
+                                            </ButtonToggle>
+                                            <ButtonToggle className="">
+                                                <i className="las la-search"></i> 검색
+                                            </ButtonToggle>
+                                            <ButtonToggle className="c-green">
+                                                <i className="las la-file-excel"></i> 엑셀
+                                            </ButtonToggle>
+                                        </Col>
+                                    </Row>
+                                </Form>
+                                {/* 리스트 */}
+                                <div className="tbl- ag-theme-balham">
                                     <AgGridReact
                                         rowData={webCall}
                                         defaultColDef={defaultColDef}

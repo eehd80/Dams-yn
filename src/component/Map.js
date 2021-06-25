@@ -43,19 +43,19 @@ const Map = () => (
                 </div>
                 {/* 지정 */}
                 <div className="point-context" style={{ top: "200px", left: "500px" }}>
-                    <div class="contextWrap">
-                        <a data-id="here" href="#" class="context_here">
-                            <span class="text">여기 주소 보기</span>
+                    <div className="contextWrap">
+                        <a data-id="here" href="#" className="context_here">
+                            <span className="text">여기 주소 보기</span>
                         </a>
-                        <a data-id="favorite" class="fav" href="#">
-                            <span class="text">즐겨찾기 추가</span>
+                        <a data-id="favorite" className="fav" href="#">
+                            <span className="text">즐겨찾기 추가</span>
                         </a>
-                        <span class="separator"></span>
-                        <a data-id="origin" href="#" class="ico- origin">
-                            <span class="text">출발지 지정</span>
+                        <span className="separator"></span>
+                        <a data-id="origin" href="#" className="ico- origin">
+                            <span className="text">출발지 지정</span>
                         </a>
                         <a data-id="destination" href="#" className="ico- dest">
-                            <span class="text">도착지 지정</span>
+                            <span className="text">도착지 지정</span>
                         </a>
                     </div>
                 </div>

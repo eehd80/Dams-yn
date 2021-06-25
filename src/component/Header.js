@@ -12,9 +12,6 @@ const Header = () => (
                 </h1>
                 <div className="util-wrap">
                     <ul className="lst-util">
-                        <li className="on">
-                            <a href="/">콜현황</a>
-                        </li>
                         <li>
                             <a href="/memo">메모</a>
                         </li>
