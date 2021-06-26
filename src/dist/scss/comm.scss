@@ -98,12 +98,12 @@
         width: 100%;
         margin: 20px 0 0;
         padding: 20px 0;
-        font-size: 0.93rem;
+        font-size: 0.85rem;
     }
     i {
         display: inline-block;
         vertical-align: middle;
-        margin: -2px 3px 0 0;
+        margin: -2px 0 0 0;
         font-size: 1.3em;
     }
 }
@@ -186,7 +186,7 @@
         height: 38px;
     }
     .inp-search {
-        width: 130px;
+        width: 150px;
         margin-right: 20px;
     }
     .btn-group2 {
@@ -215,7 +215,7 @@
             }
         }
         .css-2b097c-container {
-            width: 130px;
+            width: 120px;
         }
         label {
             padding-right: 10px;
@@ -440,7 +440,7 @@
     position: relative;
     .container {
         display: flex;
-        // justify-content: center;
+        justify-content: center;
     }
     .logo {
         margin-right: 30px;
@@ -489,14 +489,14 @@
         }
     }
     .nav-depth2 {
+        display: none;
         position: absolute;
         top: 53px;
         right: 0;
         left: 0;
         z-index: 1100;
         overflow: hidden;
-        padding: 20px 0;
-        display: none;
+        padding: 10px 0;
         > li {
             margin: 3px;
             > a {
@@ -562,7 +562,7 @@
         left: 0;
         right: 0;
         z-index: 1000;
-        height: 440px;
+        height: 425px;
         transition: all 0.5s;
         border-bottom: 1px solid #eee;
         background-color: $prim3;
@@ -608,6 +608,7 @@
 #receve {
     position: relative;
     width: 500px;
+    min-width: 500px;
     height: 1080px;
     border-right: 1px solid $line1;
     background-color: $w;

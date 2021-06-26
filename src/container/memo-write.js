@@ -75,29 +75,56 @@ class Main extends Component {
                                 <h2 className="tit-sub">메모</h2>
                             </div>
 
-                            {/* 리스트 */}
-                            <div className="lst-data">
+                            {/* 등록 */}
+                            <div className="regi-memo form-wrap">
+                                <Row>
+                                    <Col xs="1" className="tit-">
+                                        제목
+                                    </Col>
+                                    <Col xs="2">
+                                        <div className="form-control-wrap">
+                                            <NumberFormat
+                                                format="###-####-####"
+                                                id="receiveNum"
+                                                name="receiveNum"
+                                                className="form-control"
+                                            />
+                                            <span className="form-control-clear">
+                                                <span className="blind">지우기</span>
+                                            </span>
+                                        </div>
+                                    </Col>
+                                    <Col xs={{ size: 1, offset: 1 }} className="tit-">
+                                        <FormGroup check>
+                                            <Input type="checkbox" id="shuttle" />
+                                            <Label check for="shuttle">
+                                                알람일자
+                                            </Label>
+                                        </FormGroup>
+                                    </Col>
+                                    <Col xs="2">
+                                        <DatePickerButton />
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col xs="1" className="tit-">
+                                        내용
+                                    </Col>
+                                    <Col>
+                                        <Input type="textarea" name="text" id="memoCont" />
+                                    </Col>
+                                </Row>
+
                                 <div className="btn-util">
-                                    <Button color="primary">
-                                        <i className="las la-plus"></i> 신규
-                                    </Button>
                                     <Button color="secondary">
-                                        <i className="las la-search"></i> 검색
+                                        <i className="las la-check"></i> 확인
+                                    </Button>
+                                    <Button color="primary">
+                                        <i className="las la-save"></i> 저장
                                     </Button>
                                     <Button color="danger">
-                                        <i className="las la-backspace"></i> 삭제
+                                        <i className="las la-times"></i> 취소
                                     </Button>
-                                </div>
-                                <div className="tbl- ag-theme-balham">
-                                    <AgGridReact rowData={memoList} defaultColDef={defaultColDef}>
-                                        <AgGridColumn field="순서" minWidth={60} maxWidth={70}></AgGridColumn>
-                                        <AgGridColumn field="선택" minWidth={60} maxWidth={70} checkboxSelection={true}></AgGridColumn>
-                                        <AgGridColumn field="상태" minWidth={100}></AgGridColumn>
-                                        <AgGridColumn field="제목" minWidth={200}></AgGridColumn>
-                                        <AgGridColumn field="내용" minWidth={300}></AgGridColumn>
-                                        <AgGridColumn field="알람일자" minWidth={200}></AgGridColumn>
-                                        <AgGridColumn field="등록일" minWidth={200}></AgGridColumn>
-                                    </AgGridReact>
                                 </div>
                             </div>
                         </div>

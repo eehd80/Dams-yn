@@ -15,7 +15,7 @@ const defaultColDef = {
 };
 
 const Map = () => (
-    <ResizePanel direction="s" className="resize-panel" style={{ "min-height": "100px" }}>
+    <ResizePanel direction="s" className="resize-panel" style={{ minHeight: "100px" }}>
         <div className="resize-wrap panel">
             {" "}
             {/* 최소 높이값 설정 */}

@@ -103,7 +103,7 @@ class Main extends Component {
                                         <i className="las la-backspace"></i> 삭제
                                     </Button>
                                 </div>
-                                <div className="tbl- tbl-type1 tbl-call ag-theme-balham" style={{ height: "300px" }}>
+                                <div className="tbl- ag-theme-balham">
                                     <AgGridReact rowData={bbsList} defaultColDef={defaultColDef}>
                                         <AgGridColumn field="순서" minWidth={60} maxWidth={70}></AgGridColumn>
                                         <AgGridColumn field="제목" minWidth={400}></AgGridColumn>
