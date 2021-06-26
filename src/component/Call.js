@@ -571,15 +571,11 @@ const Current = (props) => {
             <div className="lst-data">
                 <Form className="tbl-filter">
                     <FormGroup>
-                        <Label for="renew" className="blind">
-                            갱신
-                        </Label>
+                        <Label for="renew">갱신</Label>
                         <Select options={renew} defaultValue={renew[0]} id="renew" name="renew" />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="array" className="blind">
-                            정렬
-                        </Label>
+                        <Label for="array">정렬</Label>
                         <Select options={array} defaultValue={array[0]} id="array" name="array" />
                     </FormGroup>
                     <FormGroup className="inp-et2">

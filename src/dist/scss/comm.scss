@@ -186,8 +186,8 @@
         height: 38px;
     }
     .inp-search {
-        width: auto;
-        // margin-right: 10px;
+        width: 130px;
+        margin-right: 20px;
     }
     .btn-group2 {
         margin-left: auto;
@@ -203,19 +203,22 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        align-items: center;
-        .css-2b097c-container {
-            width: 130px;
-            margin-right: 10px;
-            &.inp-et2 {
-                width: 220px;
+        margin-right: 10px;
+        &.inp-et2 {
+            > div {
+                width: 210px;
             }
-            &.inp-et3 {
+        }
+        &.inp-et3 {
+            > div {
                 width: 300px;
             }
         }
+        .css-2b097c-container {
+            width: 130px;
+        }
         label {
-            padding-right: 20px;
+            padding-right: 10px;
             white-space: nowrap;
         }
         > div {
@@ -476,7 +479,7 @@
             }
             > a {
                 display: block;
-                width: 160px;
+                width: 145px;
                 height: 50px;
                 line-height: 50px;
                 font-size: 1.1em;
@@ -504,6 +507,7 @@
                 color: $w;
                 font-weight: 500;
                 font-size: 0.857em;
+                letter-spacing: -0.05em;
                 &:hover,
                 &:focus {
                     color: $prim5;
@@ -544,6 +548,7 @@
             line-height: 16px;
             color: $w;
             font-size: 0.857em;
+            letter-spacing: -0.05em;
             &:hover,
             &:focus {
                 color: $prim5;
@@ -597,6 +602,7 @@
 #main {
     display: flex;
     // height: calc(100vh - 140px);
+    // padding-left: 500px;
     border-top: 1px solid $prim2;
 }
 #receve {

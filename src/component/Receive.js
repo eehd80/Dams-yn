@@ -47,6 +47,11 @@ const rowData = [
     { 상태: "접수", 접수시간: "21-06-02", 이용예정시간: "10:00", 배차예정시간: "12:00", 승차위치: "강남역", 하차위치: "삼성역" },
 ];
 
+const defaultColDef = {
+    width: 100,
+    resizable: true,
+};
+
 export default function Receive() {
     const [isSelected, setIsSelected] = useState(false);
     const onClickFold = function () {
@@ -389,7 +394,7 @@ export default function Receive() {
                     </Row>
                 </Form>
                 <div className="tbl- tbl-type1 tbl-receipt ag-theme-balham">
-                    <AgGridReact rowData={rowData}>
+                    <AgGridReact rowData={rowData} defaultColDef={defaultColDef}>
                         <AgGridColumn field="상태"></AgGridColumn>
                         <AgGridColumn field="접수시간"></AgGridColumn>
                         <AgGridColumn field="이용예정시간"></AgGridColumn>
