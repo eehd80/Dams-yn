@@ -408,6 +408,11 @@ const canclePop = [
     { value: "(2) 고객취소)", label: "(2) 고객취소" },
     { value: "(3) 고객취소)", label: "(3) 고객취소" },
 ];
+const telPop = [
+    { value: "010-222-2222", label: "010-2222-2222" },
+    { value: "010-222-2222", label: "010-2222-2222" },
+    { value: "010-222-2222", label: "010-2222-2222" },
+];
 
 const popTable = [
     { 순서: "1", 아이디: "3999", 이름: "오다다", 차량번호: "75로9874", 전화번호: "010-2222-3333", 당일수행콜: "55", 거리: "1km" },
@@ -574,14 +579,14 @@ class Main extends Component {
                                     </Row>
                                     <Row>
                                         <Col xs="3" className="tit">
-                                            <Label for="statePop">등록구분</Label>
+                                            <Label for="regisPop">등록구분</Label>
                                         </Col>
                                         <Col>
                                             <Select
                                                 isMulti
                                                 options={state}
-                                                id="statePop"
-                                                name="statePop"
+                                                id="regisPop"
+                                                name="regisPop"
                                                 placeholder="상태조건"
                                                 className="basic-multi-select"
                                                 classNamePrefix="select"
@@ -611,7 +616,7 @@ class Main extends Component {
                                     <h3>차량검색</h3>
                                 </div>
                                 <div className="cont-layer form-wrap">
-                                    <Row className="pop-filter">
+                                    <Row>
                                         <Col xs="3">
                                             <Label for="array" className="blind">
                                                 정렬
@@ -663,10 +668,10 @@ class Main extends Component {
                                 <div className="cont-layer form-wrap">
                                     <Row>
                                         <Col xs="2" className="tit">
-                                            <Label for="intervalPop">코드</Label>
+                                            <Label for="cancleCodePop">코드</Label>
                                         </Col>
                                         <Col>
-                                            <Input type="text" name="intervalPop" id="intervalPop" placeholder="(1) 고객취소" />
+                                            <Input type="text" name="cancleCodePop" id="cancleCodePop" placeholder="(1) 고객취소" />
                                         </Col>
                                         <Col>
                                             <Select
@@ -682,11 +687,11 @@ class Main extends Component {
                                     </Row>
                                     <Row>
                                         <Col xs="2" className="tit">
-                                            <Label for="guide">취소 내용</Label>
+                                            <Label for="cancleContPop">취소 내용</Label>
                                         </Col>
                                         <Col>
                                             <div className="form-control-wrap">
-                                                <Input type="text" id="guide" name="guide" />
+                                                <Input type="text" id="cancleContPop" name="cancleContPop" />
                                                 <span className="form-control-clear">
                                                     <span className="blind">지우기</span>
                                                 </span>
@@ -700,7 +705,7 @@ class Main extends Component {
                                                 type="textarea"
                                                 name="text"
                                                 id="etcQA"
-                                                placeholder="기타문의사항"
+                                                placeholder="상세내용"
                                                 style={{ height: "100px" }}
                                             />
                                         </Col>
@@ -712,6 +717,59 @@ class Main extends Component {
                                         </Col>
                                         <Col>
                                             <Button className="btn-w">취소</Button>
+                                        </Col>
+                                        <Col></Col>
+                                    </Row>
+                                </div>
+                                <Button className="btn-close">
+                                    <i className="las la-times"></i>
+                                    <span className="blind">닫기</span>
+                                </Button>
+                            </div>
+
+                            {/* SMS 전송 */}
+                            <div className="layer-" style={{ top: "200px", left: "1090px", width: "500px", transform: "translate(0,0)" }}>
+                                <div className="head-layer">
+                                    <h3>SMS 전송</h3>
+                                </div>
+                                <div className="cont-layer form-wrap">
+                                    <Row>
+                                        <Col xs="2" className="tit">
+                                            <Label for="namePop">고객명</Label>
+                                        </Col>
+                                        <Col>
+                                            <div className="form-control-wrap">
+                                                <Input type="text" name="namePop" id="namePop" value="허준일" />
+                                                <span className="form-control-clear">
+                                                    <span className="blind">지우기</span>
+                                                </span>
+                                            </div>
+                                        </Col>
+                                        <Col xs="2" className="tit">
+                                            <Label for="resPop">회신번호</Label>
+                                        </Col>
+                                        <Col>
+                                            <Select options={telPop} defaultValue={telPop[0]} id="disabilityType" name="disabilityType" />
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col xs="6">
+                                            <Input type="textarea" name="text" id="etcQA" style={{ height: "100px" }} />
+                                        </Col>
+                                        <Col>
+                                            <ul>
+                                                <li>고객님 오늘 하루도 좋은하루 되십시오.</li>
+                                                <li>저희 회사를 이용해 주셔서 감사합니다. 다음에도 꼭 이용해주세요.</li>
+                                            </ul>
+                                        </Col>
+                                    </Row>
+                                    <Row className="btn-area">
+                                        <Col></Col>
+                                        <Col>
+                                            <Button className="btn-w c-blue">적용</Button>
+                                        </Col>
+                                        <Col>
+                                            <Button className="btn-w">미적용</Button>
                                         </Col>
                                         <Col></Col>
                                     </Row>
