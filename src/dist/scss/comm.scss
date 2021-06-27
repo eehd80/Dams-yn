@@ -78,10 +78,10 @@
 }
 // btn
 .btn {
-    height: 100%;
+    height: 35px;
     padding: 0.375rem 1rem;
     border: none;
-    font-size: 0.9em;
+    font-size: 0.85rem;
     white-space: nowrap;
     &.btn-primary {
         border: 1px solid $prim3;
@@ -96,6 +96,7 @@
     }
     &.btn-h {
         width: 100%;
+        height: auto;
         margin: 20px 0 0;
         padding: 20px 0;
         font-size: 0.85rem;
@@ -153,15 +154,44 @@
 }
 .wav- {
     display: inline-block;
-    margin-right: 5px;
+    margin: 0 5px;
     line-height: 38px;
     white-space: nowrap;
+}
+
+// input
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.inp-search {
+    height: 35px;
+}
+.basic-multi-select {
+    .select__control {
+        min-height: 35px;
+        box-sizing: border-box;
+        &:hover {
+            min-height: 35px;
+            height: 35px;
+        }
+        .select__indicator {
+            padding: 6px;
+        }
+    }
+    .css-1hb7zxy-IndicatorsContainer {
+        height: 33px;
+    }
+    .css-tlfecz-indicatorContainer {
+        padding: 6px;
+    }
 }
 
 // table
 .tbl- {
     position: relative;
-    height: 100%;
+    height: 90%;
     &.tbl-map {
         height: 100%;
     }
@@ -176,17 +206,17 @@
         font-size: 0.8rem;
     }
     .btn {
-        height: 38px;
+        height: 35px;
     }
     .tit-label {
         margin: 10px 20px 0 0;
         white-space: nowrap;
     }
-    .form-control {
-        height: 38px;
-    }
+    // .form-control {
+    //     height: 38px;
+    // }
     .inp-search {
-        width: 150px;
+        width: 160px;
         margin-right: 20px;
     }
     .btn-group2 {
@@ -194,7 +224,7 @@
     }
     .react-datepicker-wrapper,
     .react-datepicker__input-container {
-        width: 150px;
+        width: 170px;
         margin-right: 10px;
     }
     .form-group {
@@ -234,7 +264,7 @@
 
 // layer
 .layer- {
-    position: absolute;
+    @include posXY;
     border: 1px solid $prim2;
     background: $w;
     box-shadow: 0 1px 4px 1px rgba(186, 191, 199, 0.4);
@@ -247,12 +277,14 @@
             font-size: 1.1em;
         }
     }
+    .form-wrap {
+        overflow: visible;
+    }
     .cont-layer {
-        padding: 20px 30px 20px 10px;
+        padding: 20px;
         .tit {
-            // justify-content: flex-end;
             align-items: center;
-            padding-left: 40px;
+            justify-content: center;
             &::before {
                 left: 30px;
             }
@@ -264,6 +296,15 @@
             display: flex;
             justify-content: space-between;
         }
+        .btn-area {
+            margin-top: 10px;
+            .btn {
+                height: 35px;
+            }
+        }
+    }
+    .tbl- {
+        height: 200px;
     }
     .form-control-wrap,
     .react-datepicker-wrapper,
@@ -285,12 +326,7 @@
         margin-left: 5px;
         padding: 0.375rem 0.5rem;
     }
-    .btn-area {
-        margin-top: 20px;
-        .btn {
-            height: 35px;
-        }
-    }
+
     .ag-root-wrapper {
         width: 100%;
     }
@@ -361,7 +397,47 @@
 
 // pop
 .pop- {
-    padding: 20px;
+    padding: 0 !important;
+    .head-pop {
+        height: 40px;
+        padding: 10px 20px;
+        background: $prim2;
+        color: $w;
+        h1 {
+            font-size: 1.1em;
+        }
+    }
+    .cont-pop {
+        height: calc(100vh - 40px);
+        padding: 20px;
+        // .tit {
+        //     align-items: center;
+        //     justify-content: center;
+        //     &::before {
+        //         left: 30px;
+        //     }
+        // }
+        // .row {
+        //     margin-bottom: 7px;
+        // }
+        // > div > div {
+        //     display: flex;
+        //     justify-content: space-between;
+        // }
+    }
+    .lst-data {
+        display: flex;
+        flex-direction: column;
+        .tbl- {
+            flex-grow: 1;
+        }
+    }
+    .tbl-filter {
+        > div > div {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
 }
 
 // 공통 레이아웃, 공통 디자인
@@ -591,7 +667,7 @@
         }
         a {
             display: block;
-            padding: 10px 20px;
+            padding: 7px 20px 6px;
             &:hover {
                 color: $prim3;
             }
@@ -600,16 +676,20 @@
 }
 
 #main {
+    position: relative;
     display: flex;
-    // height: calc(100vh - 140px);
-    // padding-left: 500px;
+    height: calc(100vh - 130px);
     border-top: 1px solid $prim2;
 }
 #receve {
-    position: relative;
+    // position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
     width: 500px;
     min-width: 500px;
-    height: 1080px;
+    height: 100%;
     border-right: 1px solid $line1;
     background-color: $w;
     box-shadow: 0 1px 3px 0 rgba($b, 0.1);
@@ -625,7 +705,11 @@
     }
     &.is-folded {
         width: 0;
+        min-width: 0;
         padding: 0;
+        + .contents {
+            margin-left: 0;
+        }
         .form-wrap {
             width: 0;
         }
@@ -655,33 +739,38 @@
         }
     }
 }
-.form-receipt {
-    position: relative;
-    // overflow-y: auto;
-    // overflow-x: hidden;
-    // height: calc(100% - 220px);
-    padding: 20px;
-    border-bottom: 1px solid $line1;
-}
-.form-wrap {
-    overflow: hidden;
+.contents {
+    overflow-y: auto;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    // width: 700px;
+    flex-grow: 1;
+    align-items: stretch;
+    margin-left: 500px;
+    padding-left: 3px;
+}
+
+.form-receipt {
+    position: relative;
+    padding: 20px;
+}
+.form-wrap {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
     height: 100%;
-    // height: calc(100vh - 145px);
     font-size: 0.8rem;
     .row {
         align-items: center;
-        // height: 38px;
-        margin-bottom: 10px;
+        margin: 0 -5px 10px;
         > * {
             padding: 0 5px;
         }
     }
     .tbl-receipt {
-        height: 200px;
-        margin-top: auto;
+        min-height: 200px;
+        padding: 0 20px 20px;
     }
     .form-control-wrap {
         position: relative;
@@ -695,7 +784,7 @@
             right: 0;
             align-items: center;
             justify-content: center;
-            width: 30px;
+            width: 25px;
             height: 37px;
             font-family: "Line Awesome Free";
             font-weight: 900;
@@ -704,9 +793,12 @@
         }
     }
     .form-control {
-        padding-right: 30px;
-        font-size: 0.9rem;
-        background: $gray-e;
+        height: 35px;
+        padding-right: 23px;
+        font-size: 0.85rem;
+    }
+    textarea.form-control {
+        height: 300px;
     }
     .form-control:focus + .form-control-clear::before {
         display: flex;
@@ -717,8 +809,8 @@
     }
     .form-check {
         position: relative;
-        height: 100%;
         padding: 1px 0 0;
+        margin-bottom: -0.125rem;
         label {
             &::before {
                 @include posY;
@@ -729,7 +821,6 @@
                 background-position: 0 0;
                 background-repeat: no-repeat;
                 content: "";
-                // transform: translateY(-2px);
             }
         }
         .form-check-input {
@@ -756,27 +847,14 @@
         position: relative;
         display: flex;
         align-items: center;
-        height: 100%;
-        padding-left: 13px;
+        justify-content: center;
+        height: 35px;
         color: $prim2;
         font-weight: 500;
         white-space: nowrap;
         letter-spacing: -1px;
-        &::before {
-            @include posY;
-            left: 5px;
-            display: block;
-            content: "";
-            width: 3px;
-            height: 3px;
-            border-radius: 50%;
-            background-color: $prim2;
-        }
-        .btn- {
-            position: absolute;
-            top: -1px;
-            right: 0;
-        }
+        background-color: $gray-e;
+        border-radius: 4px;
     }
     .col {
         white-space: nowrap;
@@ -785,9 +863,16 @@
         display: flex;
         align-items: center;
     }
-    .css-yk16xz-control,
-    .react-datepicker__input-container input {
-        background-color: $gray-e !important;
+    &.result-txt {
+        .txt {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 35px;
+            padding: 0 10px;
+            border: 1px solid $line3;
+            border-radius: 4px;
+        }
     }
 }
 
@@ -802,7 +887,6 @@
         width: 100%;
         height: 38px;
         padding: 0.375rem 0.75rem;
-        // font-size: 0.8rem;
         font-weight: 400;
         line-height: 1.5;
         color: #212529;
@@ -816,16 +900,6 @@
     }
 }
 
-.contents {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    align-items: stretch;
-    // height: 100%;
-    // height: calc(100vh - 137px);
-    padding-left: 3px;
-    // background: $gray-e;
-}
 .wrap-data {
     display: flex;
     flex-direction: column;
@@ -834,9 +908,10 @@
     position: relative;
     width: 100%;
     padding: 30px 30px;
+    box-sizing: border-box;
 }
 .lst-data {
-    height: 88%;
+    height: 100%;
 }
 
 .panel {

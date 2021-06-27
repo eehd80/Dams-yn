@@ -78,10 +78,8 @@ class Main extends Component {
                             {/* 등록 */}
                             <div className="regi-memo form-wrap">
                                 <Row>
-                                    <Col xs="1" className="tit-">
-                                        제목
-                                    </Col>
-                                    <Col xs="2">
+                                    <Col xs="1">제목</Col>
+                                    <Col xs="4">
                                         <div className="form-control-wrap">
                                             <NumberFormat
                                                 format="###-####-####"
@@ -94,28 +92,23 @@ class Main extends Component {
                                             </span>
                                         </div>
                                     </Col>
-                                    <Col xs={{ size: 1, offset: 1 }} className="tit-">
+                                    <Col xs={{ size: 2, offset: 1 }}>
                                         <FormGroup check>
-                                            <Input type="checkbox" id="shuttle" />
-                                            <Label check for="shuttle">
-                                                알람일자
-                                            </Label>
+                                            <Input type="checkbox" id="alarm" /> <Label for="alarm">알람일자</Label>
                                         </FormGroup>
                                     </Col>
-                                    <Col xs="2">
+                                    <Col>
                                         <DatePickerButton />
                                     </Col>
                                 </Row>
                                 <Row>
-                                    <Col xs="1" className="tit-">
-                                        내용
-                                    </Col>
+                                    <Col xs="1">내용</Col>
                                     <Col>
                                         <Input type="textarea" name="text" id="memoCont" />
                                     </Col>
                                 </Row>
 
-                                <div className="btn-util">
+                                <div className="btn-util mt-2">
                                     <Button color="secondary">
                                         <i className="las la-check"></i> 확인
                                     </Button>

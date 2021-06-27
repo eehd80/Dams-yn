@@ -42,7 +42,7 @@ const Map = () => (
                     </div>
                 </div>
                 {/* 지정 */}
-                <div className="point-context" style={{ top: "200px", left: "500px" }}>
+                <div className="point-context" style={{ top: "130px", left: "500px" }}>
                     <div className="contextWrap">
                         <a data-id="here" href="#" className="context_here">
                             <span className="text">여기 주소 보기</span>
@@ -61,7 +61,7 @@ const Map = () => (
                 </div>
             </div>
             <div className="map-info">
-                <div className="tbl- tbl-type1 tbl-map ag-theme-balham" style={{ height: "calc(100% - 30px)" }}>
+                <div className="tbl- ag-theme-balham">
                     <AgGridReact rowData={rowData} defaultColDef={defaultColDef}>
                         <AgGridColumn field="아이디"></AgGridColumn>
                         <AgGridColumn field="이름"></AgGridColumn>

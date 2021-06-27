@@ -11,7 +11,7 @@ const Gnb = () => (
                         <a href="/">접수</a>
                     </li>
                     <li>
-                        <a href="/">콜 현황</a>
+                        <a href="/s1020">콜 현황</a>
                     </li>
                     <li>
                         <a href="./s1030">예약콜 현황</a>

@@ -9,6 +9,7 @@ import memo from "./container/memo";
 import memoWrite from "./container/memo-write";
 import webCall from "./container/webCall";
 import board from "./container/board";
+import s1020 from "./container/s1020";
 import s1030 from "./container/s1030";
 import s1040 from "./container/s1040";
 import s1050 from "./container/s1050";
@@ -32,6 +33,7 @@ class App extends Component {
                 <Route path="/memoWrite" component={memoWrite} />
                 <Route path="/webCall" component={webCall} />
                 <Route path="/board" component={board} />
+                <Route path="/s1020" component={s1020} />
                 <Route path="/s1030" component={s1030} />
                 <Route path="/s1040" component={s1040} />
                 <Route path="/s1050" component={s1050} />

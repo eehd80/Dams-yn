@@ -396,7 +396,6 @@ const state = [
     { value: "배차", label: "배차" },
 ];
 const condition = [
-    { value: "검색전체", label: "검색" },
     { value: "ID", label: "ID" },
     { value: "고객명", label: "고객명" },
     { value: "고객전화", label: "고객전화" },
@@ -404,6 +403,19 @@ const condition = [
     { value: "승차위치", label: "승차위치" },
     { value: "하차위치", label: "하차위치" },
     { value: "차량번호", label: "차량번호" },
+];
+const canclePop = [
+    { value: "(1) 고객취소)", label: "(1) 고객취소" },
+    { value: "(2) 고객취소)", label: "(2) 고객취소" },
+    { value: "(3) 고객취소)", label: "(3) 고객취소" },
+];
+
+const popTable = [
+    { 순서: "1", 아이디: "3999", 이름: "오다다", 차량번호: "75로9874", 전화번호: "010-2222-3333", 당일수행콜: "55", 거리: "1km" },
+    { 순서: "1", 아이디: "3999", 이름: "오다다", 차량번호: "75로9874", 전화번호: "010-2222-3333", 당일수행콜: "55", 거리: "1km" },
+    { 순서: "1", 아이디: "3999", 이름: "오다다", 차량번호: "75로9874", 전화번호: "010-2222-3333", 당일수행콜: "55", 거리: "1km" },
+    { 순서: "1", 아이디: "3999", 이름: "오다다", 차량번호: "75로9874", 전화번호: "010-2222-3333", 당일수행콜: "55", 거리: "1km" },
+    { 순서: "1", 아이디: "3999", 이름: "오다다", 차량번호: "75로9874", 전화번호: "010-2222-3333", 당일수행콜: "55", 거리: "1km" },
 ];
 
 const Current = (props) => {
@@ -585,10 +597,9 @@ const Current = (props) => {
                         <Select
                             isMulti
                             options={state}
-                            defaultValue={state[0]}
                             id="state"
                             name="state"
-                            // placeholder="상태조건"
+                            placeholder="상태조건"
                             className="basic-multi-select"
                             classNamePrefix="select"
                         />
@@ -607,9 +618,10 @@ const Current = (props) => {
                         </ButtonToggle>
                     </div>
                 </Form>
-                <div className="tbl- ag-theme-balham" style={{ minHeight: "500px" }}>
+                <div className="tbl- ag-theme-balham">
                     <AgGridReact
                         rowData={callData}
+                        defaultValue={condition[0]}
                         defaultColDef={defaultColDef}
                         enableRangeSelection={true}
                         allowContextMenuWithControlKey={true}
@@ -642,7 +654,7 @@ const Current = (props) => {
 
                     {/* 마우스 오른쪽 클릭 */}
                     {/* 제가 이걸 왜 만들었을까요? ㅋ 옵션 적용해봤는데 적용이 안됐습니다. ㅜㅜ 혹시 필요하시면 사용하시고 옵션 사용하실거면 지우셔도 됩니다. */}
-                    <div className="layer-option" style={{ top: "50px", left: "100px" }}>
+                    {/* <div className="layer-option" style={{ top: "50px", left: "100px" }}>
                         <ul>
                             <li>수정</li>
                             <li>접수</li>
@@ -670,59 +682,8 @@ const Current = (props) => {
                             <li>접수위치</li>
                             <li>승차위치</li>
                         </ul>
-                    </div>
+                    </div> */}
                 </div>
-            </div>
-
-            <div className="layer-" style={{ top: "300px", right: "100px", width: "500px" }}>
-                <div className="head-layer">
-                    <h3>예약콜로 수정</h3>
-                </div>
-                <div className="cont-layer form-wrap">
-                    <Row>
-                        <Col xs="3" className="tit">
-                            예약일
-                        </Col>
-                        <Col>
-                            <DatePickerButton />
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col xs="3" className="tit">
-                            배차제한시간
-                        </Col>
-                        <Col>
-                            <NumberFormat format="##" id="previous" name="previous" placeholder="20" className="form-control" />
-                            <span className="wav-">분전</span>
-                        </Col>
-                        <Col>
-                            <NumberFormat format="##" id="after" name="after" placeholder="30" className="form-control" />
-                            <span className="wav-">분후</span>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col xs="3" className="tit">
-                            등록구분
-                        </Col>
-                        <Col>
-                            <Select options={condition} defaultValue={condition[0]} id="condition" name="condition" />
-                        </Col>
-                    </Row>
-                    <Row className="btn-area">
-                        <Col></Col>
-                        <Col>
-                            <Button className="btn-w c-blue">저장</Button>
-                        </Col>
-                        <Col>
-                            <Button className="btn-w">취소</Button>
-                        </Col>
-                        <Col></Col>
-                    </Row>
-                </div>
-                <Button className="btn-close">
-                    <i className="las la-times"></i>
-                    <span className="blind">닫기</span>
-                </Button>
             </div>
         </div>
     );

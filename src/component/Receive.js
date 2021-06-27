@@ -245,7 +245,7 @@ export default function Receive() {
                         <Col xs="2" className="tit">
                             <Label for="interval">배차제한시간</Label>
                         </Col>
-                        <Col xs="3" className="d-flex">
+                        <Col className="d-flex">
                             <div className="form-control-wrap">
                                 <Input type="number" name="interval" id="interval" placeholder="0" />
                                 <span className="form-control-clear">
@@ -254,7 +254,7 @@ export default function Receive() {
                             </div>
                             <span className="unit- unit-l">분전</span>
                         </Col>
-                        <Col xs="3" className="d-flex">
+                        <Col className="d-flex">
                             <div className="form-control-wrap">
                                 <Input type="number" name="interval2" id="interval2" placeholder="30" />
                                 <span className="form-control-clear">
@@ -263,7 +263,7 @@ export default function Receive() {
                             </div>
                             <span className="unit- unit-l">분후</span>
                         </Col>
-                        <Col>
+                        <Col xs="3">
                             <Button color="primary" className="btn-w">
                                 예약스케줄
                             </Button>
@@ -286,7 +286,7 @@ export default function Receive() {
                         <Col xs="2" className="tit">
                             <Label for="intervalAdd">배차제한시간</Label>
                         </Col>
-                        <Col xs="3" className="d-flex">
+                        <Col className="d-flex">
                             <div className="form-control-wrap">
                                 <Input type="number" name="intervalAdd" id="intervalAdd" placeholder="0" />
                                 <span className="form-control-clear">
@@ -295,7 +295,7 @@ export default function Receive() {
                             </div>
                             <span className="unit- unit-l">분전</span>
                         </Col>
-                        <Col xs="3" className="d-flex">
+                        <Col className="d-flex">
                             <div className="form-control-wrap">
                                 <Input type="number" name="intervalAdd2" id="intervalAdd2" placeholder="30" />
                                 <span className="form-control-clear">
@@ -304,7 +304,7 @@ export default function Receive() {
                             </div>
                             <span className="unit- unit-l">분후</span>
                         </Col>
-                        <Col>
+                        <Col xs="3">
                             <Button color="primary" className="btn-w">
                                 예약스케줄
                             </Button>
@@ -393,8 +393,8 @@ export default function Receive() {
                         </Col>
                     </Row>
                 </Form>
-                <div className="tbl- tbl-type1 tbl-receipt ag-theme-balham">
-                    <AgGridReact rowData={rowData} defaultColDef={defaultColDef}>
+                <div className="tbl- tbl-receipt ag-theme-balham">
+                    <AgGridReact rowData={rowData} defaultColDef={defaultColDef} style={{ height: "300px" }}>
                         <AgGridColumn field="상태"></AgGridColumn>
                         <AgGridColumn field="접수시간"></AgGridColumn>
                         <AgGridColumn field="이용예정시간"></AgGridColumn>
