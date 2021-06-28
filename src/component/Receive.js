@@ -59,7 +59,7 @@ export default function Receive() {
         setIsSelected(!isSelected);
     };
     return (
-        <div id="receve" className={isSelected ? "" : "is-folded"}>
+        <div id="receve" className={isSelected ? "is-folded" : ""}>
             {/* is-folded 추가 : 접수창 접기 */}
 
             <button role="button" className="btn-fold" aria-expanded="true" onClick={onClickFold}>

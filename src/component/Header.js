@@ -22,7 +22,7 @@ const Header = () => (
                             <a href="/s1030">예약콜</a>
                         </li>
                         <li>
-                            <a href="/Board">공지사항</a>
+                            <a href="/board">공지사항</a>
                         </li>
                     </ul>
                     <ul className="lst-log">
