@@ -414,12 +414,47 @@ const telPop = [
     { value: "010-222-2222", label: "010-2222-2222" },
 ];
 
-const popTable = [
+const carSearchPop = [
     { 순서: "1", 아이디: "3999", 이름: "오다다", 차량번호: "75로9874", 전화번호: "010-2222-3333", 당일수행콜: "55", 거리: "1km" },
     { 순서: "1", 아이디: "3999", 이름: "오다다", 차량번호: "75로9874", 전화번호: "010-2222-3333", 당일수행콜: "55", 거리: "1km" },
     { 순서: "1", 아이디: "3999", 이름: "오다다", 차량번호: "75로9874", 전화번호: "010-2222-3333", 당일수행콜: "55", 거리: "1km" },
     { 순서: "1", 아이디: "3999", 이름: "오다다", 차량번호: "75로9874", 전화번호: "010-2222-3333", 당일수행콜: "55", 거리: "1km" },
     { 순서: "1", 아이디: "3999", 이름: "오다다", 차량번호: "75로9874", 전화번호: "010-2222-3333", 당일수행콜: "55", 거리: "1km" },
+];
+const historyCallPop = [
+    {
+        순서: "1",
+        전상태: "대기",
+        후상태: "접수",
+        "처리자(ID)": "허준일2 (eehd09038)",
+        배차기사: "허허준",
+        처리시간: "2021-07-25 09:50:55",
+        변경내용: "고객정보, 고객전화번호 : 010-3333-5555  010-2222-3333  ",
+        배차차주: "허준일",
+    },
+    {
+        순서: "1",
+        전상태: "대기",
+        후상태: "접수",
+        "처리자(ID)": "허준일2 (eehd09038)",
+        배차기사: "허허준",
+        처리시간: "2021-07-25 09:50:55",
+        변경내용: "고객정보, 고객전화번호 : 010-3333-5555 &#8594; 010-2222-3333  ",
+        배차차주: "허준일",
+    },
+];
+const runCallPop = [
+    {
+        선택: "",
+        재배차: "2",
+        차수: "지정",
+        아이디: "8061",
+        이름: "용인-박보경",
+        차량번호: "55조 5468",
+        차량상태: "빈차",
+        응답여부: "요청",
+        거리: "미응답",
+    },
 ];
 
 class Main extends Component {
@@ -633,7 +668,7 @@ class Main extends Component {
                                         </Col>
                                     </Row>
                                     <div className="tbl- ag-theme-balham">
-                                        <AgGridReact rowData={popTable} defaultColDef={defaultColDef} style={{ height: "300px" }}>
+                                        <AgGridReact rowData={carSearchPop} defaultColDef={defaultColDef} style={{ height: "300px" }}>
                                             <AgGridColumn field="순서" minWidth={60} maxWidth={70}></AgGridColumn>
                                             <AgGridColumn field="아이디" minWidth={60} maxWidth={70}></AgGridColumn>
                                             <AgGridColumn field="이름" minWidth={100}></AgGridColumn>
@@ -728,7 +763,7 @@ class Main extends Component {
                             </div>
 
                             {/* SMS 전송 */}
-                            <div className="layer-" style={{ top: "200px", left: "1090px", width: "500px", transform: "translate(0,0)" }}>
+                            <div className="layer-" style={{ top: "140px", left: "1090px", width: "600px", transform: "translate(0,0)" }}>
                                 <div className="head-layer">
                                     <h3>SMS 전송</h3>
                                 </div>
@@ -753,26 +788,136 @@ class Main extends Component {
                                         </Col>
                                     </Row>
                                     <Row>
-                                        <Col xs="6">
-                                            <Input type="textarea" name="text" id="etcQA" style={{ height: "100px" }} />
+                                        <Col xs="4">
+                                            <FormGroup className="inp-txt">
+                                                <Input
+                                                    type="textarea"
+                                                    name="text"
+                                                    id="etcQA"
+                                                    className="inp-blue"
+                                                    style={{ height: "150px" }}
+                                                    placeholder="SMS 내용 입력"
+                                                />
+                                                <div className="txt-byte">0 Byte</div>
+                                            </FormGroup>
                                         </Col>
-                                        <Col>
-                                            <ul>
+                                        <Col xs="8">
+                                            <ul className="lst-sms">
+                                                <li>고객님 오늘 하루도 좋은하루 되십시오.</li>
+                                                <li>저희 회사를 이용해 주셔서 감사합니다. 다음에도 꼭 이용해주세요.</li>
+                                                <li>고객님 오늘 하루도 좋은하루 되십시오.</li>
+                                                <li>저희 회사를 이용해 주셔서 감사합니다. 다음에도 꼭 이용해주세요.</li>
+                                                <li>고객님 오늘 하루도 좋은하루 되십시오.</li>
+                                                <li>저희 회사를 이용해 주셔서 감사합니다. 다음에도 꼭 이용해주세요.</li>
+                                                <li>고객님 오늘 하루도 좋은하루 되십시오.</li>
+                                                <li>저희 회사를 이용해 주셔서 감사합니다. 다음에도 꼭 이용해주세요.</li>
                                                 <li>고객님 오늘 하루도 좋은하루 되십시오.</li>
                                                 <li>저희 회사를 이용해 주셔서 감사합니다. 다음에도 꼭 이용해주세요.</li>
                                             </ul>
                                         </Col>
                                     </Row>
+                                    <Row>
+                                        <Col xs="2" className="tit">
+                                            <Label for="resPop">예약전송</Label>
+                                        </Col>
+                                        <Col>
+                                            <DatePickerButton />
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col xs="2" className="tit">
+                                            <Label for="receiveNum">회신번호</Label>
+                                        </Col>
+                                        <Col>
+                                            <div className="form-control-wrap">
+                                                <NumberFormat
+                                                    format="###-####-####"
+                                                    id="receiveNum"
+                                                    name="receiveNum"
+                                                    className="form-control"
+                                                />
+                                                <span className="form-control-clear">
+                                                    <span className="blind">지우기</span>
+                                                </span>
+                                            </div>
+                                        </Col>
+                                        <Col xs="2" className="tit">
+                                            <Label for="receiveNum">대상번호</Label>
+                                        </Col>
+                                        <Col>
+                                            <div className="form-control-wrap">
+                                                <NumberFormat
+                                                    format="###-####-####"
+                                                    id="receiveNum"
+                                                    name="receiveNum"
+                                                    className="form-control"
+                                                />
+                                                <span className="form-control-clear">
+                                                    <span className="blind">지우기</span>
+                                                </span>
+                                            </div>
+                                        </Col>
+                                    </Row>
                                     <Row className="btn-area">
                                         <Col></Col>
                                         <Col>
-                                            <Button className="btn-w c-blue">적용</Button>
+                                            <Button className="btn-w c-blue">확인</Button>
                                         </Col>
                                         <Col>
-                                            <Button className="btn-w">미적용</Button>
+                                            <Button className="btn-w">취소</Button>
                                         </Col>
                                         <Col></Col>
                                     </Row>
+                                </div>
+                                <Button className="btn-close">
+                                    <i className="las la-times"></i>
+                                    <span className="blind">닫기</span>
+                                </Button>
+                            </div>
+
+                            {/* 콜이력 */}
+                            <div className="layer-" style={{ top: "600px", left: "570px", width: "500px", transform: "translate(0,0)" }}>
+                                <div className="head-layer">
+                                    <h3>콜이력</h3>
+                                </div>
+                                <div className="cont-layer form-wrap">
+                                    <div className="tbl- ag-theme-balham">
+                                        <AgGridReact rowData={historyCallPop} defaultColDef={defaultColDef} style={{ height: "400px" }}>
+                                            <AgGridColumn field="순서" width={60} maxWidth={70}></AgGridColumn>
+                                            <AgGridColumn field="전상태" minWidth={60} maxWidth={70}></AgGridColumn>
+                                            <AgGridColumn field="후상태" minWidth={60} maxWidth={70}></AgGridColumn>
+                                            <AgGridColumn field="처리자(ID)" minWidth={170}></AgGridColumn>
+                                            <AgGridColumn field="배차기사" minWidth={100}></AgGridColumn>
+                                            <AgGridColumn field="처리시간" minWidth={200}></AgGridColumn>
+                                            <AgGridColumn field="변경내용" minWidth={400}></AgGridColumn>
+                                            <AgGridColumn field="배차차주"></AgGridColumn>
+                                        </AgGridReact>
+                                    </div>
+                                </div>
+                                <Button className="btn-close">
+                                    <i className="las la-times"></i>
+                                    <span className="blind">닫기</span>
+                                </Button>
+                            </div>
+
+                            {/* 배차재현 */}
+                            <div className="layer-" style={{ top: "600px", left: "1090px", width: "500px", transform: "translate(0,0)" }}>
+                                <div className="head-layer">
+                                    <h3>배차재현</h3>
+                                </div>
+                                <div className="cont-layer form-wrap">
+                                    <div className="tbl- ag-theme-balham">
+                                        <AgGridReact rowData={runCallPop} defaultColDef={defaultColDef} style={{ height: "400px" }}>
+                                            <AgGridColumn field="선택" width={60} maxWidth={70} checkboxSelection={true}></AgGridColumn>
+                                            <AgGridColumn field="재배차" minWidth={60} maxWidth={70}></AgGridColumn>
+                                            <AgGridColumn field="차수" minWidth={60} maxWidth={70}></AgGridColumn>
+                                            <AgGridColumn field="아이디" minWidth={100}></AgGridColumn>
+                                            <AgGridColumn field="이름" minWidth={100}></AgGridColumn>
+                                            <AgGridColumn field="차량번호"></AgGridColumn>
+                                            <AgGridColumn field="응답여부"></AgGridColumn>
+                                            <AgGridColumn field="거리"></AgGridColumn>
+                                        </AgGridReact>
+                                    </div>
                                 </div>
                                 <Button className="btn-close">
                                     <i className="las la-times"></i>

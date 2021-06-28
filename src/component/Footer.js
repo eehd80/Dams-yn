@@ -35,6 +35,28 @@ const defaultColDef = {
 const Footer = () => (
     <div id="footer">
         <div className="container">
+            <FormGroup>
+                <Label for="timeSearch">예약</Label>
+                <DatePickerButton />
+                <div className="form-control-wrap">
+                    <Input type="number" name="intervalPop" id="intervalPop" placeholder="20" />
+                    <span className="form-control-clear">
+                        <span className="blind">지우기</span>
+                    </span>
+                </div>
+                <span className="wav-">분전</span>
+                <div className="form-control-wrap">
+                    <Input type="number" name="intervalPop2" id="intervalPop2" placeholder="30" />
+                    <span className="form-control-clear">
+                        <span className="blind">지우기</span>
+                    </span>
+                </div>
+                <span className="wav-">분후</span>
+            </FormGroup>
+            <Row>
+                <Col className="tit">타이틀</Col>
+                <Col></Col>
+            </Row>
             <Row className="pop-filter">
                 <Col xs="3">
                     <Label for="array" className="blind">
