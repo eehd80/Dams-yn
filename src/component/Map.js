@@ -15,14 +15,14 @@ const defaultColDef = {
 };
 
 const Map = () => (
-    <ResizePanel direction="s" className="resize-panel" style={{ minHeight: "100px" }}>
+    <ResizePanel direction="s" className="resize-panel" style={{ minHeight: "20px" }}>
         <div className="resize-wrap panel">
             {" "}
             {/* 최소 높이값 설정 */}
             <div id="Map" className="map-bg">
                 {/* 맵 api를 설정하실거 같아서 map-bg에 임시로 이미지를 깔아놨습니다. 나중에 이 클래스를 빼주세요 */}
                 {/* 출발 */}
-                <div className="flag-wrap flag-origin" style={{ top: "50px", left: "408px" }}>
+                <div className="flag-wrap flag-origin" style={{ top: "-48px", left: "408px" }}>
                     <div className="guide">끌어서 출발지 변경</div>
                     <a href="#" className="remover">
                         <span className="blind">삭제</span>
@@ -32,7 +32,7 @@ const Map = () => (
                     </div>
                 </div>
                 {/* 도착 */}
-                <div className="flag-wrap flag-dest" style={{ top: "22px", left: "132px" }}>
+                <div className="flag-wrap flag-dest" style={{ top: "-48px", left: "132px" }}>
                     <div className="guide">끌어서 도착지 변경</div>
                     <a href="#" className="remover">
                         <span className="blind">삭제</span>
@@ -42,7 +42,7 @@ const Map = () => (
                     </div>
                 </div>
                 {/* 지정 */}
-                <div className="point-context" style={{ top: "130px", left: "500px" }}>
+                <div className="point-context" style={{ top: "20px", left: "500px" }}>
                     <div className="contextWrap">
                         <a data-id="here" href="#" className="context_here">
                             <span className="text">여기 주소 보기</span>

@@ -230,12 +230,12 @@ class Main extends Component {
                             </div>
                             <div className="lst-data">
                                 <Form className="tbl-filter">
-                                    <FormGroup className="inp-et3">
+                                    <FormGroup>
                                         <Label for="timeSearch" className="blind">
                                             검색시간조건
                                         </Label>
                                         <Select options={timeSearch} id="timeSearch" name="timeSearch" placeholder="검색시간조건" />
-                                        <DatePickerButton /> <span className="wav-">~</span> <DatePickerButton />
+                                        <DatePickerButton /> <span className="wav- wav-right">~</span> <DatePickerButton />
                                     </FormGroup>
                                     <FormGroup>
                                         <Label for="callAll" className="blind">
