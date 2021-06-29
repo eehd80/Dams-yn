@@ -111,7 +111,7 @@ const disabilityRank = [
     { value: "6급", label: "6급" },
     { value: "7급", label: "7급" },
 ];
-const communicate = [
+const communication = [
     { value: "가능", label: "가능" },
     { value: "불가능", label: "불가능" },
 ];
@@ -124,10 +124,6 @@ const condition = [
     { value: "고객접수번호", label: "고객접수번호" },
     { value: "고객전화번호", label: "고객전화번호" },
     { value: "휴대폰번호", label: "휴대폰번호" },
-];
-const usePop = [
-    { value: "사용", label: "사용" },
-    { value: "비사용", label: "비사용" },
 ];
 const positionPop = [
     { value: "관내", label: "관내" },
@@ -150,103 +146,68 @@ class Main extends Component {
                             <div className="lst-data">
                                 {/* 검색 */}
                                 <Form className="tbl-filter">
-                                    <Row>
-                                        <Col xs="2">
-                                            <FormGroup>
-                                                <Label for="availability" className="blind">
-                                                    사용여부
-                                                </Label>
-                                                <Select
-                                                    options={availability}
-                                                    id="availability"
-                                                    name="availability"
-                                                    placeholder="사용여부"
-                                                />
-                                            </FormGroup>
-                                        </Col>
-                                        <Col xs="2">
-                                            <FormGroup>
-                                                <Label for="wheelchair" className="blind">
-                                                    휠체어
-                                                </Label>
-                                                <Select options={wheelchair} id="wheelchair" name="wheelchair" placeholder="휠체어" />
-                                            </FormGroup>
-                                        </Col>
-                                        <Col xs="2">
-                                            <FormGroup>
-                                                <Label for="disabilityType" className="blind">
-                                                    장애종류
-                                                </Label>
-                                                <Select
-                                                    options={disabilityType}
-                                                    id="disabilityType"
-                                                    name="disabilityType"
-                                                    placeholder="장애종류"
-                                                />
-                                            </FormGroup>
-                                        </Col>
-                                        <Col xs="2">
-                                            <FormGroup>
-                                                <Label for="disabilityRank" className="blind">
-                                                    장애등급
-                                                </Label>
-                                                <Select
-                                                    options={disabilityRank}
-                                                    id="disabilityRank"
-                                                    name="disabilityRank"
-                                                    placeholder="장애등급"
-                                                />
-                                            </FormGroup>
-                                        </Col>
-                                        <Col xs="2">
-                                            <FormGroup>
-                                                <Label for="communicate" className="blind">
-                                                    소통여부
-                                                </Label>
-                                                <Select options={communicate} id="communicate" name="communicate" placeholder="소통여부" />
-                                            </FormGroup>
-                                        </Col>
-                                        <Col xs="2">
-                                            <FormGroup>
-                                                <Label for="gender" className="blind">
-                                                    성별
-                                                </Label>
-                                                <Select options={gender} id="gender" name="gender" placeholder="성별" />
-                                            </FormGroup>
-                                        </Col>
-                                    </Row>
+                                    <FormGroup>
+                                        <Label for="availability" className="blind">
+                                            사용여부
+                                        </Label>
+                                        <Select options={availability} id="availability" name="availability" placeholder="사용여부" />
+                                    </FormGroup>
+                                    <FormGroup>
+                                        <Label for="wheelchair" className="blind">
+                                            휠체어
+                                        </Label>
+                                        <Select options={wheelchair} id="wheelchair" name="wheelchair" placeholder="휠체어" />
+                                    </FormGroup>
+                                    <FormGroup>
+                                        <Label for="disabilityType" className="blind">
+                                            장애종류
+                                        </Label>
+                                        <Select options={disabilityType} id="disabilityType" name="disabilityType" placeholder="장애종류" />
+                                    </FormGroup>
+                                    <FormGroup>
+                                        <Label for="disabilityRank" className="blind">
+                                            장애등급
+                                        </Label>
+                                        <Select options={disabilityRank} id="disabilityRank" name="disabilityRank" placeholder="장애등급" />
+                                    </FormGroup>
+                                    <FormGroup>
+                                        <Label for="communication" className="blind">
+                                            소통여부
+                                        </Label>
+                                        <Select options={communication} id="communication" name="communication" placeholder="소통여부" />
+                                    </FormGroup>
+                                    <FormGroup>
+                                        <Label for="gender" className="blind">
+                                            성별
+                                        </Label>
+                                        <Select options={gender} id="gender" name="gender" placeholder="성별" />
+                                    </FormGroup>
                                 </Form>
                                 <Form className="tbl-filter">
-                                    <Row>
-                                        <Col xs="2">
-                                            <FormGroup>
-                                                <Label for="condition">조회조건</Label>
-                                                <Select options={condition} defaultValue={condition[0]} id="condition" name="condition" />
-                                            </FormGroup>
-                                        </Col>
-                                        <Col xs="2">
-                                            <Input type="text" name="search" id="search" placeholder="검색" />
-                                        </Col>
-                                        <Col xs="3">
-                                            <FormGroup>
-                                                <Label for="useNumber">이용횟수</Label>
-                                                <Input type="number" name="useNumber" id="useNumber" placeholder="0" />
-                                                <span className="wav-">~</span>
-                                                <Input type="number" name="useNumber2" id="useNumber2" placeholder="999,999" />
-                                            </FormGroup>
-                                        </Col>
-                                        <Col className="btn-group2">
-                                            <ButtonToggle className="c-blue">
-                                                <i className="las la-plus"></i> 신규
-                                            </ButtonToggle>
-                                            <ButtonToggle className="">
-                                                <i className="las la-search"></i> 검색
-                                            </ButtonToggle>
-                                            <ButtonToggle className="c-green">
-                                                <i className="las la-file-excel"></i> 엑셀
-                                            </ButtonToggle>
-                                        </Col>
-                                    </Row>
+                                    <FormGroup>
+                                        <Label for="condition" className="blind">
+                                            조회조건
+                                        </Label>
+                                        <Select options={condition} defaultValue={condition[0]} id="condition" name="condition" />
+                                    </FormGroup>
+                                    <Input type="text" name="search" id="search" placeholder="검색" className="inp-search" />
+                                    <FormGroup>
+                                        <Label for="useNumber">이용횟수</Label>
+                                        <Input type="number" name="useNumber" id="useNumber" placeholder="0" />
+                                        <span className="wav-">~</span>
+                                        <Input type="number" name="useNumber2" id="useNumber2" placeholder="999,999" />
+                                    </FormGroup>
+                                    <div className="btn-group2">
+                                        <ButtonToggle className="c-blue">
+                                            <i className="las la-plus"></i> 신규
+                                        </ButtonToggle>
+                                        <ButtonToggle className="">
+                                            <i className="las la-search"></i> 검색
+                                        </ButtonToggle>
+                                        <ButtonToggle className="c-green">
+                                            <i className="las la-file-excel"></i> 엑셀
+                                        </ButtonToggle>
+                                    </div>
                                 </Form>
                                 {/* 리스트 */}
                                 <div className="tbl- ag-theme-balham">
@@ -273,17 +234,17 @@ class Main extends Component {
                                 </div>
                             </div>
 
-                            {/* layer */}
-                            <div className="layer-" style={{ top: "300px", left: "40px", width: "700px" }}>
+                            {/* layer-고객등록 */}
+                            <div className="layer-" style={{ top: "250px", left: "40px", width: "700px", transform: "translate(0,0)" }}>
                                 <div className="head-layer">
                                     <h3>고객 등록</h3>
                                 </div>
                                 <div className="cont-layer form-wrap">
                                     <Row>
-                                        <Col className="tit">
-                                            <label for="namePop">고객명</label>
+                                        <Col xs="2" className="tit">
+                                            <Label for="namePop">고객명</Label>
                                         </Col>
-                                        <Col xs="4">
+                                        <Col>
                                             <div className="form-control-wrap">
                                                 <Input type="text" name="namePop" id="namePop" />
                                                 <span className="form-control-clear">
@@ -291,24 +252,29 @@ class Main extends Component {
                                                 </span>
                                             </div>
                                         </Col>
-                                        <Col className="tit">
-                                            <label for="usePop">사용여부</label>
+                                        <Col xs="2" className="tit">
+                                            <Label for="availabilityPop">사용여부</Label>
                                         </Col>
-                                        <Col xs="4">
-                                            <Select options={usePop} defaultValue={usePop[0]} id="usePop" name="usePop" />
+                                        <Col>
+                                            <Select
+                                                options={availability}
+                                                defaultValue={availability[0]}
+                                                id="availabilityPop"
+                                                name="availabilityPop"
+                                            />
                                         </Col>
                                     </Row>
                                     <Row>
-                                        <Col className="tit">
+                                        <Col xs="2" className="tit">
                                             <Label for="birthPop">생년월일/성별</Label>
                                         </Col>
-                                        <Col xs="4">
+                                        <Col>
                                             <DatePickerButton />
                                         </Col>
-                                        <Col className="tit">
-                                            <label for="positionPop">거주위치</label>
+                                        <Col xs="2" className="tit">
+                                            <Label for="positionPop">거주위치</Label>
                                         </Col>
-                                        <Col xs="4">
+                                        <Col>
                                             <Select
                                                 options={positionPop}
                                                 defaultValue={positionPop[0]}
@@ -318,10 +284,10 @@ class Main extends Component {
                                         </Col>
                                     </Row>
                                     <Row>
-                                        <Col className="tit">
-                                            <label for="receiptPop">고객접수번호</label>
+                                        <Col xs="2" className="tit">
+                                            <Label for="receiptPop">고객접수번호</Label>
                                         </Col>
-                                        <Col xs="4">
+                                        <Col>
                                             <div className="form-control-wrap">
                                                 <Input type="text" name="receiptPop" id="receiptPop" />
                                                 <span className="form-control-clear">
@@ -330,10 +296,10 @@ class Main extends Component {
                                             </div>
                                             <Button className="btn-pop">중복검사</Button>
                                         </Col>
-                                        <Col className="tit">
-                                            <label for="reptelPop">대표자전화</label>
+                                        <Col xs="2" className="tit">
+                                            <Label for="reptelPop">대표자전화</Label>
                                         </Col>
-                                        <Col xs="4">
+                                        <Col>
                                             <div className="form-control-wrap">
                                                 <NumberFormat
                                                     format="###-####-####"
@@ -349,22 +315,10 @@ class Main extends Component {
                                         </Col>
                                     </Row>
                                     <Row>
-                                        <Col className="tit">
-                                            <label for="adressPop">주소</label>
+                                        <Col xs="2" className="tit">
+                                            <Label for="phonePop">휴대폰번호</Label>
                                         </Col>
-                                        <Col xs="4">
-                                            <div className="form-control-wrap">
-                                                <Input type="text" name="adressPop" id="adressPop" />
-                                                <span className="form-control-clear">
-                                                    <span className="blind">지우기</span>
-                                                </span>
-                                            </div>
-                                            <Button className="btn-pop">주소검색</Button>
-                                        </Col>
-                                        <Col className="tit">
-                                            <label for="phonePop">휴대폰번호</label>
-                                        </Col>
-                                        <Col xs="4">
+                                        <Col>
                                             <div className="form-control-wrap">
                                                 <NumberFormat
                                                     format="###-####-####"
@@ -380,8 +334,21 @@ class Main extends Component {
                                         </Col>
                                     </Row>
                                     <Row>
-                                        <Col></Col>
-                                        <Col xs="4">
+                                        <Col xs="2" className="tit">
+                                            <Label for="adressPop">주소</Label>
+                                        </Col>
+                                        <Col xs="5">
+                                            <div className="form-control-wrap">
+                                                <Input type="text" name="adressPop" id="adressPop" />
+                                                <span className="form-control-clear">
+                                                    <span className="blind">지우기</span>
+                                                </span>
+                                            </div>
+                                            <Button className="btn-pop">주소검색</Button>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col xs={{ offset: "2", size: "10" }}>
                                             <div className="form-control-wrap">
                                                 <Input type="text" name="adressPop2" id="adressPop2" />
                                                 <span className="form-control-clear">
@@ -389,14 +356,22 @@ class Main extends Component {
                                                 </span>
                                             </div>
                                         </Col>
-                                        <Col></Col>
-                                        <Col xs="4"></Col>
                                     </Row>
                                     <Row>
-                                        <Col className="tit">
-                                            <label for="addtelPop1">추가전화1</label>
+                                        <Col xs={{ offset: "2", size: "10" }}>
+                                            <div className="form-control-wrap">
+                                                <Input type="text" name="adressPop3" id="adressPop3" placeholder="주소상세" />
+                                                <span className="form-control-clear">
+                                                    <span className="blind">지우기</span>
+                                                </span>
+                                            </div>
                                         </Col>
-                                        <Col xs="4">
+                                    </Row>
+                                    <Row>
+                                        <Col xs="2" className="tit">
+                                            <Label for="addtelPop1">추가전화1</Label>
+                                        </Col>
+                                        <Col>
                                             <div className="form-control-wrap">
                                                 <NumberFormat
                                                     format="###-####-####"
@@ -409,10 +384,10 @@ class Main extends Component {
                                                 </span>
                                             </div>
                                         </Col>
-                                        <Col className="tit">
-                                            <label for="notePop1">비고</label>
+                                        <Col xs="2" className="tit">
+                                            <Label for="notePop1">비고</Label>
                                         </Col>
-                                        <Col xs="4">
+                                        <Col>
                                             <div className="form-control-wrap">
                                                 <Input type="text" name="notePop1" id="notePop1" />
                                                 <span className="form-control-clear">
@@ -422,10 +397,10 @@ class Main extends Component {
                                         </Col>
                                     </Row>
                                     <Row>
-                                        <Col className="tit">
-                                            <label for="addtelPop1">추가전화2</label>
+                                        <Col xs="2" className="tit">
+                                            <Label for="addtelPop2">추가전화2</Label>
                                         </Col>
-                                        <Col xs="4">
+                                        <Col>
                                             <div className="form-control-wrap">
                                                 <NumberFormat
                                                     format="###-####-####"
@@ -438,10 +413,10 @@ class Main extends Component {
                                                 </span>
                                             </div>
                                         </Col>
-                                        <Col className="tit">
-                                            <label for="notePop2">비고</label>
+                                        <Col xs="2" className="tit">
+                                            <Label for="notePop2">비고</Label>
                                         </Col>
-                                        <Col xs="4">
+                                        <Col>
                                             <div className="form-control-wrap">
                                                 <Input type="text" name="notePop2" id="notePop2" />
                                                 <span className="form-control-clear">
@@ -451,10 +426,10 @@ class Main extends Component {
                                         </Col>
                                     </Row>
                                     <Row>
-                                        <Col className="tit">
-                                            <label for="addtelPop3">추가전화3</label>
+                                        <Col xs="2" className="tit">
+                                            <Label for="addtelPop3">추가전화3</Label>
                                         </Col>
-                                        <Col xs="4">
+                                        <Col>
                                             <div className="form-control-wrap">
                                                 <NumberFormat
                                                     format="###-####-####"
@@ -467,16 +442,118 @@ class Main extends Component {
                                                 </span>
                                             </div>
                                         </Col>
-                                        <Col className="tit">
-                                            <label for="notePop3">비고</label>
+                                        <Col xs="2" className="tit">
+                                            <Label for="notePop3">비고</Label>
                                         </Col>
-                                        <Col xs="4">
+                                        <Col>
                                             <div className="form-control-wrap">
                                                 <Input type="text" name="notePop3" id="notePop3" />
                                                 <span className="form-control-clear">
                                                     <span className="blind">지우기</span>
                                                 </span>
                                             </div>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col xs="2" className="tit">
+                                            <Label for="disabilityTypePop">장애종류</Label> <span className="ico-c">필수</span>
+                                        </Col>
+                                        <Col>
+                                            <Select
+                                                options={disabilityType}
+                                                defaultValue={disabilityType[0]}
+                                                id="disabilityTypePop"
+                                                name="disabilityTypePop"
+                                            />
+                                        </Col>
+                                        <Col xs="2" className="tit">
+                                            <FormGroup check>
+                                                <Input type="checkbox" id="bookingPop" /> <Label for="bookingPop">예약</Label>
+                                            </FormGroup>
+                                        </Col>
+                                        <Col>
+                                            <DatePickerButton />
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col xs="2" className="tit">
+                                            <Label for="disabilityRankPop">장애등급</Label> <span className="ico-c">필수</span>
+                                        </Col>
+                                        <Col>
+                                            <Select
+                                                options={disabilityRank}
+                                                defaultValue={disabilityRank[0]}
+                                                id="disabilityRankPop"
+                                                name="disabilityRankPop"
+                                            />
+                                        </Col>
+                                        <Col xs="2" className="tit">
+                                            <Label for="wheelchairPop">휠체어</Label> <span className="ico-c">필수</span>
+                                        </Col>
+                                        <Col>
+                                            <Select
+                                                options={wheelchair}
+                                                defaultValue={wheelchair[0]}
+                                                id="wheelchairPop"
+                                                name="wheelchairPop"
+                                            />
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col xs="2" className="tit">
+                                            <Label for="communicationPop">소통여부</Label> <span className="ico-c">필수</span>
+                                        </Col>
+                                        <Col>
+                                            <Select
+                                                options={communication}
+                                                defaultValue={communication[0]}
+                                                id="communicationPop"
+                                                name="communicationPop"
+                                            />
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col xs="2" className="tit">
+                                            접수서류
+                                        </Col>
+                                        <Col className="justify-content-start align-items-center">
+                                            <FormGroup check inline>
+                                                <Input type="checkbox" id="paperPop1" name="paperPop1" />
+                                                <Label for="paperPop1"> 심사신청서 </Label>
+                                            </FormGroup>
+                                            <FormGroup check inline>
+                                                <Input type="checkbox" id="paperPop2" name="paperPop2" />
+                                                <Label for="paperPop2">이용동의서</Label>
+                                            </FormGroup>
+                                            <FormGroup check inline>
+                                                <Input type="checkbox" id="paperPop3" name="paperPop3" />
+                                                <Label for="paperPop3">복지카드 및 신분증사본</Label>
+                                            </FormGroup>
+                                            <FormGroup check inline>
+                                                <Input type="checkbox" id="paperPop4" name="paperPop4" />
+                                                <Label for="paperPop4">진단서</Label>
+                                            </FormGroup>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col xs="2" className="tit">
+                                            <Label for="notePop4">비고</Label>
+                                        </Col>
+                                        <Col>
+                                            <div className="form-control-wrap">
+                                                <Input type="text" name="notePop4" id="notePop4" />
+                                                <span className="form-control-clear">
+                                                    <span className="blind">지우기</span>
+                                                </span>
+                                            </div>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col xs="2" className="tit">
+                                            <Label for="usePop5">비고</Label>
+                                        </Col>
+                                        <Col>
+                                            <Input type="textarea" name="usePop5" id="usePop5" style={{ height: "100px" }} />
                                         </Col>
                                     </Row>
                                     <Row className="btn-area">

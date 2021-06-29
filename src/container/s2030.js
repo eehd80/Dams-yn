@@ -101,39 +101,31 @@ class Main extends Component {
                             <div className="lst-data">
                                 {/* 검색 */}
                                 <Form className="tbl-filter">
-                                    <Row>
-                                        <Col xs="2">
-                                            <FormGroup>
-                                                <Label for="availability">사용여부</Label>
-                                                <Select
-                                                    options={availability}
-                                                    defaultValue={availability[0]}
-                                                    id="availability"
-                                                    name="availability"
-                                                />
-                                            </FormGroup>
-                                        </Col>
-                                        <Col xs="2">
-                                            <FormGroup>
-                                                <Label for="condition">조회조건</Label>
-                                                <Select options={condition} defaultValue={condition[0]} id="condition" name="condition" />
-                                            </FormGroup>
-                                        </Col>
-                                        <Col xs="2">
-                                            <Input type="text" name="search" id="search" placeholder="검색" />
-                                        </Col>
-                                        <Col className="btn-group2">
-                                            <ButtonToggle className="c-blue">
-                                                <i className="las la-plus"></i> 신규
-                                            </ButtonToggle>
-                                            <ButtonToggle className="">
-                                                <i className="las la-search"></i> 검색
-                                            </ButtonToggle>
-                                            <ButtonToggle className="c-green">
-                                                <i className="las la-file-excel"></i> 엑셀
-                                            </ButtonToggle>
-                                        </Col>
-                                    </Row>
+                                    <FormGroup>
+                                        <Label for="availability">사용여부</Label>
+                                        <Select
+                                            options={availability}
+                                            defaultValue={availability[0]}
+                                            id="availability"
+                                            name="availability"
+                                        />
+                                    </FormGroup>
+                                    <FormGroup>
+                                        <Label for="condition">조회조건</Label>
+                                        <Select options={condition} defaultValue={condition[0]} id="condition" name="condition" />
+                                    </FormGroup>
+                                    <Input type="text" name="search" id="search" placeholder="검색" className="inp-search" />
+                                    <Col className="btn-group2">
+                                        <ButtonToggle className="c-blue">
+                                            <i className="las la-plus"></i> 신규
+                                        </ButtonToggle>
+                                        <ButtonToggle className="">
+                                            <i className="las la-search"></i> 검색
+                                        </ButtonToggle>
+                                        <ButtonToggle className="c-green">
+                                            <i className="las la-file-excel"></i> 엑셀
+                                        </ButtonToggle>
+                                    </Col>
                                 </Form>
                                 {/* 리스트 */}
                                 <div className="tbl- ag-theme-balham">
@@ -154,17 +146,17 @@ class Main extends Component {
                                 </div>
                             </div>
 
-                            {/* layer */}
-                            <div className="layer-" style={{ top: "200px", left: "40px", width: "700px" }}>
+                            {/* layer-회원사등록 */}
+                            <div className="layer-" style={{ top: "200px", left: "40px", width: "700px", transform: "translate(0,0)" }}>
                                 <div className="head-layer">
                                     <h3>회원사 등록</h3>
                                 </div>
                                 <div className="cont-layer form-wrap">
                                     <Row>
-                                        <Col className="tit">
-                                            <label for="idPop">회원사명</label> <span className="ico-c">필수</span>
+                                        <Col xs="2" className="tit">
+                                            <Label for="idPop">회원사명</Label> <span className="ico-c">필수</span>
                                         </Col>
-                                        <Col xs="4">
+                                        <Col>
                                             <div className="form-control-wrap">
                                                 <Input type="text" name="idPop" id="idPop" />
                                                 <span className="form-control-clear">
@@ -173,12 +165,12 @@ class Main extends Component {
                                             </div>
                                             <Button className="btn-pop">중복검사</Button>
                                         </Col>
-                                        <Col className="tit">
-                                            <Label for="nicknamePop">회원사별칭</Label>
+                                        <Col xs="2" className="tit">
+                                            <Label for="nicknamePop">회원사별칭</Label> <span className="ico-c">필수</span>
                                         </Col>
-                                        <Col xs="4">
+                                        <Col>
                                             <div className="form-control-wrap">
-                                                <Input type="text" name="idPop" id="idPop" />
+                                                <Input type="text" name="nicknamePop" id="nicknamePop" />
                                                 <span className="form-control-clear">
                                                     <span className="blind">지우기</span>
                                                 </span>
@@ -187,10 +179,10 @@ class Main extends Component {
                                         </Col>
                                     </Row>
                                     <Row>
-                                        <Col className="tit">
-                                            <label for="telPop">회원사전화</label> <span className="ico-c">필수</span>
+                                        <Col xs="2" className="tit">
+                                            <Label for="telPop">회원사전화</Label> <span className="ico-c">필수</span>
                                         </Col>
-                                        <Col xs="4">
+                                        <Col>
                                             <div className="form-control-wrap">
                                                 <NumberFormat format="###-####-####" id="telPop" name="telPop" className="form-control" />
                                                 <span className="form-control-clear">
@@ -198,93 +190,99 @@ class Main extends Component {
                                                 </span>
                                             </div>
                                         </Col>
-                                        <Col className="tit">
-                                            <Label for="workPop">등록일</Label>
+                                        <Col xs="2" className="tit">
+                                            <Label for="regiDatePop">등록일</Label>
                                         </Col>
-                                        <Col xs="4">
+                                        <Col>
                                             <DatePickerButton />
                                         </Col>
                                     </Row>
                                     <Row>
-                                        <Col className="tit">
-                                            <label for="namePop">대표자명</label>
+                                        <Col xs="2" className="tit">
+                                            <Label for="repiNamePop">대표자명</Label>
                                         </Col>
-                                        <Col xs="4">
+                                        <Col>
                                             <div className="form-control-wrap">
-                                                <Input type="text" name="namePop" id="namePop" />
+                                                <Input type="text" name="repiNamePop" id="repiNamePop" />
                                                 <span className="form-control-clear">
                                                     <span className="blind">지우기</span>
                                                 </span>
                                             </div>
                                         </Col>
-                                        <Col className="tit">
-                                            <Label for="usestartPop">사용시작일</Label>
+                                        <Col xs="2" className="tit">
+                                            <Label for="useStartPop">사용시작일</Label>
                                         </Col>
-                                        <Col xs="4">
+                                        <Col>
                                             <DatePickerButton />
                                         </Col>
                                     </Row>
                                     <Row>
-                                        <Col className="tit">
-                                            <label for="phonePop">대표자전화</label>
+                                        <Col xs="2" className="tit">
+                                            <Label for="repreTelPop">대표자전화</Label>
                                         </Col>
-                                        <Col xs="4">
+                                        <Col>
                                             <div className="form-control-wrap">
-                                                <Input type="text" name="phonePop" id="phonePop" />
+                                                <Input type="text" name="repreTelPop" id="repreTelPop" />
                                                 <span className="form-control-clear">
                                                     <span className="blind">지우기</span>
                                                 </span>
                                             </div>
                                         </Col>
-                                        <Col className="tit">
-                                            <Label for="useendPop">사용중지일</Label>
+                                        <Col xs="2" className="tit">
+                                            <Label for="useEndPop">사용중지일</Label>
                                         </Col>
-                                        <Col xs="4">
+                                        <Col>
                                             <DatePickerButton />
                                         </Col>
                                     </Row>
                                     <Row>
-                                        <Col className="tit">
-                                            <label for="adressPop">주소</label>
+                                        <Col xs="2" className="tit">
+                                            <Label for="usePop">사용여부</Label>
                                         </Col>
-                                        <Col xs="4">
+                                        <Col>
+                                            <Select options={usePop} defaultValue={usePop[0]} id="usePop" name="usePop" />
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col xs="2" className="tit">
+                                            <Label for="adressPop">주소</Label>
+                                        </Col>
+                                        <Col xs="5">
                                             <div className="form-control-wrap">
-                                                <Input type="text" name="idPop" id="idPop" />
+                                                <Input type="text" name="adressPop" id="adressPop" />
                                                 <span className="form-control-clear">
                                                     <span className="blind">지우기</span>
                                                 </span>
                                             </div>
                                             <Button className="btn-pop">주소검색</Button>
                                         </Col>
-                                        <Col className="tit">
-                                            <label for="usePop">사용여부</label>
-                                        </Col>
-                                        <Col xs="4">
-                                            <Select options={usePop} defaultValue={usePop[0]} id="usePop" name="usePop" />
-                                        </Col>
                                     </Row>
                                     <Row>
-                                        <Col></Col>
-                                        <Col xs="4">
+                                        <Col xs={{ offset: "2", size: "10" }}>
                                             <div className="form-control-wrap">
-                                                <Input type="text" name="idPop" id="idPop" />
+                                                <Input type="text" name="adressPop2" id="adressPop2" />
                                                 <span className="form-control-clear">
                                                     <span className="blind">지우기</span>
                                                 </span>
                                             </div>
                                         </Col>
-                                        <Col></Col>
-                                        <Col xs="4"></Col>
                                     </Row>
                                     <Row>
-                                        <Col className="tit">
-                                            <Label for="notePop">비고</Label>
+                                        <Col xs={{ offset: "2", size: "10" }}>
+                                            <div className="form-control-wrap">
+                                                <Input type="text" name="adressPop3" id="adressPop3" placeholder="주소상세" />
+                                                <span className="form-control-clear">
+                                                    <span className="blind">지우기</span>
+                                                </span>
+                                            </div>
                                         </Col>
-                                        <Col xs="10">
-                                            <FormText className="form-control">
-                                                안녕하세요~ 오다다입니다. This is some placeholder block-level help text for the above
-                                                input. It's a bit lighter and easily wraps to a new line.
-                                            </FormText>
+                                    </Row>
+                                    <Row>
+                                        <Col xs="2" className="tit">
+                                            <Label for="usePop">비고</Label>
+                                        </Col>
+                                        <Col>
+                                            <Input type="textarea" name="text" id="etcQA" style={{ height: "100px" }} />
                                         </Col>
                                     </Row>
 

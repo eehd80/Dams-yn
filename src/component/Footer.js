@@ -54,8 +54,14 @@ const Footer = () => (
                 <span className="wav-">분후</span>
             </FormGroup>
             <Row>
-                <Col className="tit">타이틀</Col>
-                <Col></Col>
+                <Col className="tit">
+                    <FormGroup check>
+                        <Input type="checkbox" id="booking" /> <Label for="booking">예약</Label>
+                    </FormGroup>
+                </Col>
+                <Col>
+                    <DatePickerButton />
+                </Col>
             </Row>
             <Row className="pop-filter">
                 <Col xs="3">
@@ -113,6 +119,14 @@ const Footer = () => (
                     <ButtonToggle className="c-blue btn-w">
                         <i className="las la-search"></i> 검색
                     </ButtonToggle>
+                </Col>
+            </Row>
+            <Row>
+                <Col xs="2" className="tit">
+                    <Label for="usePop">비고</Label>
+                </Col>
+                <Col>
+                    <Input type="textarea" name="text" id="etcQA" style={{ height: "100px" }} />
                 </Col>
             </Row>
             <div className="tbl- ag-theme-balham">

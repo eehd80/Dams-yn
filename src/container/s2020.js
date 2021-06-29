@@ -99,10 +99,10 @@ const callData = [
     },
     {
         번호: "1",
-        회원사구분: "콜센터",
-        소속콜센터: "아이원맥스",
-        회원사: "아이원맥스(법인)",
-        회원사전화: "02-555-5555",
+        회원사구분: "법인택시",
+        소속콜센터: "용인교통약자",
+        회원사: "용인교통약자(법인)",
+        회원사전화: "032-555-5555",
         대표자명: "오다다",
     },
     {
@@ -140,39 +140,30 @@ class Main extends Component {
                             <div className="lst-data">
                                 {/* 검색 */}
                                 <Form className="tbl-filter">
-                                    <Row>
-                                        <Col xs="2">
-                                            <FormGroup>
-                                                <Label for="availability">사용여부</Label>
-                                                <Select
-                                                    options={availability}
-                                                    defaultValue={availability[0]}
-                                                    id="availability"
-                                                    name="availability"
-                                                />
-                                            </FormGroup>
-                                        </Col>
-                                        <Col xs="2">
-                                            <FormGroup>
-                                                <Label for="condition">조회조건</Label>
-                                                <Select options={condition} defaultValue={condition[0]} id="condition" name="condition" />
-                                            </FormGroup>
-                                        </Col>
-                                        <Col xs="2">
-                                            <Input type="text" name="search" id="search" placeholder="검색" />
-                                        </Col>
-                                        <Col className="btn-group2">
-                                            <ButtonToggle className="c-blue">
-                                                <i className="las la-plus"></i> 신규
-                                            </ButtonToggle>
-                                            <ButtonToggle className="">
-                                                <i className="las la-search"></i> 검색
-                                            </ButtonToggle>
-                                            <ButtonToggle className="c-green">
-                                                <i className="las la-file-excel"></i> 엑셀
-                                            </ButtonToggle>
-                                        </Col>
-                                    </Row>
+                                    <FormGroup>
+                                        <Label for="availability">사용여부</Label>
+                                        <Select
+                                            options={availability}
+                                            defaultValue={availability[0]}
+                                            id="availability"
+                                            name="availability"
+                                        />
+                                    </FormGroup>
+                                    <FormGroup>
+                                        <Label for="condition">조회조건</Label>
+                                        <Select options={condition} defaultValue={condition[0]} id="condition" name="condition" />
+                                    </FormGroup>
+                                    <div className="btn-group2">
+                                        <ButtonToggle className="c-blue">
+                                            <i className="las la-plus"></i> 신규
+                                        </ButtonToggle>
+                                        <ButtonToggle className="">
+                                            <i className="las la-search"></i> 검색
+                                        </ButtonToggle>
+                                        <ButtonToggle className="c-green">
+                                            <i className="las la-file-excel"></i> 엑셀
+                                        </ButtonToggle>
+                                    </div>
                                 </Form>
                                 {/* 리스트 */}
                                 <div className="tbl- ag-theme-balham">
@@ -193,8 +184,8 @@ class Main extends Component {
                                 </div>
                             </div>
 
-                            {/* layer */}
-                            <div className="layer-" style={{ top: "200px", left: "40px", width: "700px" }}>
+                            {/* layer-사용자등록 */}
+                            <div className="layer-" style={{ top: "200px", left: "40px", width: "700px", transform: "translate(0,0)" }}>
                                 <div className="head-layer">
                                     <h3>사용자 등록</h3>
                                 </div>
@@ -316,6 +307,14 @@ class Main extends Component {
                                             />
                                         </Col>
                                     </Row>
+                                    <Row>
+                                        <Col xs="2" className="tit">
+                                            <label for="usePop">비고</label>
+                                        </Col>
+                                        <Col>
+                                            <Input type="textarea" name="text" id="etcQA" style={{ height: "100px" }} />
+                                        </Col>
+                                    </Row>
 
                                     <Row className="btn-area">
                                         <Col></Col>
@@ -334,36 +333,25 @@ class Main extends Component {
                                 </Button>
                             </div>
 
-                            {/* layer */}
-                            <div className="layer-" style={{ top: "200px", left: "840px", width: "700px" }}>
+                            {/* layer-업체검색 */}
+                            <div className="layer-" style={{ top: "200px", left: "760px", width: "600px", transform: "translate(0,0)" }}>
                                 <div className="head-layer">
                                     <h3>업체검색</h3>
                                 </div>
                                 <div className="cont-layer form-wrap">
                                     <Form className="tbl-filter">
-                                        <Row>
-                                            <Col xs="3">
-                                                <FormGroup className="d-flex">
-                                                    <Label for="array" className="blind">
-                                                        정렬
-                                                    </Label>
-                                                    <Select
-                                                        options={condition}
-                                                        defaultValue={condition[0]}
-                                                        id="condition"
-                                                        name="condition"
-                                                    />
-                                                </FormGroup>
-                                            </Col>
-                                            <Col>
-                                                <Input type="text" name="search" id="search" placeholder="검색" />
-                                            </Col>
-                                            <Col className="btn-group2">
-                                                <ButtonToggle className="c-blue">
-                                                    <i className="las la-search"></i> 검색
-                                                </ButtonToggle>
-                                            </Col>
-                                        </Row>
+                                        <FormGroup className="d-flex">
+                                            <Label for="array" className="blind">
+                                                정렬
+                                            </Label>
+                                            <Select options={condition} defaultValue={condition[0]} id="condition" name="condition" />
+                                        </FormGroup>
+                                        <Input type="text" name="search" id="search" placeholder="검색" className="inp-search" />
+                                        <div className="btn-group2">
+                                            <ButtonToggle className="c-blue">
+                                                <i className="las la-search"></i> 검색
+                                            </ButtonToggle>
+                                        </div>
                                     </Form>
 
                                     <div className="tbl- tbl-type1 tbl-call ag-theme-balham" style={{ height: "300px" }}>
