@@ -318,53 +318,42 @@ class Main extends Component {
                             </div>
                             <div className="lst-data">
                                 <Form className="tbl-filter">
-                                    <Row>
-                                        <Col xs="2">
-                                            <FormGroup>
-                                                <Label for="renew">갱신</Label>
-                                                <Select options={renew} defaultValue={renew[0]} id="renew" name="renew" />
-                                            </FormGroup>
-                                        </Col>
-                                        <Col xs="2">
-                                            <FormGroup>
-                                                <Label for="array">정렬</Label>
-                                                <Select options={array} defaultValue={array[0]} id="array" name="array" />
-                                            </FormGroup>
-                                        </Col>
-                                        <Col xs="2">
-                                            <FormGroup>
-                                                <Label for="state" className="blind">
-                                                    상태
-                                                </Label>
-                                                <Select
-                                                    isMulti
-                                                    options={state}
-                                                    // defaultValue={condition[0]}
-                                                    id="state"
-                                                    name="state"
-                                                    placeholder="상태조건"
-                                                    className="basic-multi-select"
-                                                    classNamePrefix="select"
-                                                />
-                                            </FormGroup>
-                                        </Col>
-                                        <Col xs="1">
-                                            <FormGroup className="d-flex">
-                                                <Label for="array" className="blind">
-                                                    정렬
-                                                </Label>
-                                                <Select options={condition} defaultValue={condition[0]} id="condition" name="condition" />
-                                            </FormGroup>
-                                        </Col>
-                                        <Col xs="2">
-                                            <Input type="text" name="search" id="search" placeholder="검색" />
-                                        </Col>
-                                        <Col className="btn-group2">
-                                            <ButtonToggle className="c-blue">
-                                                <i className="las la-search"></i> 검색
-                                            </ButtonToggle>
-                                        </Col>
-                                    </Row>
+                                    <FormGroup>
+                                        <Label for="renew">갱신</Label>
+                                        <Select options={renew} defaultValue={renew[0]} id="renew" name="renew" />
+                                    </FormGroup>
+                                    <FormGroup>
+                                        <Label for="array">정렬</Label>
+                                        <Select options={array} defaultValue={array[0]} id="array" name="array" />
+                                    </FormGroup>
+                                    <FormGroup>
+                                        <Label for="state" className="blind">
+                                            상태
+                                        </Label>
+                                        <Select
+                                            isMulti
+                                            options={state}
+                                            // defaultValue={condition[0]}
+                                            id="state"
+                                            name="state"
+                                            placeholder="상태조건"
+                                            className="basic-multi-select"
+                                            classNamePrefix="select"
+                                        />
+                                    </FormGroup>
+                                    <FormGroup className="d-flex">
+                                        <Label for="array" className="blind">
+                                            정렬
+                                        </Label>
+                                        <Select options={condition} defaultValue={condition[0]} id="condition" name="condition" />
+                                    </FormGroup>
+                                    <Input type="text" name="search" id="search" placeholder="검색" className="inp-search" />
+
+                                    <div className="btn-group2">
+                                        <ButtonToggle className="c-blue">
+                                            <i className="las la-search"></i> 검색
+                                        </ButtonToggle>
+                                    </div>
                                 </Form>
                                 {/* 리스트 */}
                                 <div className="tbl- ag-theme-balham">
