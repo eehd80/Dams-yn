@@ -20,6 +20,8 @@ import s2040 from "./container/s2040";
 import s2050 from "./container/s2050";
 import s2060 from "./container/s2060";
 import s2070 from "./container/s2070";
+import s2080 from "./container/s2080";
+import s2090 from "./container/s2090";
 import popMap from "./container/pop-map";
 import popSchedule from "./container/pop-schedule";
 import pop_s101 from "./container/pop-s101";
@@ -44,6 +46,8 @@ class App extends Component {
                 <Route path="/s2050" component={s2050} />
                 <Route path="/s2060" component={s2060} />
                 <Route path="/s2070" component={s2070} />
+                <Route path="/s2080" component={s2080} />
+                <Route path="/s2090" component={s2090} />
                 <Route path="/popMap" component={popMap} /> {/* 지도 팝업 */}
                 <Route path="/popSchedule" component={popSchedule} /> {/* 스케줄 팝업 */}
                 <Route path="/pop-s101" component={pop_s101} /> {/* 차량별 예약시간표 팝업 */}

@@ -102,6 +102,42 @@ const help = [
 const Footer = () => (
     <div id="footer">
         <div className="container">
+            <Form className="tbl-filter">
+                <FormGroup>
+                    <Label for="gps" className="blind">
+                        GPS상태
+                    </Label>
+                    <Select options={gps} id="gps" name="gps" placeholder="GPS상태" />
+                </FormGroup>
+                <FormGroup>
+                    <Label for="service" className="blind">
+                        서비스상태
+                    </Label>
+                    <Select options={service} id="service" name="service" placeholder="서비스상태" />
+                </FormGroup>
+                <FormGroup>
+                    <Label for="condition" className="blind">
+                        검색
+                    </Label>
+                    <Select options={condition} defaultValue={condition[0]} id="condition" name="condition" />
+                </FormGroup>
+                <Input type="text" name="search" id="search" placeholder="검색" className="inp-search" />
+
+                <div className="btn-group2">
+                    <ButtonToggle className="c-green">
+                        <i className="las la-file-excel"></i> 엑셀 불러오기
+                    </ButtonToggle>
+                    <ButtonToggle className="c-blue">
+                        <i className="las la-plus"></i> 신규
+                    </ButtonToggle>
+                    <ButtonToggle className="">
+                        <i className="las la-search"></i> 검색
+                    </ButtonToggle>
+                    <ButtonToggle className="c-green">
+                        <i className="las la-file-excel"></i> 엑셀
+                    </ButtonToggle>
+                </div>
+            </Form>
             <FormGroup>
                 <Label for="timeSearch">예약</Label>
                 <DatePickerButton />
