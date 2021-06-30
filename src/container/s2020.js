@@ -264,7 +264,7 @@ class Main extends Component {
                                             <Button className="btn-pop">업체검색</Button>
                                         </Col>
                                         <Col className="tit">
-                                            <Label for="usestartPop">사용시작일</Label>
+                                            <Label for="useStartPop">사용시작일</Label>
                                         </Col>
                                         <Col xs="4">
                                             <DatePickerButton />
@@ -305,10 +305,10 @@ class Main extends Component {
                                     </Row>
                                     <Row>
                                         <Col xs="2" className="tit">
-                                            <label for="usePop">비고</label>
+                                            <label for="notePop">비고</label>
                                         </Col>
                                         <Col>
-                                            <Input type="textarea" name="text" id="etcQA" style={{ height: "100px" }} />
+                                            <Input type="textarea" name="notePop" id="notePop" style={{ height: "100px" }} />
                                         </Col>
                                     </Row>
 

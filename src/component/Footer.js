@@ -281,6 +281,30 @@ const Footer = () => (
                     <Input type="textarea" name="text" id="etcQA" style={{ height: "100px" }} />
                 </Col>
             </Row>
+            <Row>
+                <Col xs="2" className="tit">
+                    <Label for="addressPop">주소</Label> <span className="ico-c">필수</span>
+                </Col>
+                <Col xs="5">
+                    <Input type="text" name="addressPop" id="addressPop" />
+                    <Button className="btn-pop">주소검색</Button>
+                </Col>
+            </Row>
+            <Row>
+                <Col xs={{ offset: "2", size: "10" }}>
+                    <Input type="text" name="addressPop2" id="addressPop2" />
+                </Col>
+            </Row>
+            <Row>
+                <Col xs={{ offset: "2", size: "10" }}>
+                    <div className="form-control-wrap">
+                        <Input type="text" name="addressPop3" id="addressPop3" placeholder="주소상세" />
+                        <span className="form-control-clear">
+                            <span className="blind">지우기</span>
+                        </span>
+                    </div>
+                </Col>
+            </Row>
             <div className="tbl- ag-theme-balham">
                 <AgGridReact rowData={popTable} defaultColDef={defaultColDef} style={{ height: "300px" }}>
                     <AgGridColumn field="순서" minWidth={60} maxWidth={70}></AgGridColumn>

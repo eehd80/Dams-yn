@@ -785,7 +785,7 @@ class Main extends Component {
                                         </Row>
                                         <Row>
                                             <Col xs="2" className="tit">
-                                                <Label for="ApprovalPop">등록일</Label>
+                                                <Label for="registPop">등록일</Label>
                                             </Col>
                                             <Col>
                                                 <DatePickerButton />

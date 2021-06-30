@@ -265,10 +265,10 @@ class Main extends Component {
                                     </Row>
                                     <Row>
                                         <Col xs="2" className="tit">
-                                            <Label for="usePop">비고</Label>
+                                            <Label for="notePop">비고</Label>
                                         </Col>
                                         <Col>
-                                            <Input type="textarea" name="text" id="etcQA" style={{ height: "100px" }} />
+                                            <Input type="textarea" name="notePop" id="notePop" style={{ height: "100px" }} />
                                         </Col>
                                     </Row>
 
