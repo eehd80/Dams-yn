@@ -107,7 +107,7 @@ const disabilityType = [
     { value: "장기요양", label: "장기요양" },
     { value: "지체", label: "지체" },
 ];
-const disabilityRank = [
+const disabilityGrade = [
     { value: "6급", label: "6급" },
     { value: "7급", label: "7급" },
 ];
@@ -165,10 +165,15 @@ class Main extends Component {
                                         <Select options={disabilityType} id="disabilityType" name="disabilityType" placeholder="장애종류" />
                                     </FormGroup>
                                     <FormGroup>
-                                        <Label for="disabilityRank" className="blind">
+                                        <Label for="disabilityGrade" className="blind">
                                             장애등급
                                         </Label>
-                                        <Select options={disabilityRank} id="disabilityRank" name="disabilityRank" placeholder="장애등급" />
+                                        <Select
+                                            options={disabilityGrade}
+                                            id="disabilityGrade"
+                                            name="disabilityGrade"
+                                            placeholder="장애등급"
+                                        />
                                     </FormGroup>
                                     <FormGroup>
                                         <Label for="communication" className="blind">
@@ -335,32 +340,22 @@ class Main extends Component {
                                     </Row>
                                     <Row>
                                         <Col xs="2" className="tit">
-                                            <Label for="adressPop">주소</Label>
+                                            <Label for="addressPop">주소</Label>
                                         </Col>
                                         <Col xs="5">
-                                            <div className="form-control-wrap">
-                                                <Input type="text" name="adressPop" id="adressPop" />
-                                                <span className="form-control-clear">
-                                                    <span className="blind">지우기</span>
-                                                </span>
-                                            </div>
+                                            <Input type="text" name="addressPop" id="addressPop" />
                                             <Button className="btn-pop">주소검색</Button>
                                         </Col>
                                     </Row>
                                     <Row>
                                         <Col xs={{ offset: "2", size: "10" }}>
-                                            <div className="form-control-wrap">
-                                                <Input type="text" name="adressPop2" id="adressPop2" />
-                                                <span className="form-control-clear">
-                                                    <span className="blind">지우기</span>
-                                                </span>
-                                            </div>
+                                            <Input type="text" name="addressPop2" id="addressPop2" />
                                         </Col>
                                     </Row>
                                     <Row>
                                         <Col xs={{ offset: "2", size: "10" }}>
                                             <div className="form-control-wrap">
-                                                <Input type="text" name="adressPop3" id="adressPop3" placeholder="주소상세" />
+                                                <Input type="text" name="addressPop3" id="addressPop3" placeholder="주소상세" />
                                                 <span className="form-control-clear">
                                                     <span className="blind">지우기</span>
                                                 </span>
@@ -477,14 +472,14 @@ class Main extends Component {
                                     </Row>
                                     <Row>
                                         <Col xs="2" className="tit">
-                                            <Label for="disabilityRankPop">장애등급</Label> <span className="ico-c">필수</span>
+                                            <Label for="disabilityGradePop">장애등급</Label> <span className="ico-c">필수</span>
                                         </Col>
                                         <Col>
                                             <Select
-                                                options={disabilityRank}
-                                                defaultValue={disabilityRank[0]}
-                                                id="disabilityRankPop"
-                                                name="disabilityRankPop"
+                                                options={disabilityGrade}
+                                                defaultValue={disabilityGrade[0]}
+                                                id="disabilityGradePop"
+                                                name="disabilityGradePop"
                                             />
                                         </Col>
                                         <Col xs="2" className="tit">
@@ -516,7 +511,7 @@ class Main extends Component {
                                         <Col xs="2" className="tit">
                                             접수서류
                                         </Col>
-                                        <Col className="justify-content-start align-items-center">
+                                        <Col className="s-paper">
                                             <FormGroup check inline>
                                                 <Input type="checkbox" id="paperPop1" name="paperPop1" />
                                                 <Label for="paperPop1"> 심사신청서 </Label>

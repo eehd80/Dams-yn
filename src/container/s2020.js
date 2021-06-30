@@ -79,10 +79,6 @@ const rightPop = [
     { value: "선택불가", label: "선택불가" },
     { value: "선택가능", label: "선택가능" },
 ];
-const usePop = [
-    { value: "사용", label: "사용" },
-    { value: "비사용", label: "비사용" },
-];
 const positionPop = [
     { value: "과장", label: "과장" },
     { value: "부장", label: "부장" },
@@ -293,7 +289,7 @@ class Main extends Component {
                                             <label for="usePop">사용여부</label>
                                         </Col>
                                         <Col xs="4">
-                                            <Select options={usePop} defaultValue={usePop[0]} id="usePop" name="usePop" />
+                                            <Select options={availability} defaultValue={availability[0]} id="usePop" name="usePop" />
                                         </Col>
                                         <Col className="tit">
                                             <Label for="positionPop">직책</Label>

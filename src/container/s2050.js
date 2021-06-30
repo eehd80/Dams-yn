@@ -57,12 +57,7 @@ const approval = [
     { value: "승인", label: "승인" },
     { value: "거부", label: "거부" },
 ];
-const usePop = [
-    { value: "승인대기", label: "승인대기" },
-    { value: "승인", label: "승인" },
-    { value: "거부", label: "거부" },
-];
-const useTarget = [
+const userTarget = [
     { value: "노약자", label: "노약자" },
     { value: "지체", label: "지체" },
     { value: "장기요양", label: "장기요양" },
@@ -70,8 +65,8 @@ const useTarget = [
     { value: "지체성장애", label: "지체성장애" },
     { value: "장기요양", label: "장기요양" },
 ];
-const useTarget2 = [
-    { value: "1급", label: "1급" },
+const userTarget2 = [
+    { value: "일시적장애", label: "일시적장애" },
     { value: "1급", label: "1급" },
 ];
 const wheelchair = [
@@ -83,6 +78,27 @@ const wheelchair = [
 const sex = [
     { value: "남성", label: "남성" },
     { value: "여성", label: "여성" },
+];
+const communication = [
+    { value: "가능", label: "가능" },
+    { value: "불가능", label: "불가능" },
+];
+const assistant = [
+    { value: "없음", label: "없음" },
+    { value: "있음", label: "있음" },
+];
+const help = [
+    { value: "완전도움", label: "완전도움" },
+    { value: "도움", label: "도움" },
+];
+const disabilityGrade = [
+    { value: "등급외", label: "등급외" },
+    { value: "6급", label: "6급" },
+    { value: "7급", label: "7급" },
+];
+const popTable = [
+    { 순서: "1", 선택: "", 파일제목: "신분증" },
+    { 순서: "2", 선택: "", 파일제목: "진단서" },
 ];
 
 class Main extends Component {
@@ -216,25 +232,38 @@ class Main extends Component {
                                         </Row>
                                         <Row>
                                             <Col xs="2" className="tit">
-                                                <Label for="useTargetPop">이용대상자 유형1</Label> <span className="ico-c">필수</span>
+                                                <Label for="userTargetPop">이용대상자 유형1</Label> <span className="ico-c">필수</span>
                                             </Col>
                                             <Col>
                                                 <Select
-                                                    options={useTarget}
-                                                    defaultValue={useTarget[0]}
-                                                    id="useTargetPop"
-                                                    name="useTargetPop"
+                                                    options={userTarget2}
+                                                    defaultValue={userTarget2[0]}
+                                                    id="userTargetPop"
+                                                    name="userTargetPop"
                                                 />
                                             </Col>
                                             <Col xs="2" className="tit">
-                                                <Label for="useTargetPop2">이용대상자 유형2</Label>
+                                                <Label for="disabilityGradePop2">장애등급1</Label> <span className="ico-c">필수</span>
                                             </Col>
                                             <Col>
                                                 <Select
-                                                    options={useTarget2}
-                                                    defaultValue={useTarget2[0]}
-                                                    id="useTargetPop2"
-                                                    name="useTargetPop2"
+                                                    options={disabilityGrade}
+                                                    defaultValue={disabilityGrade[0]}
+                                                    id="disabilityGradePop1"
+                                                    name="disabilityGradePop1"
+                                                />
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col xs="2" className="tit">
+                                                <Label for="userTargetPop2">이용대상자 유형2</Label>
+                                            </Col>
+                                            <Col xs="4">
+                                                <Select
+                                                    options={userTarget}
+                                                    defaultValue={userTarget[0]}
+                                                    id="userTargetPop2"
+                                                    name="userTargetPop2"
                                                 />
                                             </Col>
                                         </Row>
@@ -242,7 +271,7 @@ class Main extends Component {
                                             <Col xs="2" className="tit">
                                                 <Label for="wheelchairPop">휠체어</Label> <span className="ico-c">필수</span>
                                             </Col>
-                                            <Col>
+                                            <Col xs="4">
                                                 <Select
                                                     options={wheelchair}
                                                     defaultValue={wheelchair[0]}
@@ -250,41 +279,33 @@ class Main extends Component {
                                                     name="wheelchairPop"
                                                 />
                                             </Col>
+                                        </Row>
+                                        <Row>
                                             <Col xs="2" className="tit">
-                                                <Label for="useEndPop">생년월일</Label>
+                                                <Label for="birthPop">생년월일</Label>
                                             </Col>
-                                            <Col>
+                                            <Col xs="4">
                                                 <DatePickerButton />
                                             </Col>
                                         </Row>
                                         <Row>
                                             <Col xs="2" className="tit">
-                                                <Label for="adressPop">주소</Label>
+                                                <Label for="addressPop">주소</Label> <span className="ico-c">필수</span>
                                             </Col>
                                             <Col xs="5">
-                                                <div className="form-control-wrap">
-                                                    <Input type="text" name="adressPop" id="adressPop" />
-                                                    <span className="form-control-clear">
-                                                        <span className="blind">지우기</span>
-                                                    </span>
-                                                </div>
+                                                <Input type="text" name="addressPop" id="addressPop" />
                                                 <Button className="btn-pop">주소검색</Button>
                                             </Col>
                                         </Row>
                                         <Row>
                                             <Col xs={{ offset: "2", size: "10" }}>
-                                                <div className="form-control-wrap">
-                                                    <Input type="text" name="adressPop2" id="adressPop2" />
-                                                    <span className="form-control-clear">
-                                                        <span className="blind">지우기</span>
-                                                    </span>
-                                                </div>
+                                                <Input type="text" name="addressPop2" id="addressPop2" />
                                             </Col>
                                         </Row>
                                         <Row>
                                             <Col xs={{ offset: "2", size: "10" }}>
                                                 <div className="form-control-wrap">
-                                                    <Input type="text" name="adressPop3" id="adressPop3" placeholder="주소상세" />
+                                                    <Input type="text" name="addressPop3" id="addressPop3" placeholder="주소상세" />
                                                     <span className="form-control-clear">
                                                         <span className="blind">지우기</span>
                                                     </span>
@@ -303,7 +324,7 @@ class Main extends Component {
                                                     </span>
                                                 </div>
                                             </Col>
-                                            <Col className="justify-content-start align-items-center">
+                                            <Col className="s-paper">
                                                 <FormGroup check inline>
                                                     <Input type="checkbox" id="emailPop2" name="emailPop2" />
                                                     <Label for="emailPop2"> 메일링 서비스여부 </Label>
@@ -322,7 +343,295 @@ class Main extends Component {
                                                 <Select options={sex} defaultValue={sex[0]} id="sexPop" name="sexPop" />
                                             </Col>
                                             <Col xs="2" className="tit">
-                                                <Label for="emailPop">의사소통여부</Label>
+                                                <Label for="communicationPop">의사소통여부</Label>
+                                            </Col>
+                                            <Col xs="4">
+                                                <Select
+                                                    options={communication}
+                                                    defaultValue={communication[0]}
+                                                    id="communicationPop"
+                                                    name="communicationPop"
+                                                />
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col xs="2" className="tit">
+                                                <Label for="assistantPop">보조인여부</Label>
+                                            </Col>
+                                            <Col xs="4">
+                                                <Select
+                                                    options={assistant}
+                                                    defaultValue={assistant[0]}
+                                                    id="assistantPop"
+                                                    name="assistantPop"
+                                                />
+                                            </Col>
+                                            <Col xs="2" className="tit">
+                                                <Label for="helpPop">도움여부</Label>
+                                            </Col>
+                                            <Col xs="4">
+                                                <Select options={help} defaultValue={help[0]} id="helpPop" name="helpPop" />
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col xs="2" className="tit">
+                                                <Label for="guardianPop">보호자명</Label>
+                                            </Col>
+                                            <Col>
+                                                <div className="form-control-wrap">
+                                                    <Input type="text" name="guardianPop" id="guardianPop" />
+                                                    <span className="form-control-clear">
+                                                        <span className="blind">지우기</span>
+                                                    </span>
+                                                </div>
+                                            </Col>
+                                            <Col xs="2" className="tit">
+                                                <Label for="guardianRelPop">보호자와의 관계</Label>
+                                            </Col>
+                                            <Col>
+                                                <div className="form-control-wrap">
+                                                    <Input type="text" name="guardianRelPop" id="guardianRelPop" />
+                                                    <span className="form-control-clear">
+                                                        <span className="blind">지우기</span>
+                                                    </span>
+                                                </div>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col xs="2" className="tit">
+                                                <Label for="guardianPhonePop">보호자연락처1</Label>
+                                            </Col>
+                                            <Col>
+                                                <div className="form-control-wrap">
+                                                    <NumberFormat
+                                                        format="###-####-####"
+                                                        id="guardianPhonePop"
+                                                        name="guardianPhonePop"
+                                                        className="form-control"
+                                                    />
+                                                    <span className="form-control-clear">
+                                                        <span className="blind">지우기</span>
+                                                    </span>
+                                                </div>
+                                            </Col>
+                                            <Col xs="2" className="tit">
+                                                <Label for="guardianPhonePop2">보호자연락처2</Label>
+                                            </Col>
+                                            <Col>
+                                                <div className="form-control-wrap">
+                                                    <NumberFormat
+                                                        format="###-####-####"
+                                                        id="guardianPhonePop2"
+                                                        name="guardianPhonePop2"
+                                                        className="form-control"
+                                                    />
+                                                    <span className="form-control-clear">
+                                                        <span className="blind">지우기</span>
+                                                    </span>
+                                                </div>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col xs="2" className="tit">
+                                                <Label for="ApprovalPop">승인요청일</Label>
+                                            </Col>
+                                            <Col xs="4">
+                                                <DatePickerButton />
+                                            </Col>
+                                        </Row>
+                                        <div className="tbl- ag-theme-balham mt-3">
+                                            <AgGridReact rowData={popTable} style={{ height: "300px" }}>
+                                                <AgGridColumn field="순서" minWidth={60} maxWidth={70}></AgGridColumn>
+                                                <AgGridColumn
+                                                    field="선택"
+                                                    minWidth={60}
+                                                    maxWidth={70}
+                                                    checkboxSelection={true}
+                                                ></AgGridColumn>
+                                                <AgGridColumn field="파일제목"></AgGridColumn>
+                                            </AgGridReact>
+                                        </div>
+
+                                        <Row className="btn-area">
+                                            <Col></Col>
+                                            <Col>
+                                                <Button className="btn-w c-blue">프린트</Button>
+                                            </Col>
+                                            <Col>
+                                                <Button className="btn-w">승인/거부 취소</Button>
+                                            </Col>
+                                            <Col></Col>
+                                        </Row>
+                                    </div>
+                                    <Button className="btn-close">
+                                        <i className="las la-times"></i>
+                                        <span className="blind">닫기</span>
+                                    </Button>
+                                </div>
+
+                                {/* layer-홈페이지 가입고객 정보2 */}
+                                <div
+                                    className="layer-"
+                                    style={{ top: "200px", left: "780px", width: "700px", transform: "translate(0,0)" }}
+                                >
+                                    <div className="head-layer">
+                                        <h3>홈페이지 가입고객 정보</h3>
+                                    </div>
+                                    <div className="cont-layer form-wrap">
+                                        <Row>
+                                            <Col xs="2" className="tit">
+                                                <Label for="namePop">고객명</Label>
+                                            </Col>
+                                            <Col>
+                                                <div className="form-control-wrap">
+                                                    <Input type="text" name="namePop" id="namePop" />
+                                                    <span className="form-control-clear">
+                                                        <span className="blind">지우기</span>
+                                                    </span>
+                                                </div>
+                                            </Col>
+                                            <Col xs="2" className="tit">
+                                                <Label for="idPop">WebID</Label>
+                                            </Col>
+                                            <Col>
+                                                <div className="form-control-wrap">
+                                                    <Input type="text" name="idPop" id="idPop" />
+                                                    <span className="form-control-clear">
+                                                        <span className="blind">지우기</span>
+                                                    </span>
+                                                </div>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col xs="2" className="tit">
+                                                <Label for="phonePop">핸드폰번호</Label>
+                                            </Col>
+                                            <Col>
+                                                <div className="form-control-wrap">
+                                                    <NumberFormat
+                                                        format="###-####-####"
+                                                        id="phonePop"
+                                                        name="phonePop"
+                                                        className="form-control"
+                                                    />
+                                                    <span className="form-control-clear">
+                                                        <span className="blind">지우기</span>
+                                                    </span>
+                                                </div>
+                                            </Col>
+                                            <Col xs="2" className="tit">
+                                                <Label for="telPop">일반전화</Label>
+                                            </Col>
+                                            <Col>
+                                                <div className="form-control-wrap">
+                                                    <NumberFormat
+                                                        format="###-####-####"
+                                                        id="telPop"
+                                                        name="telPop"
+                                                        className="form-control"
+                                                    />
+                                                    <span className="form-control-clear">
+                                                        <span className="blind">지우기</span>
+                                                    </span>
+                                                </div>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col xs="2" className="tit">
+                                                <Label for="userTargetPop">이용대상자 유형1</Label> <span className="ico-c">필수</span>
+                                            </Col>
+                                            <Col>
+                                                <Select
+                                                    options={userTarget}
+                                                    defaultValue={userTarget[0]}
+                                                    id="userTargetPop"
+                                                    name="userTargetPop"
+                                                />
+                                            </Col>
+                                            <Col xs="2" className="tit">
+                                                <Label for="disabilityGradePop2">장애등급1</Label> <span className="ico-c">필수</span>
+                                            </Col>
+                                            <Col>
+                                                <Select
+                                                    options={disabilityGrade}
+                                                    defaultValue={disabilityGrade[0]}
+                                                    id="disabilityGradePop1"
+                                                    name="disabilityGradePop1"
+                                                />
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col xs="2" className="tit">
+                                                <Label for="userTargetPop2">이용대상자 유형2</Label>
+                                            </Col>
+                                            <Col>
+                                                <Select
+                                                    options={userTarget2}
+                                                    defaultValue={userTarget2[0]}
+                                                    id="userTargetPop2"
+                                                    name="userTargetPop2"
+                                                />
+                                            </Col>
+                                            <Col xs="2" className="tit">
+                                                <Label for="disabilityGradePop2">장애등급2</Label>
+                                            </Col>
+                                            <Col>
+                                                <Select
+                                                    options={disabilityGrade}
+                                                    defaultValue={disabilityGrade[0]}
+                                                    id="disabilityGradePop2"
+                                                    name="disabilityGradePop2"
+                                                />
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col xs="2" className="tit">
+                                                <Label for="wheelchairPop">휠체어</Label> <span className="ico-c">필수</span>
+                                            </Col>
+                                            <Col xs="4">
+                                                <Select
+                                                    options={wheelchair}
+                                                    defaultValue={wheelchair[0]}
+                                                    id="wheelchairPop"
+                                                    name="wheelchairPop"
+                                                />
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col xs="2" className="tit">
+                                                <Label for="birthPop">생년월일</Label>
+                                            </Col>
+                                            <Col xs="4">
+                                                <DatePickerButton />
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col xs="2" className="tit">
+                                                <Label for="addressPop">주소</Label> <span className="ico-c">필수</span>
+                                            </Col>
+                                            <Col xs="5">
+                                                <Input type="text" name="addressPop" id="addressPop" />
+                                                <Button className="btn-pop">주소검색</Button>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col xs={{ offset: "2", size: "10" }}>
+                                                <Input type="text" name="addressPop2" id="addressPop2" />
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col xs={{ offset: "2", size: "10" }}>
+                                                <div className="form-control-wrap">
+                                                    <Input type="text" name="addressPop3" id="addressPop3" placeholder="주소상세" />
+                                                    <span className="form-control-clear">
+                                                        <span className="blind">지우기</span>
+                                                    </span>
+                                                </div>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col xs="2" className="tit">
+                                                <Label for="emailPop">이메일</Label>
                                             </Col>
                                             <Col xs="4">
                                                 <div className="form-control-wrap">
@@ -332,18 +641,192 @@ class Main extends Component {
                                                     </span>
                                                 </div>
                                             </Col>
+                                            <Col className="s-paper">
+                                                <FormGroup check inline>
+                                                    <Input type="checkbox" id="emailPop2" name="emailPop2" />
+                                                    <Label for="emailPop2"> 메일링 서비스여부 </Label>
+                                                </FormGroup>
+                                                <FormGroup check inline>
+                                                    <Input type="checkbox" id="emailPop3" name="emailPop3" />
+                                                    <Label for="emailPop3">SMS수신여부</Label>
+                                                </FormGroup>
+                                            </Col>
                                         </Row>
-
-                                        <Row className="btn-area">
-                                            <Col></Col>
-                                            <Col>
-                                                <Button className="btn-w c-blue">저장</Button>
+                                        <Row>
+                                            <Col xs="2" className="tit">
+                                                <Label for="sexPop">성별</Label>
+                                            </Col>
+                                            <Col xs="4">
+                                                <Select options={sex} defaultValue={sex[0]} id="sexPop" name="sexPop" />
+                                            </Col>
+                                            <Col xs="2" className="tit">
+                                                <Label for="communicationPop">의사소통여부</Label>
+                                            </Col>
+                                            <Col xs="4">
+                                                <Select
+                                                    options={communication}
+                                                    defaultValue={communication[0]}
+                                                    id="communicationPop"
+                                                    name="communicationPop"
+                                                />
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col xs="2" className="tit">
+                                                <Label for="assistantPop">보조인여부</Label>
+                                            </Col>
+                                            <Col xs="4">
+                                                <Select
+                                                    options={assistant}
+                                                    defaultValue={assistant[0]}
+                                                    id="assistantPop"
+                                                    name="assistantPop"
+                                                />
+                                            </Col>
+                                            <Col xs="2" className="tit">
+                                                <Label for="helpPop">도움여부</Label>
+                                            </Col>
+                                            <Col xs="4">
+                                                <Select options={help} defaultValue={help[0]} id="helpPop" name="helpPop" />
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col xs="2" className="tit">
+                                                <Label for="guardianPop">보호자명</Label>
                                             </Col>
                                             <Col>
-                                                <Button className="btn-w">취소</Button>
+                                                <div className="form-control-wrap">
+                                                    <Input type="text" name="guardianPop" id="guardianPop" />
+                                                    <span className="form-control-clear">
+                                                        <span className="blind">지우기</span>
+                                                    </span>
+                                                </div>
                                             </Col>
-                                            <Col></Col>
+                                            <Col xs="2" className="tit">
+                                                <Label for="guardianRelPop">보호자와의 관계</Label>
+                                            </Col>
+                                            <Col>
+                                                <div className="form-control-wrap">
+                                                    <Input type="text" name="guardianRelPop" id="guardianRelPop" />
+                                                    <span className="form-control-clear">
+                                                        <span className="blind">지우기</span>
+                                                    </span>
+                                                </div>
+                                            </Col>
                                         </Row>
+                                        <Row>
+                                            <Col xs="2" className="tit">
+                                                <Label for="guardianPhonePop">보호자연락처1</Label>
+                                            </Col>
+                                            <Col>
+                                                <div className="form-control-wrap">
+                                                    <NumberFormat
+                                                        format="###-####-####"
+                                                        id="guardianPhonePop"
+                                                        name="guardianPhonePop"
+                                                        className="form-control"
+                                                    />
+                                                    <span className="form-control-clear">
+                                                        <span className="blind">지우기</span>
+                                                    </span>
+                                                </div>
+                                            </Col>
+                                            <Col xs="2" className="tit">
+                                                <Label for="guardianPhonePop2">보호자연락처2</Label>
+                                            </Col>
+                                            <Col>
+                                                <div className="form-control-wrap">
+                                                    <NumberFormat
+                                                        format="###-####-####"
+                                                        id="guardianPhonePop2"
+                                                        name="guardianPhonePop2"
+                                                        className="form-control"
+                                                    />
+                                                    <span className="form-control-clear">
+                                                        <span className="blind">지우기</span>
+                                                    </span>
+                                                </div>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col xs="2" className="tit">
+                                                접수서류
+                                            </Col>
+                                            <Col xs="10" className="s-paper">
+                                                <FormGroup check inline>
+                                                    <Input type="checkbox" id="paperPop1" name="paperPop1" />
+                                                    <Label for="paperPop1"> 심사신청서 </Label>
+                                                </FormGroup>
+                                                <FormGroup check inline>
+                                                    <Input type="checkbox" id="paperPop2" name="paperPop2" />
+                                                    <Label for="paperPop2">정보이용동의서</Label>
+                                                </FormGroup>
+                                                <FormGroup check inline>
+                                                    <Input type="checkbox" id="paperPop3" name="paperPop3" />
+                                                    <Label for="paperPop3">복지카드사본</Label>
+                                                </FormGroup>
+                                                <FormGroup check inline>
+                                                    <Input type="checkbox" id="paperPop4" name="paperPop4" />
+                                                    <Label for="paperPop4">진단서</Label>
+                                                </FormGroup>
+                                                <FormGroup check inline>
+                                                    <Input type="checkbox" id="paperPop4" name="paperPop4" />
+                                                    <Label for="paperPop4">장애인증명서</Label>
+                                                </FormGroup>
+                                                <FormGroup check inline>
+                                                    <Input type="checkbox" id="paperPop4" name="paperPop4" />
+                                                    <Label for="paperPop4">장기요양인증서</Label>
+                                                </FormGroup>
+                                                <FormGroup check inline>
+                                                    <Input type="checkbox" id="paperPop4" name="paperPop4" />
+                                                    <Label for="paperPop4">기타</Label>
+                                                </FormGroup>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col xs="2" className="tit">
+                                                <Label for="ApprovalPop">등록일</Label>
+                                            </Col>
+                                            <Col>
+                                                <DatePickerButton />
+                                            </Col>
+                                        </Row>
+                                        <Row className="line-">
+                                            <Col xs="2" className="tit">
+                                                <Label for="filePop">파일제목</Label>
+                                            </Col>
+                                            <Col>
+                                                <Input type="text" name="filePop" id="filePop" />
+                                            </Col>
+                                            <Col className="justify-content-start">
+                                                <Button className="btn-pop">
+                                                    <i class="las la-plus"></i> 추가
+                                                </Button>
+                                                <Button className="btn-pop">
+                                                    <i class="las la-minus"></i> 삭제
+                                                </Button>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col xs="2" className="tit">
+                                                <Label for="fileAddPop">파일명</Label>
+                                            </Col>
+                                            <Col>
+                                                <Input type="file" name="fileAddPop" id="fileAddPop" />
+                                            </Col>
+                                        </Row>
+                                        <div className="tbl- ag-theme-balham mt-3">
+                                            <AgGridReact rowData={popTable} style={{ height: "300px" }}>
+                                                <AgGridColumn field="순서" minWidth={60} maxWidth={70}></AgGridColumn>
+                                                <AgGridColumn
+                                                    field="선택"
+                                                    minWidth={60}
+                                                    maxWidth={70}
+                                                    checkboxSelection={true}
+                                                ></AgGridColumn>
+                                                <AgGridColumn field="파일제목"></AgGridColumn>
+                                            </AgGridReact>
+                                        </div>
                                     </div>
                                     <Button className="btn-close">
                                         <i className="las la-times"></i>

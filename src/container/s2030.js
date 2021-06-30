@@ -80,10 +80,6 @@ const condition = [
     { value: "사용자명", label: "사용자명" },
     { value: "사용자ID", label: "사용자ID" },
 ];
-const usePop = [
-    { value: "사용", label: "사용" },
-    { value: "비사용", label: "비사용" },
-];
 
 class Main extends Component {
     render() {
@@ -240,37 +236,27 @@ class Main extends Component {
                                             <Label for="usePop">사용여부</Label>
                                         </Col>
                                         <Col>
-                                            <Select options={usePop} defaultValue={usePop[0]} id="usePop" name="usePop" />
+                                            <Select options={availability} defaultValue={availability[0]} id="usePop" name="usePop" />
                                         </Col>
                                     </Row>
                                     <Row>
                                         <Col xs="2" className="tit">
-                                            <Label for="adressPop">주소</Label>
+                                            <Label for="addressPop">주소</Label>
                                         </Col>
                                         <Col xs="5">
-                                            <div className="form-control-wrap">
-                                                <Input type="text" name="adressPop" id="adressPop" />
-                                                <span className="form-control-clear">
-                                                    <span className="blind">지우기</span>
-                                                </span>
-                                            </div>
+                                            <Input type="text" name="addressPop" id="addressPop" />
                                             <Button className="btn-pop">주소검색</Button>
                                         </Col>
                                     </Row>
                                     <Row>
                                         <Col xs={{ offset: "2", size: "10" }}>
-                                            <div className="form-control-wrap">
-                                                <Input type="text" name="adressPop2" id="adressPop2" />
-                                                <span className="form-control-clear">
-                                                    <span className="blind">지우기</span>
-                                                </span>
-                                            </div>
+                                            <Input type="text" name="addressPop2" id="addressPop2" />
                                         </Col>
                                     </Row>
                                     <Row>
                                         <Col xs={{ offset: "2", size: "10" }}>
                                             <div className="form-control-wrap">
-                                                <Input type="text" name="adressPop3" id="adressPop3" placeholder="주소상세" />
+                                                <Input type="text" name="addressPop3" id="addressPop3" placeholder="주소상세" />
                                                 <span className="form-control-clear">
                                                     <span className="blind">지우기</span>
                                                 </span>
