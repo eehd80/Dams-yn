@@ -107,13 +107,79 @@ class Main extends Component {
 
                                     <div className="btn-group2">
                                         <ButtonToggle className="c-yellow">
-                                            <i className="las la-file-excel"></i> SMS전송
+                                            <i className="las la-sms"></i> SMS전송
                                         </ButtonToggle>
                                         <ButtonToggle className="">
                                             <i className="las la-search"></i> 검색
                                         </ButtonToggle>
                                     </div>
                                 </Form>
+                                <div className="tbl-option">
+                                    <div className="row-option">
+                                        <FormGroup xs="2" className="tit">
+                                            <Label for="driverAll">전체기사</Label>
+                                            <Input type="text" name="driverAll" id="driverAll" />
+                                        </FormGroup>
+                                        <FormGroup xs="2" className="tit">
+                                            <Label for="driverOpt1">정상</Label>
+                                            <Input type="text" name="driverOpt1" id="driverOpt1" />
+                                        </FormGroup>
+                                        <FormGroup xs="2" className="tit">
+                                            <Label for="driverOpt2">음영</Label>
+                                            <Input type="text" name="driverOpt2" id="driverOpt2" />
+                                        </FormGroup>
+                                        <FormGroup xs="2" className="tit">
+                                            <Label for="driverOpt2">기타</Label>
+                                            <Input type="text" name="driverOpt2" id="driverOpt2" />
+                                        </FormGroup>
+                                        <ButtonToggle className="c-yellow">
+                                            <i className="las la-map-marker-alt"></i> 위치보기
+                                        </ButtonToggle>
+                                    </div>
+                                    <div className="row-option">
+                                        <FormGroup xs="2" className="tit">
+                                            <Label for="driverAll" className="et c-blue">
+                                                대기
+                                            </Label>
+                                            <Input type="text" name="driverAll" id="driverAll" />
+                                        </FormGroup>
+                                        <FormGroup xs="2" className="tit">
+                                            <Label for="driverOpt1" className="c-red">
+                                                배차
+                                            </Label>
+                                            <Input type="text" name="driverOpt1" id="driverOpt1" />
+                                        </FormGroup>
+                                        <FormGroup xs="2" className="tit">
+                                            <Label for="driverOpt2" className="c-green">
+                                                승차
+                                            </Label>
+                                            <Input type="text" name="driverOpt2" id="driverOpt2" />
+                                        </FormGroup>
+                                        <FormGroup xs="2" className="tit">
+                                            <Label for="driverOpt2" className="c-gray">
+                                                출석
+                                            </Label>
+                                            <Input type="text" name="driverOpt2" id="driverOpt2" />
+                                        </FormGroup>
+                                        <FormGroup xs="2" className="tit">
+                                            <Label for="driverOpt2" className="c-gray">
+                                                퇴근
+                                            </Label>
+                                            <Input type="text" name="driverOpt2" id="driverOpt2" />
+                                        </FormGroup>
+                                        <FormGroup>
+                                            <DatePickerButton />
+                                            <div className="wav-">부터</div>
+                                            <Input type="number" name="unitTime" id="unitTime" className="inp-time" />
+                                            <div className="wav-">시간</div>
+                                        </FormGroup>
+                                        <FormGroup>
+                                            <ButtonToggle className="c-green">
+                                                <i className="las la-route"></i> 경로보기
+                                            </ButtonToggle>
+                                        </FormGroup>
+                                    </div>
+                                </div>
                                 {/* 리스트 */}
                                 <div className="tbl- ag-theme-balham">
                                     <AgGridReact

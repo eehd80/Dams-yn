@@ -800,10 +800,10 @@ class Main extends Component {
                                             </Col>
                                             <Col className="justify-content-start">
                                                 <Button className="btn-pop">
-                                                    <i class="las la-plus"></i> 추가
+                                                    <i className="las la-plus"></i> 추가
                                                 </Button>
                                                 <Button className="btn-pop">
-                                                    <i class="las la-minus"></i> 삭제
+                                                    <i className="las la-minus"></i> 삭제
                                                 </Button>
                                             </Col>
                                         </Row>

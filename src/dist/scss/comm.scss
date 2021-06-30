@@ -11,12 +11,12 @@
     }
 }
 .c-red {
-    background-color: $prim;
-    color: $w;
+    background-color: $prim !important;
+    color: $w !important;
 }
 .c-green {
-    background-color: $green;
-    color: $w;
+    background-color: $green !important;
+    color: $w !important;
     &:hover {
         background-color: #1c7345;
     }
@@ -24,6 +24,10 @@
 .c-yellow {
     background-color: $yellow !important;
     color: $b !important;
+}
+.c-gray {
+    background-color: $gray-3 !important;
+    color: $w !important;
 }
 .ico-c {
     margin-left: 5px;
@@ -340,6 +344,38 @@ input[type="number"]::-webkit-inner-spin-button {
         align-items: center;
     }
 }
+.tbl-option {
+    .row-option {
+        display: flex;
+        margin: 0 -5px 10px;
+        > div {
+            display: flex;
+            padding: 0 7px;
+            white-space: nowrap;
+        }
+    }
+    .form-control {
+        width: 100px;
+    }
+    .tit {
+        label {
+            padding: 0 7px;
+            border-radius: 4px;
+            background: $gray-e;
+            margin-right: 5px;
+            line-height: 36px;
+            font-size: 0.8rem;
+            text-align: center;
+            &.et {
+                width: 61px;
+            }
+        }
+    }
+    .inp-time {
+        width: 50px;
+    }
+}
+
 .css-2b097c-container {
     box-sizing: border-box;
     .css-1pahdxg-control {
