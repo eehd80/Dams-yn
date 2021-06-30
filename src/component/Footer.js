@@ -309,7 +309,6 @@ const Footer = () => (
                 <AgGridReact rowData={popTable} defaultColDef={defaultColDef} style={{ height: "300px" }}>
                     <AgGridColumn field="순서" minWidth={60} maxWidth={70}></AgGridColumn>
                     <AgGridColumn field="선택" minWidth={60} maxWidth={70} checkboxSelection={true}></AgGridColumn>
-
                     <AgGridColumn field="아이디" minWidth={60} maxWidth={70}></AgGridColumn>
                     <AgGridColumn field="이름" minWidth={100}></AgGridColumn>
                     <AgGridColumn field="차량번호"></AgGridColumn>
