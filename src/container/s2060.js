@@ -121,7 +121,7 @@ class Main extends Component {
                                 <div className="cont-layer form-wrap">
                                     <Row>
                                         <Col className="tit">
-                                            <label for="namePop">기사명</label>
+                                            <label for="namePop">기사명</label> <span className="ico-c">필수</span>
                                         </Col>
                                         <Col xs="4">
                                             <div className="form-control-wrap">
@@ -151,7 +151,7 @@ class Main extends Component {
                                     </Row>
                                     <Row>
                                         <Col className="tit">
-                                            <label for="identiPop">기사인식번호</label>
+                                            <label for="identiPop">기사인식번호</label> <span className="ico-c">필수</span>
                                         </Col>
                                         <Col xs="4">
                                             <div className="form-control-wrap">
