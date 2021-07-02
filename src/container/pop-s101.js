@@ -7,7 +7,22 @@ import { Row, Col, Button, ButtonToggle, Form, FormGroup, Label, Input } from "r
 
 const webCall = [
     {
-        "오후 02:00": "예약가능",
+        carNum: "70마5601(5건)",
+        "00": "예약가능",
+        10: "예약가능",
+        20: "예약가능",
+        30: "예약가능",
+        40: "예약가능",
+        50: "예약가능",
+    },
+    {
+        carNum: "70마5601(5건)",
+        "00": "예약가능",
+        10: "예약가능",
+        20: "예약가능",
+        30: "예약가능",
+        40: "예약가능",
+        50: "예약가능",
     },
 ];
 const defaultColDef = {
@@ -33,7 +48,7 @@ class Main extends Component {
                         <Form className="tbl-filter">
                             <FormGroup>
                                 <Label for="timeSearch">예약</Label>
-                                <DatePickerButton />
+                                <DatePickerButton style={{ width: "200px" }} />
                                 <div className="form-control-wrap">
                                     <Input type="number" name="intervalPop" id="intervalPop" placeholder="20" />
                                     <span className="form-control-clear">
@@ -67,47 +82,63 @@ class Main extends Component {
                                 enableRangeSelection={true}
                                 allowContextMenuWithControlKey={true}
                             >
+                                <AgGridColumn field="">
+                                    <AgGridColumn
+                                        headerName=""
+                                        field="carNum"
+                                        width={200}
+                                        filter="agTextColumnFilter"
+                                        pinned="left"
+                                        lockPinned={true}
+                                        cellClass="lock-pinned"
+                                    />
+                                </AgGridColumn>
                                 <AgGridColumn field="오후 02:00">
-                                    <AgGridColumn headerName="00" field="00분" width={60} filter="agTextColumnFilter" />
-                                    <AgGridColumn headerName="10" field="10분" width={60} filter="agTextColumnFilter" />
-                                    <AgGridColumn headerName="20" field="20분" width={60} filter="agTextColumnFilter" />
-                                    <AgGridColumn headerName="30" field="30분" width={60} filter="agTextColumnFilter" />
-                                    <AgGridColumn headerName="40" field="40분" width={60} filter="agTextColumnFilter" />
+                                    <AgGridColumn headerName="00" field="00" width={80} filter="agTextColumnFilter" />
+                                    <AgGridColumn headerName="10" field="10" width={80} filter="agTextColumnFilter" />
+                                    <AgGridColumn headerName="20" field="20" width={80} filter="agTextColumnFilter" />
+                                    <AgGridColumn headerName="30" field="30" width={80} filter="agTextColumnFilter" />
+                                    <AgGridColumn headerName="40" field="40" width={80} filter="agTextColumnFilter" />
+                                    <AgGridColumn headerName="50" field="50" width={80} filter="agTextColumnFilter" />
                                 </AgGridColumn>
                                 <AgGridColumn field="오후 03:00">
-                                    <AgGridColumn headerName="00" field="00" width={60} filter="agTextColumnFilter" />
-                                    <AgGridColumn headerName="10" field="10" width={60} filter="agTextColumnFilter" />
-                                    <AgGridColumn headerName="20" field="20" width={60} filter="agTextColumnFilter" />
-                                    <AgGridColumn headerName="30" field="30" width={60} filter="agTextColumnFilter" />
-                                    <AgGridColumn headerName="40" field="40" width={60} filter="agTextColumnFilter" />
+                                    <AgGridColumn headerName="00" field="00" width={80} filter="agTextColumnFilter" />
+                                    <AgGridColumn headerName="10" field="10" width={80} filter="agTextColumnFilter" />
+                                    <AgGridColumn headerName="20" field="20" width={80} filter="agTextColumnFilter" />
+                                    <AgGridColumn headerName="30" field="30" width={80} filter="agTextColumnFilter" />
+                                    <AgGridColumn headerName="40" field="40" width={80} filter="agTextColumnFilter" />
+                                    <AgGridColumn headerName="50" field="50" width={80} filter="agTextColumnFilter" />
                                 </AgGridColumn>
                                 <AgGridColumn field="오후 04:00">
-                                    <AgGridColumn headerName="00" field="00" width={60} filter="agTextColumnFilter" />
-                                    <AgGridColumn headerName="10" field="10" width={60} filter="agTextColumnFilter" />
-                                    <AgGridColumn headerName="20" field="20" width={60} filter="agTextColumnFilter" />
-                                    <AgGridColumn headerName="30" field="30" width={60} filter="agTextColumnFilter" />
-                                    <AgGridColumn headerName="40" field="40" width={60} filter="agTextColumnFilter" />
+                                    <AgGridColumn headerName="00" field="00" width={80} filter="agTextColumnFilter" />
+                                    <AgGridColumn headerName="10" field="10" width={80} filter="agTextColumnFilter" />
+                                    <AgGridColumn headerName="20" field="20" width={80} filter="agTextColumnFilter" />
+                                    <AgGridColumn headerName="30" field="30" width={80} filter="agTextColumnFilter" />
+                                    <AgGridColumn headerName="40" field="40" width={80} filter="agTextColumnFilter" />
+                                    <AgGridColumn headerName="50" field="50" width={80} filter="agTextColumnFilter" />
                                 </AgGridColumn>
                                 <AgGridColumn field="오후 05:00">
-                                    <AgGridColumn headerName="00" field="00" width={60} filter="agTextColumnFilter" />
-                                    <AgGridColumn headerName="10" field="10" width={60} filter="agTextColumnFilter" />
-                                    <AgGridColumn headerName="20" field="20" width={60} filter="agTextColumnFilter" />
-                                    <AgGridColumn headerName="30" field="30" width={60} filter="agTextColumnFilter" />
-                                    <AgGridColumn headerName="40" field="40" width={60} filter="agTextColumnFilter" />
+                                    <AgGridColumn headerName="00" field="00" width={80} filter="agTextColumnFilter" />
+                                    <AgGridColumn headerName="10" field="10" width={80} filter="agTextColumnFilter" />
+                                    <AgGridColumn headerName="20" field="20" width={80} filter="agTextColumnFilter" />
+                                    <AgGridColumn headerName="30" field="30" width={80} filter="agTextColumnFilter" />
+                                    <AgGridColumn headerName="40" field="40" width={80} filter="agTextColumnFilter" />
+                                    <AgGridColumn headerName="50" field="50" width={80} filter="agTextColumnFilter" />
                                 </AgGridColumn>
                                 <AgGridColumn field="오후 06:00">
-                                    <AgGridColumn headerName="00" field="00" width={60} filter="agTextColumnFilter" />
-                                    <AgGridColumn headerName="10" field="10" width={60} filter="agTextColumnFilter" />
-                                    <AgGridColumn headerName="20" field="20" width={60} filter="agTextColumnFilter" />
-                                    <AgGridColumn headerName="30" field="30" width={60} filter="agTextColumnFilter" />
-                                    <AgGridColumn headerName="40" field="40" width={60} filter="agTextColumnFilter" />
+                                    <AgGridColumn headerName="00" field="00" width={80} filter="agTextColumnFilter" />
+                                    <AgGridColumn headerName="10" field="10" width={80} filter="agTextColumnFilter" />
+                                    <AgGridColumn headerName="20" field="20" width={80} filter="agTextColumnFilter" />
+                                    <AgGridColumn headerName="30" field="30" width={80} filter="agTextColumnFilter" />
+                                    <AgGridColumn headerName="40" field="40" width={80} filter="agTextColumnFilter" />
+                                    <AgGridColumn headerName="50" field="50" width={80} filter="agTextColumnFilter" />
                                 </AgGridColumn>
                             </AgGridReact>
                         </div>
                     </div>
                 </div>
 
-                <div className="layer-" style={{ top: "200px", left: "50px", width: "500px", transform: "translate(0,0)" }}>
+                <div className="layer-" style={{ top: "250px", left: "600px", width: "500px", transform: "translate(0,0)" }}>
                     <div className="head-layer">
                         <h3>예약콜 정보</h3>
                     </div>

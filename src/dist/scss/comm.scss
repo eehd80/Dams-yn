@@ -278,6 +278,13 @@ input[type="number"]::-webkit-inner-spin-button {
         height: 100%;
     }
 }
+.ag-pinned-left-cols-container {
+    .ag-row {
+        background-color: #d1dced !important;
+        border-color: #bdc3c7 !important;
+    }
+}
+
 // form
 .tbl-filter {
     display: flex;
@@ -306,7 +313,7 @@ input[type="number"]::-webkit-inner-spin-button {
     }
     .react-datepicker-wrapper,
     .react-datepicker__input-container {
-        width: 150px;
+        width: 170px;
         margin-right: 10px;
     }
     .form-group {
