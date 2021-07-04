@@ -42,6 +42,7 @@ const disabilityType = [
     { value: "지체", label: "지체" },
 ];
 const disabilityGrade = [
+    { value: "장애종류", label: "장애종류" },
     { value: "등급외", label: "등급외" },
     { value: "6급", label: "6급" },
     { value: "7급", label: "7급" },

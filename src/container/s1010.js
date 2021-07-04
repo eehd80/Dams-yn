@@ -72,12 +72,12 @@ const Current = (props) => {
     const tttt = function (e) {
         e.preventDefault();
     };
-
     return (
-        <div className="wrap-data">
+        <div id="call" className="wrap-data">
             <div className="tit-sub-wrap">
-                <h2 className="tit-sub">심야콜 접수</h2>
+                <h2 className="tit-sub">콜현황</h2>
             </div>
+
             <div className="lst-data">
                 <Form className="tbl-filter">
                     <FormGroup>
@@ -88,14 +88,13 @@ const Current = (props) => {
                         <Label for="array">정렬</Label>
                         <Select options={array} defaultValue={array[0]} id="array" name="array" />
                     </FormGroup>
-                    <FormGroup>
+                    <FormGroup className="inp-et2">
                         <Label for="state" className="blind">
                             상태
                         </Label>
                         <Select
                             isMulti
                             options={state}
-                            // defaultValue={condition[0]}
                             id="state"
                             name="state"
                             placeholder="상태조건"
@@ -103,7 +102,7 @@ const Current = (props) => {
                             classNamePrefix="select"
                         />
                     </FormGroup>
-                    <FormGroup className="d-flex">
+                    <FormGroup>
                         <Label for="array" className="blind">
                             정렬
                         </Label>
@@ -117,8 +116,7 @@ const Current = (props) => {
                         </ButtonToggle>
                     </div>
                 </Form>
-                {/* 리스트 */}
-                <div className="tbl- ag-theme-balham">
+                <div className="tbl- ag-theme-balham" id={"test-call"}>
                     <AgGridReact
                         frameworkComponents={{
                             testRenderer: TestRenderer,
@@ -130,42 +128,42 @@ const Current = (props) => {
                         onCellContextMenu={testContext}
                         onGridReady={onGridReady}
                     >
-                        <AgGridColumn field="구분" minWidth={60} maxWidth={70} cellRenderer="testRenderer"></AgGridColumn>
-                        <AgGridColumn field="상태" minWidth={60} maxWidth={70}></AgGridColumn>
-                        <AgGridColumn field="배차차량"></AgGridColumn>
-                        <AgGridColumn field="요금"></AgGridColumn>
-                        <AgGridColumn field="완료시간" minWidth={200}></AgGridColumn>
-                        <AgGridColumn field="배차기사명"></AgGridColumn>
-                        <AgGridColumn field="고객명"></AgGridColumn>
-                        <AgGridColumn field="승차위치" minWidth={200}></AgGridColumn>
-                        <AgGridColumn field="하차위치" minWidth={200}></AgGridColumn>
-                        <AgGridColumn field="배차예정시간"></AgGridColumn>
-                        <AgGridColumn field="이용예정시간"></AgGridColumn>
-                        <AgGridColumn field="고객회신번호" minWidth={150}></AgGridColumn>
-                        <AgGridColumn field="고객전화번호" minWidth={150}></AgGridColumn>
-                        <AgGridColumn field="접수시간" minWidth={200}></AgGridColumn>
-                        <AgGridColumn field="접수자"></AgGridColumn>
-                        <AgGridColumn field="접수자ID"></AgGridColumn>
-                        <AgGridColumn field="배차시간"></AgGridColumn>
-                        <AgGridColumn field="배차차"></AgGridColumn>
-                        <AgGridColumn field="승차시간" minWidth={200}></AgGridColumn>
-                        <AgGridColumn field="하차시간" minWidth={200}></AgGridColumn>
-                        <AgGridColumn field="취소시간" minWidth={200}></AgGridColumn>
-                        <AgGridColumn field="취소자"></AgGridColumn>
-                        <AgGridColumn field="취소사유"></AgGridColumn>
-                        <AgGridColumn field="비고" minWidth={200}></AgGridColumn>
-                        <AgGridColumn field="차량단말기번호"></AgGridColumn>
-                        <AgGridColumn field="기사전화번호" minWidth={150}></AgGridColumn>
-                        <AgGridColumn field="차량번호"></AgGridColumn>
-                        <AgGridColumn field="배차경과시간"></AgGridColumn>
-                        <AgGridColumn field="상담원메모" minWidth={200}></AgGridColumn>
-                        <AgGridColumn field="승차경과시간"></AgGridColumn>
-                        <AgGridColumn field="미터요금"></AgGridColumn>
-                        <AgGridColumn field="기타요금"></AgGridColumn>
-                        <AgGridColumn field="통행요금"></AgGridColumn>
-                        <AgGridColumn field="주차요금"></AgGridColumn>
-                        <AgGridColumn field="요금합계"></AgGridColumn>
+                        <AgGridColumn field="표식" minWidth={60} maxWidth={70} />
+                        <AgGridColumn field="구분" minWidth={60} maxWidth={70} />
+                        <AgGridColumn field="상태" hide={true} />
+                        <AgGridColumn field="배차차량" />
+                        <AgGridColumn field="배차기사명" />
+                        <AgGridColumn field="고객명" cellRenderer="testRenderer" />
+                        <AgGridColumn field="승차위치" minWidth={150} />
+                        <AgGridColumn field="하차위치" minWidth={150} />
+                        <AgGridColumn field="배차예정시간" minWidth={180} />
+                        <AgGridColumn field="이용예정시간" />
+                        <AgGridColumn field="고객회신번호" minWidth={150} />
+                        <AgGridColumn field="고객전화번호" minWidth={150} />
+                        <AgGridColumn field="접수시간" />
+                        <AgGridColumn field="접수자" />
+                        <AgGridColumn field="접수자ID" />
+                        <AgGridColumn field="배차시간" />
+                        <AgGridColumn field="배차자" />
+                        <AgGridColumn field="승차시간" />
+                        <AgGridColumn field="하차시간" />
+                        <AgGridColumn field="요금" />
+                        <AgGridColumn field="기사전화번호" minWidth={150} />
+                        <AgGridColumn field="차량번호" />
                     </AgGridReact>
+                    <Menu id={MENU_ID}>
+                        <Item onClick={handleItemClick} onContextMenu={tttt}>
+                            Item 1
+                        </Item>
+                        <Item onClick={handleItemClick}>Item 2</Item>
+                        <Separator />
+                        <Item disabled>Disabled</Item>
+                        <Separator />
+                        <Submenu label="Submenu">
+                            <Item onClick={handleItemClick}>Sub Item 1</Item>
+                            <Item onClick={handleItemClick}>Sub Item 2</Item>
+                        </Submenu>
+                    </Menu>
                 </div>
             </div>
         </div>

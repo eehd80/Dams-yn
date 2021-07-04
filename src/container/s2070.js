@@ -1,28 +1,14 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import { AgGridColumn, AgGridReact } from "ag-grid-react";
 import DatePickerButton from "../component/DatePicker";
 import NumberFormat from "react-number-format";
 import Select from "react-select";
-import { Row, Col, Button, ButtonToggle, Form, FormGroup, Label, Input, FormText } from "reactstrap";
+import { Row, Col, Button, ButtonToggle, Form, FormGroup, Label, Input } from "reactstrap";
 
-import Header from "../component/Header";
-import Receive from "../component/Receive";
-import Map from "../component/Map";
-
-const webCall = [
-    {
-        근무조: "07-16조",
-        "1(토)": "김형래 71조 3717",
-        "2(일)": "김형래 71조 3717",
-        "3(월)": "김형래 71조 3717",
-    },
-    {
-        근무조: "07-16조",
-        "1(토)": "김형래 71조 3717",
-        "2(일)": "김형래 71조 3717",
-        "3(월)": "김형래 71조 3717",
-    },
-];
+import { Item, Menu, Separator, Submenu, useContextMenu } from "react-contexify";
+import "react-contexify/dist/ReactContexify.css";
+import { getData } from "../api/data";
+import TestRenderer from "../component/TestRenderer";
 
 const defaultColDef = {
     width: 100,
@@ -53,215 +39,238 @@ const month = [
     { value: "11", label: "11" },
     { value: "12", label: "12" },
 ];
-const workData = [
-    { 번호: "1", 근무조명: "09-18조", 시작시간: "09", 종료시간: "18" },
-    { 번호: "1", 근무조명: "09-18조", 시작시간: "09", 종료시간: "18" },
-    { 번호: "1", 근무조명: "09-18조", 시작시간: "09", 종료시간: "18" },
-];
-const workData2 = [
-    { 번호: "1", 기사명: "권다경", 아이디: "0022", 소속법인: "교통약자" },
-    { 번호: "1", 기사명: "권다경", 아이디: "0022", 소속법인: "교통약자" },
-    { 번호: "1", 기사명: "권다경", 아이디: "0022", 소속법인: "교통약자" },
-];
 
-class Main extends Component {
-    render() {
-        return (
-            <div className="wrap">
-                <Header />
-                <div id="main">
-                    <Receive />
-                    <div className="contents">
-                        <Map />
-                        <div className="wrap-data">
-                            <div className="tit-sub-wrap">
-                                <h2 className="tit-sub">운전원 근무조 관리</h2>
+const MENU_ID = "dams-context";
+
+const Current = (props) => {
+    const [activeTab, setActiveTab] = useState("1");
+    const { show } = useContextMenu({
+        id: MENU_ID,
+    });
+    const toggle = (tab) => {
+        if (activeTab !== tab) setActiveTab(tab);
+    };
+
+    const [gridApi, setGridApi] = useState(null);
+    const [gridColumnApi, setGridColumnApi] = useState(null);
+    const [rowData, setRowData] = useState([]);
+
+    function testContext(e) {}
+
+    function handleItemClick({ event, props, triggerEvent, data }) {
+        console.log(props);
+    }
+
+    const onGridReady = (params) => {
+        getData().then(function (r) {
+            setRowData(r);
+        });
+    };
+
+    const tttt = function (e) {
+        e.preventDefault();
+    };
+
+    return (
+        <div className="wrap-data">
+            <div className="tit-sub-wrap">
+                <h2 className="tit-sub">운전원 근무조 관리</h2>
+            </div>
+            <div className="lst-data">
+                {/* 검색 */}
+                <Form className="tbl-filter">
+                    <FormGroup>
+                        <ButtonToggle className="c-yellow mr-1">
+                            <i className="las la-sms"></i> 기존근무조설정
+                        </ButtonToggle>
+                        <Label for="workGroup" className="blind">
+                            기본근무조설정
+                        </Label>
+                        <Select options={workGroup} defaultValue={workGroup[0]} id="use" name="use" />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for="year" className="blind">
+                            년도 선택
+                        </Label>
+                        <Select options={year} defaultValue={year[0]} id="year" name="year" />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for="month" className="blind">
+                            월 선택
+                        </Label>
+                        <Select options={month} defaultValue={month[0]} id="month" name="month" />
+                    </FormGroup>
+
+                    <div className="btn-group2">
+                        <ButtonToggle className="c-green">
+                            <i className="las la-file-excel"></i> 엑셀 불러오기
+                        </ButtonToggle>
+                        <ButtonToggle className="c-blue">
+                            <i className="las la-plus"></i> 신규
+                        </ButtonToggle>
+                        <ButtonToggle className="">
+                            <i className="las la-search"></i> 검색
+                        </ButtonToggle>
+                        <ButtonToggle className="c-green">
+                            <i className="las la-file-excel"></i> 엑셀
+                        </ButtonToggle>
+                    </div>
+                </Form>
+                {/* 리스트 */}
+                <div className="tbl- ag-theme-balham">
+                    <AgGridReact
+                        frameworkComponents={{
+                            testRenderer: TestRenderer,
+                        }}
+                        rowData={rowData}
+                        defaultColDef={defaultColDef}
+                        allowContextMenuWithControlKey={true}
+                        enableRangeSelection={true}
+                        onCellContextMenu={testContext}
+                        onGridReady={onGridReady}
+                    >
+                        <AgGridColumn field="근무조" minWidth={100} cellRenderer="testRenderer"></AgGridColumn>
+                        <AgGridColumn field="1(토)" minWidth={130}></AgGridColumn>
+                        <AgGridColumn field="2(일)" minWidth={130}></AgGridColumn>
+                        <AgGridColumn field="3(월)" minWidth={130}></AgGridColumn>
+                    </AgGridReact>
+                </div>
+            </div>
+
+            {/* layer-기본근무조설정 */}
+            <div className="layer-" style={{ top: "200px", left: "570px", width: "500px", transform: "translate(0,0)" }}>
+                <div className="head-layer">
+                    <h3>기본근무조 설정</h3>
+                </div>
+                <div className="cont-layer form-wrap">
+                    <Row>
+                        <Col xs="2" className="tit">
+                            <label for="workGroupPop">회원사명</label>
+                        </Col>
+                        <Col>
+                            <Select options={workGroup} defaultValue={workGroup[0]} id="workGroupPop" name="workGroupPop" />
+                        </Col>
+                        <Col xs="2" className="tit">
+                            <label for="serviceGroupPop">근무조명</label>
+                        </Col>
+                        <Col>
+                            <div className="form-control-wrap">
+                                <Input type="text" name="idPop" id="idPop" />
+                                <span className="form-control-clear">
+                                    <span className="blind">지우기</span>
+                                </span>
                             </div>
-                            <div className="lst-data">
-                                {/* 검색 */}
-                                <Form className="tbl-filter">
-                                    <FormGroup>
-                                        <ButtonToggle className="c-yellow mr-1">
-                                            <i className="las la-sms"></i> 기존근무조설정
-                                        </ButtonToggle>
-                                        <Label for="workGroup" className="blind">
-                                            기본근무조설정
-                                        </Label>
-                                        <Select options={workGroup} defaultValue={workGroup[0]} id="use" name="use" />
-                                    </FormGroup>
-                                    <FormGroup>
-                                        <Label for="year" className="blind">
-                                            년도 선택
-                                        </Label>
-                                        <Select options={year} defaultValue={year[0]} id="year" name="year" />
-                                    </FormGroup>
-                                    <FormGroup>
-                                        <Label for="month" className="blind">
-                                            월 선택
-                                        </Label>
-                                        <Select options={month} defaultValue={month[0]} id="month" name="month" />
-                                    </FormGroup>
-
-                                    <div className="btn-group2">
-                                        <ButtonToggle className="c-green">
-                                            <i className="las la-file-excel"></i> 엑셀 불러오기
-                                        </ButtonToggle>
-                                        <ButtonToggle className="c-blue">
-                                            <i className="las la-plus"></i> 신규
-                                        </ButtonToggle>
-                                        <ButtonToggle className="">
-                                            <i className="las la-search"></i> 검색
-                                        </ButtonToggle>
-                                        <ButtonToggle className="c-green">
-                                            <i className="las la-file-excel"></i> 엑셀
-                                        </ButtonToggle>
-                                    </div>
-                                </Form>
-                                {/* 리스트 */}
-                                <div className="tbl- ag-theme-balham">
-                                    <AgGridReact
-                                        rowData={webCall}
-                                        defaultColDef={defaultColDef}
-                                        enableRangeSelection={true}
-                                        allowContextMenuWithControlKey={true}
-                                    >
-                                        <AgGridColumn field="근무조" minWidth={100}></AgGridColumn>
-                                        <AgGridColumn field="1(토)" minWidth={130}></AgGridColumn>
-                                        <AgGridColumn field="2(일)" minWidth={130}></AgGridColumn>
-                                        <AgGridColumn field="3(월)" minWidth={130}></AgGridColumn>
-                                    </AgGridReact>
-                                </div>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col xs="2" className="tit">
+                            <label for="startTimePop">시작시간</label>
+                        </Col>
+                        <Col>
+                            <div className="form-control-wrap">
+                                <Input type="number" name="startTimePop" id="startTimePop" placeholder="0" />
+                                <span className="form-control-clear">
+                                    <span className="blind">지우기</span>
+                                </span>
                             </div>
-
-                            {/* layer-기본근무조설정 */}
-                            <div className="layer-" style={{ top: "200px", left: "570px", width: "500px", transform: "translate(0,0)" }}>
-                                <div className="head-layer">
-                                    <h3>기본근무조 설정</h3>
-                                </div>
-                                <div className="cont-layer form-wrap">
-                                    <Row>
-                                        <Col xs="2" className="tit">
-                                            <label for="workGroupPop">회원사명</label>
-                                        </Col>
-                                        <Col>
-                                            <Select options={workGroup} defaultValue={workGroup[0]} id="workGroupPop" name="workGroupPop" />
-                                        </Col>
-                                        <Col xs="2" className="tit">
-                                            <label for="serviceGroupPop">근무조명</label>
-                                        </Col>
-                                        <Col>
-                                            <div className="form-control-wrap">
-                                                <Input type="text" name="idPop" id="idPop" />
-                                                <span className="form-control-clear">
-                                                    <span className="blind">지우기</span>
-                                                </span>
-                                            </div>
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <Col xs="2" className="tit">
-                                            <label for="startTimePop">시작시간</label>
-                                        </Col>
-                                        <Col>
-                                            <div className="form-control-wrap">
-                                                <Input type="number" name="startTimePop" id="startTimePop" placeholder="0" />
-                                                <span className="form-control-clear">
-                                                    <span className="blind">지우기</span>
-                                                </span>
-                                            </div>
-                                            <span className="unit- unit-l">분</span>
-                                        </Col>
-                                        <Col xs="2" className="tit">
-                                            <label for="startTimePop">종료시간</label>
-                                        </Col>
-                                        <Col>
-                                            <div className="form-control-wrap">
-                                                <Input type="number" name="startTimePop" id="startTimePop" placeholder="0" />
-                                                <span className="form-control-clear">
-                                                    <span className="blind">지우기</span>
-                                                </span>
-                                            </div>
-                                            <span className="unit- unit-l">분</span>
-                                        </Col>
-                                    </Row>
-                                    <Row className="btn-area">
-                                        <Col>
-                                            <Button className="btn-w">검색</Button>
-                                        </Col>
-                                        <Col>
-                                            <Button className="btn-w c-yellow">추가</Button>
-                                        </Col>
-                                        <Col>
-                                            <Button className="btn-w c-red">삭제</Button>
-                                        </Col>
-                                        <Col>
-                                            <Button className="btn-w c-blue">저장</Button>
-                                        </Col>
-                                    </Row>
-
-                                    <div className="tbl- tbl-type1 tbl-call ag-theme-balham" style={{ height: "200px" }}>
-                                        <AgGridReact
-                                            rowData={workData}
-                                            defaultColDef={defaultColDef}
-                                            enableRangeSelection={true}
-                                            allowContextMenuWithControlKey={true}
-                                        >
-                                            <AgGridColumn field="번호" minWidth={50} maxWidth={60}></AgGridColumn>
-                                            <AgGridColumn field="선택" minWidth={50} maxWidth={60} checkboxSelection={true}></AgGridColumn>
-                                            <AgGridColumn field="근무조명" minWidth={130}></AgGridColumn>
-                                            <AgGridColumn field="시작시간"></AgGridColumn>
-                                            <AgGridColumn field="종료시간"></AgGridColumn>
-                                        </AgGridReact>
-                                    </div>
-                                </div>
-                                <Button className="btn-close">
-                                    <i className="las la-times"></i>
-                                    <span className="blind">닫기</span>
-                                </Button>
+                            <span className="unit- unit-l">분</span>
+                        </Col>
+                        <Col xs="2" className="tit">
+                            <label for="startTimePop">종료시간</label>
+                        </Col>
+                        <Col>
+                            <div className="form-control-wrap">
+                                <Input type="number" name="startTimePop" id="startTimePop" placeholder="0" />
+                                <span className="form-control-clear">
+                                    <span className="blind">지우기</span>
+                                </span>
                             </div>
+                            <span className="unit- unit-l">분</span>
+                        </Col>
+                    </Row>
+                    <Row className="btn-area">
+                        <Col>
+                            <Button className="btn-w">검색</Button>
+                        </Col>
+                        <Col>
+                            <Button className="btn-w c-yellow">추가</Button>
+                        </Col>
+                        <Col>
+                            <Button className="btn-w c-red">삭제</Button>
+                        </Col>
+                        <Col>
+                            <Button className="btn-w c-blue">저장</Button>
+                        </Col>
+                    </Row>
 
-                            {/* layer-기사목록 */}
-                            <div className="layer-" style={{ top: "200px", left: "50px", width: "500px", transform: "translate(0,0)" }}>
-                                <div className="head-layer">
-                                    <h3>기사목록</h3>
-                                </div>
-                                <div className="cont-layer form-wrap">
-                                    <div className="tbl- tbl-type1 tbl-call ag-theme-balham" style={{ height: "290px" }}>
-                                        <AgGridReact
-                                            rowData={workData2}
-                                            defaultColDef={defaultColDef}
-                                            enableRangeSelection={true}
-                                            allowContextMenuWithControlKey={true}
-                                        >
-                                            <AgGridColumn field="번호" minWidth={50} maxWidth={60}></AgGridColumn>
-                                            <AgGridColumn field="기사명" minWidth={70}></AgGridColumn>
-                                            <AgGridColumn field="아이디"></AgGridColumn>
-                                            <AgGridColumn field="소속법인"></AgGridColumn>
-                                        </AgGridReact>
-                                    </div>
-                                    <Row className="btn-area">
-                                        <Col></Col>
-                                        <Col>
-                                            <Button className="btn-w c-blue">적용</Button>
-                                        </Col>
-                                        <Col>
-                                            <Button className="btn-w">닫기</Button>
-                                        </Col>
-                                        <Col></Col>
-                                    </Row>
-                                </div>
-                                <Button className="btn-close">
-                                    <i className="las la-times"></i>
-                                    <span className="blind">닫기</span>
-                                </Button>
-                            </div>
-                        </div>
+                    <div className="tbl- tbl-type1 tbl-call ag-theme-balham" style={{ height: "200px" }}>
+                        <AgGridReact
+                            frameworkComponents={{
+                                testRenderer: TestRenderer,
+                            }}
+                            rowData={rowData}
+                            defaultColDef={defaultColDef}
+                            allowContextMenuWithControlKey={true}
+                            enableRangeSelection={true}
+                            onCellContextMenu={testContext}
+                            onGridReady={onGridReady}
+                        >
+                            <AgGridColumn field="번호" minWidth={50} maxWidth={60}></AgGridColumn>
+                            <AgGridColumn field="선택" minWidth={50} maxWidth={60} checkboxSelection={true}></AgGridColumn>
+                            <AgGridColumn field="근무조명" minWidth={130}></AgGridColumn>
+                            <AgGridColumn field="시작시간"></AgGridColumn>
+                            <AgGridColumn field="종료시간"></AgGridColumn>
+                        </AgGridReact>
                     </div>
                 </div>
-                {/* <Footer /> */}
+                <Button className="btn-close">
+                    <i className="las la-times"></i>
+                    <span className="blind">닫기</span>
+                </Button>
             </div>
-        );
-    }
-}
 
-export default Main;
+            {/* layer-기사목록 */}
+            <div className="layer-" style={{ top: "200px", left: "50px", width: "500px", transform: "translate(0,0)" }}>
+                <div className="head-layer">
+                    <h3>기사목록</h3>
+                </div>
+                <div className="cont-layer form-wrap">
+                    <div className="tbl- tbl-type1 tbl-call ag-theme-balham" style={{ height: "290px" }}>
+                        <AgGridReact
+                            frameworkComponents={{
+                                testRenderer: TestRenderer,
+                            }}
+                            rowData={rowData}
+                            defaultColDef={defaultColDef}
+                            allowContextMenuWithControlKey={true}
+                            enableRangeSelection={true}
+                            onCellContextMenu={testContext}
+                            onGridReady={onGridReady}
+                        >
+                            <AgGridColumn field="번호" minWidth={50} maxWidth={60}></AgGridColumn>
+                            <AgGridColumn field="기사명" minWidth={70}></AgGridColumn>
+                            <AgGridColumn field="아이디"></AgGridColumn>
+                            <AgGridColumn field="소속법인"></AgGridColumn>
+                        </AgGridReact>
+                    </div>
+                    <Row className="btn-area">
+                        <Col></Col>
+                        <Col>
+                            <Button className="btn-w c-blue">적용</Button>
+                        </Col>
+                        <Col>
+                            <Button className="btn-w">닫기</Button>
+                        </Col>
+                        <Col></Col>
+                    </Row>
+                </div>
+                <Button className="btn-close">
+                    <i className="las la-times"></i>
+                    <span className="blind">닫기</span>
+                </Button>
+            </div>
+        </div>
+    );
+};
+
+export default Current;

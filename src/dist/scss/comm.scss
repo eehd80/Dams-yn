@@ -44,9 +44,9 @@
     margin-right: 10px;
 }
 .line- {
-    margin-top: 5px;
-    padding-top: 10px;
-    border-top: 1px solid rgba($prim3, 0.5);
+    margin-top: 20px !important;
+    padding-top: 25px;
+    border-top: 2px solid $prim2;
 }
 
 // tit
@@ -311,8 +311,7 @@ input[type="number"]::-webkit-inner-spin-button {
     .btn-group2 {
         margin-left: auto;
     }
-    .react-datepicker-wrapper,
-    .react-datepicker__input-container {
+    .react-datepicker-wrapper {
         width: 170px;
         margin-right: 10px;
     }
@@ -426,6 +425,8 @@ input[type="number"]::-webkit-inner-spin-button {
             align-items: center;
             justify-content: center;
             height: auto;
+            margin-right: 10px;
+            padding: 0 10px;
             min-height: 35px;
             &::before {
                 left: 30px;
@@ -1041,6 +1042,7 @@ input[type="number"]::-webkit-inner-spin-button {
     flex-grow: 1;
     position: relative;
     width: 100%;
+    height: 100vh;
     padding: 30px 30px;
     box-sizing: border-box;
 }
@@ -1247,6 +1249,15 @@ input[type="number"]::-webkit-inner-spin-button {
         }
     }
 }
+// 오른쪽 클릭
+.react-contexify {
+    background-color: #f8f8f8 !important;
+    .line- {
+        margin-top: 10px !important;
+        padding-top: 10px;
+        border-top: 1px solid #bdc2ca;
+    }
+}
 
 .pop-map {
     display: flex;
@@ -1334,14 +1345,5 @@ input[type="number"]::-webkit-inner-spin-button {
     }
     dd {
         font-weight: bold;
-    }
-}
-
-#footer {
-    padding: 20px 0;
-    background: $gray-3;
-    text-align: center;
-    * {
-        color: $w;
     }
 }

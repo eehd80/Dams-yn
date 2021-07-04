@@ -1,28 +1,14 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import { AgGridColumn, AgGridReact } from "ag-grid-react";
 import DatePickerButton from "../component/DatePicker";
 import NumberFormat from "react-number-format";
 import Select from "react-select";
-import { Row, Col, Button, ButtonToggle, Form, FormGroup, Label, Input, FormText } from "reactstrap";
+import { Row, Col, Button, ButtonToggle, Form, FormGroup, Label, Input } from "reactstrap";
 
-import Header from "../component/Header";
-import Receive from "../component/Receive";
-import Map from "../component/Map";
-
-const webCall = [
-    {
-        근무조: "07-16조",
-        "1(토)": "김형래 71조 3717",
-        "2(일)": "김형래 71조 3717",
-        "3(월)": "김형래 71조 3717",
-    },
-    {
-        근무조: "07-16조",
-        "1(토)": "김형래 71조 3717",
-        "2(일)": "김형래 71조 3717",
-        "3(월)": "김형래 71조 3717",
-    },
-];
+import { Item, Menu, Separator, Submenu, useContextMenu } from "react-contexify";
+import "react-contexify/dist/ReactContexify.css";
+import { getData } from "../api/data";
+import TestRenderer from "../component/TestRenderer";
 
 const defaultColDef = {
     width: 100,
@@ -63,145 +49,168 @@ const workData2 = [
     { 번호: "1", 기사명: "권다경", 아이디: "0022", 소속법인: "교통약자" },
 ];
 
-class Main extends Component {
-    render() {
-        return (
-            <div className="wrap">
-                <Header />
-                <div id="main">
-                    <Receive />
-                    <div className="contents">
-                        <Map />
-                        <div className="wrap-data">
-                            <div className="tit-sub-wrap">
-                                <h2 className="tit-sub">기사현황</h2>
-                            </div>
-                            <div className="lst-data">
-                                {/* 검색 */}
-                                <Form className="tbl-filter">
-                                    <FormGroup>
-                                        <Label for="gps" className="blind">
-                                            GPS상태
-                                        </Label>
-                                        <Select options={gps} id="gps" name="gps" placeholder="GPS상태" />
-                                    </FormGroup>
-                                    <FormGroup>
-                                        <Label for="service" className="blind">
-                                            서비스상태
-                                        </Label>
-                                        <Select options={service} id="service" name="service" placeholder="서비스상태" />
-                                    </FormGroup>
-                                    <FormGroup>
-                                        <Label for="condition" className="blind">
-                                            검색
-                                        </Label>
-                                        <Select options={condition} defaultValue={condition[0]} id="condition" name="condition" />
-                                    </FormGroup>
-                                    <Input type="text" name="search" id="search" placeholder="검색" className="inp-search" />
-                                    <FormGroup>
-                                        <Label for="company" className="blind">
-                                            회사명
-                                        </Label>
-                                        <Select options={company} defaultValue={company[0]} id="company" name="company" />
-                                    </FormGroup>
+const MENU_ID = "dams-context";
 
-                                    <div className="btn-group2">
-                                        <ButtonToggle className="c-yellow">
-                                            <i className="las la-sms"></i> SMS전송
-                                        </ButtonToggle>
-                                        <ButtonToggle className="">
-                                            <i className="las la-search"></i> 검색
-                                        </ButtonToggle>
-                                    </div>
-                                </Form>
-                                <div className="tbl-option">
-                                    <div className="row-option">
-                                        <FormGroup xs="2" className="tit">
-                                            <Label for="driverAll">전체기사</Label>
-                                            <Input type="text" name="driverAll" id="driverAll" />
-                                        </FormGroup>
-                                        <FormGroup xs="2" className="tit">
-                                            <Label for="driverOpt1">정상</Label>
-                                            <Input type="text" name="driverOpt1" id="driverOpt1" />
-                                        </FormGroup>
-                                        <FormGroup xs="2" className="tit">
-                                            <Label for="driverOpt2">음영</Label>
-                                            <Input type="text" name="driverOpt2" id="driverOpt2" />
-                                        </FormGroup>
-                                        <FormGroup xs="2" className="tit">
-                                            <Label for="driverOpt2">기타</Label>
-                                            <Input type="text" name="driverOpt2" id="driverOpt2" />
-                                        </FormGroup>
-                                        <ButtonToggle className="c-yellow">
-                                            <i className="las la-map-marker-alt"></i> 위치보기
-                                        </ButtonToggle>
-                                    </div>
-                                    <div className="row-option">
-                                        <FormGroup xs="2" className="tit">
-                                            <Label for="driverAll" className="et c-blue">
-                                                대기
-                                            </Label>
-                                            <Input type="text" name="driverAll" id="driverAll" />
-                                        </FormGroup>
-                                        <FormGroup xs="2" className="tit">
-                                            <Label for="driverOpt1" className="c-red">
-                                                배차
-                                            </Label>
-                                            <Input type="text" name="driverOpt1" id="driverOpt1" />
-                                        </FormGroup>
-                                        <FormGroup xs="2" className="tit">
-                                            <Label for="driverOpt2" className="c-green">
-                                                승차
-                                            </Label>
-                                            <Input type="text" name="driverOpt2" id="driverOpt2" />
-                                        </FormGroup>
-                                        <FormGroup xs="2" className="tit">
-                                            <Label for="driverOpt2" className="c-gray">
-                                                출석
-                                            </Label>
-                                            <Input type="text" name="driverOpt2" id="driverOpt2" />
-                                        </FormGroup>
-                                        <FormGroup xs="2" className="tit">
-                                            <Label for="driverOpt2" className="c-gray">
-                                                퇴근
-                                            </Label>
-                                            <Input type="text" name="driverOpt2" id="driverOpt2" />
-                                        </FormGroup>
-                                        <FormGroup>
-                                            <DatePickerButton />
-                                            <div className="wav-">부터</div>
-                                            <Input type="number" name="unitTime" id="unitTime" className="inp-time" />
-                                            <div className="wav-">시간</div>
-                                        </FormGroup>
-                                        <FormGroup>
-                                            <ButtonToggle className="c-green">
-                                                <i className="las la-route"></i> 경로보기
-                                            </ButtonToggle>
-                                        </FormGroup>
-                                    </div>
-                                </div>
-                                {/* 리스트 */}
-                                <div className="tbl- ag-theme-balham">
-                                    <AgGridReact
-                                        rowData={webCall}
-                                        defaultColDef={defaultColDef}
-                                        enableRangeSelection={true}
-                                        allowContextMenuWithControlKey={true}
-                                    >
-                                        <AgGridColumn field="근무조" minWidth={100}></AgGridColumn>
-                                        <AgGridColumn field="1(토)" minWidth={130}></AgGridColumn>
-                                        <AgGridColumn field="2(일)" minWidth={130}></AgGridColumn>
-                                        <AgGridColumn field="3(월)" minWidth={130}></AgGridColumn>
-                                    </AgGridReact>
-                                </div>
-                            </div>
-                        </div>
+const Current = (props) => {
+    const [activeTab, setActiveTab] = useState("1");
+    const { show } = useContextMenu({
+        id: MENU_ID,
+    });
+    const toggle = (tab) => {
+        if (activeTab !== tab) setActiveTab(tab);
+    };
+
+    const [gridApi, setGridApi] = useState(null);
+    const [gridColumnApi, setGridColumnApi] = useState(null);
+    const [rowData, setRowData] = useState([]);
+
+    function testContext(e) {}
+
+    function handleItemClick({ event, props, triggerEvent, data }) {
+        console.log(props);
+    }
+
+    const onGridReady = (params) => {
+        getData().then(function (r) {
+            setRowData(r);
+        });
+    };
+
+    const tttt = function (e) {
+        e.preventDefault();
+    };
+
+    return (
+        <div className="wrap-data">
+            <div className="tit-sub-wrap">
+                <h2 className="tit-sub">기사현황</h2>
+            </div>
+            <div className="lst-data">
+                {/* 검색 */}
+                <Form className="tbl-filter">
+                    <FormGroup>
+                        <Label for="gps" className="blind">
+                            GPS상태
+                        </Label>
+                        <Select options={gps} id="gps" name="gps" placeholder="GPS상태" />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for="service" className="blind">
+                            서비스상태
+                        </Label>
+                        <Select options={service} id="service" name="service" placeholder="서비스상태" />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for="condition" className="blind">
+                            검색
+                        </Label>
+                        <Select options={condition} defaultValue={condition[0]} id="condition" name="condition" />
+                    </FormGroup>
+                    <Input type="text" name="search" id="search" placeholder="검색" className="inp-search" />
+                    <FormGroup>
+                        <Label for="company" className="blind">
+                            회사명
+                        </Label>
+                        <Select options={company} defaultValue={company[0]} id="company" name="company" />
+                    </FormGroup>
+
+                    <div className="btn-group2">
+                        <ButtonToggle className="c-yellow">
+                            <i className="las la-sms"></i> SMS전송
+                        </ButtonToggle>
+                        <ButtonToggle className="">
+                            <i className="las la-search"></i> 검색
+                        </ButtonToggle>
+                    </div>
+                </Form>
+                <div className="tbl-option">
+                    <div className="row-option">
+                        <FormGroup xs="2" className="tit">
+                            <Label for="driverAll">전체기사</Label>
+                            <Input type="text" name="driverAll" id="driverAll" />
+                        </FormGroup>
+                        <FormGroup xs="2" className="tit">
+                            <Label for="driverOpt1">정상</Label>
+                            <Input type="text" name="driverOpt1" id="driverOpt1" />
+                        </FormGroup>
+                        <FormGroup xs="2" className="tit">
+                            <Label for="driverOpt2">음영</Label>
+                            <Input type="text" name="driverOpt2" id="driverOpt2" />
+                        </FormGroup>
+                        <FormGroup xs="2" className="tit">
+                            <Label for="driverOpt2">기타</Label>
+                            <Input type="text" name="driverOpt2" id="driverOpt2" />
+                        </FormGroup>
+                        <ButtonToggle className="c-yellow">
+                            <i className="las la-map-marker-alt"></i> 위치보기
+                        </ButtonToggle>
+                    </div>
+                    <div className="row-option">
+                        <FormGroup xs="2" className="tit">
+                            <Label for="driverAll" className="et c-blue">
+                                대기
+                            </Label>
+                            <Input type="text" name="driverAll" id="driverAll" />
+                        </FormGroup>
+                        <FormGroup xs="2" className="tit">
+                            <Label for="driverOpt1" className="c-red">
+                                배차
+                            </Label>
+                            <Input type="text" name="driverOpt1" id="driverOpt1" />
+                        </FormGroup>
+                        <FormGroup xs="2" className="tit">
+                            <Label for="driverOpt2" className="c-green">
+                                승차
+                            </Label>
+                            <Input type="text" name="driverOpt2" id="driverOpt2" />
+                        </FormGroup>
+                        <FormGroup xs="2" className="tit">
+                            <Label for="driverOpt2" className="c-gray">
+                                출석
+                            </Label>
+                            <Input type="text" name="driverOpt2" id="driverOpt2" />
+                        </FormGroup>
+                        <FormGroup xs="2" className="tit">
+                            <Label for="driverOpt2" className="c-gray">
+                                퇴근
+                            </Label>
+                            <Input type="text" name="driverOpt2" id="driverOpt2" />
+                        </FormGroup>
+                        <FormGroup>
+                            <DatePickerButton />
+                            <div className="wav-">부터</div>
+                            <Input type="number" name="unitTime" id="unitTime" className="inp-time" />
+                            <div className="wav-">시간</div>
+                        </FormGroup>
+                        <FormGroup>
+                            <ButtonToggle className="c-green">
+                                <i className="las la-route"></i> 경로보기
+                            </ButtonToggle>
+                        </FormGroup>
                     </div>
                 </div>
-                {/* <Footer /> */}
+                {/* 리스트 */}
+                <div className="tbl- ag-theme-balham">
+                    <AgGridReact
+                        frameworkComponents={{
+                            testRenderer: TestRenderer,
+                        }}
+                        rowData={rowData}
+                        defaultColDef={defaultColDef}
+                        allowContextMenuWithControlKey={true}
+                        enableRangeSelection={true}
+                        onCellContextMenu={testContext}
+                        onGridReady={onGridReady}
+                    >
+                        <AgGridColumn field="근무조" minWidth={100} cellRenderer="testRenderer"></AgGridColumn>
+                        <AgGridColumn field="1(토)" minWidth={130}></AgGridColumn>
+                        <AgGridColumn field="2(일)" minWidth={130}></AgGridColumn>
+                        <AgGridColumn field="3(월)" minWidth={130}></AgGridColumn>
+                    </AgGridReact>
+                </div>
             </div>
-        );
-    }
-}
+        </div>
+    );
+};
 
-export default Main;
+export default Current;
