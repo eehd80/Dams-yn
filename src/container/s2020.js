@@ -78,11 +78,11 @@ const Current = (props) => {
                 {/* 검색 */}
                 <Form className="tbl-filter">
                     <FormGroup>
-                        <Label for="availability">사용여부</Label>
+                        <Label htmlFor="availability">사용여부</Label>
                         <Select options={availability} defaultValue={availability[0]} id="availability" name="availability" />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="condition">조회조건</Label>
+                        <Label htmlFor="condition">조회조건</Label>
                         <Select options={condition} defaultValue={condition[0]} id="condition" name="condition" />
                     </FormGroup>
                     <div className="btn-group2">
@@ -129,7 +129,7 @@ const Current = (props) => {
                 <div className="cont-layer form-wrap">
                     <Row>
                         <Col className="tit">
-                            <label for="idPop">아이디</label>
+                            <label htmlFor="idPop">아이디</label>
                         </Col>
                         <Col xs="4">
                             <div className="form-control-wrap">
@@ -141,7 +141,7 @@ const Current = (props) => {
                             <Button className="btn-pop">중복저장</Button>
                         </Col>
                         <Col className="tit">
-                            <Label for="telPop">전화번호</Label>
+                            <Label htmlFor="telPop">전화번호</Label>
                         </Col>
                         <Col xs="4">
                             <div className="form-control-wrap">
@@ -154,7 +154,7 @@ const Current = (props) => {
                     </Row>
                     <Row>
                         <Col className="tit">
-                            <label for="pwPop">패스워드</label>
+                            <label htmlFor="pwPop">패스워드</label>
                         </Col>
                         <Col xs="4">
                             <div className="form-control-wrap">
@@ -166,7 +166,7 @@ const Current = (props) => {
                             <Button className="btn-pop">?</Button>
                         </Col>
                         <Col className="tit">
-                            <Label for="workPop">근무조</Label>
+                            <Label htmlFor="workPop">근무조</Label>
                         </Col>
                         <Col xs="4">
                             <Select options={workPop} defaultValue={workPop[0]} id="workPop" name="workPop" />
@@ -174,7 +174,7 @@ const Current = (props) => {
                     </Row>
                     <Row>
                         <Col className="tit">
-                            <label for="namePop">사용자명</label>
+                            <label htmlFor="namePop">사용자명</label>
                         </Col>
                         <Col xs="4">
                             <div className="form-control-wrap">
@@ -185,7 +185,7 @@ const Current = (props) => {
                             </div>
                         </Col>
                         <Col className="tit">
-                            <Label for="registPop">등록일</Label>
+                            <Label htmlFor="registPop">등록일</Label>
                         </Col>
                         <Col xs="4">
                             <DatePickerButton />
@@ -193,7 +193,7 @@ const Current = (props) => {
                     </Row>
                     <Row>
                         <Col className="tit">
-                            <label for="attachPop">소속업체</label>
+                            <label htmlFor="attachPop">소속업체</label>
                         </Col>
                         <Col xs="4">
                             <div className="form-control-wrap">
@@ -205,7 +205,7 @@ const Current = (props) => {
                             <Button className="btn-pop">업체검색</Button>
                         </Col>
                         <Col className="tit">
-                            <Label for="useStartPop">사용시작일</Label>
+                            <Label htmlFor="useStartPop">사용시작일</Label>
                         </Col>
                         <Col xs="4">
                             <DatePickerButton />
@@ -213,13 +213,13 @@ const Current = (props) => {
                     </Row>
                     <Row>
                         <Col className="tit">
-                            <label for="rightPop">권한그룹</label>
+                            <label htmlFor="rightPop">권한그룹</label>
                         </Col>
                         <Col xs="4">
                             <Select options={rightPop} defaultValue={rightPop[0]} id="rightPop" name="rightPop" />
                         </Col>
                         <Col className="tit">
-                            <Label for="useendPop">사용중지일</Label>
+                            <Label htmlFor="useendPop">사용중지일</Label>
                         </Col>
                         <Col xs="4">
                             <DatePickerButton />
@@ -227,13 +227,13 @@ const Current = (props) => {
                     </Row>
                     <Row>
                         <Col className="tit">
-                            <label for="usePop">사용여부</label>
+                            <label htmlFor="usePop">사용여부</label>
                         </Col>
                         <Col xs="4">
                             <Select options={availability} defaultValue={availability[0]} id="usePop" name="usePop" />
                         </Col>
                         <Col className="tit">
-                            <Label for="positionPop">직책</Label>
+                            <Label htmlFor="positionPop">직책</Label>
                         </Col>
                         <Col xs="4">
                             <Select options={positionPop} defaultValue={positionPop[0]} id="positionPop" name="positionPop" />
@@ -241,7 +241,7 @@ const Current = (props) => {
                     </Row>
                     <Row>
                         <Col xs="2" className="tit">
-                            <label for="notePop">비고</label>
+                            <label htmlFor="notePop">비고</label>
                         </Col>
                         <Col>
                             <Input type="textarea" name="notePop" id="notePop" style={{ height: "100px" }} />
@@ -273,7 +273,7 @@ const Current = (props) => {
                 <div className="cont-layer form-wrap">
                     <Form className="tbl-filter">
                         <FormGroup className="d-flex">
-                            <Label for="array" className="blind">
+                            <Label htmlFor="array" className="blind">
                                 정렬
                             </Label>
                             <Select options={condition} defaultValue={condition[0]} id="condition" name="condition" />

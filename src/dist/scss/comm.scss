@@ -43,6 +43,10 @@
 .mr-1 {
     margin-right: 10px;
 }
+.pl-1 {
+    display: block;
+    padding-left: 10px;
+}
 .line- {
     margin-top: 20px !important;
     padding-top: 25px;
@@ -88,6 +92,15 @@
         margin-right: 10px;
         background: $prim3;
     }
+}
+.tit-sub3 {
+    margin: 20px 0 10px;
+    font-size: 22px;
+}
+.tit-sub4 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    letter-spacing: -1px;
 }
 // btn
 .btn {
@@ -163,6 +176,12 @@
         &:last-child {
             margin-right: 0;
         }
+    }
+}
+.btn-group3 {
+    display: flex;
+    button {
+        margin-right: 10px;
     }
 }
 
@@ -282,6 +301,34 @@ input[type="number"]::-webkit-inner-spin-button {
     .ag-row {
         background-color: #d1dced !important;
         border-color: #bdc3c7 !important;
+    }
+}
+.tbl-type1 {
+    border: 1px solid #bdc3c7;
+    border-top: 2px solid #3a4a5d;
+    thead {
+        display: none;
+    }
+    th,
+    td {
+        // height: 36px;
+        height: 100%;
+        font-size: 13px;
+    }
+    .q-tit {
+        padding: 10px 10px;
+        border-left: 1px solid #bdc3c7;
+        font-size: 13px;
+        font-weight: 500;
+        background: $gray-e;
+    }
+    .q-sub {
+        padding: 5px 0 5px 25px;
+        border-left: 1px solid #bdc3c7;
+        font-size: 13px;
+    }
+    label::before {
+        display: none;
     }
 }
 
@@ -425,7 +472,7 @@ input[type="number"]::-webkit-inner-spin-button {
             align-items: center;
             justify-content: center;
             height: auto;
-            margin-right: 10px;
+            // margin-right: 10px;
             padding: 0 10px;
             min-height: 35px;
             &::before {
@@ -489,7 +536,7 @@ input[type="number"]::-webkit-inner-spin-button {
         padding-bottom: 5px !important;
     }
     .form-check label::before {
-        top: 3px;
+        top: 4px;
         transform: translateY(0);
     }
 }
@@ -972,10 +1019,10 @@ input[type="number"]::-webkit-inner-spin-button {
         align-items: center;
         white-space: nowrap;
         &.unit-l {
-            margin-left: 10px;
+            margin: 0 10px 0 5px;
         }
         &.unit-r {
-            margin-right: 10px;
+            margin: 0 5px 0 10px;
         }
     }
     .tit {

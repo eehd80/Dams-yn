@@ -89,26 +89,26 @@ const Current = (props) => {
                 {/* 검색 */}
                 <Form className="tbl-filter">
                     <FormGroup>
-                        <Label for="gps" className="blind">
+                        <Label htmlFor="gps" className="blind">
                             GPS상태
                         </Label>
                         <Select options={gps} id="gps" name="gps" placeholder="GPS상태" />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="service" className="blind">
+                        <Label htmlFor="service" className="blind">
                             서비스상태
                         </Label>
                         <Select options={service} id="service" name="service" placeholder="서비스상태" />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="condition" className="blind">
+                        <Label htmlFor="condition" className="blind">
                             검색
                         </Label>
                         <Select options={condition} defaultValue={condition[0]} id="condition" name="condition" />
                     </FormGroup>
                     <Input type="text" name="search" id="search" placeholder="검색" className="inp-search" />
                     <FormGroup>
-                        <Label for="company" className="blind">
+                        <Label htmlFor="company" className="blind">
                             회사명
                         </Label>
                         <Select options={company} defaultValue={company[0]} id="company" name="company" />
@@ -126,19 +126,19 @@ const Current = (props) => {
                 <div className="tbl-option">
                     <div className="row-option">
                         <FormGroup xs="2" className="tit">
-                            <Label for="driverAll">전체기사</Label>
+                            <Label htmlFor="driverAll">전체기사</Label>
                             <Input type="text" name="driverAll" id="driverAll" />
                         </FormGroup>
                         <FormGroup xs="2" className="tit">
-                            <Label for="driverOpt1">정상</Label>
+                            <Label htmlFor="driverOpt1">정상</Label>
                             <Input type="text" name="driverOpt1" id="driverOpt1" />
                         </FormGroup>
                         <FormGroup xs="2" className="tit">
-                            <Label for="driverOpt2">음영</Label>
+                            <Label htmlFor="driverOpt2">음영</Label>
                             <Input type="text" name="driverOpt2" id="driverOpt2" />
                         </FormGroup>
                         <FormGroup xs="2" className="tit">
-                            <Label for="driverOpt2">기타</Label>
+                            <Label htmlFor="driverOpt2">기타</Label>
                             <Input type="text" name="driverOpt2" id="driverOpt2" />
                         </FormGroup>
                         <ButtonToggle className="c-yellow">
@@ -147,31 +147,31 @@ const Current = (props) => {
                     </div>
                     <div className="row-option">
                         <FormGroup xs="2" className="tit">
-                            <Label for="driverAll" className="et c-blue">
+                            <Label htmlFor="driverAll" className="et c-blue">
                                 대기
                             </Label>
                             <Input type="text" name="driverAll" id="driverAll" />
                         </FormGroup>
                         <FormGroup xs="2" className="tit">
-                            <Label for="driverOpt1" className="c-red">
+                            <Label htmlFor="driverOpt1" className="c-red">
                                 배차
                             </Label>
                             <Input type="text" name="driverOpt1" id="driverOpt1" />
                         </FormGroup>
                         <FormGroup xs="2" className="tit">
-                            <Label for="driverOpt2" className="c-green">
+                            <Label htmlFor="driverOpt2" className="c-green">
                                 승차
                             </Label>
                             <Input type="text" name="driverOpt2" id="driverOpt2" />
                         </FormGroup>
                         <FormGroup xs="2" className="tit">
-                            <Label for="driverOpt2" className="c-gray">
+                            <Label htmlFor="driverOpt2" className="c-gray">
                                 출석
                             </Label>
                             <Input type="text" name="driverOpt2" id="driverOpt2" />
                         </FormGroup>
                         <FormGroup xs="2" className="tit">
-                            <Label for="driverOpt2" className="c-gray">
+                            <Label htmlFor="driverOpt2" className="c-gray">
                                 퇴근
                             </Label>
                             <Input type="text" name="driverOpt2" id="driverOpt2" />

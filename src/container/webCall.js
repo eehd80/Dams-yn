@@ -233,7 +233,7 @@ class Main extends Component {
                             <Form className="tbl-filter">
                                 <Row>
                                     <Col xs="1">
-                                        <Label for="timeSearch" className="blind">
+                                        <Label htmlFor="timeSearch" className="blind">
                                             검색시간조건
                                         </Label>
                                         <Select options={timeSearch} id="timeSearch" name="timeSearch" placeholder="검색시간조건" />
@@ -243,7 +243,7 @@ class Main extends Component {
                                     </Col>
                                     <Col xs="1">
                                         <FormGroup>
-                                            <Label for="callAll" className="blind">
+                                            <Label htmlFor="callAll" className="blind">
                                                 전체콜
                                             </Label>
                                             <Select options={callAll} id="callAll" name="callAll" placeholder="전체콜" />
@@ -251,7 +251,7 @@ class Main extends Component {
                                     </Col>
                                     <Col xs="1">
                                         <FormGroup>
-                                            <Label for="condition" className="blind">
+                                            <Label htmlFor="condition" className="blind">
                                                 조회조건
                                             </Label>
                                             <Select options={condition} id="condition" name="condition" placeholder="조회조건" />
@@ -338,7 +338,7 @@ class Main extends Component {
                                     <Col xs={{ size: 1, offset: 1 }} className="tit-">
                                         <FormGroup check>
                                             <Input type="checkbox" id="shuttle" />
-                                            <Label check for="shuttle">
+                                            <Label check htmlFor="shuttle">
                                                 알람일자
                                             </Label>
                                         </FormGroup>

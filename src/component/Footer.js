@@ -105,19 +105,19 @@ const Footer = () => (
         <div className="container">
             <Form className="tbl-filter">
                 <FormGroup>
-                    <Label for="gps" className="blind">
+                    <Label htmlFor="gps" className="blind">
                         GPS상태
                     </Label>
                     <Select options={gps} id="gps" name="gps" placeholder="GPS상태" />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="service" className="blind">
+                    <Label htmlFor="service" className="blind">
                         서비스상태
                     </Label>
                     <Select options={service} id="service" name="service" placeholder="서비스상태" />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="condition" className="blind">
+                    <Label htmlFor="condition" className="blind">
                         검색
                     </Label>
                     <Select options={condition} defaultValue={condition[0]} id="condition" name="condition" />
@@ -140,7 +140,7 @@ const Footer = () => (
                 </div>
             </Form>
             <FormGroup>
-                <Label for="timeSearch">예약</Label>
+                <Label htmlFor="timeSearch">예약</Label>
                 <DatePickerButton />
                 <div className="form-control-wrap">
                     <Input type="number" name="intervalPop" id="intervalPop" placeholder="20" />
@@ -159,7 +159,7 @@ const Footer = () => (
             </FormGroup>
             <Row>
                 <Col xs="2" className="tit">
-                    <Label for="namePop">고객명</Label>
+                    <Label htmlFor="namePop">고객명</Label>
                 </Col>
                 <Col>
                     <div className="form-control-wrap">
@@ -170,7 +170,7 @@ const Footer = () => (
                     </div>
                 </Col>
                 <Col xs="2" className="tit">
-                    <Label for="idPop">WebID</Label>
+                    <Label htmlFor="idPop">WebID</Label>
                 </Col>
                 <Col>
                     <div className="form-control-wrap">
@@ -183,7 +183,7 @@ const Footer = () => (
             </Row>
             <Row>
                 <Col xs="2" className="tit">
-                    <Label for="phonePop">핸드폰번호</Label>
+                    <Label htmlFor="phonePop">핸드폰번호</Label>
                 </Col>
                 <Col>
                     <div className="form-control-wrap">
@@ -194,7 +194,7 @@ const Footer = () => (
                     </div>
                 </Col>
                 <Col xs="2" className="tit">
-                    <Label for="telPop">일반전화</Label>
+                    <Label htmlFor="telPop">일반전화</Label>
                 </Col>
                 <Col>
                     <div className="form-control-wrap">
@@ -207,13 +207,13 @@ const Footer = () => (
             </Row>
             <Row>
                 <Col xs="2" className="tit">
-                    <Label for="userTargetPop">이용대상자 유형1</Label> <span className="ico-c">필수</span>
+                    <Label htmlFor="userTargetPop">이용대상자 유형1</Label> <span className="ico-c">필수</span>
                 </Col>
                 <Col>
                     <Select options={userTarget} defaultValue={userTarget[0]} id="userTargetPop" name="userTargetPop" />
                 </Col>
                 <Col xs="2" className="tit">
-                    <Label for="userTargetPop2">이용대상자 유형2</Label>
+                    <Label htmlFor="userTargetPop2">이용대상자 유형2</Label>
                 </Col>
                 <Col>
                     <Select options={userTarget2} defaultValue={userTarget2[0]} id="userTargetPop2" name="userTargetPop2" />
@@ -226,26 +226,26 @@ const Footer = () => (
                 <Col className="justify-content-start align-items-center">
                     <FormGroup check inline>
                         <Input type="checkbox" id="paperPop1" name="paperPop1" />
-                        <Label for="paperPop1"> 심사신청서 </Label>
+                        <Label htmlFor="paperPop1"> 심사신청서 </Label>
                     </FormGroup>
                     <FormGroup check inline>
                         <Input type="checkbox" id="paperPop2" name="paperPop2" />
-                        <Label for="paperPop2">이용동의서</Label>
+                        <Label htmlFor="paperPop2">이용동의서</Label>
                     </FormGroup>
                     <FormGroup check inline>
                         <Input type="checkbox" id="paperPop3" name="paperPop3" />
-                        <Label for="paperPop3">복지카드 및 신분증사본</Label>
+                        <Label htmlFor="paperPop3">복지카드 및 신분증사본</Label>
                     </FormGroup>
                     <FormGroup check inline>
                         <Input type="checkbox" id="paperPop4" name="paperPop4" />
-                        <Label for="paperPop4">진단서</Label>
+                        <Label htmlFor="paperPop4">진단서</Label>
                     </FormGroup>
                 </Col>
             </Row>
             <Row>
                 <Col xs="2" className="tit">
                     <FormGroup check>
-                        <Input type="checkbox" id="booking" /> <Label for="booking">예약</Label>
+                        <Input type="checkbox" id="booking" /> <Label htmlFor="booking">예약</Label>
                     </FormGroup>
                 </Col>
                 <Col>
@@ -254,7 +254,7 @@ const Footer = () => (
             </Row>
             <Row className="pop-filter">
                 <Col xs="3">
-                    <Label for="array" className="blind">
+                    <Label htmlFor="array" className="blind">
                         정렬
                     </Label>
                     <Select options={condition} defaultValue={condition[0]} id="condition" name="condition" />
@@ -283,7 +283,7 @@ const Footer = () => (
             </Row>
             <Row>
                 <Col xs="2" className="tit">
-                    <Label for="guide">안내</Label>
+                    <Label htmlFor="guide">안내</Label>
                 </Col>
                 <Col>
                     <div className="form-control-wrap">
@@ -296,7 +296,7 @@ const Footer = () => (
             </Row>
             <Row className="pop-filter">
                 <Col xs="3">
-                    <Label for="array" className="blind">
+                    <Label htmlFor="array" className="blind">
                         정렬
                     </Label>
                     <Select options={condition} defaultValue={condition[0]} id="condition" name="condition" />
@@ -312,7 +312,7 @@ const Footer = () => (
             </Row>
             <Row>
                 <Col xs="2" className="tit">
-                    <Label for="usePop">비고</Label>
+                    <Label htmlFor="usePop">비고</Label>
                 </Col>
                 <Col>
                     <Input type="textarea" name="text" id="etcQA" style={{ height: "100px" }} />
@@ -320,7 +320,7 @@ const Footer = () => (
             </Row>
             <Row>
                 <Col xs="2" className="tit">
-                    <Label for="addressPop">주소</Label> <span className="ico-c">필수</span>
+                    <Label htmlFor="addressPop">주소</Label> <span className="ico-c">필수</span>
                 </Col>
                 <Col xs="5">
                     <Input type="text" name="addressPop" id="addressPop" />

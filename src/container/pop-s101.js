@@ -47,7 +47,7 @@ class Main extends Component {
                     <div className="lst-data form-wrap">
                         <Form className="tbl-filter">
                             <FormGroup>
-                                <Label for="timeSearch">예약</Label>
+                                <Label htmlFor="timeSearch">예약</Label>
                                 <DatePickerButton style={{ width: "200px" }} />
                                 <div className="form-control-wrap">
                                     <Input type="number" name="intervalPop" id="intervalPop" placeholder="20" />
@@ -90,7 +90,7 @@ class Main extends Component {
                                         filter="agTextColumnFilter"
                                         pinned="left"
                                         lockPinned={true}
-                                        cellClass="lock-pinned"
+                                        cellclassName="lock-pinned"
                                     />
                                 </AgGridColumn>
                                 <AgGridColumn field="오후 02:00">
@@ -145,13 +145,13 @@ class Main extends Component {
                     <div className="cont-layer form-wrap result-txt">
                         <Row>
                             <Col xs="2" className="tit">
-                                <Label for="resPop">고객명</Label>
+                                <Label htmlFor="resPop">고객명</Label>
                             </Col>
                             <Col>
                                 <div className="txt">정미애</div>
                             </Col>
                             <Col xs="2" className="tit">
-                                <Label for="resPop">회신번호</Label>
+                                <Label htmlFor="resPop">회신번호</Label>
                             </Col>
                             <Col>
                                 <div className="txt">010-3333-3333</div>
@@ -159,7 +159,7 @@ class Main extends Component {
                         </Row>
                         <Row>
                             <Col xs="2" className="tit">
-                                <Label for="intervalPop">차량번호</Label>
+                                <Label htmlFor="intervalPop">차량번호</Label>
                             </Col>
                             <Col>
                                 <div className="txt">42노 3456</div>
@@ -167,7 +167,7 @@ class Main extends Component {
                         </Row>
                         <Row>
                             <Col xs="2" className="tit">
-                                <Label for="intervalPop">이용예정시간</Label>
+                                <Label htmlFor="intervalPop">이용예정시간</Label>
                             </Col>
                             <Col>
                                 <div className="txt">2021-02-22 16:55:55</div>
@@ -175,7 +175,7 @@ class Main extends Component {
                         </Row>
                         <Row>
                             <Col xs="2" className="tit">
-                                <Label for="intervalPop">배차예정시간</Label>
+                                <Label htmlFor="intervalPop">배차예정시간</Label>
                             </Col>
                             <Col>
                                 <div className="txt">2021-02-22 16:55:55</div>
@@ -183,7 +183,7 @@ class Main extends Component {
                         </Row>
                         <Row>
                             <Col xs="2" className="tit">
-                                <Label for="intervalPop">배차제한시간</Label>
+                                <Label htmlFor="intervalPop">배차제한시간</Label>
                             </Col>
                             <Col>
                                 <div className="txt">2021-02-22 16:55:55</div>
@@ -191,7 +191,7 @@ class Main extends Component {
                         </Row>
                         <Row>
                             <Col xs="2" className="tit">
-                                <Label for="intervalPop">승차위치</Label>
+                                <Label htmlFor="intervalPop">승차위치</Label>
                             </Col>
                             <Col>
                                 <div className="txt">중동 용인세브란스병원</div>
@@ -199,7 +199,7 @@ class Main extends Component {
                         </Row>
                         <Row>
                             <Col xs="2" className="tit">
-                                <Label for="intervalPop">하차위치</Label>
+                                <Label htmlFor="intervalPop">하차위치</Label>
                             </Col>
                             <Col>
                                 <div className="txt">보라동 민속마을 쌍용아파트 102동</div>

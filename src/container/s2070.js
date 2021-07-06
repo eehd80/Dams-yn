@@ -83,19 +83,19 @@ const Current = (props) => {
                         <ButtonToggle className="c-yellow mr-1">
                             <i className="las la-sms"></i> 기존근무조설정
                         </ButtonToggle>
-                        <Label for="workGroup" className="blind">
+                        <Label htmlFor="workGroup" className="blind">
                             기본근무조설정
                         </Label>
                         <Select options={workGroup} defaultValue={workGroup[0]} id="use" name="use" />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="year" className="blind">
+                        <Label htmlFor="year" className="blind">
                             년도 선택
                         </Label>
                         <Select options={year} defaultValue={year[0]} id="year" name="year" />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="month" className="blind">
+                        <Label htmlFor="month" className="blind">
                             월 선택
                         </Label>
                         <Select options={month} defaultValue={month[0]} id="month" name="month" />
@@ -145,13 +145,13 @@ const Current = (props) => {
                 <div className="cont-layer form-wrap">
                     <Row>
                         <Col xs="2" className="tit">
-                            <label for="workGroupPop">회원사명</label>
+                            <label htmlFor="workGroupPop">회원사명</label>
                         </Col>
                         <Col>
                             <Select options={workGroup} defaultValue={workGroup[0]} id="workGroupPop" name="workGroupPop" />
                         </Col>
                         <Col xs="2" className="tit">
-                            <label for="serviceGroupPop">근무조명</label>
+                            <label htmlFor="serviceGroupPop">근무조명</label>
                         </Col>
                         <Col>
                             <div className="form-control-wrap">
@@ -164,7 +164,7 @@ const Current = (props) => {
                     </Row>
                     <Row>
                         <Col xs="2" className="tit">
-                            <label for="startTimePop">시작시간</label>
+                            <label htmlFor="startTimePop">시작시간</label>
                         </Col>
                         <Col>
                             <div className="form-control-wrap">
@@ -176,7 +176,7 @@ const Current = (props) => {
                             <span className="unit- unit-l">분</span>
                         </Col>
                         <Col xs="2" className="tit">
-                            <label for="startTimePop">종료시간</label>
+                            <label htmlFor="startTimePop">종료시간</label>
                         </Col>
                         <Col>
                             <div className="form-control-wrap">

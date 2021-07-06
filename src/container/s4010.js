@@ -61,7 +61,7 @@ const Current = (props) => {
                 {/* 검색 */}
                 <Form className="tbl-filter">
                     <FormGroup>
-                        <Label for="sms" className="blind">
+                        <Label htmlFor="sms" className="blind">
                             일자선택
                         </Label>
                         <DatePickerButton /> <span className="wav- wav-right">~</span> <DatePickerButton />
@@ -115,19 +115,19 @@ const Current = (props) => {
                 <div className="cont-layer form-wrap">
                     <Form className="tbl-filter">
                         <FormGroup xs="2">
-                            <Label for="companyPop" className="blind">
+                            <Label htmlFor="companyPop" className="blind">
                                 검색기간
                             </Label>
                             <DatePickerButton /> <span className="wav- wav-right">~</span> <DatePickerButton />
                         </FormGroup>
                         <FormGroup>
-                            <Label for="callStatePop" className="blind">
+                            <Label htmlFor="callStatePop" className="blind">
                                 콜상태
                             </Label>
                             <Select options={callState} defaultValue={callState[0]} id="callStatePop" name="callStatePop" />
                         </FormGroup>
                         <FormGroup>
-                            <Label for="callStatePop" className="blind">
+                            <Label htmlFor="callStatePop" className="blind">
                                 검색조건
                             </Label>
                             <Select options={condition} defaultValue={condition[0]} id="condition" name="condition" />

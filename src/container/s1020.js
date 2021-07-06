@@ -91,15 +91,15 @@ const Current = (props) => {
             <div className="lst-data">
                 <Form className="tbl-filter">
                     <FormGroup>
-                        <Label for="renew">갱신</Label>
+                        <Label htmlFor="renew">갱신</Label>
                         <Select options={renew} defaultValue={renew[0]} id="renew" name="renew" />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="array">정렬</Label>
+                        <Label htmlFor="array">정렬</Label>
                         <Select options={array} defaultValue={array[0]} id="array" name="array" />
                     </FormGroup>
                     <FormGroup className="inp-et2">
-                        <Label for="state" className="blind">
+                        <Label htmlFor="state" className="blind">
                             상태
                         </Label>
                         <Select
@@ -113,7 +113,7 @@ const Current = (props) => {
                         />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="array" className="blind">
+                        <Label htmlFor="array" className="blind">
                             정렬
                         </Label>
                         <Select options={condition} defaultValue={condition[0]} id="condition" name="condition" />
@@ -203,7 +203,7 @@ const Current = (props) => {
                 <div className="cont-layer form-wrap">
                     <Row>
                         <Col xs="3" className="tit">
-                            <Label for="resPop">예약일</Label>
+                            <Label htmlFor="resPop">예약일</Label>
                         </Col>
                         <Col>
                             <DatePickerButton />
@@ -211,7 +211,7 @@ const Current = (props) => {
                     </Row>
                     <Row>
                         <Col xs="3" className="tit">
-                            <Label for="intervalPop">배차제한시간</Label>
+                            <Label htmlFor="intervalPop">배차제한시간</Label>
                         </Col>
                         <Col>
                             <div className="form-control-wrap">
@@ -234,7 +234,7 @@ const Current = (props) => {
                     </Row>
                     <Row>
                         <Col xs="3" className="tit">
-                            <Label for="regisPop">등록구분</Label>
+                            <Label htmlFor="regisPop">등록구분</Label>
                         </Col>
                         <Col>
                             <Select
@@ -273,7 +273,7 @@ const Current = (props) => {
                 <div className="cont-layer form-wrap">
                     <Row>
                         <Col xs="3">
-                            <Label for="array" className="blind">
+                            <Label htmlFor="array" className="blind">
                                 정렬
                             </Label>
                             <Select options={condition} defaultValue={condition[0]} id="condition" name="condition" />
@@ -334,7 +334,7 @@ const Current = (props) => {
                 <div className="cont-layer form-wrap">
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="cancleCodePop">코드</Label>
+                            <Label htmlFor="cancleCodePop">코드</Label>
                         </Col>
                         <Col>
                             <Input type="text" name="cancleCodePop" id="cancleCodePop" placeholder="(1) 고객취소" />
@@ -353,7 +353,7 @@ const Current = (props) => {
                     </Row>
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="cancleContPop">취소 내용</Label>
+                            <Label htmlFor="cancleContPop">취소 내용</Label>
                         </Col>
                         <Col>
                             <div className="form-control-wrap">
@@ -395,7 +395,7 @@ const Current = (props) => {
                 <div className="cont-layer form-wrap">
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="namePop">고객명</Label>
+                            <Label htmlFor="namePop">고객명</Label>
                         </Col>
                         <Col>
                             <div className="form-control-wrap">
@@ -406,7 +406,7 @@ const Current = (props) => {
                             </div>
                         </Col>
                         <Col xs="2" className="tit">
-                            <Label for="resPop">회신번호</Label>
+                            <Label htmlFor="resPop">회신번호</Label>
                         </Col>
                         <Col>
                             <Select options={telPop} defaultValue={telPop[0]} id="disabilityType" name="disabilityType" />
@@ -443,7 +443,7 @@ const Current = (props) => {
                     </Row>
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="resPop">예약전송</Label>
+                            <Label htmlFor="resPop">예약전송</Label>
                         </Col>
                         <Col>
                             <DatePickerButton />
@@ -451,7 +451,7 @@ const Current = (props) => {
                     </Row>
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="receiveNum">회신번호</Label>
+                            <Label htmlFor="receiveNum">회신번호</Label>
                         </Col>
                         <Col>
                             <div className="form-control-wrap">
@@ -462,7 +462,7 @@ const Current = (props) => {
                             </div>
                         </Col>
                         <Col xs="2" className="tit">
-                            <Label for="receiveNum">대상번호</Label>
+                            <Label htmlFor="receiveNum">대상번호</Label>
                         </Col>
                         <Col>
                             <div className="form-control-wrap">

@@ -81,15 +81,15 @@ const Current = (props) => {
             <div className="lst-data">
                 <Form className="tbl-filter">
                     <FormGroup>
-                        <Label for="renew">갱신</Label>
+                        <Label htmlFor="renew">갱신</Label>
                         <Select options={renew} defaultValue={renew[0]} id="renew" name="renew" />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="array">정렬</Label>
+                        <Label htmlFor="array">정렬</Label>
                         <Select options={array} defaultValue={array[0]} id="array" name="array" />
                     </FormGroup>
                     <FormGroup className="inp-et2">
-                        <Label for="state" className="blind">
+                        <Label htmlFor="state" className="blind">
                             상태
                         </Label>
                         <Select
@@ -103,7 +103,7 @@ const Current = (props) => {
                         />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="array" className="blind">
+                        <Label htmlFor="array" className="blind">
                             정렬
                         </Label>
                         <Select options={condition} defaultValue={condition[0]} id="condition" name="condition" />

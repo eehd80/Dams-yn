@@ -72,20 +72,20 @@ const Current = (props) => {
             <div className="lst-data">
                 <Form className="tbl-filter">
                     <FormGroup>
-                        <Label for="timeSearch" className="blind">
+                        <Label htmlFor="timeSearch" className="blind">
                             검색시간조건
                         </Label>
                         <Select options={timeSearch} id="timeSearch" name="timeSearch" placeholder="검색시간조건" />
                         <DatePickerButton /> <span className="wav- wav-right">~</span> <DatePickerButton />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="callAll" className="blind">
+                        <Label htmlFor="callAll" className="blind">
                             전체콜
                         </Label>
                         <Select options={callAll} id="callAll" name="callAll" placeholder="전체콜" />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="condition" className="blind">
+                        <Label htmlFor="condition" className="blind">
                             조회조건
                         </Label>
                         <Select options={condition} id="condition" name="condition" placeholder="조회조건" />

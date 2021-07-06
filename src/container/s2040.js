@@ -93,37 +93,37 @@ const Current = (props) => {
                 {/* 검색 */}
                 <Form className="tbl-filter">
                     <FormGroup>
-                        <Label for="availability" className="blind">
+                        <Label htmlFor="availability" className="blind">
                             사용여부
                         </Label>
                         <Select options={availability} id="availability" name="availability" placeholder="사용여부" />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="wheelchair" className="blind">
+                        <Label htmlFor="wheelchair" className="blind">
                             휠체어
                         </Label>
                         <Select options={wheelchair} id="wheelchair" name="wheelchair" placeholder="휠체어" />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="disabilityType" className="blind">
+                        <Label htmlFor="disabilityType" className="blind">
                             장애종류
                         </Label>
                         <Select options={disabilityType} id="disabilityType" name="disabilityType" placeholder="장애종류" />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="disabilityGrade" className="blind">
+                        <Label htmlFor="disabilityGrade" className="blind">
                             장애등급
                         </Label>
                         <Select options={disabilityGrade} id="disabilityGrade" name="disabilityGrade" placeholder="장애등급" />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="communication" className="blind">
+                        <Label htmlFor="communication" className="blind">
                             소통여부
                         </Label>
                         <Select options={communication} id="communication" name="communication" placeholder="소통여부" />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="gender" className="blind">
+                        <Label htmlFor="gender" className="blind">
                             성별
                         </Label>
                         <Select options={gender} id="gender" name="gender" placeholder="성별" />
@@ -131,14 +131,14 @@ const Current = (props) => {
                 </Form>
                 <Form className="tbl-filter">
                     <FormGroup>
-                        <Label for="condition" className="blind">
+                        <Label htmlFor="condition" className="blind">
                             조회조건
                         </Label>
                         <Select options={condition} defaultValue={condition[0]} id="condition" name="condition" />
                     </FormGroup>
                     <Input type="text" name="search" id="search" placeholder="검색" className="inp-search" />
                     <FormGroup>
-                        <Label for="useNumber">이용횟수</Label>
+                        <Label htmlFor="useNumber">이용횟수</Label>
                         <Input type="number" name="useNumber" id="useNumber" placeholder="0" />
                         <span className="wav-">~</span>
                         <Input type="number" name="useNumber2" id="useNumber2" placeholder="999,999" />
@@ -193,7 +193,7 @@ const Current = (props) => {
                 <div className="cont-layer form-wrap">
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="namePop">고객명</Label>
+                            <Label htmlFor="namePop">고객명</Label>
                         </Col>
                         <Col>
                             <div className="form-control-wrap">
@@ -204,7 +204,7 @@ const Current = (props) => {
                             </div>
                         </Col>
                         <Col xs="2" className="tit">
-                            <Label for="availabilityPop">사용여부</Label>
+                            <Label htmlFor="availabilityPop">사용여부</Label>
                         </Col>
                         <Col>
                             <Select options={availability} defaultValue={availability[0]} id="availabilityPop" name="availabilityPop" />
@@ -212,13 +212,13 @@ const Current = (props) => {
                     </Row>
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="birthPop">생년월일/성별</Label>
+                            <Label htmlFor="birthPop">생년월일/성별</Label>
                         </Col>
                         <Col>
                             <DatePickerButton />
                         </Col>
                         <Col xs="2" className="tit">
-                            <Label for="positionPop">거주위치</Label>
+                            <Label htmlFor="positionPop">거주위치</Label>
                         </Col>
                         <Col>
                             <Select options={positionPop} defaultValue={positionPop[0]} id="positionPop" name="positionPop" />
@@ -226,7 +226,7 @@ const Current = (props) => {
                     </Row>
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="receiptPop">고객접수번호</Label>
+                            <Label htmlFor="receiptPop">고객접수번호</Label>
                         </Col>
                         <Col>
                             <div className="form-control-wrap">
@@ -238,7 +238,7 @@ const Current = (props) => {
                             <Button className="btn-pop">중복검사</Button>
                         </Col>
                         <Col xs="2" className="tit">
-                            <Label for="reptelPop">대표자전화</Label>
+                            <Label htmlFor="reptelPop">대표자전화</Label>
                         </Col>
                         <Col>
                             <div className="form-control-wrap">
@@ -252,7 +252,7 @@ const Current = (props) => {
                     </Row>
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="phonePop">휴대폰번호</Label>
+                            <Label htmlFor="phonePop">휴대폰번호</Label>
                         </Col>
                         <Col>
                             <div className="form-control-wrap">
@@ -266,7 +266,7 @@ const Current = (props) => {
                     </Row>
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="addressPop">주소</Label>
+                            <Label htmlFor="addressPop">주소</Label>
                         </Col>
                         <Col xs="5">
                             <Input type="text" name="addressPop" id="addressPop" />
@@ -290,7 +290,7 @@ const Current = (props) => {
                     </Row>
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="addtelPop1">추가전화1</Label>
+                            <Label htmlFor="addtelPop1">추가전화1</Label>
                         </Col>
                         <Col>
                             <div className="form-control-wrap">
@@ -301,7 +301,7 @@ const Current = (props) => {
                             </div>
                         </Col>
                         <Col xs="2" className="tit">
-                            <Label for="notePop1">비고</Label>
+                            <Label htmlFor="notePop1">비고</Label>
                         </Col>
                         <Col>
                             <div className="form-control-wrap">
@@ -314,7 +314,7 @@ const Current = (props) => {
                     </Row>
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="addtelPop2">추가전화2</Label>
+                            <Label htmlFor="addtelPop2">추가전화2</Label>
                         </Col>
                         <Col>
                             <div className="form-control-wrap">
@@ -325,7 +325,7 @@ const Current = (props) => {
                             </div>
                         </Col>
                         <Col xs="2" className="tit">
-                            <Label for="notePop2">비고</Label>
+                            <Label htmlFor="notePop2">비고</Label>
                         </Col>
                         <Col>
                             <div className="form-control-wrap">
@@ -338,7 +338,7 @@ const Current = (props) => {
                     </Row>
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="addtelPop3">추가전화3</Label>
+                            <Label htmlFor="addtelPop3">추가전화3</Label>
                         </Col>
                         <Col>
                             <div className="form-control-wrap">
@@ -349,7 +349,7 @@ const Current = (props) => {
                             </div>
                         </Col>
                         <Col xs="2" className="tit">
-                            <Label for="notePop3">비고</Label>
+                            <Label htmlFor="notePop3">비고</Label>
                         </Col>
                         <Col>
                             <div className="form-control-wrap">
@@ -362,7 +362,7 @@ const Current = (props) => {
                     </Row>
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="disabilityTypePop">장애종류</Label> <span className="ico-c">필수</span>
+                            <Label htmlFor="disabilityTypePop">장애종류</Label> <span className="ico-c">필수</span>
                         </Col>
                         <Col>
                             <Select
@@ -374,7 +374,7 @@ const Current = (props) => {
                         </Col>
                         <Col xs="2" className="tit">
                             <FormGroup check>
-                                <Input type="checkbox" id="bookingPop" /> <Label for="bookingPop">예약</Label>
+                                <Input type="checkbox" id="bookingPop" /> <Label htmlFor="bookingPop">예약</Label>
                             </FormGroup>
                         </Col>
                         <Col>
@@ -383,7 +383,7 @@ const Current = (props) => {
                     </Row>
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="disabilityGradePop">장애등급</Label> <span className="ico-c">필수</span>
+                            <Label htmlFor="disabilityGradePop">장애등급</Label> <span className="ico-c">필수</span>
                         </Col>
                         <Col>
                             <Select
@@ -394,7 +394,7 @@ const Current = (props) => {
                             />
                         </Col>
                         <Col xs="2" className="tit">
-                            <Label for="wheelchairPop">휠체어</Label> <span className="ico-c">필수</span>
+                            <Label htmlFor="wheelchairPop">휠체어</Label> <span className="ico-c">필수</span>
                         </Col>
                         <Col>
                             <Select options={wheelchair} defaultValue={wheelchair[0]} id="wheelchairPop" name="wheelchairPop" />
@@ -402,7 +402,7 @@ const Current = (props) => {
                     </Row>
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="communicationPop">소통여부</Label> <span className="ico-c">필수</span>
+                            <Label htmlFor="communicationPop">소통여부</Label> <span className="ico-c">필수</span>
                         </Col>
                         <Col>
                             <Select options={communication} defaultValue={communication[0]} id="communicationPop" name="communicationPop" />
@@ -415,25 +415,25 @@ const Current = (props) => {
                         <Col className="s-paper">
                             <FormGroup check inline>
                                 <Input type="checkbox" id="paperPop1" name="paperPop1" />
-                                <Label for="paperPop1"> 심사신청서 </Label>
+                                <Label htmlFor="paperPop1"> 심사신청서 </Label>
                             </FormGroup>
                             <FormGroup check inline>
                                 <Input type="checkbox" id="paperPop2" name="paperPop2" />
-                                <Label for="paperPop2">이용동의서</Label>
+                                <Label htmlFor="paperPop2">이용동의서</Label>
                             </FormGroup>
                             <FormGroup check inline>
                                 <Input type="checkbox" id="paperPop3" name="paperPop3" />
-                                <Label for="paperPop3">복지카드 및 신분증사본</Label>
+                                <Label htmlFor="paperPop3">복지카드 및 신분증사본</Label>
                             </FormGroup>
                             <FormGroup check inline>
                                 <Input type="checkbox" id="paperPop4" name="paperPop4" />
-                                <Label for="paperPop4">진단서</Label>
+                                <Label htmlFor="paperPop4">진단서</Label>
                             </FormGroup>
                         </Col>
                     </Row>
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="notePop4">비고</Label>
+                            <Label htmlFor="notePop4">비고</Label>
                         </Col>
                         <Col>
                             <div className="form-control-wrap">
@@ -446,7 +446,7 @@ const Current = (props) => {
                     </Row>
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="usePop5">비고</Label>
+                            <Label htmlFor="usePop5">비고</Label>
                         </Col>
                         <Col>
                             <Input type="textarea" name="usePop5" id="usePop5" style={{ height: "100px" }} />

@@ -169,19 +169,19 @@ const Current = (props) => {
                 <div className="cont-layer form-wrap">
                     <Form className="tbl-filter">
                         <FormGroup>
-                            <Label for="areaGuPop" className="blind">
+                            <Label htmlFor="areaGuPop" className="blind">
                                 구선택
                             </Label>
                             <Select options={areaGu} defaultValue={areaGu[0]} id="areaGuPop" name="areaGuPop" />
                         </FormGroup>
                         <FormGroup>
-                            <Label for="areaDongPop" className="blind">
+                            <Label htmlFor="areaDongPop" className="blind">
                                 동선택
                             </Label>
                             <Select options={areaDong} defaultValue={areaDong[0]} id="areaDongPop" name="areaDongPop" />
                         </FormGroup>
                         <FormGroup xs="2">
-                            <Label for="companyPop" className="blind">
+                            <Label htmlFor="companyPop" className="blind">
                                 검색기간
                             </Label>
                             <DatePickerButton /> <span className="wav- wav-right">~</span> <DatePickerButton />
@@ -189,19 +189,19 @@ const Current = (props) => {
                     </Form>
                     <Form className="tbl-filter">
                         <FormGroup>
-                            <Label for="statePop" className="blind">
+                            <Label htmlFor="statePop" className="blind">
                                 상태
                             </Label>
                             <Select options={state} defaultValue={state[0]} id="statePop" name="statePop" />
                         </FormGroup>
                         <FormGroup>
-                            <Label for="useGoalPop" className="blind">
+                            <Label htmlFor="useGoalPop" className="blind">
                                 이용목적
                             </Label>
                             <Select options={useGoal} defaultValue={useGoal[0]} id="useGoalPop" name="useGoalPop" />
                         </FormGroup>
                         <FormGroup>
-                            <Label for="disabilityGradePop" className="blind">
+                            <Label htmlFor="disabilityGradePop" className="blind">
                                 장애종류
                             </Label>
                             <Select
@@ -212,13 +212,13 @@ const Current = (props) => {
                             />
                         </FormGroup>
                         <FormGroup>
-                            <Label for="wheelchairPop" className="blind">
+                            <Label htmlFor="wheelchairPop" className="blind">
                                 휠체어
                             </Label>
                             <Select options={wheelchair} defaultValue={wheelchair[0]} id="wheelchairPop" name="wheelchairPop" />
                         </FormGroup>
                         <FormGroup>
-                            <Label for="conditionPop" className="blind">
+                            <Label htmlFor="conditionPop" className="blind">
                                 조회조건
                             </Label>
                             <Select options={condition} defaultValue={condition[0]} id="conditionPop" name="conditionPop" />

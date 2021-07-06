@@ -88,20 +88,20 @@ const Current = (props) => {
                 {/* 검색 */}
                 <Form className="tbl-filter">
                     <FormGroup>
-                        <Label for="timeBooking" className="blind">
+                        <Label htmlFor="timeBooking" className="blind">
                             예약시간
                         </Label>
                         <Select options={timeBooking} id="timeBooking" name="timeBooking" placeholder="예약시간" />
                         <DatePickerButton /> <span className="wav- wav-right">~</span> <DatePickerButton />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="state" className="blind">
+                        <Label htmlFor="state" className="blind">
                             상태
                         </Label>
                         <Select isMulti options={state} id="state" name="state" placeholder="상태" />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="callBooking" className="blind">
+                        <Label htmlFor="callBooking" className="blind">
                             예약콜포함
                         </Label>
                         <Select
@@ -114,12 +114,12 @@ const Current = (props) => {
                     </FormGroup>
                     <FormGroup check>
                         <Input type="checkbox" id="check" />
-                        <Label check for="check" className="mr-1">
+                        <Label check htmlFor="check" className="mr-1">
                             접수자
                         </Label>
                     </FormGroup>
                     <FormGroup>
-                        <Label for="condition" className="blind">
+                        <Label htmlFor="condition" className="blind">
                             조회조건
                         </Label>
                         <Select options={condition} id="condition" name="condition" placeholder="조회조건" />
@@ -213,7 +213,7 @@ const Current = (props) => {
                 <div className="cont-layer form-wrap">
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="cancleCodePop">코드</Label>
+                            <Label htmlFor="cancleCodePop">코드</Label>
                         </Col>
                         <Col>
                             <Input type="text" name="cancleCodePop" id="cancleCodePop" placeholder="(1) 고객취소" />
@@ -232,7 +232,7 @@ const Current = (props) => {
                     </Row>
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="cancleContPop">취소 내용</Label>
+                            <Label htmlFor="cancleContPop">취소 내용</Label>
                         </Col>
                         <Col>
                             <div className="form-control-wrap">
@@ -274,7 +274,7 @@ const Current = (props) => {
                 <div className="cont-layer form-wrap">
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="vehicleOutPop">하차위치</Label>
+                            <Label htmlFor="vehicleOutPop">하차위치</Label>
                         </Col>
                         <Col>
                             <div className="form-control-wrap">
@@ -287,7 +287,7 @@ const Current = (props) => {
                     </Row>
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="distancePop">승하차지간거리</Label>
+                            <Label htmlFor="distancePop">승하차지간거리</Label>
                         </Col>
                         <Col>
                             <div className="form-control-wrap">
@@ -299,7 +299,7 @@ const Current = (props) => {
                             <span className="unit- unit-l">m</span>
                         </Col>
                         <Col xs="2" className="tit">
-                            <Label for="meteragePop">미터요금</Label>
+                            <Label htmlFor="meteragePop">미터요금</Label>
                         </Col>
                         <Col>
                             <div className="form-control-wrap">
@@ -313,7 +313,7 @@ const Current = (props) => {
                     </Row>
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="passPop">통행요금</Label>
+                            <Label htmlFor="passPop">통행요금</Label>
                         </Col>
                         <Col>
                             <div className="form-control-wrap">
@@ -325,7 +325,7 @@ const Current = (props) => {
                             <span className="unit- unit-l">원</span>
                         </Col>
                         <Col xs="2" className="tit">
-                            <Label for="parkingPop">주차요금</Label>
+                            <Label htmlFor="parkingPop">주차요금</Label>
                         </Col>
                         <Col>
                             <div className="form-control-wrap">
@@ -339,7 +339,7 @@ const Current = (props) => {
                     </Row>
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="etcPop">기타요금</Label>
+                            <Label htmlFor="etcPop">기타요금</Label>
                         </Col>
                         <Col>
                             <div className="form-control-wrap">
@@ -353,7 +353,7 @@ const Current = (props) => {
                     </Row>
                     <Row>
                         <Col xs="2" className="tit c-yellow">
-                            <Label for="totalPop">합계</Label>
+                            <Label htmlFor="totalPop">합계</Label>
                         </Col>
                         <Col>
                             <div className="form-control-wrap">

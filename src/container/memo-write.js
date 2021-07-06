@@ -94,7 +94,7 @@ class Main extends Component {
                                     </Col>
                                     <Col xs={{ size: 2, offset: 1 }}>
                                         <FormGroup check>
-                                            <Input type="checkbox" id="alarm" /> <Label for="alarm">알람일자</Label>
+                                            <Input type="checkbox" id="alarm" /> <Label htmlFor="alarm">알람일자</Label>
                                         </FormGroup>
                                     </Col>
                                     <Col>

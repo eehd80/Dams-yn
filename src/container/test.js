@@ -85,19 +85,19 @@ const Current = (props) => {
                     <Row>
                         <Col xs="2">
                             <FormGroup>
-                                <Label for="renew">갱신</Label>
+                                <Label htmlFor="renew">갱신</Label>
                                 <Select options={renew} defaultValue={renew[0]} id="renew" name="renew" />
                             </FormGroup>
                         </Col>
                         <Col xs="2">
                             <FormGroup>
-                                <Label for="array">정렬</Label>
+                                <Label htmlFor="array">정렬</Label>
                                 <Select options={array} defaultValue={array[0]} id="array" name="array" />
                             </FormGroup>
                         </Col>
                         <Col xs="2">
                             <FormGroup>
-                                <Label for="state" className="blind">
+                                <Label htmlFor="state" className="blind">
                                     상태
                                 </Label>
                                 <Select
@@ -114,7 +114,7 @@ const Current = (props) => {
                         </Col>
                         <Col xs="1">
                             <FormGroup className="d-flex">
-                                <Label for="array" className="blind">
+                                <Label htmlFor="array" className="blind">
                                     정렬
                                 </Label>
                                 <Select options={condition} defaultValue={condition[0]} id="condition" name="condition" />
@@ -125,7 +125,7 @@ const Current = (props) => {
                         </Col>
                         <Col xs="1">
                             <ButtonToggle color="primary" className="btn-w">
-                                <i class="las la-search"></i> 검색
+                                <i className="las la-search"></i> 검색
                             </ButtonToggle>
                         </Col>
                     </Row>

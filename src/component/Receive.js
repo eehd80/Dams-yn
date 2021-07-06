@@ -70,7 +70,7 @@ export default function Receive() {
                 <Form className="form-receipt">
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="tel">고객전화번호</Label>
+                            <Label htmlFor="tel">고객전화번호</Label>
                         </Col>
                         <Col>
                             <div className="form-control-wrap">
@@ -81,7 +81,7 @@ export default function Receive() {
                             </div>
                         </Col>
                         <Col xs="2" className="tit">
-                            <Label for="purpose">이용목적</Label>
+                            <Label htmlFor="purpose">이용목적</Label>
                         </Col>
                         <Col>
                             <Select options={purpose} defaultValue={purpose[0]} id="purpose" name="purpose" />
@@ -89,7 +89,7 @@ export default function Receive() {
                     </Row>
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="replyTel">회신번호</Label>
+                            <Label htmlFor="replyTel">회신번호</Label>
                             <button className="btn-">
                                 <i className="las la-search"></i>
                                 <span className="blind">검색</span>
@@ -104,7 +104,7 @@ export default function Receive() {
                             </div>
                         </Col>
                         <Col xs="2" className="tit">
-                            <Label for="companion">동행인</Label>
+                            <Label htmlFor="companion">동행인</Label>
                         </Col>
                         <Col>
                             <div className="form-control-wrap">
@@ -117,7 +117,7 @@ export default function Receive() {
                     </Row>
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="name">고객명</Label>
+                            <Label htmlFor="name">고객명</Label>
                         </Col>
                         <Col>
                             <div className="form-control-wrap">
@@ -128,7 +128,7 @@ export default function Receive() {
                             </div>
                         </Col>
                         <Col xs="2" className="tit">
-                            <Label for="receiveNum">고객접수번호</Label>
+                            <Label htmlFor="receiveNum">고객접수번호</Label>
                         </Col>
                         <Col>
                             <div className="form-control-wrap">
@@ -141,13 +141,13 @@ export default function Receive() {
                     </Row>
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="disabilityType">장애종류</Label>
+                            <Label htmlFor="disabilityType">장애종류</Label>
                         </Col>
                         <Col>
                             <Select options={disabilityType} defaultValue={disabilityType[0]} id="disabilityType" name="disabilityType" />
                         </Col>
                         <Col xs="2" className="tit">
-                            <Label for="disabilityGrade">장애등급</Label>
+                            <Label htmlFor="disabilityGrade">장애등급</Label>
                         </Col>
                         <Col>
                             <Select
@@ -160,13 +160,13 @@ export default function Receive() {
                     </Row>
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="wheelchair">휠체어</Label>
+                            <Label htmlFor="wheelchair">휠체어</Label>
                         </Col>
                         <Col>
                             <Select options={wheelchair} defaultValue={wheelchair[0]} id="wheelchair" name="wheelchair" />
                         </Col>
                         <Col xs="2" className="tit">
-                            <Label for="communication">소통여부</Label>
+                            <Label htmlFor="communication">소통여부</Label>
                         </Col>
                         <Col>
                             <Select options={communication} defaultValue={communication[0]} id="communication" name="communication" />
@@ -178,19 +178,19 @@ export default function Receive() {
                         </Col>
                         <Col>
                             <FormGroup check inline>
-                                <Input type="checkbox" id="paper1" name="paper1" /> <Label for="paper1"> 심사신청서 </Label>
+                                <Input type="checkbox" id="paper1" name="paper1" /> <Label htmlFor="paper1"> 심사신청서 </Label>
                             </FormGroup>
                             <FormGroup check inline>
-                                <Input type="checkbox" id="paper2" name="paper2" /> <Label for="paper2">이용동의서</Label>
+                                <Input type="checkbox" id="paper2" name="paper2" /> <Label htmlFor="paper2">이용동의서</Label>
                             </FormGroup>
                             <FormGroup check inline>
-                                <Input type="checkbox" id="paper3" name="paper3" /> <Label for="paper3">복지카드 및 신분증사본</Label>
+                                <Input type="checkbox" id="paper3" name="paper3" /> <Label htmlFor="paper3">복지카드 및 신분증사본</Label>
                             </FormGroup>
                         </Col>
                     </Row>
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="vehicleIn">승차위치</Label>
+                            <Label htmlFor="vehicleIn">승차위치</Label>
                         </Col>
                         <Col xs="6">
                             <div className="form-control-wrap">
@@ -211,7 +211,7 @@ export default function Receive() {
                     </Row>
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="vehicleOut">하차위치</Label>
+                            <Label htmlFor="vehicleOut">하차위치</Label>
                         </Col>
                         <Col xs="6">
                             <div className="form-control-wrap">
@@ -234,7 +234,7 @@ export default function Receive() {
                     <Row>
                         <Col xs="2" className="tit">
                             <FormGroup check>
-                                <Input type="checkbox" id="booking" /> <Label for="booking">예약</Label>
+                                <Input type="checkbox" id="booking" /> <Label htmlFor="booking">예약</Label>
                             </FormGroup>
                         </Col>
                         <Col>
@@ -243,7 +243,7 @@ export default function Receive() {
                     </Row>
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="interval">배차제한시간</Label>
+                            <Label htmlFor="interval">배차제한시간</Label>
                         </Col>
                         <Col className="d-flex">
                             <div className="form-control-wrap">
@@ -273,7 +273,7 @@ export default function Receive() {
                         <Col xs="2" className="tit">
                             <FormGroup check>
                                 <Input type="checkbox" id="shuttle" />
-                                <Label check for="shuttle">
+                                <Label check htmlFor="shuttle">
                                     왕복예약
                                 </Label>
                             </FormGroup>
@@ -284,7 +284,7 @@ export default function Receive() {
                     </Row>
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="intervalAdd">배차제한시간</Label>
+                            <Label htmlFor="intervalAdd">배차제한시간</Label>
                         </Col>
                         <Col className="d-flex">
                             <div className="form-control-wrap">
@@ -312,7 +312,7 @@ export default function Receive() {
                     </Row>
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="callBooking">콜이용실적</Label>
+                            <Label htmlFor="callBooking">콜이용실적</Label>
                         </Col>
                         <Col className="d-flex">
                             <span className="unit- unit-r">합계</span>
@@ -359,7 +359,7 @@ export default function Receive() {
                     </Row>
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="guide">안내</Label>
+                            <Label htmlFor="guide">안내</Label>
                         </Col>
                         <Col>
                             <div className="form-control-wrap">

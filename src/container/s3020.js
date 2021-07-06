@@ -75,13 +75,13 @@ const Current = (props) => {
                 {/* 검색 */}
                 <Form className="tbl-filter">
                     <FormGroup>
-                        <Label for="sms" className="blind">
+                        <Label htmlFor="sms" className="blind">
                             SMS대상
                         </Label>
                         <Select options={sms} defaultValue={sms[0]} id="sms" name="sms" />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="condition" className="blind">
+                        <Label htmlFor="condition" className="blind">
                             조회조건
                         </Label>
                         <Select options={condition} defaultValue={condition[0]} id="condition" name="condition" />
@@ -127,13 +127,13 @@ const Current = (props) => {
                 <div className="cont-layer form-wrap">
                     <Row>
                         <Col xs="2" className="tit">
-                            <Label for="companyPop">업체명</Label>
+                            <Label htmlFor="companyPop">업체명</Label>
                         </Col>
                         <Col>
                             <Select options={company} defaultValue={company[0]} id="companyPop" name="companyPop" />
                         </Col>
                         <Col xs="2" className="tit">
-                            <Label for="smsTargetPop">SMS대상</Label>
+                            <Label htmlFor="smsTargetPop">SMS대상</Label>
                         </Col>
                         <Col>
                             <Select options={smsTarget} defaultValue={smsTarget[0]} id="smsTargetPop" name="smsTargetPop" />
