@@ -325,7 +325,7 @@ const Current = (props) => {
                             <AgGridColumn field="비교"></AgGridColumn>
                         </AgGridReact>
                     </div>
-                    <h4 className="tit-sub4 mt-5">차량일일점검표</h4>
+                    <h4 className="tit-sub4 mt-4">차량일일점검표</h4>
                     <Table size="sm" className="tbl-type1 mb-4">
                         <colgroup>
                             <col />
