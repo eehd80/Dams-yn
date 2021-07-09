@@ -343,7 +343,17 @@ const Footer = () => (
                 </Col>
             </Row>
             <div className="tbl- ag-theme-balham">
-                <AgGridReact rowData={popTable} defaultColDef={defaultColDef} style={{ height: "300px" }}>
+                <AgGridReact
+                    frameworkComponents={{
+                        testRenderer: TestRenderer,
+                    }}
+                    rowData={rowData}
+                    defaultColDef={defaultColDef}
+                    allowContextMenuWithControlKey={true}
+                    enableRangeSelection={true}
+                    onCellContextMenu={testContext}
+                    onGridReady={onGridReady}
+                >
                     <AgGridColumn field="순서" minWidth={60} maxWidth={70}></AgGridColumn>
                     <AgGridColumn field="선택" minWidth={60} maxWidth={70} checkboxSelection={true}></AgGridColumn>
                     <AgGridColumn field="아이디" minWidth={60} maxWidth={70}></AgGridColumn>

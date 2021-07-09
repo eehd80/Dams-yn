@@ -14,6 +14,9 @@
     background-color: $prim !important;
     color: $w !important;
 }
+.c-red-t {
+    color: red;
+}
 .c-green {
     background-color: $green !important;
     color: $w !important;
@@ -47,6 +50,9 @@
     display: block;
     padding-left: 10px;
 }
+.pr-3 {
+    padding-right: 30px !important;
+}
 .line- {
     margin-top: 20px !important;
     padding-top: 25px;
@@ -54,23 +60,19 @@
 }
 
 // tit
-.tit- {
+.tit {
     position: relative;
     display: flex;
-    height: 100%;
     align-items: center;
+    justify-content: center;
+    height: 35px;
     color: #3a4a5d;
     font-weight: 500;
     white-space: nowrap;
-    &::before {
-        display: inline-block;
-        content: "";
-        width: 3px;
-        height: 3px;
-        margin: 0 7px 0 0;
-        border-radius: 50%;
-        background-color: #3a4a5d;
-    }
+    letter-spacing: -1px;
+    background-color: #eee;
+    border-radius: 4px;
+    font-size: 0.8rem;
 }
 .tit-sub-wrap {
     display: flex;
@@ -237,7 +239,7 @@ input[type="number"]::-webkit-inner-spin-button {
         white-space: nowrap;
         &::before {
             position: absolute;
-            top: 3px;
+            top: 4px;
             left: 0;
             width: 15px;
             height: 15px;
@@ -338,8 +340,44 @@ input[type="number"]::-webkit-inner-spin-button {
     height: 100%;
 }
 .tab-content {
+    margin-top: 30px;
     padding: 0 0 0 5px;
-    // border: 1px solid $gray-e;
+}
+.nav-tabs {
+    position: relative;
+    flex-wrap: nowrap;
+    border: none;
+    border-left: 1px solid $prim2;
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        height: 2px;
+        background: $prim3;
+    }
+    .nav-link {
+        border-top: 1px solid rgba($prim2, 0.6);
+        border-right: 1px solid rgba($prim2, 0.6);
+        border-radius: 0;
+        background-color: $prim3;
+        color: $w;
+        cursor: pointer;
+        &:hover {
+            border: 1px solid rgba($prim2, 0.6);
+            border-left: 1px solid rgba($prim2, 0.6);
+            background-color: $prim4;
+        }
+        &.active {
+            border: 1px solid $prim2;
+            border-bottom: 1px solid $w;
+            border-left: 1px solid $w;
+            background-color: $w;
+            font-weight: 700;
+        }
+    }
 }
 
 // form
@@ -455,6 +493,13 @@ input[type="number"]::-webkit-inner-spin-button {
     }
     .css-1gtu0rj-indicatorContainer {
         padding: 6px !important;
+    }
+}
+
+.form-cont {
+    .row {
+        margin-bottom: 7px;
+        margin-left: -5px;
     }
 }
 
@@ -1093,6 +1138,7 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .wrap-data {
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -1102,6 +1148,12 @@ input[type="number"]::-webkit-inner-spin-button {
     height: 100vh;
     padding: 30px 30px;
     box-sizing: border-box;
+    &.h-auto {
+        height: auto;
+        .aling-items-start {
+            align-items: flex-start;
+        }
+    }
 }
 .lst-data {
     height: 100%;
