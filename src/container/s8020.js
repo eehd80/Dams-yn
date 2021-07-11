@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { AgGridColumn, AgGridReact } from "ag-grid-react";
-import DatePickerButton from "../component/DatePicker";
-import NumberFormat from "react-number-format";
 import Select from "react-select";
 import { Row, Col, Button, ButtonToggle, Form, FormGroup, Label, Input } from "reactstrap";
 
@@ -23,18 +21,6 @@ const availability = [
 const condition = [
     { value: "사용자명", label: "사용자명" },
     { value: "사용자ID", label: "사용자ID" },
-];
-const workPop = [
-    { value: "선택불가", label: "선택불가" },
-    { value: "선택가능", label: "선택가능" },
-];
-const rightPop = [
-    { value: "선택불가", label: "선택불가" },
-    { value: "선택가능", label: "선택가능" },
-];
-const positionPop = [
-    { value: "과장", label: "과장" },
-    { value: "부장", label: "부장" },
 ];
 
 const MENU_ID = "dams-context";
@@ -117,12 +103,12 @@ const Current = (props) => {
                         <AgGridColumn field="NodeKey" minWidth={150}></AgGridColumn>
                         <AgGridColumn field="ParentKey" minWidth={150}></AgGridColumn>
                         <AgGridColumn field="메뉴명" minWidth={200}></AgGridColumn>
-                        <AgGridColumn field="검색" checkboxSelection={true}></AgGridColumn>
-                        <AgGridColumn field="등록" checkboxSelection={true}></AgGridColumn>
-                        <AgGridColumn field="수정" checkboxSelection={true}></AgGridColumn>
-                        <AgGridColumn field="삭제" checkboxSelection={true}></AgGridColumn>
-                        <AgGridColumn field="엑셀" checkboxSelection={true}></AgGridColumn>
-                        <AgGridColumn field="추가옵션설정" checkboxSelection={true}></AgGridColumn>
+                        <AgGridColumn field="검색" minWidth={60} maxWidth={70} checkboxSelection={true}></AgGridColumn>
+                        <AgGridColumn field="등록" minWidth={60} maxWidth={70} checkboxSelection={true}></AgGridColumn>
+                        <AgGridColumn field="수정" minWidth={60} maxWidth={70} checkboxSelection={true}></AgGridColumn>
+                        <AgGridColumn field="삭제" minWidth={60} maxWidth={70} checkboxSelection={true}></AgGridColumn>
+                        <AgGridColumn field="엑셀" minWidth={60} maxWidth={70} checkboxSelection={true}></AgGridColumn>
+                        <AgGridColumn field="추가옵션설정" minWidth={60} maxWidth={70} checkboxSelection={true}></AgGridColumn>
                         <AgGridColumn field="추가옵션수"></AgGridColumn>
                     </AgGridReact>
                 </div>
@@ -140,7 +126,7 @@ const Current = (props) => {
                                 <i class="las la-save"></i> 저장
                             </ButtonToggle>
                             <ButtonToggle>
-                                <i className="las la-search"></i> 취소
+                                <i className="las la-times"></i> 취소
                             </ButtonToggle>
                         </div>
                     </Form>
@@ -167,11 +153,11 @@ const Current = (props) => {
                             <AgGridColumn field="NodeKey" minWidth={150}></AgGridColumn>
                             <AgGridColumn field="ParentKey" minWidth={150}></AgGridColumn>
                             <AgGridColumn field="메뉴명" minWidth={200}></AgGridColumn>
-                            <AgGridColumn field="검색" checkboxSelection={true}></AgGridColumn>
-                            <AgGridColumn field="등록" checkboxSelection={true}></AgGridColumn>
-                            <AgGridColumn field="수정" checkboxSelection={true}></AgGridColumn>
-                            <AgGridColumn field="삭제" checkboxSelection={true}></AgGridColumn>
-                            <AgGridColumn field="엑셀" checkboxSelection={true}></AgGridColumn>
+                            <AgGridColumn field="검색" minWidth={60} maxWidth={70} checkboxSelection={true}></AgGridColumn>
+                            <AgGridColumn field="등록" minWidth={60} maxWidth={70} checkboxSelection={true}></AgGridColumn>
+                            <AgGridColumn field="수정" minWidth={60} maxWidth={70} checkboxSelection={true}></AgGridColumn>
+                            <AgGridColumn field="삭제" minWidth={60} maxWidth={70} checkboxSelection={true}></AgGridColumn>
+                            <AgGridColumn field="엑셀" minWidth={60} maxWidth={70} checkboxSelection={true}></AgGridColumn>
                         </AgGridReact>
                     </div>
                 </div>

@@ -1,27 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { AgGridColumn, AgGridReact } from "ag-grid-react";
-import DatePickerButton from "../component/DatePicker";
-import NumberFormat from "react-number-format";
 import Select from "react-select";
-import {
-    Row,
-    Col,
-    Button,
-    ButtonToggle,
-    Form,
-    FormGroup,
-    Label,
-    Input,
-    TabContent,
-    TabPane,
-    Nav,
-    NavItem,
-    NavLink,
-    Card,
-    CardTitle,
-    CardText,
-} from "reactstrap";
-import classnames from "classnames";
+import { Row, Col, Button, ButtonToggle, Form, FormGroup, Label, Input } from "reactstrap";
 
 import { Item, Menu, Separator, Submenu, useContextMenu } from "react-contexify";
 import "react-contexify/dist/ReactContexify.css";
@@ -38,6 +18,8 @@ const callSearch = [
     { value: "아이투맥스", label: "아이투맥스" },
 ];
 const condition = [{ value: "조회조건", label: "조회조건" }];
+const company = [{ value: "업체", label: "업체" }];
+
 const MENU_ID = "dams-context";
 
 const Current = (props) => {
@@ -72,7 +54,7 @@ const Current = (props) => {
     return (
         <div className="wrap-data">
             <div className="tit-sub-wrap">
-                <h2 className="tit-sub">권한별메뉴</h2>
+                <h2 className="tit-sub">사용자별메뉴</h2>
             </div>
             <div className="lst-data">
                 <Form className="tbl-filter">
@@ -83,6 +65,12 @@ const Current = (props) => {
                         <Select options={condition} id="condition" name="condition" placeholder="조회조건" />
                     </FormGroup>
                     <Input type="text" name="search" id="search" placeholder="검색" className="inp-search" />
+                    <FormGroup>
+                        <Label htmlFor="company" className="blind">
+                            업체선택
+                        </Label>
+                        <Select options={company} defaultValue={company[0]} id="company" name="company" />
+                    </FormGroup>
                     <div className="btn-group2">
                         <ButtonToggle className="c-blue">
                             <i class="las la-search"></i> 검색
@@ -124,8 +112,10 @@ const Current = (props) => {
                                     cellRenderer="testRenderer"
                                     checkboxSelection={true}
                                 ></AgGridColumn>
+                                <AgGridColumn field="ID" minWidth={150}></AgGridColumn>
+                                <AgGridColumn field="사용자명" minWidth={150}></AgGridColumn>
+                                <AgGridColumn field="소속사명" minWidth={150}></AgGridColumn>
                                 <AgGridColumn field="권한그룹명" minWidth={150}></AgGridColumn>
-                                <AgGridColumn field="소속콜센터" minWidth={150}></AgGridColumn>
                             </AgGridReact>
                         </div>
                     </Col>
@@ -150,12 +140,12 @@ const Current = (props) => {
                                     checkboxSelection={true}
                                 ></AgGridColumn>
                                 <AgGridColumn field="메뉴명" minWidth={200}></AgGridColumn>
-                                <AgGridColumn field="검색" checkboxSelection={true}></AgGridColumn>
-                                <AgGridColumn field="등록" checkboxSelection={true}></AgGridColumn>
-                                <AgGridColumn field="수정" checkboxSelection={true}></AgGridColumn>
-                                <AgGridColumn field="삭제" checkboxSelection={true}></AgGridColumn>
-                                <AgGridColumn field="엑셀" checkboxSelection={true}></AgGridColumn>
-                                <AgGridColumn field="추가설정" checkboxSelection={true}></AgGridColumn>
+                                <AgGridColumn field="검색" minWidth={60} maxWidth={70} checkboxSelection={true}></AgGridColumn>
+                                <AgGridColumn field="등록" minWidth={60} maxWidth={70} checkboxSelection={true}></AgGridColumn>
+                                <AgGridColumn field="수정" minWidth={60} maxWidth={70} checkboxSelection={true}></AgGridColumn>
+                                <AgGridColumn field="삭제" minWidth={60} maxWidth={70} checkboxSelection={true}></AgGridColumn>
+                                <AgGridColumn field="엑셀" minWidth={60} maxWidth={70} checkboxSelection={true}></AgGridColumn>
+                                <AgGridColumn field="추가설정" minWidth={60} maxWidth={70} checkboxSelection={true}></AgGridColumn>
                                 <AgGridColumn field="설정"></AgGridColumn>
                                 <AgGridColumn field="가능"></AgGridColumn>
                             </AgGridReact>
@@ -164,10 +154,10 @@ const Current = (props) => {
                 </Row>
             </div>
 
-            {/* layer - 권한그룹메뉴 추가설정 */}
-            <div className="layer-" style={{ top: "200px", left: "60px", width: "550px", transform: "translate(0,0)" }}>
+            {/* layer - 사용자별메뉴 추가설정 */}
+            <div className="layer-" style={{ top: "300px", left: "60px", width: "550px", transform: "translate(0,0)" }}>
                 <div className="head-layer">
-                    <h3>권한그룹메뉴 추가설정</h3>
+                    <h3>사용자별메뉴 추가설정</h3>
                 </div>
                 <div className="cont-layer form-wrap">
                     <Form className="tbl-filter">
