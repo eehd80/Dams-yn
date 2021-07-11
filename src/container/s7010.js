@@ -131,12 +131,12 @@ const Current = (props) => {
                                     </ButtonToggle>
                                 </div>
                             </Form>
-                            <form className="form-cont">
+                            <Form className="form-cont">
                                 <Row className="aling-items-start">
                                     <Col xs="5" className="pr-3">
                                         <Row>
                                             <Col xs="4" className="tit">
-                                                <label htmlFor="tooltip">툴팁표시</label>
+                                                <Label htmlFor="tooltip">툴팁표시</Label>
                                             </Col>
                                             <Col>
                                                 <Select options={tooltip} defaultValue={tooltip[0]} id="tooltip" name="tooltip" />
@@ -144,7 +144,7 @@ const Current = (props) => {
                                         </Row>
                                         <Row>
                                             <Col xs="4" className="tit">
-                                                <label htmlFor="setting1">대기지역 자동회차</label>
+                                                <Label htmlFor="setting1">대기지역 자동회차</Label>
                                             </Col>
                                             <Col>
                                                 <Select options={use} defaultValue={use[0]} id="setting1" name="setting1" />
@@ -152,7 +152,7 @@ const Current = (props) => {
                                         </Row>
                                         <Row>
                                             <Col xs="4" className="tit">
-                                                <label htmlFor="setting2">대기지역 회차시간</label>
+                                                <Label htmlFor="setting2">대기지역 회차시간</Label>
                                             </Col>
                                             <Col className="d-flex">
                                                 <div className="form-control-wrap">
@@ -166,7 +166,7 @@ const Current = (props) => {
                                         </Row>
                                         <Row>
                                             <Col xs="4" className="tit">
-                                                <label htmlFor="setting3">배차 지연시간</label>
+                                                <Label htmlFor="setting3">배차 지연시간</Label>
                                             </Col>
                                             <Col className="d-flex">
                                                 <div className="form-control-wrap">
@@ -180,7 +180,7 @@ const Current = (props) => {
                                         </Row>
                                         <Row>
                                             <Col xs="4" className="tit">
-                                                <label htmlFor="setting4">요청차량 대수</label>
+                                                <Label htmlFor="setting4">요청차량 대수</Label>
                                             </Col>
                                             <Col className="d-flex">
                                                 <div className="form-control-wrap">
@@ -194,7 +194,7 @@ const Current = (props) => {
                                         </Row>
                                         <Row>
                                             <Col xs="4" className="tit">
-                                                <label htmlFor="setting5">배차시 고객SMS</label>
+                                                <Label htmlFor="setting5">배차시 고객SMS</Label>
                                             </Col>
                                             <Col>
                                                 <Select options={use} defaultValue={use[0]} id="setting5" name="setting5" />
@@ -202,7 +202,7 @@ const Current = (props) => {
                                         </Row>
                                         <Row>
                                             <Col xs="4" className="tit">
-                                                <label htmlFor="setting6">취소시 고객SMS</label>
+                                                <Label htmlFor="setting6">취소시 고객SMS</Label>
                                             </Col>
                                             <Col>
                                                 <Select options={use} defaultValue={use[0]} id="setting6" name="setting6" />
@@ -210,7 +210,7 @@ const Current = (props) => {
                                         </Row>
                                         <Row>
                                             <Col xs="4" className="tit">
-                                                <label htmlFor="setting7">완료시 고객SMS</label>
+                                                <Label htmlFor="setting7">완료시 고객SMS</Label>
                                             </Col>
                                             <Col>
                                                 <Select options={use} defaultValue={use[0]} id="setting7" name="setting7" />
@@ -218,7 +218,7 @@ const Current = (props) => {
                                         </Row>
                                         <Row>
                                             <Col xs="4" className="tit">
-                                                <label htmlFor="trainRun">기본배차방식</label>
+                                                <Label htmlFor="trainRun">기본배차방식</Label>
                                             </Col>
                                             <Col>
                                                 <Select options={trainRun} defaultValue={trainRun[0]} id="trainRun" name="trainRun" />
@@ -226,7 +226,7 @@ const Current = (props) => {
                                         </Row>
                                         <Row>
                                             <Col xs="4" className="tit">
-                                                <label htmlFor="display">배차차수표시(기사)</label>
+                                                <Label htmlFor="display">배차차수표시(기사)</Label>
                                             </Col>
                                             <Col>
                                                 <Select options={display} defaultValue={display[0]} id="display" name="display" />
@@ -300,7 +300,7 @@ const Current = (props) => {
                                             <TabPane tabId="1">
                                                 <Row>
                                                     <Col xs="2" className="tit">
-                                                        <label htmlFor="tabSet1-1">사용구분</label>
+                                                        <Label htmlFor="tabSet1-1">사용구분</Label>
                                                     </Col>
                                                     <Col xs="5">
                                                         <Select options={use} defaultValue={use[0]} id="tabSet1-1" name="tabSet1-1" />
@@ -308,7 +308,7 @@ const Current = (props) => {
                                                 </Row>
                                                 <Row>
                                                     <Col xs="2" className="tit">
-                                                        <label htmlFor="tabSet1-2">경고제한</label>
+                                                        <Label htmlFor="tabSet1-2">경고제한</Label>
                                                     </Col>
                                                     <Col className="d-flex">
                                                         <div className="form-control-wrap">
@@ -322,7 +322,7 @@ const Current = (props) => {
                                                 </Row>
                                                 <Row>
                                                     <Col xs="2" className="tit">
-                                                        <label htmlFor="tabSet1-3">별점제한</label>
+                                                        <Label htmlFor="tabSet1-3">별점제한</Label>
                                                     </Col>
                                                     <Col className="d-flex">
                                                         <div className="form-control-wrap">
@@ -336,7 +336,7 @@ const Current = (props) => {
                                                 </Row>
                                                 <Row>
                                                     <Col xs="2" className="tit">
-                                                        <label htmlFor="tabSet1-4">적용구분</label>
+                                                        <Label htmlFor="tabSet1-4">적용구분</Label>
                                                     </Col>
                                                     <Col xs="5">
                                                         <Select options={appliy} defaultValue={appliy[0]} id="tabSet1-4" name="tabSet1-4" />
@@ -344,7 +344,7 @@ const Current = (props) => {
                                                 </Row>
                                                 <Row>
                                                     <Col xs="2" className="tit">
-                                                        <label htmlFor="tabSet1-5">제한시간</label>
+                                                        <Label htmlFor="tabSet1-5">제한시간</Label>
                                                     </Col>
                                                     <Col className="d-flex">
                                                         <div className="form-control-wrap">
@@ -358,7 +358,7 @@ const Current = (props) => {
                                                 </Row>
                                                 <Row>
                                                     <Col xs="2" className="tit">
-                                                        <label htmlFor="tabSet1-6">리셋여부</label>
+                                                        <Label htmlFor="tabSet1-6">리셋여부</Label>
                                                     </Col>
                                                     <Col xs="5">
                                                         <Select options={use} defaultValue={use[0]} id="tabSet1-6" name="tabSet1-6" />
@@ -366,7 +366,7 @@ const Current = (props) => {
                                                 </Row>
                                                 <Row>
                                                     <Col xs="2" className="tit">
-                                                        <label htmlFor="tabSet1-7">리셋시간</label>
+                                                        <Label htmlFor="tabSet1-7">리셋시간</Label>
                                                     </Col>
                                                     <Col className="d-flex">
                                                         <div className="form-control-wrap">
@@ -385,7 +385,7 @@ const Current = (props) => {
                                             <TabPane tabId="2">
                                                 <Row>
                                                     <Col xs="2" className="tit">
-                                                        <label htmlFor="tabSet2-1">사용구분</label>
+                                                        <Label htmlFor="tabSet2-1">사용구분</Label>
                                                     </Col>
                                                     <Col xs="5">
                                                         <Select
@@ -408,7 +408,7 @@ const Current = (props) => {
                                             <TabPane tabId="3">
                                                 <Row>
                                                     <Col xs="2" className="tit">
-                                                        <label htmlFor="tabSet3-1">사용구분</label>
+                                                        <Label htmlFor="tabSet3-1">사용구분</Label>
                                                     </Col>
                                                     <Col xs="5">
                                                         <Select
@@ -431,7 +431,7 @@ const Current = (props) => {
                                             <TabPane tabId="4">
                                                 <Row>
                                                     <Col xs="2" className="tit">
-                                                        <label htmlFor="tabSet4-1">표식</label>
+                                                        <Label htmlFor="tabSet4-1">표식</Label>
                                                     </Col>
                                                     <Col xs="5">
                                                         <div className="form-control-wrap">
@@ -452,7 +452,7 @@ const Current = (props) => {
                                                 </Row>
                                                 <Row>
                                                     <Col xs="2" className="tit">
-                                                        <label htmlFor="tabSet4-2">내용</label>
+                                                        <Label htmlFor="tabSet4-2">내용</Label>
                                                     </Col>
                                                     <Col>
                                                         <div className="form-control-wrap">
@@ -489,7 +489,7 @@ const Current = (props) => {
                                             <TabPane tabId="5">
                                                 <Row>
                                                     <Col xs="2" className="tit">
-                                                        <label htmlFor="tabSet5-1">주소</label>
+                                                        <Label htmlFor="tabSet5-1">주소</Label>
                                                     </Col>
                                                     <Col xs="5">
                                                         <Select options={garage} defaultValue={garage[0]} id="tabSet5-1" name="tabSet5-1" />
@@ -528,7 +528,7 @@ const Current = (props) => {
                                             <TabPane tabId="6">
                                                 <Row>
                                                     <Col xs="2" className="tit">
-                                                        <label htmlFor="tabSet6-1">표시위치</label>
+                                                        <Label htmlFor="tabSet6-1">표시위치</Label>
                                                     </Col>
                                                     <Col xs="5">
                                                         <Select
@@ -724,7 +724,7 @@ const Current = (props) => {
                                         <AgGridColumn field="비고" minWidth={400}></AgGridColumn>
                                     </AgGridReact>
                                 </div>
-                            </form>
+                            </Form>
                         </div>
                     </div>
                 </div>
