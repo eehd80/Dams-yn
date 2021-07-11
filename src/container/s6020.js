@@ -83,7 +83,7 @@ const Current = (props) => {
                         </ButtonToggle>
                     </div>
                     <div className="btn-group2">
-                        <ButtonToggle className="c-blue">저장</ButtonToggle>
+                        <ButtonToggle className="c-yellow">저장</ButtonToggle>
                         <ButtonToggle>취소</ButtonToggle>
                     </div>
                 </Form>

@@ -159,7 +159,7 @@ const Current = (props) => {
                                 <Col>
                                     <Select options={company} defaultValue={company[0]} id="company" name="company" />
                                 </Col>
-                                <Col className="d-flex justify-content-end">
+                                <Col className="area-btn">
                                     <ButtonToggle outline size="sm" className="c-yellow">
                                         저장
                                     </ButtonToggle>

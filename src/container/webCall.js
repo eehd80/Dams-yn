@@ -311,7 +311,7 @@ class Main extends Component {
                                     <Button color="secondary">
                                         <i className="las la-check"></i> 확인
                                     </Button>
-                                    <Button color="primary">
+                                    <Button className="c-yellow">
                                         <i className="las la-save"></i> 저장
                                     </Button>
                                     <Button color="danger">

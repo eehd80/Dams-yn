@@ -126,7 +126,7 @@ const Current = (props) => {
                                     <Select options={member} defaultValue={member[0]} id="member" name="member" placeholder="조회조건" />
                                 </FormGroup>
                                 <div className="btn-group2">
-                                    <ButtonToggle>
+                                    <ButtonToggle className="c-yellow">
                                         <i className="las la-save"></i> 저장
                                     </ButtonToggle>
                                 </div>

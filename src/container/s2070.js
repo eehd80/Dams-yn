@@ -193,13 +193,13 @@ const Current = (props) => {
                             <Button className="btn-w">검색</Button>
                         </Col>
                         <Col>
-                            <Button className="btn-w c-yellow">추가</Button>
+                            <Button className="btn-w c-blue">추가</Button>
                         </Col>
                         <Col>
                             <Button className="btn-w c-red">삭제</Button>
                         </Col>
                         <Col>
-                            <Button className="btn-w c-blue">저장</Button>
+                            <Button className="btn-w c-yellow">저장</Button>
                         </Col>
                     </Row>
 

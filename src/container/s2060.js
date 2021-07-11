@@ -246,7 +246,7 @@ const Current = (props) => {
                     <Row className="btn-area">
                         <Col></Col>
                         <Col>
-                            <Button className="btn-w c-blue">저장</Button>
+                            <Button className="btn-w c-yellow">저장</Button>
                         </Col>
                         <Col>
                             <Button className="btn-w">취소</Button>
