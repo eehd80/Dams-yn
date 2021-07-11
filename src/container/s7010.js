@@ -121,7 +121,7 @@ const Current = (props) => {
                             <Form className="tbl-filter">
                                 <FormGroup>
                                     <Label htmlFor="member" className="blind">
-                                        멤버설정
+                                        회원사 선택
                                     </Label>
                                     <Select options={member} defaultValue={member[0]} id="member" name="member" placeholder="조회조건" />
                                 </FormGroup>

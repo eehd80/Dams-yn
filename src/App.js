@@ -35,6 +35,7 @@ import s7020 from "./container/s7020";
 import s8020 from "./container/s8020";
 import s8030 from "./container/s8030";
 import s8040 from "./container/s8040";
+import s8050 from "./container/s8050";
 import popMap from "./container/pop-map";
 import popSchedule from "./container/pop-schedule";
 import pop_s101 from "./container/pop-s101";
@@ -75,6 +76,7 @@ class App extends Component {
                 <Route path="/s8020" component={s8020} />
                 <Route path="/s8030" component={s8030} />
                 <Route path="/s8040" component={s8040} />
+                <Route path="/s8050" component={s8050} />
                 <Route path="/popMap" component={popMap} /> {/* 지도 팝업 */}
                 <Route path="/popSchedule" component={popSchedule} /> {/* 스케줄 팝업 */}
                 <Route path="/pop-s101" component={pop_s101} /> {/* 차량별 예약시간표 팝업 */}

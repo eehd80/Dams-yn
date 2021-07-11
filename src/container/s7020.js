@@ -79,7 +79,7 @@ const Current = (props) => {
     };
 
     return (
-        <div className="wrap-data">
+        <div className="wrap-data h-auto">
             <div className="tit-sub-wrap">
                 <h2 className="tit-sub">CID설정</h2>
             </div>
@@ -96,7 +96,7 @@ const Current = (props) => {
                 </Form>
                 <Row className="wrap-col-2">
                     <Col xs="5">
-                        <div className="tbl- ag-theme-balham">
+                        <div className="tbl- ag-theme-balham" style={{ height: "400px" }}>
                             <AgGridReact
                                 frameworkComponents={{
                                     testRenderer: TestRenderer,
@@ -130,6 +130,14 @@ const Current = (props) => {
                                     </div>
                                 </Col>
                                 <Col xs="2" className="tit">
+                                    <Label htmlFor="lineClass1">회선구분1</Label>
+                                </Col>
+                                <Col>
+                                    <Select options={lineClass1} defaultValue={lineClass1[0]} id="lineClass1" name="lineClass1" />
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col xs="2" className="tit">
                                     <Label htmlFor="setting1">대표번호</Label>
                                 </Col>
                                 <Col>
@@ -140,13 +148,8 @@ const Current = (props) => {
                                         </span>
                                     </div>
                                 </Col>
-                            </Row>
-                            <Row>
                                 <Col xs="2" className="tit">
-                                    <Label htmlFor="lineClass1">회선구분</Label>
-                                </Col>
-                                <Col>
-                                    <Select options={lineClass1} defaultValue={lineClass1[0]} id="lineClass1" name="lineClass1" />
+                                    <Label htmlFor="lineClass2">회선구분2</Label>
                                 </Col>
                                 <Col>
                                     <Select options={lineClass2} defaultValue={lineClass2[0]} id="lineClass2" name="lineClass2" />
@@ -156,7 +159,7 @@ const Current = (props) => {
                                 <Col xs="2" className="tit">
                                     <Label htmlFor="company">회원사</Label>
                                 </Col>
-                                <Col>
+                                <Col xs="4">
                                     <Select options={company} defaultValue={company[0]} id="company" name="company" />
                                 </Col>
                                 <Col className="area-btn">
@@ -169,7 +172,7 @@ const Current = (props) => {
                             </Row>
                         </Form>
 
-                        <div className="tbl- ag-theme-balham">
+                        <div className="tbl- ag-theme-balham" style={{ height: "254px" }}>
                             <AgGridReact
                                 frameworkComponents={{
                                     testRenderer: TestRenderer,
