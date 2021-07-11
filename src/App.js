@@ -29,6 +29,7 @@ import s4010 from "./container/s4010";
 import s4030 from "./container/s4030";
 import s4040 from "./container/s4040";
 import s5010 from "./container/s5010";
+import s5020 from "./container/s5020";
 import s6010 from "./container/s6010";
 import s7010 from "./container/s7010";
 import s7020 from "./container/s7020";
@@ -70,6 +71,7 @@ class App extends Component {
                 <Route path="/s4030" component={s4030} />
                 <Route path="/s4040" component={s4040} />
                 <Route path="/s5010" component={s5010} />
+                <Route path="/s5020" component={s5020} />
                 <Route path="/s6010" component={s6010} />
                 <Route path="/s7010" component={s7010} />
                 <Route path="/s7020" component={s7020} />

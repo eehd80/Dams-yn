@@ -68,7 +68,7 @@ const Current = (props) => {
     return (
         <div className="wrap-data h-auto">
             <div className="tit-sub-wrap">
-                <h2 className="tit-sub">일/주/월 보고</h2>
+                <h2 className="tit-sub">일/주/월 보고 - 추진실적</h2>
             </div>
             <div className="lst-data">
                 <Form className="tbl-filter">
@@ -111,10 +111,10 @@ const Current = (props) => {
                     <Col>
                         <div className="form-cont-type2">
                             <h3 className="tit-sub3-t2">
-                                <i class="las la-car"></i> 금일 운행실적
+                                <i class="las la-list"></i> 운영현황
                             </h3>
                         </div>
-                        <h4 className="tit-sub4-t2">예약접수 현황</h4>
+                        <h4 className="tit-sub4-t2">구별 운영현황</h4>
                         <div className="tbl- ag-theme-balham" style={{ height: "200px" }}>
                             <AgGridReact
                                 frameworkComponents={{
@@ -127,7 +127,8 @@ const Current = (props) => {
                                 onCellContextMenu={testContext}
                                 onGridReady={onGridReady}
                             >
-                                <AgGridColumn field="계" />
+                                <AgGridColumn field="구분" />
+                                <AgGridColumn field="합계" />
                                 <AgGridColumn field="처인구" />
                                 <AgGridColumn field="기흥구" />
                                 <AgGridColumn field="수지구" />
@@ -137,32 +138,45 @@ const Current = (props) => {
                                 <AgGridColumn field="기타" />
                             </AgGridReact>
                         </div>
-                        <h4 className="tit-sub4-t2">배차 현황</h4>
-                        <div className="tbl- ag-theme-balham" style={{ height: "200px" }}>
-                            <AgGridReact
-                                frameworkComponents={{
-                                    testRenderer: TestRenderer,
-                                }}
-                                rowData={rowData}
-                                defaultColDef={defaultColDef}
-                                allowContextMenuWithControlKey={true}
-                                enableRangeSelection={true}
-                                onCellContextMenu={testContext}
-                                onGridReady={onGridReady}
-                            >
-                                <AgGridColumn field="계" />
-                                <AgGridColumn field="처인구" />
-                                <AgGridColumn field="기흥구" />
-                                <AgGridColumn field="수지구" />
-                                <AgGridColumn field="서울" />
-                                <AgGridColumn field="경기" />
-                                <AgGridColumn field="인천" />
-                                <AgGridColumn field="기타" />
-                                <AgGridColumn field="미배차" />
-                                <AgGridColumn field="예약취소" />
-                            </AgGridReact>
+                        <div className="wrap-graph">
+                            <div class="percent-indicator">
+                                <div class="per-100"></div>
+                                <div class="per-90"></div>
+                                <div class="per-80"></div>
+                                <div class="per-70"></div>
+                                <div class="per-60"></div>
+                                <div class="per-50"></div>
+                                <div class="per-40"></div>
+                                <div class="per-30"></div>
+                                <div class="per-20"></div>
+                                <div class="per-10"></div>
+                                <div class="per-0"></div>
+                            </div>
+                            <ul class="graph">
+                                <li>
+                                    처인구 <span style={{ height: "100%" }}></span>
+                                </li>
+                                <li>
+                                    기흥구 <span style={{ height: "80%" }}></span>
+                                </li>
+                                <li>
+                                    수지구 <span style={{ height: "60%" }}></span>
+                                </li>
+                                <li>
+                                    서울 <span style={{ height: "5%" }}></span>
+                                </li>
+                                <li>
+                                    경기 <span style={{ height: "55%" }}></span>
+                                </li>
+                                <li>
+                                    인천 <span style={{ height: "0%" }}></span>
+                                </li>
+                                <li>
+                                    기타 <span style={{ height: "10%" }}></span>
+                                </li>
+                            </ul>
                         </div>
-                        <h4 className="tit-sub4-t2">장애 유형별 이용현황</h4>
+                        <h4 className="tit-sub4-t2">동별 운영현황</h4>
                         <div className="tbl- ag-theme-balham" style={{ height: "200px" }}>
                             <AgGridReact
                                 frameworkComponents={{
@@ -175,89 +189,23 @@ const Current = (props) => {
                                 onCellContextMenu={testContext}
                                 onGridReady={onGridReady}
                             >
-                                <AgGridColumn field="계" />
-                                <AgGridColumn field="지체" />
-                                <AgGridColumn field="뇌병변" />
-                                <AgGridColumn field="시각" />
-                                <AgGridColumn field="청각" />
-                                <AgGridColumn field="언어" />
-                                <AgGridColumn field="신장" />
-                                <AgGridColumn field="심장" />
-                                <AgGridColumn field="호흡기" />
-                                <AgGridColumn field="간" />
-                                <AgGridColumn field="안면" />
-                                <AgGridColumn field="장루, 요류" />
-                                <AgGridColumn field="간질" />
-                            </AgGridReact>
-                        </div>
-                        <h4 className="tit-sub4-t2">목적별 이용현황</h4>
-                        <div className="tbl- ag-theme-balham" style={{ height: "200px" }}>
-                            <AgGridReact
-                                frameworkComponents={{
-                                    testRenderer: TestRenderer,
-                                }}
-                                rowData={rowData}
-                                defaultColDef={defaultColDef}
-                                allowContextMenuWithControlKey={true}
-                                enableRangeSelection={true}
-                                onCellContextMenu={testContext}
-                                onGridReady={onGridReady}
-                            >
-                                <AgGridColumn field="계" />
-                                <AgGridColumn field="병원">
-                                    <AgGridColumn field="소계" />
-                                    <AgGridColumn field="관내" />
-                                    <AgGridColumn field="관외" />
+                                <AgGridColumn field="구분" />
+                                <AgGridColumn field="합계" />
+                                <AgGridColumn field="기흥구">
+                                    <AgGridColumn field="구갈동" />
+                                    <AgGridColumn field="구성동" />
+                                    <AgGridColumn field="기흥동" />
+                                    <AgGridColumn field="동백동" />
+                                    <AgGridColumn field="마북동" />
+                                    <AgGridColumn field="보정동" />
+                                    <AgGridColumn field="상갈동" />
+                                    <AgGridColumn field="상하동" />
+                                    <AgGridColumn field="서농동" />
+                                    <AgGridColumn field="신갈동" />
+                                    <AgGridColumn field="영덕동" />
                                 </AgGridColumn>
-                                <AgGridColumn field="복지관" />
-                                <AgGridColumn field="재활" />
-                                <AgGridColumn field="생업" />
-                                <AgGridColumn field="학교" />
-                                <AgGridColumn field="학교" />
-                                <AgGridColumn field="여가" />
-                                <AgGridColumn field="기타" />
                             </AgGridReact>
                         </div>
-
-                        <div className="form-cont-type2 mt-3">
-                            <h3 className="tit-sub3-t2">
-                                <i class="las la-calendar"></i> 명일 운행계획
-                            </h3>
-                        </div>
-                        <div className="tbl- ag-theme-balham" style={{ height: "200px" }}>
-                            <AgGridReact
-                                frameworkComponents={{
-                                    testRenderer: TestRenderer,
-                                }}
-                                rowData={rowData}
-                                defaultColDef={defaultColDef}
-                                allowContextMenuWithControlKey={true}
-                                enableRangeSelection={true}
-                                onCellContextMenu={testContext}
-                                onGridReady={onGridReady}
-                            >
-                                <AgGridColumn field="계" />
-                                <AgGridColumn field="지체" />
-                                <AgGridColumn field="뇌병변" />
-                                <AgGridColumn field="시각" />
-                                <AgGridColumn field="청각" />
-                                <AgGridColumn field="언어" />
-                                <AgGridColumn field="신장" />
-                                <AgGridColumn field="심장" />
-                                <AgGridColumn field="호흡기" />
-                                <AgGridColumn field="간" />
-                                <AgGridColumn field="안면" />
-                                <AgGridColumn field="장루, 요류" />
-                                <AgGridColumn field="간질" />
-                            </AgGridReact>
-                        </div>
-
-                        <div className="form-cont-type2 mt-3">
-                            <h3 className="tit-sub3-t2">
-                                <i class="las la-info-circle"></i> 특이사항
-                            </h3>
-                        </div>
-                        <Input type="textarea" name="text" id="exampleText" style={{ height: "200px" }} />
                     </Col>
                 </Row>
             </div>
