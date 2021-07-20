@@ -87,7 +87,7 @@ const Current = (props) => {
                     <Col xs="4">
                         <div className="form-cont-type2">
                             <h3 className="tit-sub3-t2">
-                                <i class="las la-print"></i> 프린트 이력
+                                <i className="las la-print"></i> 프린트 이력
                             </h3>
                         </div>
                         <div className="tbl- ag-theme-balham" style={{ height: "97.9%" }}>
@@ -111,7 +111,7 @@ const Current = (props) => {
                     <Col>
                         <div className="form-cont-type2">
                             <h3 className="tit-sub3-t2">
-                                <i class="las la-car"></i> 금일 운행실적
+                                <i className="las la-car"></i> 금일 운행실적
                             </h3>
                         </div>
                         <h4 className="tit-sub4-t2">예약접수 현황</h4>
@@ -221,7 +221,7 @@ const Current = (props) => {
 
                         <div className="form-cont-type2 mt-3">
                             <h3 className="tit-sub3-t2">
-                                <i class="las la-calendar"></i> 명일 운행계획
+                                <i className="las la-calendar"></i> 명일 운행계획
                             </h3>
                         </div>
                         <div className="tbl- ag-theme-balham" style={{ height: "200px" }}>
@@ -254,7 +254,7 @@ const Current = (props) => {
 
                         <div className="form-cont-type2 mt-3">
                             <h3 className="tit-sub3-t2">
-                                <i class="las la-info-circle"></i> 특이사항
+                                <i className="las la-info-circle"></i> 특이사항
                             </h3>
                         </div>
                         <Input type="textarea" name="text" id="exampleText" style={{ height: "200px" }} />

@@ -85,7 +85,7 @@ const Current = (props) => {
                     <Input type="text" name="search" id="search" placeholder="검색" className="inp-search" />
                     <div className="btn-group2">
                         <ButtonToggle className="c-blue">
-                            <i class="las la-search"></i> 검색
+                            <i className="las la-search"></i> 검색
                         </ButtonToggle>
                         <ButtonToggle className="c-yellow">
                             <i className="las la-save"></i> 저장
@@ -177,7 +177,7 @@ const Current = (props) => {
                         </FormGroup>
                         <div className="btn-group2">
                             <ButtonToggle className="c-yellow">
-                                <i class="las la-save"></i> 저장
+                                <i className="las la-save"></i> 저장
                             </ButtonToggle>
                             <ButtonToggle>
                                 <i className="las la-times"></i> 취소

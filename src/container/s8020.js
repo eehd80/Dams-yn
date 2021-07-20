@@ -76,7 +76,7 @@ const Current = (props) => {
                             <i className="las la-plus"></i> 신규
                         </ButtonToggle>
                         <ButtonToggle className="c-red">
-                            <i class="las la-minus"></i> 삭제
+                            <i className="las la-minus"></i> 삭제
                         </ButtonToggle>
                     </div>
                 </Form>
@@ -123,7 +123,7 @@ const Current = (props) => {
                     <Form className="tbl-filter">
                         <div className="btn-group2">
                             <ButtonToggle className="c-yellow">
-                                <i class="las la-save"></i> 저장
+                                <i className="las la-save"></i> 저장
                             </ButtonToggle>
                             <ButtonToggle>
                                 <i className="las la-times"></i> 취소
@@ -168,7 +168,7 @@ const Current = (props) => {
                                 <i className="las la-plus"></i> 추가
                             </ButtonToggle>
                             <ButtonToggle>
-                                <i class="las la-minus"></i> 삭제
+                                <i className="las la-minus"></i> 삭제
                             </ButtonToggle>
                         </div>
                     </Form>

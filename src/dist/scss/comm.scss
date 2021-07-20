@@ -274,7 +274,7 @@ input[type="number"]::-webkit-inner-spin-button {
             align-items: center;
             justify-content: center;
             width: 25px;
-            height: 37px;
+            height: 100%;
             font-family: "Line Awesome Free";
             font-weight: 900;
             font-size: 1em;
@@ -292,8 +292,9 @@ input[type="number"]::-webkit-inner-spin-button {
         white-space: nowrap;
         &::before {
             position: absolute;
-            top: 4px;
+            top: 50%;
             left: 0;
+            transform: translateY(-50%);
             width: 15px;
             height: 15px;
             background-image: url(../../images/img-comm.png);
@@ -304,6 +305,8 @@ input[type="number"]::-webkit-inner-spin-button {
     }
     .form-check-input {
         float: none;
+        width: 15px;
+        height: 15px;
         margin: -2px 5px 0 0;
         vertical-align: middle;
         &:checked + label::before {
@@ -1641,6 +1644,118 @@ input[type="number"]::-webkit-inner-spin-button {
             transform: translateX(-50%);
             width: 30px;
             background-color: rgba($prim, 0.8);
+        }
+    }
+}
+
+.wrap-login {
+    header {
+        padding: 100px 0 30px;
+    }
+    .logo {
+        height: 80px;
+        padding-left: 0;
+        background: url(../../images/logo.png) 50% 0 no-repeat;
+        background-size: contain;
+        text-indent: -9999px;
+        &::before {
+            display: none;
+        }
+    }
+}
+.login-area {
+    width: 460px;
+    margin: 0 auto;
+    .form-control-wrap {
+        display: flex;
+        .form-control {
+            height: 48px;
+        }
+    }
+    .error {
+        margin-top: 10px;
+        color: $prim;
+    }
+    .btn-global {
+        display: block;
+        width: 100%;
+        height: 56px;
+        line-height: 55px;
+        margin: 20px 0 14px;
+        border-radius: 0;
+        border: solid 1px rgba(0, 0, 0, 0.1);
+        // box-shadow: 0 2px 6px 0 rgba(61 80 81 0.8);
+        background-color: $prim3;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        cursor: pointer;
+        text-align: center;
+    }
+    .check-area {
+        display: flex;
+        justify-content: space-between;
+    }
+    .ico-save {
+        padding: 8px 0 0 25px;
+        label {
+            letter-spacing: -0.5px;
+            &::before {
+                width: 26px;
+                height: 26px;
+                background-position: -110px -60px;
+                background-size: 260px 84px;
+            }
+        }
+        .form-check-input {
+            width: 0;
+            height: 0;
+            &:checked + label::before {
+                background-position: -80px -60px;
+            }
+        }
+    }
+
+    .setting {
+        .btn-secondary {
+            padding: 0.375rem 0;
+            background: none;
+            color: $b;
+            font-size: 1rem;
+        }
+    }
+    .setting-area {
+        margin-top: 30px;
+        padding: 30px 0 70px;
+        border-top: 1px solid rgba($b, 0.05);
+        .tit- {
+            width: 100px;
+            line-height: 48px;
+            white-space: nowrap;
+            font-weight: 500;
+        }
+    }
+    .map-select {
+        display: flex;
+        margin: 10px 0 30px;
+        .form-check {
+            display: flex;
+            align-items: center;
+            height: 48px;
+        }
+        .form-check-label {
+            margin-right: 20px;
+            &::before {
+                display: none;
+            }
+        }
+    }
+    .btn-area {
+        display: flex;
+        justify-content: space-between;
+        button {
+            width: 45%;
         }
     }
 }

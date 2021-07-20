@@ -87,7 +87,7 @@ const Current = (props) => {
                     <Col xs="4">
                         <div className="form-cont-type2">
                             <h3 className="tit-sub3-t2">
-                                <i class="las la-print"></i> 프린트 이력
+                                <i className="las la-print"></i> 프린트 이력
                             </h3>
                         </div>
                         <div className="tbl- ag-theme-balham" style={{ height: "97.9%" }}>
@@ -111,7 +111,7 @@ const Current = (props) => {
                     <Col>
                         <div className="form-cont-type2">
                             <h3 className="tit-sub3-t2">
-                                <i class="las la-list"></i> 운영현황
+                                <i className="las la-list"></i> 운영현황
                             </h3>
                         </div>
                         <h4 className="tit-sub4-t2">구별 운영현황</h4>
@@ -139,20 +139,20 @@ const Current = (props) => {
                             </AgGridReact>
                         </div>
                         <div className="wrap-graph">
-                            <div class="percent-indicator">
-                                <div class="per-100"></div>
-                                <div class="per-90"></div>
-                                <div class="per-80"></div>
-                                <div class="per-70"></div>
-                                <div class="per-60"></div>
-                                <div class="per-50"></div>
-                                <div class="per-40"></div>
-                                <div class="per-30"></div>
-                                <div class="per-20"></div>
-                                <div class="per-10"></div>
-                                <div class="per-0"></div>
+                            <div className="percent-indicator">
+                                <div className="per-100"></div>
+                                <div className="per-90"></div>
+                                <div className="per-80"></div>
+                                <div className="per-70"></div>
+                                <div className="per-60"></div>
+                                <div className="per-50"></div>
+                                <div className="per-40"></div>
+                                <div className="per-30"></div>
+                                <div className="per-20"></div>
+                                <div className="per-10"></div>
+                                <div className="per-0"></div>
                             </div>
-                            <ul class="graph">
+                            <ul className="graph">
                                 <li>
                                     처인구 <span style={{ height: "100%" }}></span>
                                 </li>
