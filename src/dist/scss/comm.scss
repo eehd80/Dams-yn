@@ -1769,3 +1769,29 @@ input[type="number"]::-webkit-inner-spin-button {
         }
     }
 }
+.info-program {
+    width: 500px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: $gray-e;
+    border: 1px solid #ccc;
+    h2 {
+        display: block;
+        margin-bottom: 20px;
+        padding: 10px 0;
+        background-color: $gray-3;
+        color: $w;
+        font-size: 1rem;
+        text-align: center;
+    }
+    h3 {
+        margin: 0 0 20px 10px;
+        font-size: 1.3rem;
+    }
+    .txt {
+        margin: 0 0 20px 10px;
+    }
+    .form-control {
+        height: 100px;
+    }
+}
