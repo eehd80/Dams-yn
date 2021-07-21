@@ -8,7 +8,9 @@ const Header = () => (
         <nav className="gnb-util">
             <div className="container">
                 <h1 className="logo">
-                    <a href="#">용인시 교통약자 DAMS</a>
+                    <a href="#">
+                        <span>용인시</span> 교통약자 이동지원센터
+                    </a>
                 </h1>
                 <div className="util-wrap">
                     <ul className="lst-util">

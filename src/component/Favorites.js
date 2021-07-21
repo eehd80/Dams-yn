@@ -5,13 +5,13 @@ const Favorites = () => (
         <div className="container">
             <ul className="lst-favor">
                 <li>
-                    <a href="#">접수</a>
+                    <button>접수</button>
                 </li>
                 <li>
-                    <a href="#">콜 현황</a>
+                    <button>콜 현황</button>
                 </li>
                 <li>
-                    <a href="#">예약 콜</a>
+                    <button>예약 콜</button>
                 </li>
                 <li>
                     <a href="#">기사관리</a>
