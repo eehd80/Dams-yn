@@ -37,6 +37,7 @@ import s8020 from "./container/s8020";
 import s8030 from "./container/s8030";
 import s8040 from "./container/s8040";
 import s8050 from "./container/s8050";
+import s9010 from "./container/s9010";
 import s9020 from "./container/s9020";
 import s9030 from "./container/s9030";
 import popMap from "./container/pop-map";
@@ -80,6 +81,7 @@ class App extends Component {
                 <Route path="/s8030" component={s8030} />
                 <Route path="/s8040" component={s8040} />
                 <Route path="/s8050" component={s8050} />
+                <Route path="/s9010" component={s9010} />
                 <Route path="/s9020" component={s9020} />
                 <Route path="/s9030" component={s9030} />
                 <Route path="/popMap" component={popMap} /> {/* 지도 팝업 */}

@@ -1745,6 +1745,36 @@ input[type="number"]::-webkit-inner-spin-button {
             white-space: nowrap;
             font-weight: 500;
         }
+        &.pw-find {
+            margin: 0;
+            padding-bottom: 30px;
+            border: none;
+            border-bottom: 1px solid rgba($b, 0.05);
+            .tit- {
+                width: 160px;
+            }
+        }
+        button {
+            height: 45px;
+        }
+    }
+    .txt-area {
+        margin-top: 30px;
+        padding: 30px 0 0;
+        border-top: 1px solid rgba($b, 0.05);
+        li {
+            position: relative;
+            padding: 3px 0 3px 10px;
+            &::before {
+                content: "";
+                @include posY;
+                left: 0;
+                width: 3px;
+                height: 3px;
+                background-color: rgba($b, 0.3);
+                border-radius: 50%;
+            }
+        }
     }
     .map-select {
         display: flex;
