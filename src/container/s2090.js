@@ -114,6 +114,17 @@ const Current = (props) => {
                         <Select options={company} defaultValue={company[0]} id="company" name="company" />
                     </FormGroup>
 
+                    <FormGroup>
+                        <DatePickerButton />
+                        <div className="wav-">부터</div>
+                        <DatePickerButton />
+                    </FormGroup>
+                    <FormGroup>
+                        <ButtonToggle className="mr-1 c-green">
+                            <i className="las la-route"></i> 경로보기
+                        </ButtonToggle>
+                    </FormGroup>
+
                     <div className="btn-group2">
                         <ButtonToggle className="c-yellow">
                             <i className="las la-sms"></i> SMS전송
@@ -125,69 +136,65 @@ const Current = (props) => {
                 </Form>
                 <div className="tbl-option">
                     <div className="row-option">
-                        <FormGroup xs="2" className="tit">
-                            <Label htmlFor="driverAll">전체기사</Label>
+                        <FormGroup xs="2">
+                            <Label htmlFor="driverAll" className="tit2">
+                                전체기사
+                            </Label>
                             <Input type="text" name="driverAll" id="driverAll" />
                         </FormGroup>
-                        <FormGroup xs="2" className="tit">
-                            <Label htmlFor="driverOpt1">정상</Label>
+                        <FormGroup xs="2">
+                            <Label htmlFor="driverOpt1" className="tit2">
+                                정상
+                            </Label>
                             <Input type="text" name="driverOpt1" id="driverOpt1" />
                         </FormGroup>
-                        <FormGroup xs="2" className="tit">
-                            <Label htmlFor="driverOpt2">음영</Label>
+                        <FormGroup xs="2">
+                            <Label htmlFor="driverOpt2" className="tit2">
+                                음영
+                            </Label>
                             <Input type="text" name="driverOpt2" id="driverOpt2" />
                         </FormGroup>
-                        <FormGroup xs="2" className="tit">
-                            <Label htmlFor="driverOpt2">기타</Label>
+                        <FormGroup xs="2">
+                            <Label htmlFor="driverOpt2" className="tit2">
+                                기타
+                            </Label>
                             <Input type="text" name="driverOpt2" id="driverOpt2" />
                         </FormGroup>
-                        <ButtonToggle className="c-yellow">
+                        {/* <ButtonToggle className="c-yellow">
                             <i className="las la-map-marker-alt"></i> 위치보기
-                        </ButtonToggle>
-                    </div>
-                    <div className="row-option">
-                        <FormGroup xs="2" className="tit">
-                            <Label htmlFor="driverAll" className="et c-blue">
+                        </ButtonToggle> */}
+                        <FormGroup xs="2">
+                            <Label htmlFor="driverAll" className="tit-et c-skyblue">
                                 대기
                             </Label>
                             <Input type="text" name="driverAll" id="driverAll" />
                         </FormGroup>
-                        <FormGroup xs="2" className="tit">
-                            <Label htmlFor="driverOpt1" className="c-red">
+                        <FormGroup xs="2">
+                            <Label htmlFor="driverOpt1" className="tit-et c-green">
                                 배차
                             </Label>
                             <Input type="text" name="driverOpt1" id="driverOpt1" />
                         </FormGroup>
-                        <FormGroup xs="2" className="tit">
-                            <Label htmlFor="driverOpt2" className="c-green">
+                        <FormGroup xs="2">
+                            <Label htmlFor="driverOpt2" className="tit-et c-red">
                                 승차
                             </Label>
                             <Input type="text" name="driverOpt2" id="driverOpt2" />
                         </FormGroup>
-                        <FormGroup xs="2" className="tit">
-                            <Label htmlFor="driverOpt2" className="c-gray">
-                                출석
+                        <FormGroup xs="2">
+                            <Label htmlFor="driverOpt2" className="tit-et c-green">
+                                휴식
                             </Label>
                             <Input type="text" name="driverOpt2" id="driverOpt2" />
                         </FormGroup>
-                        <FormGroup xs="2" className="tit">
-                            <Label htmlFor="driverOpt2" className="c-gray">
+                        <FormGroup xs="2">
+                            <Label htmlFor="driverOpt2" className="tit-et c-gray">
                                 퇴근
                             </Label>
                             <Input type="text" name="driverOpt2" id="driverOpt2" />
                         </FormGroup>
-                        <FormGroup>
-                            <DatePickerButton />
-                            <div className="wav-">부터</div>
-                            <Input type="number" name="unitTime" id="unitTime" className="inp-time" />
-                            <div className="wav-">시간</div>
-                        </FormGroup>
-                        <FormGroup>
-                            <ButtonToggle className="c-green">
-                                <i className="las la-route"></i> 경로보기
-                            </ButtonToggle>
-                        </FormGroup>
                     </div>
+                    <div className="row-option"></div>
                 </div>
                 {/* 리스트 */}
                 <div className="tbl- ag-theme-balham">
