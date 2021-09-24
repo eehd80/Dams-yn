@@ -324,14 +324,14 @@ input[type="number"]::-webkit-inner-spin-button {
         box-sizing: border-box;
         &:hover {
             min-height: 35px;
-            height: 35px;
+            // height: 35px;
         }
         .select__indicator {
             padding: 6px;
         }
     }
     .css-1hb7zxy-IndicatorsContainer {
-        height: 33px;
+        height: 100%;
     }
     .css-tlfecz-indicatorContainer {
         padding: 6px;
@@ -560,7 +560,10 @@ input[type="number"]::-webkit-inner-spin-button {
     }
     .css-yk16xz-control {
         min-height: 35px !important;
-        height: 35px;
+        // height: 35px;
+        &:hover {
+            height: auto;
+        }
         .css-tlfecz-indicatorContainer {
             padding: 6px !important;
         }
