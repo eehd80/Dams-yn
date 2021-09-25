@@ -492,6 +492,13 @@ input[type="number"]::-webkit-inner-spin-button {
             .css-12jo7m5 {
                 padding: 3px 0 3px 5px;
             }
+            .css-b8ldur-Input {
+                overflow: hidden;
+                width: 0;
+                height: 0;
+                margin: 0;
+                padding: 0;
+            }
         }
         &.inp-et3 {
             > div {
