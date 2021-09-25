@@ -482,9 +482,15 @@ input[type="number"]::-webkit-inner-spin-button {
                 width: auto;
                 min-width: 210px;
                 // max-width: 370px;
-                .select__value-container {
-                    padding: 2px 0 2px 10px;
-                }
+            }
+            .select__value-container {
+                padding: 2px 0 2px 2px;
+            }
+            .css-1rhbuit-multiValue {
+                margin: 1px;
+            }
+            .css-12jo7m5 {
+                padding: 3px 0 3px 5px;
             }
         }
         &.inp-et3 {
