@@ -479,7 +479,15 @@ input[type="number"]::-webkit-inner-spin-button {
         // margin-right: 10px;
         &.inp-et2 {
             > div {
-                width: 210px;
+                width: auto;
+                min-width: 210px;
+                // max-width: 370px;
+                .select__value-container {
+                    padding: 2px 0 2px 10px;
+                }
+                .select__value-container {
+                    max-height: 65px;
+                }
             }
         }
         &.inp-et3 {
@@ -865,8 +873,8 @@ input[type="number"]::-webkit-inner-spin-button {
 
 // 공통 레이아웃, 공통 디자인
 .wrap {
-    min-width: 1400px;
-    max-width: 1920px;
+    min-width: 1670px;
+    // max-width: 1920px;
 }
 .container {
     width: calc(100% - 35px) !important;

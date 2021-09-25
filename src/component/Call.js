@@ -32,9 +32,15 @@ const array = [
     { value: "상태순", label: "상태순" },
 ];
 const state = [
-    { value: "대기", label: "대기" },
     { value: "접수", label: "접수" },
     { value: "배차", label: "배차" },
+    { value: "승차", label: "승차" },
+    { value: "하차", label: "하차" },
+    { value: "실패", label: "실패" },
+    { value: "예약", label: "예약" },
+    { value: "대기", label: "대기" },
+    { value: "배차(수동)", label: "배차(수동)" },
+    { value: "배차(확정)", label: "배차(확정)" },
 ];
 const condition = [
     { value: "ID", label: "ID" },
