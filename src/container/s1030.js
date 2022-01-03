@@ -64,6 +64,8 @@ const Current = (props) => {
         e.preventDefault();
     };
 
+    const [startDate, setStartDate] = useState(new Date());
+
     return (
         <div className="wrap-data">
             <div className="tit-sub-wrap">
@@ -76,7 +78,9 @@ const Current = (props) => {
                             검색시간조건
                         </Label>
                         <Select options={timeSearch} id="timeSearch" name="timeSearch" placeholder="검색시간조건" />
-                        <DatePickerButton /> <span className="wav- wav-right">~</span> <DatePickerButton />
+                        <DatePickerButton wrapperClassName="datePicker" dateFormat="dd/MM/yyyy" />
+                        <span className="wav- wav-right">~</span>
+                        <DatePickerButton className="date-only" />
                     </FormGroup>
                     <FormGroup>
                         <Label htmlFor="callAll" className="blind">
